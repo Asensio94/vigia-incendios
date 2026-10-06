@@ -1,0 +1,89 @@
+name: Vigilancia horaria
+
+# Cada hora: focos nuevos de FIRMS, agrupado en incendios, cruces, EFFIS y web.
+#
+# FIRMS publica cada pasada unas tres horas después; con una vuelta por hora un foco tarda
+# como mucho una hora más en salir en la web. El minuto 17 esquiva las horas en punto, que
+# es cuando GitHub retrasa más los trabajos programados.
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+    inputs:
+      periodo:
+        description: "Periodo de FIRMS (24h, 48h o 7d); vacío para elegirlo solo"
+        required: false
+        default: ""
+
+permissions:
+  contents: write           # para guardar el registro y publicar gh-pages
+
+concurrency:
+  group: vigilancia
+  cancel-in-progress: false
+
+jobs:
+  vigilar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12", cache: pip}
+
+      - run: pip install -r requirements.txt
+
+      - name: Focos, incendios y web
+        run: python -m vigia vigilar --periodo "${{ inputs.periodo }}"
+
+      - name: Guardar el registro
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Solo se guarda si han entrado focos nuevos. Sin focos nuevos lo único que cambia
+          # es la hora de revisión y el estado de los incendios, que se recalcula en cada
+          # vuelta: guardarlo daría un commit por hora sin información.
+          if git diff --quiet -- data/focos; then
+            echo "Sin focos nuevos: no se guarda nada."
+          else
+            git add data
+            git commit -q -m "Focos hasta el $(date -u +'%Y-%m-%d %H:%M') UTC"
+            git pull -q --rebase --autostash origin main
+            git push -q origin HEAD:main
+          fi
+
+      - name: Publicar la web
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          # gh-pages es un único commit huérfano que se reemplaza en cada vuelta: la historia
+          # está en data/, en main.
+          cd site
+          git init -q -b gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Web de las $(date -u +'%Y-%m-%d %H:%M') UTC"
+          git push -q --force "https://x-access-token:$TOKEN@github.com/$REPO.git" HEAD:gh-pages
+
+      - name: Resumen de la ejecución
+        if: always()
+        run: |
+          python - >> "$GITHUB_STEP_SUMMARY" <<'PY'
+          import json, pathlib
+          from vigia import web
+          p = pathlib.Path("data/incendios.json")
+          print("### Vigía de incendios\n")
+          if not p.exists():
+              print("Sin registro."); raise SystemExit
+          r = json.loads(p.read_text(encoding="utf-8"))
+          act = [i for i in r["incendios"] if i.get("estado") == "activo" and web.relevante(i)]
+          print(f"Revisado {r['actualizado']} · **{len(act)} incendios activos** (sin contar focos aislados)\n")
+          for i in sorted(act, key=lambda i: -i["n_focos"])[:20]:
+              l = i.get("lugar") or {}
+              print(f"- `{i['id']}` {l.get('municipio')} ({l.get('provincia')}) · {i['n_focos']} focos"
+                    + (" · Red Natura" if i.get("natura") else "") + (f" · EFFIS {i['effis_ha']} ha" if i.get("effis_ha") else ""))
+          print("\nhttps://asensio94.github.io/vigia-incendios/")
+          PY

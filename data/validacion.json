@@ -1,0 +1,112 @@
+{
+ "2023": {
+  "effis_total": 1397,
+  "clases": [
+   {
+    "desde": 30,
+    "hasta": 100,
+    "effis": 244,
+    "detectados": 202,
+    "retraso_mediana_h": 1.0,
+    "antes_que_effis": 41,
+    "ratio_ha_mediana": 2.38
+   },
+   {
+    "desde": 100,
+    "hasta": 500,
+    "effis": 105,
+    "detectados": 98,
+    "retraso_mediana_h": 1.2,
+    "antes_que_effis": 21,
+    "ratio_ha_mediana": 1.62
+   },
+   {
+    "desde": 500,
+    "hasta": null,
+    "effis": 23,
+    "detectados": 21,
+    "retraso_mediana_h": 2.0,
+    "antes_que_effis": 4,
+    "ratio_ha_mediana": 1.24
+   }
+  ],
+  "vigia_total": 4162,
+  "vigia_sin_effis": 3419,
+  "vigia_sin_effis_3_focos": 515,
+  "vigia_sin_effis_10_focos": 45,
+  "vigia_con_effis_por_focos": {
+   "1": [
+    743,
+    4162
+   ],
+   "3": [
+    477,
+    992
+   ],
+   "10": [
+    187,
+    232
+   ],
+   "30": [
+    59,
+    65
+   ]
+  },
+  "focos": 19339
+ },
+ "2024": {
+  "effis_total": 769,
+  "clases": [
+   {
+    "desde": 30,
+    "hasta": 100,
+    "effis": 135,
+    "detectados": 103,
+    "retraso_mediana_h": 1.9,
+    "antes_que_effis": 16,
+    "ratio_ha_mediana": 2.02
+   },
+   {
+    "desde": 100,
+    "hasta": 500,
+    "effis": 63,
+    "detectados": 48,
+    "retraso_mediana_h": 2.0,
+    "antes_que_effis": 9,
+    "ratio_ha_mediana": 1.05
+   },
+   {
+    "desde": 500,
+    "hasta": null,
+    "effis": 20,
+    "detectados": 20,
+    "retraso_mediana_h": 2.0,
+    "antes_que_effis": 3,
+    "ratio_ha_mediana": 0.62
+   }
+  ],
+  "vigia_total": 4039,
+  "vigia_sin_effis": 3549,
+  "vigia_sin_effis_3_focos": 645,
+  "vigia_sin_effis_10_focos": 63,
+  "vigia_con_effis_por_focos": {
+   "1": [
+    490,
+    4039
+   ],
+   "3": [
+    290,
+    935
+   ],
+   "10": [
+    90,
+    153
+   ],
+   "30": [
+    27,
+    34
+   ]
+  },
+  "focos": 11522
+ }
+}

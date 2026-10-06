@@ -1,0 +1,6776 @@
+{
+ "incendios": [
+  {
+   "id": "IN-20260929-001",
+   "primera": "2026-09-29T13:40Z",
+   "ultima": "2026-09-30T13:23Z",
+   "n_focos": 6,
+   "n_viirs": 6,
+   "pasadas": 2,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 6.7,
+   "frp_total": 37.2,
+   "ha_focos": 47.5,
+   "centro": [
+    -5.90699,
+    36.75238
+   ],
+   "bbox": [
+    -5.91263,
+    36.75003,
+    -5.90213,
+    36.75756
+   ],
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        -5.90773,
+        36.75003
+       ],
+       [
+        -5.90773,
+        36.75103
+       ],
+       [
+        -5.91185,
+        36.75103
+       ],
+       [
+        -5.91185,
+        36.75429
+       ],
+       [
+        -5.90759,
+        36.75429
+       ],
+       [
+        -5.90759,
+        36.75373
+       ],
+       [
+        -5.90213,
+        36.75373
+       ],
+       [
+        -5.90213,
+        36.75003
+       ],
+       [
+        -5.90773,
+        36.75003
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        -5.91263,
+        36.75756
+       ],
+       [
+        -5.90837,
+        36.75756
+       ],
+       [
+        -5.90837,
+        36.7543
+       ],
+       [
+        -5.91263,
+        36.7543
+       ],
+       [
+        -5.91263,
+        36.75756
+       ]
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Arcos de la Frontera",
+    "provincia": "Cádiz",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 6,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20260929-002",
+   "primera": "2026-09-29T01:34Z",
+   "ultima": "2026-09-30T12:40Z",
+   "n_focos": 5,
+   "n_viirs": 5,
+   "pasadas": 3,
+   "satelites": [
+    "NOAA-20",
+    "S-NPP"
+   ],
+   "frp_max": 10.0,
+   "frp_total": 20.1,
+   "ha_focos": 73.6,
+   "centro": [
+    -4.37009,
+    41.87435
+   ],
+   "bbox": [
+    -4.37623,
+    41.8685,
+    -4.36394,
+    41.87764
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -4.37386,
+       41.8685
+      ],
+      [
+       -4.37386,
+       41.87256
+      ],
+      [
+       -4.37242,
+       41.87258
+      ],
+      [
+       -4.37623,
+       41.87258
+      ],
+      [
+       -4.37623,
+       41.87764
+      ],
+      [
+       -4.36805,
+       41.8774
+      ],
+      [
+       -4.36805,
+       41.87659
+      ],
+      [
+       -4.36748,
+       41.87659
+      ],
+      [
+       -4.36748,
+       41.87612
+      ],
+      [
+       -4.36394,
+       41.87612
+      ],
+      [
+       -4.36394,
+       41.8716
+      ],
+      [
+       -4.36892,
+       41.8716
+      ],
+      [
+       -4.36892,
+       41.8685
+      ],
+      [
+       -4.37386,
+       41.8685
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 0.8,
+    "bosque": 0.2
+   },
+   "lugar": {
+    "municipio": "Valle de Cerrato",
+    "provincia": "Palencia",
+    "comunidad": "Castilla y León"
+   },
+   "lugar_focos": 5,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20260929-003",
+   "primera": "2026-09-29T12:55Z",
+   "ultima": "2026-09-29T12:55Z",
+   "n_focos": 4,
+   "n_viirs": 4,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-20"
+   ],
+   "frp_max": 3.8,
+   "frp_total": 14.1,
+   "ha_focos": 32.2,
+   "centro": [
+    -5.06032,
+    37.18395
+   ],
+   "bbox": [
+    -5.06343,
+    37.18077,
+    -5.05721,
+    37.18714
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -5.06343,
+       37.18077
+      ],
+      [
+       -5.06343,
+       37.18483
+      ],
+      [
+       -5.06195,
+       37.18483
+      ],
+      [
+       -5.06195,
+       37.18714
+      ],
+      [
+       -5.05721,
+       37.18714
+      ],
+      [
+       -5.05721,
+       37.18308
+      ],
+      [
+       -5.05869,
+       37.18308
+      ],
+      [
+       -5.05869,
+       37.18077
+      ],
+      [
+       -5.06343,
+       37.18077
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Osuna",
+    "provincia": "Sevilla",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 4,
+   "estado": "inactivo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20260929-004",
+   "primera": "2026-09-29T12:02Z",
+   "ultima": "2026-09-29T12:02Z",
+   "n_focos": 3,
+   "n_viirs": 3,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 26.9,
+   "frp_total": 62.5,
+   "ha_focos": 59.4,
+   "centro": [
+    -1.9994,
+    42.62595
+   ],
+   "bbox": [
+    -2.00472,
+    42.62234,
+    -1.99409,
+    42.62956
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -1.99898,
+       42.62234
+      ],
+      [
+       -2.00472,
+       42.62234
+      ],
+      [
+       -2.00472,
+       42.62812
+      ],
+      [
+       -2.00171,
+       42.62812
+      ],
+      [
+       -2.00171,
+       42.62944
+      ],
+      [
+       -1.99409,
+       42.62956
+      ],
+      [
+       -1.99409,
+       42.62378
+      ],
+      [
+       -1.99898,
+       42.62366
+      ],
+      [
+       -1.99898,
+       42.62234
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Aberin",
+    "provincia": "Navarra",
+    "comunidad": "Navarra"
+   },
+   "lugar_focos": 3,
+   "estado": "inactivo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20260929-005",
+   "primera": "2026-09-29T01:13Z",
+   "ultima": "2026-09-29T01:34Z",
+   "n_focos": 2,
+   "n_viirs": 2,
+   "pasadas": 2,
+   "satelites": [
+    "NOAA-20",
+    "S-NPP"
+   ],
+   "frp_max": 2.0,
+   "frp_total": 3.7,
+   "ha_focos": 51.5,
+   "centro": [
+    -3.0128,
+    43.30441
+   ],
+   "bbox": [
+    -3.01741,
+    43.30046,
+    -3.0082,
+    43.30698
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -3.00963,
+       43.30046
+      ],
+      [
+       -3.01741,
+       43.30046
+      ],
+      [
+       -3.01741,
+       43.30698
+      ],
+      [
+       -3.0082,
+       43.30681
+      ],
+      [
+       -3.0082,
+       43.30201
+      ],
+      [
+       -3.00963,
+       43.30201
+      ],
+      [
+       -3.00963,
+       43.30046
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "artificial": 1.0
+   },
+   "lugar": {
+    "municipio": "Valle de Trápaga",
+    "provincia": "Vizcaya",
+    "comunidad": "País Vasco"
+   },
+   "lugar_focos": 2,
+   "estado": "inactivo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20260929-006",
+   "primera": "2026-09-29T01:34Z",
+   "ultima": "2026-09-29T02:56Z",
+   "n_focos": 2,
+   "n_viirs": 2,
+   "pasadas": 2,
+   "satelites": [
+    "NOAA-20",
+    "S-NPP"
+   ],
+   "frp_max": 2.9,
+   "frp_total": 4.4,
+   "ha_focos": 23.1,
+   "centro": [
+    -4.24974,
+    43.04186
+   ],
+   "bbox": [
+    -4.25214,
+    43.03987,
+    -4.24734,
+    43.04543
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -4.24739,
+       43.04543
+      ],
+      [
+       -4.24734,
+       43.03987
+      ],
+      [
+       -4.25214,
+       43.03987
+      ],
+      [
+       -4.25214,
+       43.04385
+      ],
+      [
+       -4.25157,
+       43.04385
+      ],
+      [
+       -4.25157,
+       43.04543
+      ],
+      [
+       -4.24739,
+       43.04543
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "matorral": 1.0
+   },
+   "lugar": {
+    "municipio": "Hermandad de Campoo de Suso",
+    "provincia": "Cantabria",
+    "comunidad": "Cantabria"
+   },
+   "lugar_focos": 2,
+   "estado": "inactivo",
+   "effis": [
+    {
+     "id": 809689,
+     "firedate": "2026-09-28T17:57Z",
+     "area_ha": 2,
+     "actualizado": "2026-10-05"
+    },
+    {
+     "id": 809683,
+     "firedate": "2026-09-28T17:57Z",
+     "area_ha": 3,
+     "actualizado": "2026-10-05"
+    },
+    {
+     "id": 809690,
+     "firedate": "2026-09-28T17:57Z",
+     "area_ha": 0,
+     "actualizado": "2026-10-05"
+    },
+    {
+     "id": 809691,
+     "firedate": "2026-09-28T17:57Z",
+     "area_ha": 0,
+     "actualizado": "2026-10-05"
+    },
+    {
+     "id": 809682,
+     "firedate": "2026-09-28T17:57Z",
+     "area_ha": 6,
+     "actualizado": "2026-10-05"
+    },
+    {
+     "id": 809681,
+     "firedate": "2026-09-28T17:57Z",
+     "area_ha": 2,
+     "actualizado": "2026-10-05"
+    }
+   ],
+   "effis_ha": 13
+  },
+  {
+   "id": "IN-20260929-007",
+   "primera": "2026-09-29T02:56Z",
+   "ultima": "2026-09-29T03:15Z",
+   "n_focos": 2,
+   "n_viirs": 2,
+   "pasadas": 2,
+   "satelites": [
+    "NOAA-20",
+    "S-NPP"
+   ],
+   "frp_max": 1.2,
+   "frp_total": 2.2,
+   "ha_focos": 32.8,
+   "centro": [
+    -4.65613,
+    43.05459
+   ],
+   "bbox": [
+    -4.65964,
+    43.05239,
+    -4.65261,
+    43.05824
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -4.65276,
+       43.05239
+      ],
+      [
+       -4.65964,
+       43.05239
+      ],
+      [
+       -4.65964,
+       43.05627
+      ],
+      [
+       -4.65729,
+       43.05627
+      ],
+      [
+       -4.65729,
+       43.05824
+      ],
+      [
+       -4.65261,
+       43.05824
+      ],
+      [
+       -4.65276,
+       43.05239
+      ]
+     ]
+    ]
+   },
+   "natura": [
+    {
+     "codigo": "ES0000198",
+     "nombre": "Liébana",
+     "tipo": "ZEPA",
+     "ha": 32.8
+    },
+    {
+     "codigo": "ES1300001",
+     "nombre": "Liébana",
+     "tipo": "ZEC",
+     "ha": 32.8
+    }
+   ],
+   "cobertura": {
+    "matorral": 1.0
+   },
+   "lugar": {
+    "municipio": "Vega de Liébana",
+    "provincia": "Cantabria",
+    "comunidad": "Cantabria"
+   },
+   "lugar_focos": 2,
+   "estado": "inactivo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20260929-008",
+   "primera": "2026-09-29T12:38Z",
+   "ultima": "2026-09-29T12:55Z",
+   "n_focos": 2,
+   "n_viirs": 2,
+   "pasadas": 2,
+   "satelites": [
+    "NOAA-20",
+    "S-NPP"
+   ],
+   "frp_max": 5.0,
+   "frp_total": 7.1,
+   "ha_focos": 41.6,
+   "centro": [
+    -4.37315,
+    37.8339
+   ],
+   "bbox": [
+    -4.37699,
+    37.83112,
+    -4.36931,
+    37.83821
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -4.36931,
+       37.835
+      ],
+      [
+       -4.36931,
+       37.83112
+      ],
+      [
+       -4.37579,
+       37.83112
+      ],
+      [
+       -4.37579,
+       37.83279
+      ],
+      [
+       -4.37699,
+       37.83279
+      ],
+      [
+       -4.37699,
+       37.83821
+      ],
+      [
+       -4.37233,
+       37.83821
+      ],
+      [
+       -4.37233,
+       37.835
+      ],
+      [
+       -4.36931,
+       37.835
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Córdoba",
+    "provincia": "Córdoba",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 2,
+   "estado": "inactivo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20260929-009",
+   "primera": "2026-09-29T13:40Z",
+   "ultima": "2026-09-29T13:40Z",
+   "n_focos": 2,
+   "n_viirs": 2,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 6.5,
+   "frp_total": 13.0,
+   "ha_focos": 19.6,
+   "centro": [
+    -6.11309,
+    36.83927
+   ],
+   "bbox": [
+    -6.11584,
+    36.83746,
+    -6.11034,
+    36.84108
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -6.11034,
+       36.83746
+      ],
+      [
+       -6.11584,
+       36.83746
+      ],
+      [
+       -6.11584,
+       36.84108
+      ],
+      [
+       -6.11034,
+       36.84108
+      ],
+      [
+       -6.11034,
+       36.83746
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Jerez de la Frontera",
+    "provincia": "Cádiz",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 2,
+   "estado": "inactivo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20260929-010",
+   "primera": "2026-09-29T02:17Z",
+   "ultima": "2026-09-29T02:17Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 0.5,
+   "frp_total": 0.5,
+   "ha_focos": 15.2,
+   "centro": [
+    -2.77349,
+    43.20694
+   ],
+   "bbox": [
+    -2.77602,
+    43.20527,
+    -2.77096,
+    43.20861
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -2.77096,
+       43.20527
+      ],
+      [
+       -2.77096,
+       43.20861
+      ],
+      [
+       -2.77602,
+       43.20861
+      ],
+      [
+       -2.77602,
+       43.20527
+      ],
+      [
+       -2.77096,
+       43.20527
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "artificial": 1.0
+   },
+   "lugar": {
+    "municipio": "Lemona",
+    "provincia": "Vizcaya",
+    "comunidad": "País Vasco"
+   },
+   "lugar_focos": 1,
+   "estado": "inactivo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20260929-011",
+   "primera": "2026-09-29T09:32Z",
+   "ultima": "2026-09-29T09:32Z",
+   "n_focos": 1,
+   "n_viirs": 0,
+   "pasadas": 1,
+   "satelites": [
+    "Terra"
+   ],
+   "frp_max": 4.8,
+   "frp_total": 4.8,
+   "ha_focos": 130.8,
+   "centro": [
+    -3.99975,
+    37.93957
+   ],
+   "bbox": [
+    -4.00658,
+    37.93464,
+    -3.99292,
+    37.9445
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -3.99292,
+       37.93464
+      ],
+      [
+       -3.99292,
+       37.9445
+      ],
+      [
+       -4.00658,
+       37.9445
+      ],
+      [
+       -4.00658,
+       37.93464
+      ],
+      [
+       -3.99292,
+       37.93464
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Lahiguera",
+    "provincia": "Jaén",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 1,
+   "estado": "inactivo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20260929-012",
+   "primera": "2026-09-29T12:02Z",
+   "ultima": "2026-09-29T12:02Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 10.6,
+   "frp_total": 10.6,
+   "ha_focos": 31.9,
+   "centro": [
+    -0.33586,
+    39.27511
+   ],
+   "bbox": [
+    -0.3387,
+    39.27217,
+    -0.33302,
+    39.27805
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -0.33302,
+       39.27217
+      ],
+      [
+       -0.33302,
+       39.27805
+      ],
+      [
+       -0.3387,
+       39.27805
+      ],
+      [
+       -0.3387,
+       39.27217
+      ],
+      [
+       -0.33302,
+       39.27217
+      ]
+     ]
+    ]
+   },
+   "natura": [
+    {
+     "codigo": "ES0000023",
+     "nombre": "L'Albufera",
+     "tipo": "ZEC",
+     "ha": 31.9
+    },
+    {
+     "codigo": "ES0000471",
+     "nombre": "l'Albufera (ZEPA)",
+     "tipo": "ZEPA",
+     "ha": 31.9
+    }
+   ],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Sueca",
+    "provincia": "Valencia",
+    "comunidad": "Comunidad Valenciana"
+   },
+   "lugar_focos": 1,
+   "estado": "inactivo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20260929-013",
+   "primera": "2026-09-29T12:38Z",
+   "ultima": "2026-09-29T12:38Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "S-NPP"
+   ],
+   "frp_max": 3.7,
+   "frp_total": 3.7,
+   "ha_focos": 21.6,
+   "centro": [
+    -0.26697,
+    39.2192
+   ],
+   "bbox": [
+    -0.26964,
+    39.21707,
+    -0.2643,
+    39.22133
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -0.2643,
+       39.21707
+      ],
+      [
+       -0.2643,
+       39.22133
+      ],
+      [
+       -0.26964,
+       39.22133
+      ],
+      [
+       -0.26964,
+       39.21707
+      ],
+      [
+       -0.2643,
+       39.21707
+      ]
+     ]
+    ]
+   },
+   "natura": [
+    {
+     "codigo": "ES0000023",
+     "nombre": "L'Albufera",
+     "tipo": "ZEC",
+     "ha": 21.6
+    },
+    {
+     "codigo": "ES0000471",
+     "nombre": "l'Albufera (ZEPA)",
+     "tipo": "ZEPA",
+     "ha": 21.6
+    }
+   ],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Sueca",
+    "provincia": "Valencia",
+    "comunidad": "Comunidad Valenciana"
+   },
+   "lugar_focos": 1,
+   "estado": "inactivo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20260929-014",
+   "primera": "2026-09-29T12:55Z",
+   "ultima": "2026-09-29T12:55Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-20"
+   ],
+   "frp_max": 1.8,
+   "frp_total": 1.8,
+   "ha_focos": 17.2,
+   "centro": [
+    -4.70437,
+    37.73384
+   ],
+   "bbox": [
+    -4.70658,
+    37.73185,
+    -4.70216,
+    37.73583
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -4.70216,
+       37.73185
+      ],
+      [
+       -4.70216,
+       37.73583
+      ],
+      [
+       -4.70658,
+       37.73583
+      ],
+      [
+       -4.70658,
+       37.73185
+      ],
+      [
+       -4.70216,
+       37.73185
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Córdoba",
+    "provincia": "Córdoba",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 1,
+   "estado": "inactivo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20260929-015",
+   "primera": "2026-09-29T12:57Z",
+   "ultima": "2026-09-29T12:57Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-20"
+   ],
+   "frp_max": 6.3,
+   "frp_total": 6.3,
+   "ha_focos": 14.8,
+   "centro": [
+    -1.2507,
+    40.45915
+   ],
+   "bbox": [
+    -1.25306,
+    40.45748,
+    -1.24834,
+    40.46082
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -1.24834,
+       40.45748
+      ],
+      [
+       -1.24834,
+       40.46082
+      ],
+      [
+       -1.25306,
+       40.46082
+      ],
+      [
+       -1.25306,
+       40.45748
+      ],
+      [
+       -1.24834,
+       40.45748
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Cella",
+    "provincia": "Teruel",
+    "comunidad": "Aragón"
+   },
+   "lugar_focos": 1,
+   "estado": "inactivo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20260929-016",
+   "primera": "2026-09-29T12:57Z",
+   "ultima": "2026-09-29T12:57Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-20"
+   ],
+   "frp_max": 2.4,
+   "frp_total": 2.4,
+   "ha_focos": 14.8,
+   "centro": [
+    -1.49525,
+    41.82697
+   ],
+   "bbox": [
+    -1.49766,
+    41.8253,
+    -1.49284,
+    41.82864
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -1.49284,
+       41.8253
+      ],
+      [
+       -1.49284,
+       41.82864
+      ],
+      [
+       -1.49766,
+       41.82864
+      ],
+      [
+       -1.49766,
+       41.8253
+      ],
+      [
+       -1.49284,
+       41.8253
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agroforestal": 1.0
+   },
+   "lugar": {
+    "municipio": "Albeta",
+    "provincia": "Zaragoza",
+    "comunidad": "Aragón"
+   },
+   "lugar_focos": 1,
+   "estado": "inactivo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20260929-017",
+   "primera": "2026-09-29T13:42Z",
+   "ultima": "2026-09-29T13:42Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 5.0,
+   "frp_total": 5.0,
+   "ha_focos": 22.1,
+   "centro": [
+    -3.41224,
+    39.07701
+   ],
+   "bbox": [
+    -3.41496,
+    39.07488,
+    -3.40952,
+    39.07914
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -3.40952,
+       39.07488
+      ],
+      [
+       -3.40952,
+       39.07914
+      ],
+      [
+       -3.41496,
+       39.07914
+      ],
+      [
+       -3.41496,
+       39.07488
+      ],
+      [
+       -3.40952,
+       39.07488
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Manzanares",
+    "provincia": "Ciudad Real",
+    "comunidad": "Castilla-La Mancha"
+   },
+   "lugar_focos": 1,
+   "estado": "inactivo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20260929-018",
+   "primera": "2026-09-29T13:42Z",
+   "ultima": "2026-09-29T13:42Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 3.3,
+   "frp_total": 3.3,
+   "ha_focos": 19.0,
+   "centro": [
+    -0.33206,
+    39.18273
+   ],
+   "bbox": [
+    -0.33403,
+    39.1802,
+    -0.33009,
+    39.18526
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -0.33009,
+       39.1802
+      ],
+      [
+       -0.33009,
+       39.18526
+      ],
+      [
+       -0.33403,
+       39.18526
+      ],
+      [
+       -0.33403,
+       39.1802
+      ],
+      [
+       -0.33009,
+       39.1802
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Riola",
+    "provincia": "Valencia",
+    "comunidad": "Comunidad Valenciana"
+   },
+   "lugar_focos": 1,
+   "estado": "inactivo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20260930-001",
+   "primera": "2026-09-30T13:59Z",
+   "ultima": "2026-10-02T14:27Z",
+   "n_focos": 8,
+   "n_viirs": 8,
+   "pasadas": 4,
+   "satelites": [
+    "NOAA-20",
+    "NOAA-21",
+    "S-NPP"
+   ],
+   "frp_max": 13.9,
+   "frp_total": 58.1,
+   "ha_focos": 145.6,
+   "centro": [
+    -5.62428,
+    38.34228
+   ],
+   "bbox": [
+    -5.62859,
+    38.31255,
+    -5.61022,
+    38.34577
+   ],
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        -5.61263,
+        38.31661
+       ],
+       [
+        -5.61263,
+        38.31255
+       ],
+       [
+        -5.61733,
+        38.31255
+       ],
+       [
+        -5.61733,
+        38.31661
+       ],
+       [
+        -5.61263,
+        38.31661
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        -5.61323,
+        38.32076
+       ],
+       [
+        -5.61323,
+        38.3167
+       ],
+       [
+        -5.61793,
+        38.3167
+       ],
+       [
+        -5.61793,
+        38.32076
+       ],
+       [
+        -5.61323,
+        38.32076
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        -5.61972,
+        38.33518
+       ],
+       [
+        -5.61502,
+        38.33534
+       ],
+       [
+        -5.61843,
+        38.33541
+       ],
+       [
+        -5.61843,
+        38.33893
+       ],
+       [
+        -5.61317,
+        38.33893
+       ],
+       [
+        -5.61317,
+        38.33601
+       ],
+       [
+        -5.61022,
+        38.33601
+       ],
+       [
+        -5.61022,
+        38.33257
+       ],
+       [
+        -5.61249,
+        38.33257
+       ],
+       [
+        -5.61249,
+        38.33182
+       ],
+       [
+        -5.61972,
+        38.33174
+       ],
+       [
+        -5.61972,
+        38.33518
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        -5.62859,
+        38.34556
+       ],
+       [
+        -5.61997,
+        38.34577
+       ],
+       [
+        -5.61997,
+        38.33899
+       ],
+       [
+        -5.62859,
+        38.33878
+       ],
+       [
+        -5.62859,
+        38.34556
+       ]
+      ]
+     ]
+    ]
+   },
+   "natura": [
+    {
+     "codigo": "ES0000325",
+     "nombre": "Campiña sur - Embalse de Arroyo Conejos",
+     "tipo": "ZEPA",
+     "ha": 47.2
+    }
+   ],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Granja de Torrehermosa",
+    "provincia": "Badajoz",
+    "comunidad": "Extremadura"
+   },
+   "lugar_focos": 8,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20260930-002",
+   "primera": "2026-09-30T02:58Z",
+   "ultima": "2026-09-30T02:58Z",
+   "n_focos": 4,
+   "n_viirs": 4,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-20"
+   ],
+   "frp_max": 0.6,
+   "frp_total": 2.5,
+   "ha_focos": 35.2,
+   "centro": [
+    -4.79649,
+    36.50118
+   ],
+   "bbox": [
+    -4.80006,
+    36.49824,
+    -4.79291,
+    36.50412
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -4.79649,
+       36.49824
+      ],
+      [
+       -4.79649,
+       36.49914
+      ],
+      [
+       -4.80006,
+       36.49914
+      ],
+      [
+       -4.80006,
+       36.50412
+      ],
+      [
+       -4.79648,
+       36.50412
+      ],
+      [
+       -4.79648,
+       36.50322
+      ],
+      [
+       -4.79291,
+       36.50322
+      ],
+      [
+       -4.79291,
+       36.49824
+      ],
+      [
+       -4.79649,
+       36.49824
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "artificial": 1.0
+   },
+   "lugar": {
+    "municipio": "Marbella",
+    "provincia": "Málaga",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 4,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20260930-003",
+   "primera": "2026-09-30T13:23Z",
+   "ultima": "2026-09-30T13:23Z",
+   "n_focos": 2,
+   "n_viirs": 2,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 3.9,
+   "frp_total": 7.7,
+   "ha_focos": 13.7,
+   "centro": [
+    -6.21399,
+    37.40169
+   ],
+   "bbox": [
+    -6.21614,
+    37.40006,
+    -6.21184,
+    37.40332
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -6.21184,
+       37.40006
+      ],
+      [
+       -6.21614,
+       37.40006
+      ],
+      [
+       -6.21614,
+       37.40332
+      ],
+      [
+       -6.21184,
+       37.40332
+      ],
+      [
+       -6.21184,
+       37.40006
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Sanlúcar la Mayor",
+    "provincia": "Sevilla",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 2,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20260930-004",
+   "primera": "2026-09-30T02:00Z",
+   "ultima": "2026-09-30T02:00Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 1.4,
+   "frp_total": 1.4,
+   "ha_focos": 15.2,
+   "centro": [
+    1.034,
+    41.1095
+   ],
+   "bbox": [
+    1.03156,
+    41.10783,
+    1.03644,
+    41.11117
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       1.03644,
+       41.10783
+      ],
+      [
+       1.03644,
+       41.11117
+      ],
+      [
+       1.03156,
+       41.11117
+      ],
+      [
+       1.03156,
+       41.10783
+      ],
+      [
+       1.03644,
+       41.10783
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Cambrils",
+    "provincia": "Tarragona",
+    "comunidad": "Cataluña"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20260930-005",
+   "primera": "2026-09-30T02:00Z",
+   "ultima": "2026-09-30T02:00Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 0.6,
+   "frp_total": 0.6,
+   "ha_focos": 16.3,
+   "centro": [
+    2.18507,
+    41.47422
+   ],
+   "bbox": [
+    2.18249,
+    41.4725,
+    2.18765,
+    41.47594
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       2.18765,
+       41.4725
+      ],
+      [
+       2.18765,
+       41.47594
+      ],
+      [
+       2.18249,
+       41.47594
+      ],
+      [
+       2.18249,
+       41.4725
+      ],
+      [
+       2.18765,
+       41.4725
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "matorral": 1.0
+   },
+   "lugar": {
+    "municipio": "Montcada i Reixac",
+    "provincia": "Barcelona",
+    "comunidad": "Cataluña"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20260930-006",
+   "primera": "2026-09-30T02:56Z",
+   "ultima": "2026-09-30T02:56Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-20"
+   ],
+   "frp_max": 0.8,
+   "frp_total": 0.8,
+   "ha_focos": 18.5,
+   "centro": [
+    -5.69011,
+    43.14928
+   ],
+   "bbox": [
+    -5.69263,
+    43.14725,
+    -5.68759,
+    43.15131
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -5.68759,
+       43.14725
+      ],
+      [
+       -5.68759,
+       43.15131
+      ],
+      [
+       -5.69263,
+       43.15131
+      ],
+      [
+       -5.69263,
+       43.14725
+      ],
+      [
+       -5.68759,
+       43.14725
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "matorral": 1.0
+   },
+   "lugar": {
+    "municipio": "Aller",
+    "provincia": "Asturias",
+    "comunidad": "Asturias"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20260930-007",
+   "primera": "2026-09-30T13:23Z",
+   "ultima": "2026-09-30T13:23Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 3.9,
+   "frp_total": 3.9,
+   "ha_focos": 14.0,
+   "centro": [
+    -5.56093,
+    38.32518
+   ],
+   "bbox": [
+    -5.56316,
+    38.32355,
+    -5.5587,
+    38.32681
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -5.5587,
+       38.32355
+      ],
+      [
+       -5.5587,
+       38.32681
+      ],
+      [
+       -5.56316,
+       38.32681
+      ],
+      [
+       -5.56316,
+       38.32355
+      ],
+      [
+       -5.5587,
+       38.32355
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Fuente Obejuna",
+    "provincia": "Córdoba",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20260930-008",
+   "primera": "2026-09-30T13:23Z",
+   "ultima": "2026-09-30T13:23Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 4.4,
+   "frp_total": 4.4,
+   "ha_focos": 14.0,
+   "centro": [
+    -5.79165,
+    38.32521
+   ],
+   "bbox": [
+    -5.79388,
+    38.32358,
+    -5.78942,
+    38.32684
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -5.78942,
+       38.32358
+      ],
+      [
+       -5.78942,
+       38.32684
+      ],
+      [
+       -5.79388,
+       38.32684
+      ],
+      [
+       -5.79388,
+       38.32358
+      ],
+      [
+       -5.78942,
+       38.32358
+      ]
+     ]
+    ]
+   },
+   "natura": [
+    {
+     "codigo": "ES0000325",
+     "nombre": "Campiña sur - Embalse de Arroyo Conejos",
+     "tipo": "ZEPA",
+     "ha": 8.9
+    }
+   ],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Berlanga",
+    "provincia": "Badajoz",
+    "comunidad": "Extremadura"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20260930-009",
+   "primera": "2026-09-30T13:23Z",
+   "ultima": "2026-09-30T13:23Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 2.5,
+   "frp_total": 2.5,
+   "ha_focos": 14.0,
+   "centro": [
+    -5.79001,
+    38.35602
+   ],
+   "bbox": [
+    -5.79224,
+    38.35439,
+    -5.78778,
+    38.35765
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -5.78778,
+       38.35439
+      ],
+      [
+       -5.78778,
+       38.35765
+      ],
+      [
+       -5.79224,
+       38.35765
+      ],
+      [
+       -5.79224,
+       38.35439
+      ],
+      [
+       -5.78778,
+       38.35439
+      ]
+     ]
+    ]
+   },
+   "natura": [
+    {
+     "codigo": "ES0000325",
+     "nombre": "Campiña sur - Embalse de Arroyo Conejos",
+     "tipo": "ZEPA",
+     "ha": 14.0
+    }
+   ],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Maguilla",
+    "provincia": "Badajoz",
+    "comunidad": "Extremadura"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20260930-010",
+   "primera": "2026-09-30T13:59Z",
+   "ultima": "2026-09-30T13:59Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "S-NPP"
+   ],
+   "frp_max": 5.6,
+   "frp_total": 5.6,
+   "ha_focos": 17.6,
+   "centro": [
+    -5.84095,
+    38.32589
+   ],
+   "bbox": [
+    -5.84324,
+    38.3239,
+    -5.83866,
+    38.32788
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -5.83866,
+       38.3239
+      ],
+      [
+       -5.83866,
+       38.32788
+      ],
+      [
+       -5.84324,
+       38.32788
+      ],
+      [
+       -5.84324,
+       38.3239
+      ],
+      [
+       -5.83866,
+       38.3239
+      ]
+     ]
+    ]
+   },
+   "natura": [
+    {
+     "codigo": "ES0000325",
+     "nombre": "Campiña sur - Embalse de Arroyo Conejos",
+     "tipo": "ZEPA",
+     "ha": 17.6
+    }
+   ],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Berlanga",
+    "provincia": "Badajoz",
+    "comunidad": "Extremadura"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261001-001",
+   "primera": "2026-10-01T01:41Z",
+   "ultima": "2026-10-01T03:21Z",
+   "n_focos": 7,
+   "n_viirs": 7,
+   "pasadas": 4,
+   "satelites": [
+    "NOAA-20",
+    "NOAA-21",
+    "S-NPP"
+   ],
+   "frp_max": 4.6,
+   "frp_total": 13.0,
+   "ha_focos": 106.4,
+   "centro": [
+    -5.58264,
+    37.56817
+   ],
+   "bbox": [
+    -5.58859,
+    37.56432,
+    -5.57547,
+    37.57487
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -5.58859,
+       37.56432
+      ],
+      [
+       -5.58859,
+       37.5712
+      ],
+      [
+       -5.58457,
+       37.57148
+      ],
+      [
+       -5.58459,
+       37.57487
+      ],
+      [
+       -5.5761,
+       37.57477
+      ],
+      [
+       -5.5761,
+       37.57422
+      ],
+      [
+       -5.57547,
+       37.57422
+      ],
+      [
+       -5.57547,
+       37.57088
+      ],
+      [
+       -5.5761,
+       37.57088
+      ],
+      [
+       -5.5761,
+       37.57043
+      ],
+      [
+       -5.57901,
+       37.57043
+      ],
+      [
+       -5.57669,
+       37.57034
+      ],
+      [
+       -5.57669,
+       37.566
+      ],
+      [
+       -5.58031,
+       37.566
+      ],
+      [
+       -5.58031,
+       37.56432
+      ],
+      [
+       -5.58859,
+       37.56432
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Carmona",
+    "provincia": "Sevilla",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 7,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261001-002",
+   "primera": "2026-10-01T09:11Z",
+   "ultima": "2026-10-01T13:04Z",
+   "n_focos": 7,
+   "n_viirs": 6,
+   "pasadas": 2,
+   "satelites": [
+    "NOAA-21",
+    "Terra"
+   ],
+   "frp_max": 16.4,
+   "frp_total": 79.2,
+   "ha_focos": 83.9,
+   "centro": [
+    -3.10055,
+    39.04167
+   ],
+   "bbox": [
+    -3.10727,
+    39.03602,
+    -3.09383,
+    39.0466
+   ],
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        -3.10637,
+        39.03602
+       ],
+       [
+        -3.10637,
+        39.03928
+       ],
+       [
+        -3.10191,
+        39.03928
+       ],
+       [
+        -3.10191,
+        39.04002
+       ],
+       [
+        -3.09739,
+        39.04002
+       ],
+       [
+        -3.09739,
+        39.03676
+       ],
+       [
+        -3.10185,
+        39.03676
+       ],
+       [
+        -3.10185,
+        39.03602
+       ],
+       [
+        -3.10637,
+        39.03602
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        -3.10281,
+        39.04257
+       ],
+       [
+        -3.10281,
+        39.04331
+       ],
+       [
+        -3.09835,
+        39.04331
+       ],
+       [
+        -3.09835,
+        39.04404
+       ],
+       [
+        -3.09383,
+        39.04404
+       ],
+       [
+        -3.09383,
+        39.04078
+       ],
+       [
+        -3.09829,
+        39.04078
+       ],
+       [
+        -3.09829,
+        39.04005
+       ],
+       [
+        -3.10275,
+        39.04005
+       ],
+       [
+        -3.10275,
+        39.03931
+       ],
+       [
+        -3.10727,
+        39.03931
+       ],
+       [
+        -3.10727,
+        39.04257
+       ],
+       [
+        -3.10281,
+        39.04257
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        -3.09918,
+        39.0466
+       ],
+       [
+        -3.09918,
+        39.04334
+       ],
+       [
+        -3.1037,
+        39.04334
+       ],
+       [
+        -3.1037,
+        39.0466
+       ],
+       [
+        -3.09918,
+        39.0466
+       ]
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agroforestal": 0.71,
+    "agricola": 0.29
+   },
+   "lugar": {
+    "municipio": "Argamasilla de Alba",
+    "provincia": "Ciudad Real",
+    "comunidad": "Castilla-La Mancha"
+   },
+   "lugar_focos": 7,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261001-003",
+   "primera": "2026-10-01T09:09Z",
+   "ultima": "2026-10-01T13:42Z",
+   "n_focos": 6,
+   "n_viirs": 4,
+   "pasadas": 2,
+   "satelites": [
+    "S-NPP",
+    "Terra"
+   ],
+   "frp_max": 22.0,
+   "frp_total": 53.6,
+   "ha_focos": 77.3,
+   "centro": [
+    -1.62002,
+    42.62029
+   ],
+   "bbox": [
+    -1.62584,
+    42.61798,
+    -1.6105,
+    42.62725
+   ],
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        -1.62514,
+        42.61798
+       ],
+       [
+        -1.62514,
+        42.62214
+       ],
+       [
+        -1.62002,
+        42.62214
+       ],
+       [
+        -1.62002,
+        42.62259
+       ],
+       [
+        -1.6149,
+        42.62259
+       ],
+       [
+        -1.6149,
+        42.61843
+       ],
+       [
+        -1.62514,
+        42.61798
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        -1.62584,
+        42.62634
+       ],
+       [
+        -1.62072,
+        42.62634
+       ],
+       [
+        -1.62072,
+        42.62218
+       ],
+       [
+        -1.62584,
+        42.62218
+       ],
+       [
+        -1.62584,
+        42.62634
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        -1.61562,
+        42.62725
+       ],
+       [
+        -1.6105,
+        42.62725
+       ],
+       [
+        -1.6105,
+        42.62309
+       ],
+       [
+        -1.61562,
+        42.62309
+       ],
+       [
+        -1.61562,
+        42.62725
+       ]
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Olóriz",
+    "provincia": "Navarra",
+    "comunidad": "Navarra"
+   },
+   "lugar_focos": 6,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261001-004",
+   "primera": "2026-10-01T09:11Z",
+   "ultima": "2026-10-01T13:40Z",
+   "n_focos": 6,
+   "n_viirs": 4,
+   "pasadas": 4,
+   "satelites": [
+    "NOAA-20",
+    "NOAA-21",
+    "S-NPP",
+    "Terra"
+   ],
+   "frp_max": 10.9,
+   "frp_total": 49.0,
+   "ha_focos": 38.7,
+   "centro": [
+    -1.48635,
+    38.24831
+   ],
+   "bbox": [
+    -1.48983,
+    38.24563,
+    -1.48368,
+    38.25321
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -1.48903,
+       38.24994
+      ],
+      [
+       -1.48983,
+       38.24995
+      ],
+      [
+       -1.48983,
+       38.25321
+      ],
+      [
+       -1.48549,
+       38.25321
+      ],
+      [
+       -1.48549,
+       38.25274
+      ],
+      [
+       -1.48463,
+       38.25274
+      ],
+      [
+       -1.48463,
+       38.25105
+      ],
+      [
+       -1.48368,
+       38.25105
+      ],
+      [
+       -1.48368,
+       38.24563
+      ],
+      [
+       -1.48836,
+       38.24563
+      ],
+      [
+       -1.48836,
+       38.24668
+      ],
+      [
+       -1.48903,
+       38.24668
+      ],
+      [
+       -1.48903,
+       38.24994
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Cieza",
+    "provincia": "Región de Murcia",
+    "comunidad": "Región de Murcia"
+   },
+   "lugar_focos": 6,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261001-005",
+   "primera": "2026-10-01T01:41Z",
+   "ultima": "2026-10-01T02:38Z",
+   "n_focos": 4,
+   "n_viirs": 4,
+   "pasadas": 3,
+   "satelites": [
+    "NOAA-20",
+    "NOAA-21",
+    "S-NPP"
+   ],
+   "frp_max": 2.7,
+   "frp_total": 6.9,
+   "ha_focos": 40.3,
+   "centro": [
+    -4.92187,
+    39.92247
+   ],
+   "bbox": [
+    -4.92667,
+    39.91907,
+    -4.91706,
+    39.92433
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -4.92389,
+       39.91907
+      ],
+      [
+       -4.92389,
+       39.92099
+      ],
+      [
+       -4.92667,
+       39.92099
+      ],
+      [
+       -4.92667,
+       39.92433
+      ],
+      [
+       -4.91706,
+       39.92395
+      ],
+      [
+       -4.91706,
+       39.91961
+      ],
+      [
+       -4.91827,
+       39.91961
+      ],
+      [
+       -4.91827,
+       39.91907
+      ],
+      [
+       -4.92389,
+       39.91907
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Calera y Chozas",
+    "provincia": "Toledo",
+    "comunidad": "Castilla-La Mancha"
+   },
+   "lugar_focos": 4,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261001-006",
+   "primera": "2026-10-01T03:21Z",
+   "ultima": "2026-10-01T03:21Z",
+   "n_focos": 4,
+   "n_viirs": 4,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 4.7,
+   "frp_total": 16.8,
+   "ha_focos": 86.5,
+   "centro": [
+    -5.3949,
+    37.09695
+   ],
+   "bbox": [
+    -5.40102,
+    37.09318,
+    -5.38879,
+    37.10072
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -5.40102,
+       37.09318
+      ],
+      [
+       -5.40102,
+       37.10014
+      ],
+      [
+       -5.39747,
+       37.10014
+      ],
+      [
+       -5.39747,
+       37.10072
+      ],
+      [
+       -5.38879,
+       37.10072
+      ],
+      [
+       -5.38879,
+       37.09376
+      ],
+      [
+       -5.39234,
+       37.09376
+      ],
+      [
+       -5.39234,
+       37.09318
+      ],
+      [
+       -5.40102,
+       37.09318
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "matorral": 0.5,
+    "agricola": 0.5
+   },
+   "lugar": {
+    "municipio": "Morón de la Frontera",
+    "provincia": "Sevilla",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 4,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261001-007",
+   "primera": "2026-10-01T04:57Z",
+   "ultima": "2026-10-01T13:40Z",
+   "n_focos": 4,
+   "n_viirs": 1,
+   "pasadas": 3,
+   "satelites": [
+    "Aqua",
+    "S-NPP",
+    "Terra"
+   ],
+   "frp_max": 52.6,
+   "frp_total": 67.0,
+   "ha_focos": 17.6,
+   "centro": [
+    -1.05215,
+    38.17502
+   ],
+   "bbox": [
+    -1.05444,
+    38.17303,
+    -1.04986,
+    38.17701
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -1.04986,
+       38.17303
+      ],
+      [
+       -1.04986,
+       38.17701
+      ],
+      [
+       -1.05444,
+       38.17701
+      ],
+      [
+       -1.05444,
+       38.17303
+      ],
+      [
+       -1.04986,
+       38.17303
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 0.5,
+    "artificial": 0.5
+   },
+   "lugar": {
+    "municipio": "Abanilla",
+    "provincia": "Región de Murcia",
+    "comunidad": "Región de Murcia"
+   },
+   "lugar_focos": 4,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261001-008",
+   "primera": "2026-10-01T13:04Z",
+   "ultima": "2026-10-01T13:04Z",
+   "n_focos": 4,
+   "n_viirs": 4,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 10.4,
+   "frp_total": 25.1,
+   "ha_focos": 63.2,
+   "centro": [
+    -4.8673,
+    39.97749
+   ],
+   "bbox": [
+    -4.87218,
+    39.9728,
+    -4.8576,
+    39.98135
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -4.86627,
+       39.9728
+      ],
+      [
+       -4.87119,
+       39.9728
+      ],
+      [
+       -4.87119,
+       39.97619
+      ],
+      [
+       -4.87218,
+       39.97619
+      ],
+      [
+       -4.87218,
+       39.97963
+      ],
+      [
+       -4.86735,
+       39.97963
+      ],
+      [
+       -4.86735,
+       39.9805
+      ],
+      [
+       -4.86252,
+       39.9805
+      ],
+      [
+       -4.86252,
+       39.98135
+      ],
+      [
+       -4.8576,
+       39.98135
+      ],
+      [
+       -4.8576,
+       39.97791
+      ],
+      [
+       -4.86243,
+       39.97791
+      ],
+      [
+       -4.86243,
+       39.97706
+      ],
+      [
+       -4.86726,
+       39.97706
+      ],
+      [
+       -4.86726,
+       39.97624
+      ],
+      [
+       -4.86627,
+       39.97624
+      ],
+      [
+       -4.86627,
+       39.9728
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Talavera de la Reina",
+    "provincia": "Toledo",
+    "comunidad": "Castilla-La Mancha"
+   },
+   "lugar_focos": 4,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261001-009",
+   "primera": "2026-10-01T02:19Z",
+   "ultima": "2026-10-01T02:38Z",
+   "n_focos": 3,
+   "n_viirs": 3,
+   "pasadas": 2,
+   "satelites": [
+    "NOAA-20",
+    "S-NPP"
+   ],
+   "frp_max": 0.9,
+   "frp_total": 2.3,
+   "ha_focos": 30.3,
+   "centro": [
+    -5.06925,
+    37.6031
+   ],
+   "bbox": [
+    -5.07273,
+    37.60121,
+    -5.06577,
+    37.60606
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -5.06577,
+       37.60491
+      ],
+      [
+       -5.06577,
+       37.60121
+      ],
+      [
+       -5.07273,
+       37.6013
+      ],
+      [
+       -5.07273,
+       37.605
+      ],
+      [
+       -5.07229,
+       37.605
+      ],
+      [
+       -5.07229,
+       37.60606
+      ],
+      [
+       -5.06775,
+       37.60606
+      ],
+      [
+       -5.06775,
+       37.605
+      ],
+      [
+       -5.06577,
+       37.60491
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Écija",
+    "provincia": "Sevilla",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 3,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261001-010",
+   "primera": "2026-10-01T09:11Z",
+   "ultima": "2026-10-01T13:04Z",
+   "n_focos": 3,
+   "n_viirs": 1,
+   "pasadas": 2,
+   "satelites": [
+    "NOAA-21",
+    "Terra"
+   ],
+   "frp_max": 10.0,
+   "frp_total": 23.7,
+   "ha_focos": 13.7,
+   "centro": [
+    -1.34358,
+    37.7481
+   ],
+   "bbox": [
+    -1.34574,
+    37.74647,
+    -1.34142,
+    37.74973
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -1.34142,
+       37.74647
+      ],
+      [
+       -1.34142,
+       37.74973
+      ],
+      [
+       -1.34574,
+       37.74973
+      ],
+      [
+       -1.34574,
+       37.74647
+      ],
+      [
+       -1.34142,
+       37.74647
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Alhama de Murcia",
+    "provincia": "Región de Murcia",
+    "comunidad": "Región de Murcia"
+   },
+   "lugar_focos": 3,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261001-011",
+   "primera": "2026-10-01T09:11Z",
+   "ultima": "2026-10-01T13:04Z",
+   "n_focos": 3,
+   "n_viirs": 2,
+   "pasadas": 3,
+   "satelites": [
+    "NOAA-20",
+    "NOAA-21",
+    "Terra"
+   ],
+   "frp_max": 8.6,
+   "frp_total": 15.7,
+   "ha_focos": 34.6,
+   "centro": [
+    -1.48762,
+    38.40212
+   ],
+   "bbox": [
+    -1.49159,
+    38.39674,
+    -1.48533,
+    38.40424
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -1.48723,
+       38.39674
+      ],
+      [
+       -1.49159,
+       38.39674
+      ],
+      [
+       -1.49159,
+       38.4
+      ],
+      [
+       -1.48991,
+       38.4
+      ],
+      [
+       -1.48991,
+       38.40424
+      ],
+      [
+       -1.48533,
+       38.40424
+      ],
+      [
+       -1.48533,
+       38.39882
+      ],
+      [
+       -1.48723,
+       38.39882
+      ],
+      [
+       -1.48723,
+       38.39674
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Hellín",
+    "provincia": "Albacete",
+    "comunidad": "Castilla-La Mancha"
+   },
+   "lugar_focos": 3,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261001-012",
+   "primera": "2026-10-01T13:04Z",
+   "ultima": "2026-10-01T13:04Z",
+   "n_focos": 3,
+   "n_viirs": 3,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 6.8,
+   "frp_total": 19.6,
+   "ha_focos": 47.6,
+   "centro": [
+    -6.03583,
+    42.57115
+   ],
+   "bbox": [
+    -6.052,
+    42.56898,
+    -6.03077,
+    42.574
+   ],
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        -6.03577,
+        42.56898
+       ],
+       [
+        -6.04089,
+        42.56898
+       ],
+       [
+        -6.04089,
+        42.57242
+       ],
+       [
+        -6.03589,
+        42.57242
+       ],
+       [
+        -6.03589,
+        42.57332
+       ],
+       [
+        -6.03077,
+        42.57332
+       ],
+       [
+        -6.03077,
+        42.56988
+       ],
+       [
+        -6.03577,
+        42.56988
+       ],
+       [
+        -6.03577,
+        42.56898
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        -6.052,
+        42.574
+       ],
+       [
+        -6.04688,
+        42.574
+       ],
+       [
+        -6.04688,
+        42.57056
+       ],
+       [
+        -6.052,
+        42.57056
+       ],
+       [
+        -6.052,
+        42.574
+       ]
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 0.67,
+    "matorral": 0.33
+   },
+   "lugar": {
+    "municipio": "Villamejil",
+    "provincia": "León",
+    "comunidad": "Castilla y León"
+   },
+   "lugar_focos": 3,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261001-013",
+   "primera": "2026-10-01T13:40Z",
+   "ultima": "2026-10-01T13:59Z",
+   "n_focos": 3,
+   "n_viirs": 3,
+   "pasadas": 2,
+   "satelites": [
+    "NOAA-20",
+    "S-NPP"
+   ],
+   "frp_max": 8.1,
+   "frp_total": 17.4,
+   "ha_focos": 42.6,
+   "centro": [
+    -5.6035,
+    40.73613
+   ],
+   "bbox": [
+    -5.60776,
+    40.73269,
+    -5.59925,
+    40.73873
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -5.59925,
+       40.73731
+      ],
+      [
+       -5.59925,
+       40.73269
+      ],
+      [
+       -5.60577,
+       40.73269
+      ],
+      [
+       -5.60577,
+       40.73411
+      ],
+      [
+       -5.60766,
+       40.73411
+      ],
+      [
+       -5.60766,
+       40.73873
+      ],
+      [
+       -5.60114,
+       40.73873
+      ],
+      [
+       -5.60114,
+       40.73731
+      ],
+      [
+       -5.59925,
+       40.73731
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "matorral": 1.0
+   },
+   "lugar": {
+    "municipio": "Sieteiglesias de Tormes",
+    "provincia": "Salamanca",
+    "comunidad": "Castilla y León"
+   },
+   "lugar_focos": 3,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261001-014",
+   "primera": "2026-10-01T01:41Z",
+   "ultima": "2026-10-01T02:19Z",
+   "n_focos": 2,
+   "n_viirs": 2,
+   "pasadas": 2,
+   "satelites": [
+    "NOAA-21",
+    "S-NPP"
+   ],
+   "frp_max": 0.6,
+   "frp_total": 1.0,
+   "ha_focos": 27.4,
+   "centro": [
+    -5.86899,
+    38.29819
+   ],
+   "bbox": [
+    -5.87191,
+    38.29597,
+    -5.86607,
+    38.30093
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -5.86607,
+       38.30041
+      ],
+      [
+       -5.86607,
+       38.29597
+      ],
+      [
+       -5.87191,
+       38.29597
+      ],
+      [
+       -5.87191,
+       38.30041
+      ],
+      [
+       -5.87146,
+       38.30041
+      ],
+      [
+       -5.87146,
+       38.30093
+      ],
+      [
+       -5.86676,
+       38.30093
+      ],
+      [
+       -5.86676,
+       38.30041
+      ],
+      [
+       -5.86607,
+       38.30041
+      ]
+     ]
+    ]
+   },
+   "natura": [
+    {
+     "codigo": "ES0000325",
+     "nombre": "Campiña sur - Embalse de Arroyo Conejos",
+     "tipo": "ZEPA",
+     "ha": 27.4
+    }
+   ],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Berlanga",
+    "provincia": "Badajoz",
+    "comunidad": "Extremadura"
+   },
+   "lugar_focos": 2,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261001-015",
+   "primera": "2026-10-01T13:04Z",
+   "ultima": "2026-10-01T13:04Z",
+   "n_focos": 2,
+   "n_viirs": 2,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 3.8,
+   "frp_total": 7.6,
+   "ha_focos": 20.9,
+   "centro": [
+    -6.08593,
+    36.84611
+   ],
+   "bbox": [
+    -6.08879,
+    36.84426,
+    -6.08307,
+    36.84796
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -6.08307,
+       36.84426
+      ],
+      [
+       -6.08879,
+       36.84426
+      ],
+      [
+       -6.08879,
+       36.84796
+      ],
+      [
+       -6.08307,
+       36.84796
+      ],
+      [
+       -6.08307,
+       36.84426
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Jerez de la Frontera",
+    "provincia": "Cádiz",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 2,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261001-016",
+   "primera": "2026-10-01T13:40Z",
+   "ultima": "2026-10-01T13:40Z",
+   "n_focos": 2,
+   "n_viirs": 2,
+   "pasadas": 1,
+   "satelites": [
+    "S-NPP"
+   ],
+   "frp_max": 4.2,
+   "frp_total": 8.4,
+   "ha_focos": 14.8,
+   "centro": [
+    -5.65107,
+    37.13545
+   ],
+   "bbox": [
+    -5.65332,
+    37.13378,
+    -5.64882,
+    37.13712
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -5.64882,
+       37.13378
+      ],
+      [
+       -5.65332,
+       37.13378
+      ],
+      [
+       -5.65332,
+       37.13712
+      ],
+      [
+       -5.64882,
+       37.13712
+      ],
+      [
+       -5.64882,
+       37.13378
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Los Molares",
+    "provincia": "Sevilla",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 2,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261001-017",
+   "primera": "2026-10-01T13:42Z",
+   "ultima": "2026-10-01T14:01Z",
+   "n_focos": 2,
+   "n_viirs": 2,
+   "pasadas": 2,
+   "satelites": [
+    "NOAA-20",
+    "S-NPP"
+   ],
+   "frp_max": 19.4,
+   "frp_total": 25.6,
+   "ha_focos": 47.9,
+   "centro": [
+    -1.68699,
+    42.60724
+   ],
+   "bbox": [
+    -1.69893,
+    42.60439,
+    -1.68418,
+    42.61973
+   ],
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        -1.6898,
+        42.60439
+       ],
+       [
+        -1.6898,
+        42.61009
+       ],
+       [
+        -1.68418,
+        42.61009
+       ],
+       [
+        -1.68418,
+        42.60439
+       ],
+       [
+        -1.6898,
+        42.60439
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        -1.69893,
+        42.61567
+       ],
+       [
+        -1.69893,
+        42.61973
+       ],
+       [
+        -1.69381,
+        42.61973
+       ],
+       [
+        -1.69381,
+        42.61567
+       ],
+       [
+        -1.69893,
+        42.61567
+       ]
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Barásoain",
+    "provincia": "Navarra",
+    "comunidad": "Navarra"
+   },
+   "lugar_focos": 2,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261001-018",
+   "primera": "2026-10-01T01:41Z",
+   "ultima": "2026-10-01T01:41Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 0.6,
+   "frp_total": 0.6,
+   "ha_focos": 25.0,
+   "centro": [
+    -5.8061,
+    38.25956
+   ],
+   "bbox": [
+    -5.80902,
+    38.25734,
+    -5.80318,
+    38.26178
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -5.80318,
+       38.25734
+      ],
+      [
+       -5.80318,
+       38.26178
+      ],
+      [
+       -5.80902,
+       38.26178
+      ],
+      [
+       -5.80902,
+       38.25734
+      ],
+      [
+       -5.80318,
+       38.25734
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Berlanga",
+    "provincia": "Badajoz",
+    "comunidad": "Extremadura"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261001-019",
+   "primera": "2026-10-01T02:19Z",
+   "ultima": "2026-10-01T02:19Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "S-NPP"
+   ],
+   "frp_max": 0.3,
+   "frp_total": 0.3,
+   "ha_focos": 15.5,
+   "centro": [
+    -5.95119,
+    38.34926
+   ],
+   "bbox": [
+    -5.9536,
+    38.34759,
+    -5.94878,
+    38.35093
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -5.94878,
+       38.34759
+      ],
+      [
+       -5.94878,
+       38.35093
+      ],
+      [
+       -5.9536,
+       38.35093
+      ],
+      [
+       -5.9536,
+       38.34759
+      ],
+      [
+       -5.94878,
+       38.34759
+      ]
+     ]
+    ]
+   },
+   "natura": [
+    {
+     "codigo": "ES0000325",
+     "nombre": "Campiña sur - Embalse de Arroyo Conejos",
+     "tipo": "ZEPA",
+     "ha": 15.5
+    }
+   ],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Higuera de Llerena",
+    "provincia": "Badajoz",
+    "comunidad": "Extremadura"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261001-020",
+   "primera": "2026-10-01T09:11Z",
+   "ultima": "2026-10-01T09:11Z",
+   "n_focos": 1,
+   "n_viirs": 0,
+   "pasadas": 1,
+   "satelites": [
+    "Terra"
+   ],
+   "frp_max": 4.0,
+   "frp_total": 4.0,
+   "ha_focos": 102.0,
+   "centro": [
+    -1.41408,
+    38.22609
+   ],
+   "bbox": [
+    -1.41985,
+    38.22152,
+    -1.40831,
+    38.23066
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -1.40831,
+       38.22152
+      ],
+      [
+       -1.40831,
+       38.23066
+      ],
+      [
+       -1.41985,
+       38.23066
+      ],
+      [
+       -1.41985,
+       38.22152
+      ],
+      [
+       -1.40831,
+       38.22152
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Cieza",
+    "provincia": "Región de Murcia",
+    "comunidad": "Región de Murcia"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261001-021",
+   "primera": "2026-10-01T09:11Z",
+   "ultima": "2026-10-01T09:11Z",
+   "n_focos": 1,
+   "n_viirs": 0,
+   "pasadas": 1,
+   "satelites": [
+    "Terra"
+   ],
+   "frp_max": 4.8,
+   "frp_total": 4.8,
+   "ha_focos": 101.0,
+   "centro": [
+    -2.74158,
+    38.93242
+   ],
+   "bbox": [
+    -2.74741,
+    38.9279,
+    -2.73575,
+    38.93694
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -2.73575,
+       38.9279
+      ],
+      [
+       -2.73575,
+       38.93694
+      ],
+      [
+       -2.74741,
+       38.93694
+      ],
+      [
+       -2.74741,
+       38.9279
+      ],
+      [
+       -2.73575,
+       38.9279
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Ossa de Montiel",
+    "provincia": "Albacete",
+    "comunidad": "Castilla-La Mancha"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261001-022",
+   "primera": "2026-10-01T13:04Z",
+   "ultima": "2026-10-01T13:04Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 1.8,
+   "frp_total": 1.8,
+   "ha_focos": 14.8,
+   "centro": [
+    -0.2895,
+    39.24691
+   ],
+   "bbox": [
+    -0.29182,
+    39.24524,
+    -0.28718,
+    39.24858
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -0.28718,
+       39.24524
+      ],
+      [
+       -0.28718,
+       39.24858
+      ],
+      [
+       -0.29182,
+       39.24858
+      ],
+      [
+       -0.29182,
+       39.24524
+      ],
+      [
+       -0.28718,
+       39.24524
+      ]
+     ]
+    ]
+   },
+   "natura": [
+    {
+     "codigo": "ES0000023",
+     "nombre": "L'Albufera",
+     "tipo": "ZEC",
+     "ha": 14.8
+    },
+    {
+     "codigo": "ES0000471",
+     "nombre": "l'Albufera (ZEPA)",
+     "tipo": "ZEPA",
+     "ha": 14.8
+    }
+   ],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Sueca",
+    "provincia": "Valencia",
+    "comunidad": "Comunidad Valenciana"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261001-023",
+   "primera": "2026-10-01T13:04Z",
+   "ultima": "2026-10-01T13:04Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 6.7,
+   "frp_total": 6.7,
+   "ha_focos": 15.2,
+   "centro": [
+    -5.10808,
+    41.85003
+   ],
+   "bbox": [
+    -5.11055,
+    41.84836,
+    -5.10561,
+    41.8517
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -5.10561,
+       41.84836
+      ],
+      [
+       -5.10561,
+       41.8517
+      ],
+      [
+       -5.11055,
+       41.8517
+      ],
+      [
+       -5.11055,
+       41.84836
+      ],
+      [
+       -5.10561,
+       41.84836
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Villabrágima",
+    "provincia": "Valladolid",
+    "comunidad": "Castilla y León"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261001-024",
+   "primera": "2026-10-01T13:40Z",
+   "ultima": "2026-10-01T13:40Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "S-NPP"
+   ],
+   "frp_max": 4.4,
+   "frp_total": 4.4,
+   "ha_focos": 24.5,
+   "centro": [
+    -1.55011,
+    38.28501
+   ],
+   "bbox": [
+    -1.55337,
+    38.28307,
+    -1.54685,
+    38.28695
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -1.54685,
+       38.28307
+      ],
+      [
+       -1.54685,
+       38.28695
+      ],
+      [
+       -1.55337,
+       38.28695
+      ],
+      [
+       -1.55337,
+       38.28307
+      ],
+      [
+       -1.54685,
+       38.28307
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Cieza",
+    "provincia": "Región de Murcia",
+    "comunidad": "Región de Murcia"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261001-025",
+   "primera": "2026-10-01T13:40Z",
+   "ultima": "2026-10-01T13:40Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "S-NPP"
+   ],
+   "frp_max": 4.7,
+   "frp_total": 4.7,
+   "ha_focos": 18.8,
+   "centro": [
+    -4.01753,
+    40.04631
+   ],
+   "bbox": [
+    -4.02029,
+    40.0445,
+    -4.01477,
+    40.04812
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -4.01477,
+       40.0445
+      ],
+      [
+       -4.01477,
+       40.04812
+      ],
+      [
+       -4.02029,
+       40.04812
+      ],
+      [
+       -4.02029,
+       40.0445
+      ],
+      [
+       -4.01477,
+       40.0445
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Recas",
+    "provincia": "Toledo",
+    "comunidad": "Castilla-La Mancha"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261002-001",
+   "primera": "2026-10-02T01:22Z",
+   "ultima": "2026-10-02T03:02Z",
+   "n_focos": 7,
+   "n_viirs": 7,
+   "pasadas": 4,
+   "satelites": [
+    "NOAA-20",
+    "NOAA-21",
+    "S-NPP"
+   ],
+   "frp_max": 6.8,
+   "frp_total": 27.3,
+   "ha_focos": 152.2,
+   "centro": [
+    -7.66138,
+    43.55998
+   ],
+   "bbox": [
+    -7.67145,
+    43.55341,
+    -7.65472,
+    43.56656
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -7.66913,
+       43.55341
+      ],
+      [
+       -7.66913,
+       43.55993
+      ],
+      [
+       -7.66717,
+       43.56004
+      ],
+      [
+       -7.67145,
+       43.56004
+      ],
+      [
+       -7.67145,
+       43.56656
+      ],
+      [
+       -7.66363,
+       43.56656
+      ],
+      [
+       -7.66363,
+       43.56198
+      ],
+      [
+       -7.66228,
+       43.56198
+      ],
+      [
+       -7.66228,
+       43.56546
+      ],
+      [
+       -7.65472,
+       43.56546
+      ],
+      [
+       -7.65472,
+       43.56066
+      ],
+      [
+       -7.65623,
+       43.56066
+      ],
+      [
+       -7.65559,
+       43.5605
+      ],
+      [
+       -7.65559,
+       43.5557
+      ],
+      [
+       -7.66133,
+       43.55546
+      ],
+      [
+       -7.66133,
+       43.55341
+      ],
+      [
+       -7.66913,
+       43.55341
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "matorral": 1.0
+   },
+   "lugar": {
+    "municipio": "Ourol",
+    "provincia": "Lugo",
+    "comunidad": "Galicia"
+   },
+   "lugar_focos": 7,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261002-002",
+   "primera": "2026-10-02T02:00Z",
+   "ultima": "2026-10-02T02:19Z",
+   "n_focos": 4,
+   "n_viirs": 4,
+   "pasadas": 2,
+   "satelites": [
+    "NOAA-20",
+    "S-NPP"
+   ],
+   "frp_max": 0.8,
+   "frp_total": 3.0,
+   "ha_focos": 22.2,
+   "centro": [
+    -3.66072,
+    37.15005
+   ],
+   "bbox": [
+    -3.66354,
+    37.14781,
+    -3.6579,
+    37.1519
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -3.66266,
+       37.14781
+      ],
+      [
+       -3.66266,
+       37.1482
+      ],
+      [
+       -3.66354,
+       37.1482
+      ],
+      [
+       -3.66354,
+       37.1519
+      ],
+      [
+       -3.6579,
+       37.1519
+      ],
+      [
+       -3.65816,
+       37.14781
+      ],
+      [
+       -3.66266,
+       37.14781
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "artificial": 0.5,
+    "agricola": 0.5
+   },
+   "lugar": {
+    "municipio": "Cúllar Vega",
+    "provincia": "Granada",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 4,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261002-003",
+   "primera": "2026-10-02T01:24Z",
+   "ultima": "2026-10-02T01:24Z",
+   "n_focos": 2,
+   "n_viirs": 2,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 0.7,
+   "frp_total": 1.3,
+   "ha_focos": 29.0,
+   "centro": [
+    -5.86196,
+    37.11774
+   ],
+   "bbox": [
+    -5.86455,
+    37.11489,
+    -5.85937,
+    37.12059
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -5.85937,
+       37.11489
+      ],
+      [
+       -5.86455,
+       37.11489
+      ],
+      [
+       -5.86455,
+       37.12059
+      ],
+      [
+       -5.85937,
+       37.12059
+      ],
+      [
+       -5.85937,
+       37.11489
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Los Palacios y Villafranca",
+    "provincia": "Sevilla",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 2,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261002-004",
+   "primera": "2026-10-02T02:00Z",
+   "ultima": "2026-10-02T03:04Z",
+   "n_focos": 2,
+   "n_viirs": 2,
+   "pasadas": 2,
+   "satelites": [
+    "NOAA-21",
+    "S-NPP"
+   ],
+   "frp_max": 2.1,
+   "frp_total": 2.9,
+   "ha_focos": 53.1,
+   "centro": [
+    -4.54862,
+    37.70336
+   ],
+   "bbox": [
+    -4.55174,
+    37.6951,
+    -4.54476,
+    37.7053
+   ],
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        -4.54998,
+        37.6951
+       ],
+       [
+        -4.54998,
+        37.70088
+       ],
+       [
+        -4.54476,
+        37.70088
+       ],
+       [
+        -4.54476,
+        37.6951
+       ],
+       [
+        -4.54998,
+        37.6951
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        -4.55174,
+        37.70142
+       ],
+       [
+        -4.55174,
+        37.7053
+       ],
+       [
+        -4.5455,
+        37.7053
+       ],
+       [
+        -4.5455,
+        37.70142
+       ],
+       [
+        -4.55174,
+        37.70142
+       ]
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Espejo",
+    "provincia": "Córdoba",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 2,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261002-005",
+   "primera": "2026-10-02T02:00Z",
+   "ultima": "2026-10-02T02:19Z",
+   "n_focos": 2,
+   "n_viirs": 2,
+   "pasadas": 2,
+   "satelites": [
+    "NOAA-20",
+    "S-NPP"
+   ],
+   "frp_max": 0.7,
+   "frp_total": 1.4,
+   "ha_focos": 18.9,
+   "centro": [
+    -5.59218,
+    38.19302
+   ],
+   "bbox": [
+    -5.59458,
+    38.19099,
+    -5.58978,
+    38.19505
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -5.59458,
+       38.19099
+      ],
+      [
+       -5.59458,
+       38.19505
+      ],
+      [
+       -5.58978,
+       38.19505
+      ],
+      [
+       -5.58978,
+       38.19099
+      ],
+      [
+       -5.59458,
+       38.19099
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agroforestal": 1.0
+   },
+   "lugar": {
+    "municipio": "Azuaga",
+    "provincia": "Badajoz",
+    "comunidad": "Extremadura"
+   },
+   "lugar_focos": 2,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261002-006",
+   "primera": "2026-10-02T02:00Z",
+   "ultima": "2026-10-02T02:19Z",
+   "n_focos": 2,
+   "n_viirs": 2,
+   "pasadas": 2,
+   "satelites": [
+    "NOAA-20",
+    "S-NPP"
+   ],
+   "frp_max": 1.0,
+   "frp_total": 1.4,
+   "ha_focos": 31.6,
+   "centro": [
+    -5.71909,
+    38.43458
+   ],
+   "bbox": [
+    -5.72341,
+    38.43286,
+    -5.71476,
+    38.4372
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -5.71476,
+       38.43304
+      ],
+      [
+       -5.72341,
+       38.43286
+      ],
+      [
+       -5.72341,
+       38.43612
+      ],
+      [
+       -5.7197,
+       38.43612
+      ],
+      [
+       -5.7197,
+       38.4372
+      ],
+      [
+       -5.71476,
+       38.4372
+      ],
+      [
+       -5.71476,
+       38.43304
+      ]
+     ]
+    ]
+   },
+   "natura": [
+    {
+     "codigo": "ES0000325",
+     "nombre": "Campiña sur - Embalse de Arroyo Conejos",
+     "tipo": "ZEPA",
+     "ha": 29.4
+    }
+   ],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Azuaga",
+    "provincia": "Badajoz",
+    "comunidad": "Extremadura"
+   },
+   "lugar_focos": 2,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261002-007",
+   "primera": "2026-10-02T13:23Z",
+   "ultima": "2026-10-02T13:23Z",
+   "n_focos": 2,
+   "n_viirs": 2,
+   "pasadas": 1,
+   "satelites": [
+    "S-NPP"
+   ],
+   "frp_max": 2.7,
+   "frp_total": 5.4,
+   "ha_focos": 30.1,
+   "centro": [
+    -5.66179,
+    39.81502
+   ],
+   "bbox": [
+    -5.66654,
+    39.81294,
+    -5.65705,
+    39.8171
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -5.66174,
+       39.81294
+      ],
+      [
+       -5.66654,
+       39.81294
+      ],
+      [
+       -5.66654,
+       39.81628
+      ],
+      [
+       -5.66185,
+       39.81628
+      ],
+      [
+       -5.66185,
+       39.8171
+      ],
+      [
+       -5.65705,
+       39.8171
+      ],
+      [
+       -5.65705,
+       39.81376
+      ],
+      [
+       -5.66174,
+       39.81376
+      ],
+      [
+       -5.66174,
+       39.81294
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "matorral": 0.5,
+    "agricola": 0.5
+   },
+   "lugar": {
+    "municipio": "Almaraz",
+    "provincia": "Cáceres",
+    "comunidad": "Extremadura"
+   },
+   "lugar_focos": 2,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261002-008",
+   "primera": "2026-10-02T02:00Z",
+   "ultima": "2026-10-02T02:00Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "S-NPP"
+   ],
+   "frp_max": 0.4,
+   "frp_total": 0.4,
+   "ha_focos": 17.2,
+   "centro": [
+    -5.13266,
+    37.56096
+   ],
+   "bbox": [
+    -5.13487,
+    37.55897,
+    -5.13045,
+    37.56295
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -5.13045,
+       37.55897
+      ],
+      [
+       -5.13045,
+       37.56295
+      ],
+      [
+       -5.13487,
+       37.56295
+      ],
+      [
+       -5.13487,
+       37.55897
+      ],
+      [
+       -5.13045,
+       37.55897
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Écija",
+    "provincia": "Sevilla",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261002-009",
+   "primera": "2026-10-02T02:19Z",
+   "ultima": "2026-10-02T02:19Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-20"
+   ],
+   "frp_max": 0.3,
+   "frp_total": 0.3,
+   "ha_focos": 14.0,
+   "centro": [
+    -4.32892,
+    37.88076
+   ],
+   "bbox": [
+    -4.33114,
+    37.87913,
+    -4.3267,
+    37.88239
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -4.3267,
+       37.87913
+      ],
+      [
+       -4.3267,
+       37.88239
+      ],
+      [
+       -4.33114,
+       37.88239
+      ],
+      [
+       -4.33114,
+       37.87913
+      ],
+      [
+       -4.3267,
+       37.87913
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Cañete de las Torres",
+    "provincia": "Córdoba",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261002-010",
+   "primera": "2026-10-02T03:02Z",
+   "ultima": "2026-10-02T03:02Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 0.9,
+   "frp_total": 0.9,
+   "ha_focos": 19.8,
+   "centro": [
+    -8.24083,
+    43.4591
+   ],
+   "bbox": [
+    -8.24349,
+    43.45702,
+    -8.23817,
+    43.46118
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -8.23817,
+       43.45702
+      ],
+      [
+       -8.23817,
+       43.46118
+      ],
+      [
+       -8.24349,
+       43.46118
+      ],
+      [
+       -8.24349,
+       43.45702
+      ],
+      [
+       -8.23817,
+       43.45702
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "artificial": 1.0
+   },
+   "lugar": {
+    "municipio": "Mugardos",
+    "provincia": "La Coruña",
+    "comunidad": "Galicia"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261002-011",
+   "primera": "2026-10-02T09:49Z",
+   "ultima": "2026-10-02T09:49Z",
+   "n_focos": 1,
+   "n_viirs": 0,
+   "pasadas": 1,
+   "satelites": [
+    "Terra"
+   ],
+   "frp_max": 14.6,
+   "frp_total": 14.6,
+   "ha_focos": 202.5,
+   "centro": [
+    -6.16268,
+    38.27653
+   ],
+   "bbox": [
+    -6.17195,
+    38.27088,
+    -6.15341,
+    38.28218
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -6.15341,
+       38.27088
+      ],
+      [
+       -6.15341,
+       38.28218
+      ],
+      [
+       -6.17195,
+       38.28218
+      ],
+      [
+       -6.17195,
+       38.27088
+      ],
+      [
+       -6.15341,
+       38.27088
+      ]
+     ]
+    ]
+   },
+   "natura": [
+    {
+     "codigo": "ES4310068",
+     "nombre": "Sierras de Bienvenida y la Capitana",
+     "tipo": "ZEC",
+     "ha": 122.3
+    }
+   ],
+   "cobertura": {
+    "bosque": 1.0
+   },
+   "lugar": {
+    "municipio": "Bienvenida",
+    "provincia": "Badajoz",
+    "comunidad": "Extremadura"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261002-012",
+   "primera": "2026-10-02T09:49Z",
+   "ultima": "2026-10-02T09:49Z",
+   "n_focos": 1,
+   "n_viirs": 0,
+   "pasadas": 1,
+   "satelites": [
+    "Terra"
+   ],
+   "frp_max": 6.5,
+   "frp_total": 6.5,
+   "ha_focos": 166.4,
+   "centro": [
+    -5.87527,
+    41.76511
+   ],
+   "bbox": [
+    -5.88376,
+    41.75977,
+    -5.86678,
+    41.77045
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -5.86678,
+       41.75977
+      ],
+      [
+       -5.86678,
+       41.77045
+      ],
+      [
+       -5.88376,
+       41.77045
+      ],
+      [
+       -5.88376,
+       41.75977
+      ],
+      [
+       -5.86678,
+       41.75977
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Pozuelo de Tábara",
+    "provincia": "Zamora",
+    "comunidad": "Castilla y León"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261002-013",
+   "primera": "2026-10-02T12:44Z",
+   "ultima": "2026-10-02T12:44Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 6.3,
+   "frp_total": 6.3,
+   "ha_focos": 24.0,
+   "centro": [
+    -5.01592,
+    37.73009
+   ],
+   "bbox": [
+    -5.0187,
+    37.72787,
+    -5.01314,
+    37.73231
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -5.01314,
+       37.72787
+      ],
+      [
+       -5.01314,
+       37.73231
+      ],
+      [
+       -5.0187,
+       37.73231
+      ],
+      [
+       -5.0187,
+       37.72787
+      ],
+      [
+       -5.01314,
+       37.72787
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Guadalcázar",
+    "provincia": "Córdoba",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261002-014",
+   "primera": "2026-10-02T13:23Z",
+   "ultima": "2026-10-02T13:23Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "S-NPP"
+   ],
+   "frp_max": 24.8,
+   "frp_total": 24.8,
+   "ha_focos": 15.5,
+   "centro": [
+    -5.77297,
+    38.94799
+   ],
+   "bbox": [
+    -5.7754,
+    38.94632,
+    -5.77054,
+    38.94966
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -5.77054,
+       38.94632
+      ],
+      [
+       -5.77054,
+       38.94966
+      ],
+      [
+       -5.7754,
+       38.94966
+      ],
+      [
+       -5.7754,
+       38.94632
+      ],
+      [
+       -5.77054,
+       38.94632
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Villanueva de la Serena",
+    "provincia": "Badajoz",
+    "comunidad": "Extremadura"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261002-015",
+   "primera": "2026-10-02T13:23Z",
+   "ultima": "2026-10-02T13:23Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "S-NPP"
+   ],
+   "frp_max": 3.9,
+   "frp_total": 3.9,
+   "ha_focos": 17.2,
+   "centro": [
+    -6.98111,
+    39.64166
+   ],
+   "bbox": [
+    -6.98368,
+    39.6399,
+    -6.97854,
+    39.64342
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -6.97854,
+       39.6399
+      ],
+      [
+       -6.97854,
+       39.64342
+      ],
+      [
+       -6.98368,
+       39.64342
+      ],
+      [
+       -6.98368,
+       39.6399
+      ],
+      [
+       -6.97854,
+       39.6399
+      ]
+     ]
+    ]
+   },
+   "natura": [
+    {
+     "codigo": "ES0000369",
+     "nombre": "Llanos de Alcantara y Brozas",
+     "tipo": "ZEC y ZEPA",
+     "ha": 17.2
+    }
+   ],
+   "cobertura": {
+    "matorral": 1.0
+   },
+   "lugar": {
+    "municipio": "Alcántara",
+    "provincia": "Cáceres",
+    "comunidad": "Extremadura"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261002-016",
+   "primera": "2026-10-02T13:40Z",
+   "ultima": "2026-10-02T13:40Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-20"
+   ],
+   "frp_max": 5.8,
+   "frp_total": 5.8,
+   "ha_focos": 18.8,
+   "centro": [
+    -5.09946,
+    37.54361
+   ],
+   "bbox": [
+    -5.10212,
+    37.5418,
+    -5.0968,
+    37.54542
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -5.0968,
+       37.5418
+      ],
+      [
+       -5.0968,
+       37.54542
+      ],
+      [
+       -5.10212,
+       37.54542
+      ],
+      [
+       -5.10212,
+       37.5418
+      ],
+      [
+       -5.0968,
+       37.5418
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Écija",
+    "provincia": "Sevilla",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261002-017",
+   "primera": "2026-10-02T13:42Z",
+   "ultima": "2026-10-02T13:42Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-20"
+   ],
+   "frp_max": 10.8,
+   "frp_total": 10.8,
+   "ha_focos": 24.1,
+   "centro": [
+    -3.89463,
+    39.66074
+   ],
+   "bbox": [
+    -3.8979,
+    39.6588,
+    -3.89136,
+    39.66268
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -3.89136,
+       39.6588
+      ],
+      [
+       -3.89136,
+       39.66268
+      ],
+      [
+       -3.8979,
+       39.66268
+      ],
+      [
+       -3.8979,
+       39.6588
+      ],
+      [
+       -3.89136,
+       39.6588
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Orgaz",
+    "provincia": "Toledo",
+    "comunidad": "Castilla-La Mancha"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261003-001",
+   "primera": "2026-10-03T13:04Z",
+   "ultima": "2026-10-03T13:25Z",
+   "n_focos": 3,
+   "n_viirs": 3,
+   "pasadas": 2,
+   "satelites": [
+    "NOAA-20",
+    "S-NPP"
+   ],
+   "frp_max": 23.8,
+   "frp_total": 60.3,
+   "ha_focos": 33.6,
+   "centro": [
+    -6.97386,
+    43.00011
+   ],
+   "bbox": [
+    -6.97856,
+    42.99811,
+    -6.96917,
+    43.00315
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -6.97376,
+       42.99811
+      ],
+      [
+       -6.97856,
+       42.99811
+      ],
+      [
+       -6.97856,
+       43.00137
+      ],
+      [
+       -6.97604,
+       43.00137
+      ],
+      [
+       -6.97604,
+       43.00315
+      ],
+      [
+       -6.97112,
+       43.00315
+      ],
+      [
+       -6.97112,
+       43.0021
+      ],
+      [
+       -6.96917,
+       43.0021
+      ],
+      [
+       -6.96917,
+       42.99884
+      ],
+      [
+       -6.97376,
+       42.99884
+      ],
+      [
+       -6.97376,
+       42.99811
+      ]
+     ]
+    ]
+   },
+   "natura": [
+    {
+     "codigo": "ES1120001",
+     "nombre": "Ancares - Courel",
+     "tipo": "ZEC",
+     "ha": 5.4
+    }
+   ],
+   "cobertura": {
+    "bosque": 0.67,
+    "matorral": 0.33
+   },
+   "lugar": {
+    "municipio": "Ibias",
+    "provincia": "Asturias",
+    "comunidad": "Asturias"
+   },
+   "lugar_focos": 3,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261003-002",
+   "primera": "2026-10-03T13:23Z",
+   "ultima": "2026-10-03T13:23Z",
+   "n_focos": 2,
+   "n_viirs": 2,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-20"
+   ],
+   "frp_max": 5.4,
+   "frp_total": 10.7,
+   "ha_focos": 14.8,
+   "centro": [
+    -6.27078,
+    37.35334
+   ],
+   "bbox": [
+    -6.27304,
+    37.35167,
+    -6.26852,
+    37.35501
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -6.26852,
+       37.35167
+      ],
+      [
+       -6.27304,
+       37.35167
+      ],
+      [
+       -6.27304,
+       37.35501
+      ],
+      [
+       -6.26852,
+       37.35501
+      ],
+      [
+       -6.26852,
+       37.35167
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Huévar del Aljarafe",
+    "provincia": "Sevilla",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 2,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261003-003",
+   "primera": "2026-10-03T13:23Z",
+   "ultima": "2026-10-03T13:23Z",
+   "n_focos": 2,
+   "n_viirs": 2,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-20"
+   ],
+   "frp_max": 8.7,
+   "frp_total": 13.2,
+   "ha_focos": 29.4,
+   "centro": [
+    -7.00292,
+    39.65391
+   ],
+   "bbox": [
+    -7.00755,
+    39.65186,
+    -6.9983,
+    39.65597
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -7.00289,
+       39.65186
+      ],
+      [
+       -7.00755,
+       39.65186
+      ],
+      [
+       -7.00755,
+       39.6552
+      ],
+      [
+       -7.00296,
+       39.6552
+      ],
+      [
+       -7.00296,
+       39.65597
+      ],
+      [
+       -6.9983,
+       39.65597
+      ],
+      [
+       -6.9983,
+       39.65263
+      ],
+      [
+       -7.00289,
+       39.65263
+      ],
+      [
+       -7.00289,
+       39.65186
+      ]
+     ]
+    ]
+   },
+   "natura": [
+    {
+     "codigo": "ES0000369",
+     "nombre": "Llanos de Alcantara y Brozas",
+     "tipo": "ZEC y ZEPA",
+     "ha": 29.4
+    }
+   ],
+   "cobertura": {
+    "matorral": 1.0
+   },
+   "lugar": {
+    "municipio": "Alcántara",
+    "provincia": "Cáceres",
+    "comunidad": "Extremadura"
+   },
+   "lugar_focos": 2,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261003-004",
+   "primera": "2026-10-03T12:25Z",
+   "ultima": "2026-10-03T12:25Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 5.4,
+   "frp_total": 5.4,
+   "ha_focos": 30.1,
+   "centro": [
+    -5.40751,
+    37.51428
+   ],
+   "bbox": [
+    -5.41017,
+    37.51139,
+    -5.40485,
+    37.51717
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -5.40485,
+       37.51139
+      ],
+      [
+       -5.40485,
+       37.51717
+      ],
+      [
+       -5.41017,
+       37.51717
+      ],
+      [
+       -5.41017,
+       37.51139
+      ],
+      [
+       -5.40485,
+       37.51139
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "La Campana",
+    "provincia": "Sevilla",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261003-005",
+   "primera": "2026-10-03T13:25Z",
+   "ultima": "2026-10-03T13:25Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-20"
+   ],
+   "frp_max": 2.3,
+   "frp_total": 2.3,
+   "ha_focos": 15.2,
+   "centro": [
+    -8.7382,
+    42.20581
+   ],
+   "bbox": [
+    -8.74069,
+    42.20414,
+    -8.73571,
+    42.20748
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -8.73571,
+       42.20414
+      ],
+      [
+       -8.73571,
+       42.20748
+      ],
+      [
+       -8.74069,
+       42.20748
+      ],
+      [
+       -8.74069,
+       42.20414
+      ],
+      [
+       -8.73571,
+       42.20414
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agroforestal": 1.0
+   },
+   "lugar": {
+    "municipio": "Vigo",
+    "provincia": "Pontevedra",
+    "comunidad": "Galicia"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261003-006",
+   "primera": "2026-10-03T14:03Z",
+   "ultima": "2026-10-03T14:03Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 2.1,
+   "frp_total": 2.1,
+   "ha_focos": 15.2,
+   "centro": [
+    -16.46784,
+    28.16386
+   ],
+   "bbox": [
+    -16.46993,
+    28.16219,
+    -16.46575,
+    28.16553
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -16.46575,
+       28.16219
+      ],
+      [
+       -16.46575,
+       28.16553
+      ],
+      [
+       -16.46993,
+       28.16553
+      ],
+      [
+       -16.46993,
+       28.16219
+      ],
+      [
+       -16.46575,
+       28.16219
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "artificial": 1.0
+   },
+   "lugar": {
+    "municipio": "Arico",
+    "provincia": "Santa Cruz de Tenerife",
+    "comunidad": "Canarias"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261004-001",
+   "primera": "2026-10-04T12:44Z",
+   "ultima": "2026-10-04T12:44Z",
+   "n_focos": 2,
+   "n_viirs": 2,
+   "pasadas": 1,
+   "satelites": [
+    "S-NPP"
+   ],
+   "frp_max": 5.5,
+   "frp_total": 9.3,
+   "ha_focos": 31.8,
+   "centro": [
+    3.36688,
+    39.57655
+   ],
+   "bbox": [
+    3.36393,
+    39.57313,
+    3.36984,
+    39.57997
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.36984,
+       39.57657
+      ],
+      [
+       3.36984,
+       39.57313
+      ],
+      [
+       3.36494,
+       39.57313
+      ],
+      [
+       3.36494,
+       39.57653
+      ],
+      [
+       3.36393,
+       39.57653
+      ],
+      [
+       3.36393,
+       39.57997
+      ],
+      [
+       3.36883,
+       39.57997
+      ],
+      [
+       3.36883,
+       39.57657
+      ],
+      [
+       3.36984,
+       39.57657
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "artificial": 1.0
+   },
+   "lugar": {
+    "municipio": "San Lorenzo del Cardessar",
+    "provincia": "Islas Baleares",
+    "comunidad": "Islas Baleares"
+   },
+   "lugar_focos": 2,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261004-002",
+   "primera": "2026-10-04T12:44Z",
+   "ultima": "2026-10-04T12:44Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "S-NPP"
+   ],
+   "frp_max": 4.8,
+   "frp_total": 4.8,
+   "ha_focos": 16.3,
+   "centro": [
+    3.09319,
+    39.36407
+   ],
+   "bbox": [
+    3.09069,
+    39.36235,
+    3.09569,
+    39.36579
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.09569,
+       39.36235
+      ],
+      [
+       3.09569,
+       39.36579
+      ],
+      [
+       3.09069,
+       39.36579
+      ],
+      [
+       3.09069,
+       39.36235
+      ],
+      [
+       3.09569,
+       39.36235
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agroforestal": 1.0
+   },
+   "lugar": {
+    "municipio": "Santanyí",
+    "provincia": "Islas Baleares",
+    "comunidad": "Islas Baleares"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261004-003",
+   "primera": "2026-10-04T12:44Z",
+   "ultima": "2026-10-04T12:44Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "S-NPP"
+   ],
+   "frp_max": 3.2,
+   "frp_total": 3.2,
+   "ha_focos": 16.3,
+   "centro": [
+    3.11772,
+    39.3685
+   ],
+   "bbox": [
+    3.11522,
+    39.36678,
+    3.12022,
+    39.37022
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.12022,
+       39.36678
+      ],
+      [
+       3.12022,
+       39.37022
+      ],
+      [
+       3.11522,
+       39.37022
+      ],
+      [
+       3.11522,
+       39.36678
+      ],
+      [
+       3.12022,
+       39.36678
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Santanyí",
+    "provincia": "Islas Baleares",
+    "comunidad": "Islas Baleares"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261004-004",
+   "primera": "2026-10-04T12:44Z",
+   "ultima": "2026-10-04T12:44Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "S-NPP"
+   ],
+   "frp_max": 2.4,
+   "frp_total": 2.4,
+   "ha_focos": 16.0,
+   "centro": [
+    3.14492,
+    39.75392
+   ],
+   "bbox": [
+    3.14247,
+    39.7522,
+    3.14737,
+    39.75564
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.14737,
+       39.7522
+      ],
+      [
+       3.14737,
+       39.75564
+      ],
+      [
+       3.14247,
+       39.75564
+      ],
+      [
+       3.14247,
+       39.7522
+      ],
+      [
+       3.14737,
+       39.7522
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Santa Margalida",
+    "provincia": "Islas Baleares",
+    "comunidad": "Islas Baleares"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261004-005",
+   "primera": "2026-10-04T13:04Z",
+   "ultima": "2026-10-04T13:04Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-20"
+   ],
+   "frp_max": 1.9,
+   "frp_total": 1.9,
+   "ha_focos": 14.8,
+   "centro": [
+    -1.68683,
+    38.26013
+   ],
+   "bbox": [
+    -1.68912,
+    38.25846,
+    -1.68454,
+    38.2618
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -1.68454,
+       38.25846
+      ],
+      [
+       -1.68454,
+       38.2618
+      ],
+      [
+       -1.68912,
+       38.2618
+      ],
+      [
+       -1.68912,
+       38.25846
+      ],
+      [
+       -1.68454,
+       38.25846
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Calasparra",
+    "provincia": "Región de Murcia",
+    "comunidad": "Región de Murcia"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261004-006",
+   "primera": "2026-10-04T13:04Z",
+   "ultima": "2026-10-04T13:04Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-20"
+   ],
+   "frp_max": 2.3,
+   "frp_total": 2.3,
+   "ha_focos": 16.3,
+   "centro": [
+    -3.65619,
+    39.53978
+   ],
+   "bbox": [
+    -3.65869,
+    39.53806,
+    -3.65369,
+    39.5415
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -3.65369,
+       39.53806
+      ],
+      [
+       -3.65369,
+       39.5415
+      ],
+      [
+       -3.65869,
+       39.5415
+      ],
+      [
+       -3.65869,
+       39.53806
+      ],
+      [
+       -3.65369,
+       39.53806
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Consuegra",
+    "provincia": "Toledo",
+    "comunidad": "Castilla-La Mancha"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261005-001",
+   "primera": "2026-10-05T01:02Z",
+   "ultima": "2026-10-05T02:41Z",
+   "n_focos": 7,
+   "n_viirs": 7,
+   "pasadas": 4,
+   "satelites": [
+    "NOAA-20",
+    "NOAA-21",
+    "S-NPP"
+   ],
+   "frp_max": 3.6,
+   "frp_total": 12.0,
+   "ha_focos": 111.9,
+   "centro": [
+    0.88126,
+    41.50412
+   ],
+   "bbox": [
+    0.87516,
+    41.49905,
+    0.88736,
+    41.51181
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       0.87765,
+       41.49905
+      ],
+      [
+       0.87765,
+       41.50002
+      ],
+      [
+       0.87516,
+       41.50002
+      ],
+      [
+       0.87519,
+       41.50796
+      ],
+      [
+       0.87779,
+       41.50826
+      ],
+      [
+       0.87779,
+       41.51181
+      ],
+      [
+       0.88475,
+       41.51181
+      ],
+      [
+       0.88475,
+       41.50651
+      ],
+      [
+       0.88736,
+       41.50651
+      ],
+      [
+       0.88736,
+       41.50199
+      ],
+      [
+       0.88461,
+       41.50199
+      ],
+      [
+       0.88461,
+       41.49905
+      ],
+      [
+       0.87765,
+       41.49905
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "les Borges Blanques",
+    "provincia": "Lérida",
+    "comunidad": "Cataluña"
+   },
+   "lugar_focos": 7,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261005-002",
+   "primera": "2026-10-05T13:27Z",
+   "ultima": "2026-10-05T15:14Z",
+   "n_focos": 7,
+   "n_viirs": 1,
+   "pasadas": 2,
+   "satelites": [
+    "Aqua",
+    "NOAA-21"
+   ],
+   "frp_max": 242.6,
+   "frp_total": 658.5,
+   "ha_focos": 14.8,
+   "centro": [
+    -6.1024,
+    38.32295
+   ],
+   "bbox": [
+    -6.10469,
+    38.32128,
+    -6.10011,
+    38.32462
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -6.10011,
+       38.32128
+      ],
+      [
+       -6.10011,
+       38.32462
+      ],
+      [
+       -6.10469,
+       38.32462
+      ],
+      [
+       -6.10469,
+       38.32128
+      ],
+      [
+       -6.10011,
+       38.32128
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 0.57,
+    "matorral": 0.43
+   },
+   "lugar": {
+    "municipio": "Villagarcía de la Torre",
+    "provincia": "Badajoz",
+    "comunidad": "Extremadura"
+   },
+   "lugar_focos": 7,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261005-003",
+   "primera": "2026-10-05T13:29Z",
+   "ultima": "2026-10-05T13:29Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 5.1,
+   "frp_total": 5.1,
+   "ha_focos": 20.9,
+   "centro": [
+    -3.83926,
+    41.68117
+   ],
+   "bbox": [
+    -3.84233,
+    41.67932,
+    -3.83619,
+    41.68302
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -3.83619,
+       41.67932
+      ],
+      [
+       -3.83619,
+       41.68302
+      ],
+      [
+       -3.84233,
+       41.68302
+      ],
+      [
+       -3.84233,
+       41.67932
+      ],
+      [
+       -3.83619,
+       41.67932
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Berlangas de Roa",
+    "provincia": "Burgos",
+    "comunidad": "Castilla y León"
+   },
+   "lugar_focos": 1,
+   "estado": "reciente",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261006-001",
+   "primera": "2026-10-06T13:10Z",
+   "ultima": "2026-10-06T13:10Z",
+   "n_focos": 2,
+   "n_viirs": 2,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 5.5,
+   "frp_total": 11.1,
+   "ha_focos": 33.0,
+   "centro": [
+    -6.97787,
+    39.63884
+   ],
+   "bbox": [
+    -6.98292,
+    39.63666,
+    -6.97282,
+    39.64101
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -6.97778,
+       39.63666
+      ],
+      [
+       -6.98292,
+       39.63666
+      ],
+      [
+       -6.98292,
+       39.6401
+      ],
+      [
+       -6.97796,
+       39.6401
+      ],
+      [
+       -6.97796,
+       39.64101
+      ],
+      [
+       -6.97282,
+       39.64101
+      ],
+      [
+       -6.97282,
+       39.63757
+      ],
+      [
+       -6.97778,
+       39.63757
+      ],
+      [
+       -6.97778,
+       39.63666
+      ]
+     ]
+    ]
+   },
+   "natura": [
+    {
+     "codigo": "ES0000369",
+     "nombre": "Llanos de Alcantara y Brozas",
+     "tipo": "ZEC y ZEPA",
+     "ha": 33.0
+    }
+   ],
+   "cobertura": {
+    "matorral": 1.0
+   },
+   "lugar": {
+    "municipio": "Alcántara",
+    "provincia": "Cáceres",
+    "comunidad": "Extremadura"
+   },
+   "lugar_focos": 2,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261006-002",
+   "primera": "2026-10-06T02:26Z",
+   "ultima": "2026-10-06T02:26Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "S-NPP"
+   ],
+   "frp_max": 4.1,
+   "frp_total": 4.1,
+   "ha_focos": 14.0,
+   "centro": [
+    -3.56256,
+    39.02684
+   ],
+   "bbox": [
+    -3.56481,
+    39.02521,
+    -3.56031,
+    39.02847
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -3.56031,
+       39.02521
+      ],
+      [
+       -3.56031,
+       39.02847
+      ],
+      [
+       -3.56481,
+       39.02847
+      ],
+      [
+       -3.56481,
+       39.02521
+      ],
+      [
+       -3.56031,
+       39.02521
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Daimiel",
+    "provincia": "Ciudad Real",
+    "comunidad": "Castilla-La Mancha"
+   },
+   "lugar_focos": 1,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261006-003",
+   "primera": "2026-10-06T13:10Z",
+   "ultima": "2026-10-06T13:10Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 3.5,
+   "frp_total": 3.5,
+   "ha_focos": 14.8,
+   "centro": [
+    -5.66091,
+    39.8162
+   ],
+   "bbox": [
+    -5.66325,
+    39.81453,
+    -5.65857,
+    39.81787
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -5.65857,
+       39.81453
+      ],
+      [
+       -5.65857,
+       39.81787
+      ],
+      [
+       -5.66325,
+       39.81787
+      ],
+      [
+       -5.66325,
+       39.81453
+      ],
+      [
+       -5.65857,
+       39.81453
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "matorral": 1.0
+   },
+   "lugar": {
+    "municipio": "Almaraz",
+    "provincia": "Cáceres",
+    "comunidad": "Extremadura"
+   },
+   "lugar_focos": 1,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null
+  }
+ ],
+ "actualizado": "2026-10-06T16:57Z"
+}
