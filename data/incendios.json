@@ -6770,7 +6770,71 @@
    "estado": "activo",
    "effis": [],
    "effis_ha": null
+  },
+  {
+   "id": "IN-20261006-004",
+   "primera": "2026-10-06T15:52Z",
+   "ultima": "2026-10-06T15:52Z",
+   "n_focos": 1,
+   "n_viirs": 0,
+   "pasadas": 1,
+   "satelites": [
+    "Aqua"
+   ],
+   "frp_max": 14.3,
+   "frp_total": 14.3,
+   "ha_focos": 142.2,
+   "centro": [
+    -5.22434,
+    38.58708
+   ],
+   "bbox": [
+    -5.23164,
+    38.58202,
+    -5.21704,
+    38.59214
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -5.21704,
+       38.58202
+      ],
+      [
+       -5.21704,
+       38.59214
+      ],
+      [
+       -5.23164,
+       38.59214
+      ],
+      [
+       -5.23164,
+       38.58202
+      ],
+      [
+       -5.21704,
+       38.58202
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Belalcázar",
+    "provincia": "Córdoba",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 1,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null
   }
  ],
- "actualizado": "2026-10-06T16:57Z"
+ "actualizado": "2026-10-06T21:38Z"
 }
