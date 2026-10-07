@@ -71,3 +71,32 @@ EFFIS_HOLGURA_DIAS = 3            # margen de fechas para casar un perímetro co
 EFFIS_HOLGURA_KM = 1.0
 
 NOMINATIM = "https://nominatim.openstreetmap.org"
+
+# ── Superficie quemada con Sentinel-2 ──────────────────────────────────────────────────
+# Escenas L2A de Earth Search (AWS), sin clave. NBR con B8A (nir08) y B12 (swir22), a 20 m.
+STAC_URL = "https://earth-search.aws.element84.com/v1"
+STAC_COLECCION = "sentinel-2-l2a"
+PERIMETRO_RES_M = 20
+PERIMETRO_MARGEN_M = 2000      # recorte alrededor de la huella de focos
+PRE_DIAS = 40                  # antes: escenas de las semanas previas al primer foco...
+PRE_ESCENAS_MAX = 6            # ...las más recientes...
+PRE_NUBES_MAX = 60             # ...con menos de este % de nubes en la tesela
+POST_DIAS = 20                 # después: desde el primer foco hasta 20 días tras el último
+POST_NUBES_MAX = 80
+POST_ESCENAS_TRAS = 4          # escenas de después del último foco que se usan
+# Clases SCL aceptadas. Después del fuego se acepta también la 2 («zona oscura»), que es
+# como Sen2Cor suele clasificar la ceniza; antes no, porque ahí es sombra o agua turbia.
+SCL_PRE = (4, 5, 7)
+SCL_POST = (2, 4, 5, 7)
+DNBR_UMBRAL = 0.15             # contrastado con EFFIS 2023-2024: docs/validacion_perimetro.md
+PERIMETRO_ANCLA_M = 3000       # a menos de esto de los focos (y dentro de la ventana de cálculo);
+                               # con 750 m se cortaban las lenguas de los grandes, con huecos entre focos
+# Severidad según el dNBR (Key y Benson, 2006, simplificada a tres clases).
+SEVERIDAD = (("baja", -9.0, 0.27), ("moderada", 0.27, 0.66), ("alta", 0.66, 9.0))
+# Producción
+PERIMETRO_MIN_FOCOS = 3        # o en Red Natura o con EFFIS: los focos aislados no se calculan
+PERIMETRO_CADA_HORAS = 6       # cada incendio se revisa en el catálogo como mucho cada 6 h
+PERIMETRO_PRESUPUESTO_S = 15 * 60   # tiempo máximo por vuelta; lo demás, en la siguiente
+# Si las nubes dejan ver menos de esta fracción de la zona de los focos, la cifra no se da
+# como medida: «0 ha» bajo un cielo cubierto no es «no ardió nada».
+PERIMETRO_COBERTURA_MIN = 0.5

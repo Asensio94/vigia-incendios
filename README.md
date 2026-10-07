@@ -3,11 +3,13 @@
 Incendios con focos activos en España vistos por satélite cada hora, sin esperar a la
 estadística oficial. Los focos de NASA FIRMS se agrupan en incendios con reglas fijas y se
 cruzan con la Red Natura 2000, con la cubierta del suelo (CORINE Land Cover 2018) y con las
-áreas quemadas que cartografía EFFIS, el servicio europeo de incendios de Copernicus.
+áreas quemadas que cartografía EFFIS, el servicio europeo de incendios de Copernicus. La
+superficie quemada se estima con imágenes de Sentinel-2 en cuanto hay una pasada despejada.
 
 **Web:** https://asensio94.github.io/vigia-incendios/ · **Fuente Atom:**
 [feed.xml](https://asensio94.github.io/vigia-incendios/feed.xml) · **GeoJSON:**
-[incendios.geojson](https://asensio94.github.io/vigia-incendios/incendios.geojson)
+[incendios.geojson](https://asensio94.github.io/vigia-incendios/incendios.geojson) ·
+**Quemado según Sentinel-2:** [quemado.geojson](https://asensio94.github.io/vigia-incendios/quemado.geojson)
 
 Está pensado para que periodistas y entidades de conservación sepan en pocas horas qué
 arde, dónde y si toca un espacio protegido. No sustituye a la información oficial de
@@ -52,7 +54,24 @@ haría el cruce en su lado. Nada de ese cruce volvería aquí.
    - Municipio y provincia, de Nominatim.
    - Perímetro EFFIS: el área quemada que toca la huella con 1 km de margen y empezó entre
      3 días antes del primer foco y 3 días después del último.
-5. **Estados.** «Activo» si hay algún foco en las últimas 24 h; «reciente» hasta 7 días;
+5. **Superficie quemada con Sentinel-2.** Para los incendios que no son focos aislados:
+   - NBR = (B8A − B12) / (B8A + B12), a 20 m, de las escenas L2A de Earth Search (AWS),
+     con la máscara de nubes SCL.
+   - Antes: mediana de las 6 escenas más recientes de los 40 días previos al primer foco.
+   - Después: el segundo NBR más bajo de cada píxel (el único, si solo hay una observación)
+     desde el primer foco hasta 4 escenas después del último (como mucho 20 días). Así entra
+     todo el avance aunque cada escena tenga nubes distintas, y una sombra de nube o una bruma
+     que la máscara no detectó en una sola escena no cuenta como quemado: hacen falta dos
+     escenas que lo vean.
+   - Quemado: dNBR por encima del umbral, en manchas unidas a la huella de focos y cerca de
+     ella. Así no entran las cosechas ni los labrados, que también bajan el NBR.
+   - Severidad por el dNBR: baja hasta 0,27, moderada hasta 0,66, alta por encima.
+   - Hectáreas quemadas dentro de cada espacio de la Red Natura 2000.
+   - Cada incendio se revisa como mucho cada 6 horas y se recalcula si cambian sus focos o
+     llegan escenas nuevas. Mientras no estén todas, el perímetro es «provisional».
+   - Si las nubes dejan ver menos de la mitad de la zona de los focos, la cifra se publica
+     como mínimo («al menos X ha») o, si no se ve nada quemado, como «aún no se puede medir».
+6. **Estados.** «Activo» si hay algún foco en las últimas 24 h; «reciente» hasta 7 días;
    luego «inactivo».
    - Los **focos aislados** (uno o dos focos, sin perímetro EFFIS ni Red Natura) suelen ser
      quemas agrícolas y no se muestran salvo que se pida.
@@ -75,11 +94,16 @@ Los que se escapan apenas tienen focos en el archivo de FIRMS. Son incendios que
 entre dos pasadas o bajo nubes, como los de invierno en la cornisa cantábrica. Los filtros
 del vigía no los tapan.
 
+Los umbrales se eligieron contrastando el cálculo con los perímetros de EFFIS de una
+muestra de 2023 y 2024: [docs/validacion_perimetro.md](docs/validacion_perimetro.md).
+
 ## Límites
 
 - **La superficie de los píxeles con focos no es superficie quemada.** En incendios pequeños
-  la exagera: un fuego de una hectárea enciende un píxel de 14 ha. La superficie citable es
-  la de EFFIS o la oficial.
+  la exagera: un fuego de una hectárea enciende un píxel de 14 ha.
+- **La superficie de Sentinel-2 es una estimación propia.** Puede quedarse corta bajo nubes
+  persistentes o con fuego de superficie bajo arbolado, que apenas cambia el NBR visto desde
+  arriba. Como cifra oficial, la de EFFIS o la de la comunidad autónoma.
 - FIRMS publica cada pasada unas tres horas después. El humo espeso, las nubes y el fuego
   bajo arbolado pueden esconder un incendio que sigue ardiendo.
 - «Activo» quiere decir que el satélite vio calor en las últimas 24 h, no que el incendio
@@ -99,7 +123,7 @@ del vigía no los tapan.
 ```bash
 python -m venv .venv && .venv/bin/pip install -r requirements.txt
 python -m vigia zonas      # capas fijas: España, Red Natura 2000, fuentes fijas (una vez)
-python -m vigia vigilar    # una vuelta: focos, incendios, EFFIS y web en site/
+python -m vigia vigilar    # una vuelta: focos, incendios, EFFIS, Sentinel-2 y web en site/
 python -m vigia web        # rehacer la web sin descargar nada
 python -m vigia validar    # contraste con 2023 y 2024 (descarga el archivo de FIRMS)
 ```
@@ -113,7 +137,8 @@ rama `gh-pages`.
 | Fichero | Contenido |
 |---|---|
 | `data/focos/AAAA.csv` | Todos los focos que pasaron los filtros, con el incendio al que pertenecen |
-| `data/incendios.json` | Registro de incendios con cifras, huella, cruces y estado |
+| `data/incendios.json` | Registro de incendios con cifras, huella, cruces, estado y perímetro de Sentinel-2 |
+| `data/validacion_perimetro.json` | Contraste de los perímetros de Sentinel-2 con EFFIS |
 | `data/effis.json` | Áreas quemadas de EFFIS (perímetros simplificados a ~20 m) |
 | `data/cache.json` | Cubierta CORINE por celda y municipios ya consultados |
 | `data/zonas/` | Contorno de España, Red Natura 2000 y fuentes fijas |
@@ -123,6 +148,8 @@ rama `gh-pages`.
 - **Focos activos:** NASA FIRMS (LANCE), parte del Earth Science Data and Information System
   (ESDIS) de la NASA. Uso libre con atribución.
 - **Áreas quemadas:** EFFIS, Copernicus Emergency Management Service, © Unión Europea.
+- **Imágenes Sentinel-2:** Copernicus, © Unión Europea; catálogo y copia en AWS de Earth
+  Search (Element 84).
 - **Red Natura 2000 y CORINE Land Cover 2018:** Agencia Europea de Medio Ambiente.
 - **Municipios y contorno de España:** Nominatim, © colaboradores de OpenStreetMap (ODbL).
 - **Ortofoto:** PNOA, CC BY 4.0 scne.es.
