@@ -1635,7 +1635,7 @@
     "comunidad": "Andalucía"
    },
    "lugar_focos": 4,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -1763,7 +1763,7 @@
     "comunidad": "Cataluña"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -1827,7 +1827,7 @@
     "comunidad": "Cataluña"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -1891,7 +1891,7 @@
     "comunidad": "Asturias"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -6703,7 +6703,7 @@
     "comunidad": "Castilla-La Mancha"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -6834,7 +6834,148 @@
    "estado": "activo",
    "effis": [],
    "effis_ha": null
+  },
+  {
+   "id": "IN-20261007-001",
+   "primera": "2026-10-07T02:06Z",
+   "ultima": "2026-10-07T02:06Z",
+   "n_focos": 2,
+   "n_viirs": 2,
+   "pasadas": 1,
+   "satelites": [
+    "S-NPP"
+   ],
+   "frp_max": 0.3,
+   "frp_total": 0.6,
+   "ha_focos": 14.0,
+   "centro": [
+    -1.79163,
+    37.23658
+   ],
+   "bbox": [
+    -1.79383,
+    37.23495,
+    -1.78943,
+    37.23821
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -1.78943,
+       37.23495
+      ],
+      [
+       -1.79383,
+       37.23495
+      ],
+      [
+       -1.79383,
+       37.23821
+      ],
+      [
+       -1.78943,
+       37.23821
+      ],
+      [
+       -1.78943,
+       37.23495
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "matorral": 1.0
+   },
+   "lugar": {
+    "municipio": "Cuevas del Almanzora",
+    "provincia": "Almería",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 2,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261007-002",
+   "primera": "2026-10-07T02:26Z",
+   "ultima": "2026-10-07T02:26Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-20"
+   ],
+   "frp_max": 0.3,
+   "frp_total": 0.3,
+   "ha_focos": 15.2,
+   "centro": [
+    -3.47353,
+    40.43236
+   ],
+   "bbox": [
+    -3.47595,
+    40.43069,
+    -3.47111,
+    40.43403
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -3.47111,
+       40.43069
+      ],
+      [
+       -3.47111,
+       40.43403
+      ],
+      [
+       -3.47595,
+       40.43403
+      ],
+      [
+       -3.47595,
+       40.43069
+      ],
+      [
+       -3.47111,
+       40.43069
+      ]
+     ]
+    ]
+   },
+   "natura": [
+    {
+     "codigo": "ES3110006",
+     "nombre": "Vegas, cuestas y páramos del sureste de Madrid",
+     "tipo": "ZEC",
+     "ha": 12.7
+    },
+    {
+     "codigo": "ES0000142",
+     "nombre": "Cortados y cantiles de los ríos Jarama y Manzanares",
+     "tipo": "ZEPA",
+     "ha": 12.7
+    }
+   ],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "San Fernando de Henares",
+    "provincia": "Comunidad de Madrid",
+    "comunidad": "Comunidad de Madrid"
+   },
+   "lugar_focos": 1,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null
   }
  ],
- "actualizado": "2026-10-06T21:38Z"
+ "actualizado": "2026-10-07T08:38Z"
 }
