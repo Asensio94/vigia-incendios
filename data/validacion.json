@@ -9,7 +9,10 @@
     "detectados": 202,
     "retraso_mediana_h": 1.0,
     "antes_que_effis": 41,
-    "ratio_ha_mediana": 2.38
+    "ratio_ha_mediana": 2.38,
+    "ratio_perimetro_mediana": 1.42,
+    "iou_huella_mediana": 0.18,
+    "iou_perimetro_mediana": 0.23
    },
    {
     "desde": 100,
@@ -18,7 +21,10 @@
     "detectados": 98,
     "retraso_mediana_h": 1.2,
     "antes_que_effis": 21,
-    "ratio_ha_mediana": 1.62
+    "ratio_ha_mediana": 1.62,
+    "ratio_perimetro_mediana": 1.11,
+    "iou_huella_mediana": 0.28,
+    "iou_perimetro_mediana": 0.29
    },
    {
     "desde": 500,
@@ -27,7 +33,10 @@
     "detectados": 21,
     "retraso_mediana_h": 2.0,
     "antes_que_effis": 4,
-    "ratio_ha_mediana": 1.24
+    "ratio_ha_mediana": 1.24,
+    "ratio_perimetro_mediana": 1.18,
+    "iou_huella_mediana": 0.33,
+    "iou_perimetro_mediana": 0.39
    }
   ],
   "vigia_total": 4162,
@@ -64,7 +73,10 @@
     "detectados": 103,
     "retraso_mediana_h": 1.9,
     "antes_que_effis": 16,
-    "ratio_ha_mediana": 2.02
+    "ratio_ha_mediana": 2.02,
+    "ratio_perimetro_mediana": 1.12,
+    "iou_huella_mediana": 0.2,
+    "iou_perimetro_mediana": 0.24
    },
    {
     "desde": 100,
@@ -73,7 +85,10 @@
     "detectados": 48,
     "retraso_mediana_h": 2.0,
     "antes_que_effis": 9,
-    "ratio_ha_mediana": 1.05
+    "ratio_ha_mediana": 1.05,
+    "ratio_perimetro_mediana": 0.74,
+    "iou_huella_mediana": 0.27,
+    "iou_perimetro_mediana": 0.23
    },
    {
     "desde": 500,
@@ -82,7 +97,10 @@
     "detectados": 20,
     "retraso_mediana_h": 2.0,
     "antes_que_effis": 3,
-    "ratio_ha_mediana": 0.62
+    "ratio_ha_mediana": 0.62,
+    "ratio_perimetro_mediana": 0.49,
+    "iou_huella_mediana": 0.32,
+    "iou_perimetro_mediana": 0.34
    }
   ],
   "vigia_total": 4039,

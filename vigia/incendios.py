@@ -24,7 +24,7 @@ from scipy.spatial import cKDTree
 from shapely.geometry import box, mapping, shape
 from shapely.ops import unary_union
 
-from . import config, focos as F, zonas
+from . import config, perimeter, focos as F, zonas
 
 log = logging.getLogger(__name__)
 
@@ -217,6 +217,11 @@ def describir(inc: dict, fs: list[dict], detalle: bool = True) -> None:
         "bbox": [round(v, 5) for v in g.bounds],
         "geometry": _geo(g.simplify(0.0003)),
     })
+    per = perimeter.describe(fs)
+    for k in perimeter.FIELDS:
+        inc.pop(k, None)
+    if per:
+        inc.update(per)
     if not detalle or antes == len(fs):
         return
     inc["natura"] = zonas.natura_de(g)

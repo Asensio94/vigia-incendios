@@ -57,6 +57,18 @@ haría el cruce en su lado. Nada de ese cruce volvería aquí.
    - Los **focos aislados** (uno o dos focos, sin perímetro EFFIS ni Red Natura) suelen ser
      quemas agrícolas y no se muestran salvo que se pida.
 
+6. **Perímetro, frente y progresión** (a partir de 3 píxeles VIIRS). Sigue la idea de
+   [FEDS](https://doi.org/10.1038/s41597-022-01343-0), el seguimiento de incendios de la NASA
+   (Chen et al., 2022), con reglas que se pueden rehacer a mano:
+   - Cada píxel VIIRS es un disco de radio medio píxel × 0,5.
+   - Tras cada pasada se suman los discos nuevos al perímetro anterior y se cierran los
+     huecos de menos de 1,5 km (cierre morfológico de 0,75 km): el terreno que el fuego
+     cruzó entre dos pasadas. El perímetro nunca encoge.
+   - **Frente activo:** el tramo del borde a menos de 300 m de un píxel de la última pasada.
+     Se da su longitud en km.
+   - **Progresión:** superficie tras cada pasada y crecimiento en ha/h entre pasadas.
+   - Código en [`vigia/perimeter.py`](vigia/perimeter.py).
+
 Todo son reglas fijas, escritas en [`vigia/config.py`](vigia/config.py). No hay ningún
 modelo entrenado ni inteligencia artificial.
 
@@ -71,6 +83,12 @@ incendios que cartografió EFFIS. Detalle en [docs/validacion.md](docs/validacio
 | 100–500 ha | 93 % | 76 % |
 | ≥ 500 ha | 91 % | 100 % |
 
+El perímetro se acerca más a EFFIS que la huella de píxeles. En los incendios que
+corresponden a una sola área EFFIS de 30 ha o más, la coincidencia mediana (IoU) sube de
+0,30 a 0,35 en 2023 y de 0,28 a 0,34 en 2024. El error típico de superficie baja del 93 %
+al 68 % en 2023 y del 118 % al 68 % en 2024. Los parámetros se eligieron con 2023, y 2024
+sirvió de comprobación.
+
 Los que se escapan apenas tienen focos en el archivo de FIRMS. Son incendios que ardieron
 entre dos pasadas o bajo nubes, como los de invierno en la cornisa cantábrica. Los filtros
 del vigía no los tapan.
@@ -80,6 +98,10 @@ del vigía no los tapan.
 - **La superficie de los píxeles con focos no es superficie quemada.** En incendios pequeños
   la exagera: un fuego de una hectárea enciende un píxel de 14 ha. La superficie citable es
   la de EFFIS o la oficial.
+- **El perímetro estimado tampoco lo es.** Mejora la huella, pero en los incendios de más
+  de 500 ha de 2024 se quedó en la mitad de EFFIS (mediana 0,49): el humo y las pasadas
+  perdidas dejan zonas quemadas sin ningún píxel. Es una estimación para seguir el
+  incendio, no una cartografía.
 - FIRMS publica cada pasada unas tres horas después. El humo espeso, las nubes y el fuego
   bajo arbolado pueden esconder un incendio que sigue ardiendo.
 - «Activo» quiere decir que el satélite vio calor en las últimas 24 h, no que el incendio
@@ -113,7 +135,7 @@ rama `gh-pages`.
 | Fichero | Contenido |
 |---|---|
 | `data/focos/AAAA.csv` | Todos los focos que pasaron los filtros, con el incendio al que pertenecen |
-| `data/incendios.json` | Registro de incendios con cifras, huella, cruces y estado |
+| `data/incendios.json` | Registro de incendios con cifras, huella, perímetro, frente, progresión, cruces y estado |
 | `data/effis.json` | Áreas quemadas de EFFIS (perímetros simplificados a ~20 m) |
 | `data/cache.json` | Cubierta CORINE por celda y municipios ya consultados |
 | `data/zonas/` | Contorno de España, Red Natura 2000 y fuentes fijas |
