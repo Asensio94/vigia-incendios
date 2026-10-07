@@ -100,3 +100,5 @@ PERIMETRO_PRESUPUESTO_S = 15 * 60   # tiempo máximo por vuelta; lo demás, en l
 # Si las nubes dejan ver menos de esta fracción de la zona de los focos, la cifra no se da
 # como medida: «0 ha» bajo un cielo cubierto no es «no ardió nada».
 PERIMETRO_COBERTURA_MIN = 0.5
+# Sube al cambiar el cálculo: entra en la clave de cada perímetro y obliga a rehacerlos todos.
+PERIMETRO_VERSION = 2

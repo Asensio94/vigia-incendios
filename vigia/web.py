@@ -46,7 +46,8 @@ def _quemado(incs: list[dict], simplificar: float = 0) -> dict:
         feats.append({"type": "Feature", "geometry": g,
                       "properties": {"incendio": i["id"], "ha": per["ha"], "severidad": per["severidad"],
                                      "imagenes": per["imagenes"], "definitivo": per["definitivo"],
-                                     "nublado": bool(per.get("nublado"))}})
+                                     "nublado": bool(per.get("nublado")), "una_imagen": per.get("una_imagen"),
+                                     "fecha_antes": per.get("fecha_antes"), "fecha_despues": per.get("fecha_despues")}})
     return {"type": "FeatureCollection", "features": feats}
 
 
@@ -124,7 +125,8 @@ def _feed(vivos: list[dict], ahora: str) -> str:
                    f"Píxeles con focos: {i['ha_focos']:g} ha. Arde sobre: {I.tipo(i)}."
                    + (f" Red Natura: {nat}." if nat else "")
                    + (f" Superficie quemada estimada con Sentinel-2: {'al menos ' if i['perimetro'].get('nublado') else ''}{i['perimetro']['ha']:g} ha"
-                      f"{'' if i['perimetro'].get('definitivo') else ' (provisional)'}."
+                      f"{'' if i['perimetro'].get('definitivo') else ' (provisional)'}"
+                      f"{', medida con una sola imagen' if i['perimetro'].get('una_imagen', 0) > 0.5 else ''}."
                       if (i.get("perimetro") or {}).get("ha") else "")
                    + (f" Perímetro EFFIS: {i['effis_ha']:g} ha." if i.get("effis_ha") else ""))
         ent.append(f"""<entry><id>{config.WEB}#{i['id']}</id><title>{escape(_titulo(i))}</title>
@@ -377,7 +379,7 @@ footer{max-width:1440px;margin:0 auto;padding:16px 16px 40px;font-size:13px;colo
     <p>Se quitan los focos de confianza baja, que suelen ser reflejos del sol en tejados e invernaderos, y los que caen junto a fuentes fijas de calor como cementeras, acerías o refinerías. Los demás se agrupan en incendios: dos focos son del mismo incendio si sus píxeles están a menos de dos kilómetros y se vieron con menos de tres días de diferencia, y basta una cadena de focos para unir un frente que avanza. Son reglas fijas: no interviene ningún modelo entrenado ni ninguna inteligencia artificial.</p>
     <p>De cada incendio se calcula la extensión de sus píxeles, qué cubierta tenía el suelo según CORINE Land Cover 2018, los espacios de la Red Natura 2000 que toca y el municipio. Cuando EFFIS, el servicio europeo de incendios de Copernicus, publica el perímetro quemado, se enlaza.</p>
     <h3>Superficie quemada con Sentinel-2</h3>
-    <p>EFFIS tarda días en cartografiar y apenas dibuja nada por debajo de 30 hectáreas. Para no esperar, el vigía mide lo quemado con las imágenes de Sentinel-2, que pasan cada dos o tres días con píxeles de 20 metros. Compara el índice de área quemada (NBR) de antes y de después del fuego: la vegetación quemada pierde reflectancia en el infrarrojo cercano y la gana en el de onda corta. Solo cuenta lo que cambia junto a los focos y unido a ellos, para que no entren cosechas ni labrados de las mismas semanas. Para que una sombra de nube o una bruma de una sola imagen no pase por ceniza, un píxel solo cuenta como quemado si lo ven al menos dos imágenes. El cálculo se rehace al llegar imágenes nuevas, hasta veinte días después del último foco. Si las nubes tapan más de la mitad de la zona, la cifra se da como mínimo («al menos») o no se da.</p>
+    <p>EFFIS tarda días en cartografiar y apenas dibuja nada por debajo de 30 hectáreas. Para no esperar, el vigía mide lo quemado con las imágenes de Sentinel-2, que pasan cada dos o tres días con píxeles de 20 metros. Compara el índice de área quemada (NBR) de antes y de después del fuego: la vegetación quemada pierde reflectancia en el infrarrojo cercano y la gana en el de onda corta. Solo cuenta lo que cambia junto a los focos y unido a ellos, para que no entren cosechas ni labrados de las mismas semanas. Para que una sombra de nube o una bruma de una sola imagen no pase por ceniza, un píxel solo cuenta como quemado si lo ven al menos dos imágenes. El cálculo se rehace al llegar imágenes nuevas, hasta veinte días después del último foco. Si las nubes tapan más de la mitad de la zona, la cifra se da como mínimo («al menos») o no se da. Si lo quemado solo lo ha visto una imagen, ese filtro no puede actuar: la ficha lo avisa y la cifra no se da por definitiva hasta que llegue otra. Cada ficha enlaza la imagen de antes y la de después en Copernicus Browser, para que cualquiera pueda comprobar a ojo lo que dice el índice.</p>
     <h3>Lo que hay que saber antes de citarlo</h3>
     <p class="aviso">La extensión de los píxeles con focos no es la superficie quemada. En incendios pequeños la exagera, porque un fuego de una hectárea enciende un píxel de catorce; en los grandes puede quedarse corta. La superficie de Sentinel-2 es una estimación propia, contrastada con EFFIS más abajo. Como cifra oficial, la de EFFIS o la de la comunidad autónoma.</p>
     <p>«Activo» quiere decir que el satélite vio calor en las últimas 24 horas, no que el incendio siga sin controlar. Al revés, un incendio puede seguir ardiendo sin focos si el humo o las nubes lo tapan o si arde bajo arbolado. Los focos aislados, uno o dos sin más señales, son a menudo quemas agrícolas o de rastrojos. Por eso no se muestran salvo que se pida.</p>
@@ -504,20 +506,30 @@ function ficha(p){
 
 const fdia = new Intl.DateTimeFormat("es-ES",{day:"numeric",month:"short"});
 const dia = d => fdia.format(new Date(d+"T12:00:00Z"));
+// Copernicus Browser en el compuesto de infrarrojo de onda corta (B12-B8A-B4), donde lo
+// quemado sale granate y la vegetación verde: cualquiera puede comprobar la cifra con sus ojos.
+const urlCB = (f, p) => "https://browser.dataspace.copernicus.eu/?" + new URLSearchParams({zoom:14,
+  lat:p.centro[1].toFixed(5), lng:p.centro[0].toFixed(5), themeId:"MONITORING", datasetId:"S2_L2A_CDAS",
+  layerId:"6-SWIR", fromTime:`${f}T00:00:00.000Z`, toTime:`${f}T23:59:59.999Z`, dateMode:"SINGLE"});
+const verCB = (s, p) => s.fecha_antes && s.fecha_despues && p.centro ? `<p class="nota ver">Compruébalo con las imágenes:
+  <a href="${urlCB(s.fecha_antes,p)}" target="_blank" rel="noopener">antes (${dia(s.fecha_antes)})</a> ·
+  <a href="${urlCB(s.fecha_despues,p)}" target="_blank" rel="noopener">después (${dia(s.fecha_despues)})</a>
+  en Copernicus Browser. Lo quemado sale granate; la vegetación, verde.</p>` : "";
 function bloqueS2(p){
   const s = p.s2;
   if (!s) return "";
   if (s.sin_imagen) return `<div class="quemado"><p class="nota">Aún no hay una imagen despejada de Sentinel-2 para medir lo quemado.</p></div>`;
   const ult = `${s.imagenes.length} ${s.imagenes.length===1?"imagen":"imágenes"}, la última del ${dia(s.imagenes.at(-1))}`;
-  if (s.nublado && !s.ha) return `<div class="quemado"><p class="nota">Las nubes tapan la zona de los focos en las imágenes de Sentinel-2 (${ult}): aún no se puede medir lo quemado.</p></div>`;
-  if (!s.ha) return `<div class="quemado"><p class="nota">Sentinel-2 no ve superficie quemada apreciable junto a los focos (${ult}). Suele pasar con quemas agrícolas, con fuego bajo arbolado o si las nubes taparon la zona.</p></div>`;
+  if (s.nublado && !s.ha) return `<div class="quemado"><p class="nota">Las nubes tapan la zona de los focos en las imágenes de Sentinel-2 (${ult}): aún no se puede medir lo quemado.</p>${verCB(s,p)}</div>`;
+  if (!s.ha) return `<div class="quemado"><p class="nota">Sentinel-2 no ve superficie quemada apreciable junto a los focos (${ult}). Suele pasar con quemas agrícolas, con fuego bajo arbolado o si las nubes taparon la zona.</p>${verCB(s,p)}</div>`;
   const sev = [["alta","--sev-alta"],["moderada","--sev-mod"],["baja","--sev-baja"]];
   const tot = Object.values(s.severidad).reduce((a,b)=>a+b,0) || 1;
   return `<div class="quemado">
     <p>Superficie quemada estimada con Sentinel-2: <span class="cifra-q">${s.nublado?"al menos ":""}${num(s.ha)} ha</span>${s.definitivo?"":" · <strong>provisional</strong>"}</p>
     <div class="barra" role="img" aria-label="Severidad">${sev.map(([k,c])=>`<span style="width:${100*s.severidad[k]/tot}%;background:var(${c})"></span>`).join("")}</div>
     <div class="sev">${sev.map(([k,c])=>`<span><i style="background:var(${c})"></i>severidad ${k} ${num(s.severidad[k])} ha</span>`).join("")}</div>
-    <p class="nota">${ult}.${s.nublado?" Las nubes tapan buena parte de la zona: es un mínimo, no la superficie total.":s.cobertura<0.8?" Las nubes taparon parte de la zona: la cifra puede quedarse corta.":""}${s.definitivo?"":" Se rehará cuando lleguen imágenes nuevas."}</p>
+    <p class="nota">${ult}.${s.nublado?" Las nubes tapan buena parte de la zona: es un mínimo, no la superficie total.":s.cobertura<0.8?" Las nubes taparon parte de la zona: la cifra puede quedarse corta.":""}${s.una_imagen>0.5?" Medido con una sola imagen despejada: una bruma o la sombra de una nube junto al fuego pueden pasar por quemado, así que la cifra puede sobrar. Se confirmará con la siguiente.":""}${s.definitivo||s.una_imagen>0.5?"":" Se rehará cuando lleguen imágenes nuevas."}</p>
+    ${verCB(s,p)}
   </div>`;
 }
 

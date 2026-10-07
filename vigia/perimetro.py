@@ -140,7 +140,7 @@ def dnbr(huella_geo, primera: datetime, ultima: datetime, hasta: datetime, esc: 
     g, gb, crs = esc["g"], esc["gb"], esc["crs"]
     if not esc["pre"] or not esc["post"]:
         return None
-    pre, _ = _serie_nbr(esc["pre"], gb, config.SCL_PRE)
+    pre, fechas_pre = _serie_nbr(esc["pre"], gb, config.SCL_PRE)
     post, fechas = _serie_nbr(esc["post"], gb, config.SCL_POST)
     if not pre or not post:
         return None
@@ -153,8 +153,13 @@ def dnbr(huella_geo, primera: datetime, ultima: datetime, hasta: datetime, esc: 
         nbr_post = np.where(n_obs >= 2, pila[min(1, len(pila) - 1)], nbr_min)
     huella = features.rasterize([(g.geom, 1)], out_shape=gb.shape, transform=gb.affine,
                                 all_touched=True, dtype="uint8").astype(bool)
+    # La imagen más despejada sobre los focos, de antes y de después, para enlazarla en la
+    # web: así cualquiera puede mirar con sus ojos lo que el índice dice que ardió.
+    cerca = ndimage.binary_dilation(huella, iterations=10)
+    limpia = lambda capas, fs: max(zip(capas, fs), key=lambda cf: (round(float(np.isfinite(cf[0][cerca]).mean()), 1), cf[1]))[1]
     return {"dnbr": nbr_pre - nbr_post, "dnbr_min": nbr_pre - nbr_min, "huella": huella, "gb": gb, "crs": crs,
-            "post_fechas": sorted(set(fechas)), "pre_escenas": len(pre)}
+            "n_obs": n_obs, "post_fechas": sorted(set(fechas)), "pre_escenas": len(pre),
+            "fecha_antes": limpia(pre, fechas_pre), "fecha_despues": limpia(post, fechas)}
 
 
 def recortar(d: dict, umbral: float = None, margen_m: float = None, capa: str = "dnbr") -> np.ndarray:
@@ -195,7 +200,10 @@ def resultado(d: dict, mask: np.ndarray) -> dict:
         geom = Geometry(u, d["crs"]).to_crs("EPSG:4326").geom
     zona = ndimage.binary_dilation(d["huella"], iterations=3)
     return {"ha": round(float(mask.sum()) * px_ha, 1), "severidad": sev, "geom": geom,
-            "imagenes": d["post_fechas"],
+            "imagenes": d["post_fechas"], "fecha_antes": d["fecha_antes"], "fecha_despues": d["fecha_despues"],
+            # Parte de lo quemado que solo vio una imagen: ahí no actúa el filtro del segundo
+            # NBR más bajo y una bruma o una sombra de nube pueden pasar por ceniza.
+            "una_imagen": round(float((d["n_obs"][mask] < 2).mean()), 2) if mask.any() else 0.0,
             "cobertura": round(float((~np.isnan(d["dnbr"][zona])).mean()), 2)}
 
 
@@ -230,7 +238,8 @@ def actualizar(incendios: list[dict], ahora: str) -> dict:
     res = {"candidatos": len(cand), "revisados": 0, "calculados": 0, "pendientes": 0}
     for inc in cand:
         prev = inc.get("perimetro") or {}
-        if prev.get("revisado") and F.horas_entre(prev["revisado"], ahora) < config.PERIMETRO_CADA_HORAS:
+        al_dia = str(prev.get("clave", "")).startswith(f"v{config.PERIMETRO_VERSION}|")
+        if al_dia and prev.get("revisado") and F.horas_entre(prev["revisado"], ahora) < config.PERIMETRO_CADA_HORAS:
             continue
         if time.monotonic() - inicio > config.PERIMETRO_PRESUPUESTO_S:
             res["pendientes"] += 1
@@ -243,7 +252,7 @@ def actualizar(incendios: list[dict], ahora: str) -> dict:
             continue
         res["revisados"] += 1
         ids = sorted(it.id for it in esc["pre"] + esc["post"])
-        clave = f"{inc['n_focos']}|" + hashlib.sha1(",".join(ids).encode()).hexdigest()[:12]
+        clave = f"v{config.PERIMETRO_VERSION}|{inc['n_focos']}|" + hashlib.sha1(",".join(ids).encode()).hexdigest()[:12]
         if prev.get("clave") == clave:
             prev["revisado"] = ahora
             continue
@@ -265,8 +274,10 @@ def actualizar(incendios: list[dict], ahora: str) -> dict:
             g = r.pop("geom")
             nuevo.update(r)
             if r["cobertura"] < config.PERIMETRO_COBERTURA_MIN:
-                # Sin cielo despejado sobre los focos no se da por cerrado mientras queden días.
                 nuevo["nublado"] = True
+            if nuevo.get("nublado") or r["una_imagen"] > 0.5:
+                # Sin cielo despejado, o con lo quemado visto una sola vez, no se da por cerrado
+                # mientras queden días para que llegue otra imagen.
                 nuevo["definitivo"] = F.horas_entre(inc["ultima"], ahora) > config.POST_DIAS * 24
             nuevo["natura"] = [{k: e[k] for k in ("codigo", "nombre", "tipo", "ha") if k in e}
                                for e in zonas.natura_de(g)] if g is not None else []

@@ -71,6 +71,13 @@ haría el cruce en su lado. Nada de ese cruce volvería aquí.
      llegan escenas nuevas. Mientras no estén todas, el perímetro es «provisional».
    - Si las nubes dejan ver menos de la mitad de la zona de los focos, la cifra se publica
      como mínimo («al menos X ha») o, si no se ve nada quemado, como «aún no se puede medir».
+   - Si más de la mitad de lo quemado solo lo vio una imagen, el filtro del segundo NBR no
+     actúa: la ficha avisa de que la cifra puede sobrar y no se da por definitiva hasta que
+     llegue otra imagen o pasen los 20 días.
+   - Cada ficha enlaza la imagen más despejada de antes y la de después en Copernicus Browser,
+     en infrarrojo de onda corta (B12-B8A-B4), para comprobar el perímetro a ojo.
+   - `PERIMETRO_VERSION` entra en la clave de cada perímetro: al cambiar el cálculo se sube y
+     se rehacen todos en las vueltas siguientes.
 6. **Estados.** «Activo» si hay algún foco en las últimas 24 h; «reciente» hasta 7 días;
    luego «inactivo».
    - Los **focos aislados** (uno o dos focos, sin perímetro EFFIS ni Red Natura) suelen ser
