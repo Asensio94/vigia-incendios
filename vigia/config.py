@@ -72,6 +72,14 @@ EFFIS_HOLGURA_KM = 1.0
 
 NOMINATIM = "https://nominatim.openstreetmap.org"
 
+# ── Perímetro, frente y progresión (después de FEDS, Chen et al. 2022) ─────────────────
+# Calibrados con la temporada 2023 contra EFFIS y comprobados en 2024 (docs/validacion.md).
+PIXEL_RADIUS_FACTOR = 0.5         # radio del disco de cada píxel, en medios píxeles
+CLOSING_KM = 0.75                 # cierre morfológico: rellena huecos de menos de 2 × 0,75 km
+STEP_MERGE_HOURS = 1.0            # píxeles a menos de 1 h son la misma pasada
+FRONT_KM = 0.3                    # borde a menos de 300 m de un píxel de la última pasada = frente
+PERIMETER_MIN_VIIRS = 3           # con menos, el perímetro no añade nada a la huella de píxeles
+
 # ── Superficie quemada con Sentinel-2 ──────────────────────────────────────────────────
 # Escenas L2A de Earth Search (AWS), sin clave. NBR con B8A (nir08) y B12 (swir22), a 20 m.
 STAC_URL = "https://earth-search.aws.element84.com/v1"

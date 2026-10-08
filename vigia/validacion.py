@@ -16,7 +16,7 @@ from scipy.spatial import cKDTree
 from shapely import STRtree
 from shapely.geometry import Point, shape
 
-from . import config, effis, focos as F, incendios as I, zonas
+from . import config, effis, focos as F, incendios as I, perimeter, zonas
 
 CLASES = [(30, 100), (100, 500), (500, 1e9)]
 
@@ -59,8 +59,10 @@ def incendios_archivo(anio: int, datos: dict) -> tuple[list[dict], int]:
     incs = []
     for fs in grupos.values():
         g = I.huella(fs)
+        n_viirs = sum(f["sensor"] == "VIIRS" for f in fs)
         incs.append({"primera": min(f["t"] for f in fs), "ultima": max(f["t"] for f in fs),
-                     "n": len(fs), "ha": zonas.ha_geo(g), "g": g})
+                     "n": len(fs), "ha": zonas.ha_geo(g), "g": g,
+                     "p": perimeter.geometry(fs) if n_viirs >= config.PERIMETER_MIN_VIIRS else None})
     return incs, len(focos)
 
 
@@ -96,11 +98,14 @@ def _medir(incs: list[dict], areas: list[dict]) -> dict:
     usados = set()
     filas = []
     for a, hit in zip(areas, emparejar(incs, areas)):
+        fila = {"area_ha": a["area_ha"], "hit": hit, "retraso_h": None, "ha_focos": None}
         if hit is not None:
             usados.add(hit)
-        filas.append({"area_ha": a["area_ha"], "hit": hit,
-                      "retraso_h": F.horas_entre(a["firedate"], incs[hit]["primera"]) if hit is not None else None,
-                      "ha_focos": incs[hit]["ha"] if hit is not None else None})
+            i, e = incs[hit], shape(a["geometry"])
+            p = i["p"] if i.get("p") is not None else i["g"]
+            fila.update(retraso_h=F.horas_entre(a["firedate"], i["primera"]), ha_focos=i["ha"],
+                        ha_perimetro=zonas.ha_geo(p), iou_huella=_iou(i["g"], e), iou_perimetro=_iou(p, e))
+        filas.append(fila)
 
     out = {"effis_total": len(areas), "clases": []}
     for lo, hi in CLASES:
@@ -111,7 +116,10 @@ def _medir(incs: list[dict], areas: list[dict]) -> dict:
             "desde": lo, "hasta": hi if hi < 1e9 else None, "effis": len(fs), "detectados": len(det),
             "retraso_mediana_h": round(float(np.median(ret)), 1) if len(ret) else None,
             "antes_que_effis": int((ret <= 0).sum()),
-            "ratio_ha_mediana": round(float(np.median([f["ha_focos"] / f["area_ha"] for f in det])), 2) if det else None,
+            "ratio_ha_mediana": _mediana([f["ha_focos"] / f["area_ha"] for f in det]),
+            "ratio_perimetro_mediana": _mediana([f["ha_perimetro"] / f["area_ha"] for f in det]),
+            "iou_huella_mediana": _mediana([f["iou_huella"] for f in det]),
+            "iou_perimetro_mediana": _mediana([f["iou_perimetro"] for f in det]),
         })
     # Incendios del vigía sin ningún perímetro EFFIS (de cualquier tamaño).
     sin = [i for k, i in enumerate(incs) if k not in usados]
@@ -125,24 +133,47 @@ def _medir(incs: list[dict], areas: list[dict]) -> dict:
     return out
 
 
+def _iou(a, b) -> float:
+    """Intersection over union; areas in square degrees are fine for a ratio at one latitude."""
+    a, b = a.buffer(0), b.buffer(0)
+    u = a.union(b).area
+    return a.intersection(b).area / u if u else 0.0
+
+
+def _mediana(xs: list[float]) -> float | None:
+    return round(float(np.median(xs)), 2) if xs else None
+
+
+def _d(x: float | None) -> str:
+    return f"{x:.2f}".replace(".", ",") if x is not None else "—"
+
+
 def informe(res: dict) -> str:
     L = ["# Contraste con temporadas pasadas", "",
          "Reglas de la vigilancia aplicadas al archivo estándar de FIRMS (VIIRS S-NPP, NOAA-20 y "
          "MODIS) y comparadas con las áreas quemadas de EFFIS en España. Un incendio de EFFIS "
          "cuenta como detectado si su perímetro toca la huella de focos de un incendio del vigía "
          f"(con {config.EFFIS_HOLGURA_KM:g} km de margen) y su fecha cae dentro de las del incendio "
-         f"(± {config.EFFIS_HOLGURA_DIAS} días). La máscara de fuentes fijas de cada año sale del otro año.", ""]
+         f"(± {config.EFFIS_HOLGURA_DIAS} días). La máscara de fuentes fijas de cada año sale del otro año.", "",
+         "Las dos últimas columnas comparan con EFFIS la huella de píxeles y el perímetro estimado "
+         "(solo en incendios con al menos " f"{config.PERIMETER_MIN_VIIRS} píxeles VIIRS). El IoU es "
+         "superficie común entre superficie unida: 1 sería el mismo dibujo. Sale bajo cuando un "
+         "incendio del vigía abarca varias áreas EFFIS, porque se compara con cada una por separado. "
+         f"Parámetros del perímetro ({config.PIXEL_RADIUS_FACTOR:g} de radio, {config.CLOSING_KM:g} km de "
+         "cierre) elegidos con 2023; 2024 sirve de comprobación.", ""]
     for a, r in res.items():
         L += [f"## {a}", "", f"{r['focos']:,} focos tras los filtros; {r['vigia_total']:,} incendios del vigía; "
               f"{r['effis_total']:,} áreas EFFIS de cualquier tamaño.".replace(",", "."), "",
-              "| Tamaño (EFFIS) | Incendios EFFIS | Detectados | Retraso mediano | Vistos antes que la fecha EFFIS | Superficie de focos / EFFIS (mediana) |",
-              "|---|---:|---:|---:|---:|---:|"]
+              "| Tamaño (EFFIS) | Incendios EFFIS | Detectados | Retraso mediano | Vistos antes que la fecha EFFIS "
+              "| Superficie / EFFIS: píxeles · perímetro | Coincidencia (IoU): píxeles · perímetro |",
+              "|---|---:|---:|---:|---:|---:|---:|"]
         for c in r["clases"]:
             t = f"{c['desde']}–{c['hasta']} ha" if c["hasta"] else f"≥ {c['desde']} ha"
             pct = f" ({100 * c['detectados'] / c['effis']:.0f} %)" if c["effis"] else ""
             ret = f"{c['retraso_mediana_h']:+.1f} h".replace(".", ",") if c["retraso_mediana_h"] is not None else "—"
-            rat = f"{c['ratio_ha_mediana']:.2f}".replace(".", ",") if c["ratio_ha_mediana"] is not None else "—"
-            L.append(f"| {t} | {c['effis']} | {c['detectados']}{pct} | {ret} | {c['antes_que_effis']} | {rat} |")
+            rat = f"{_d(c['ratio_ha_mediana'])} · {_d(c.get('ratio_perimetro_mediana'))}"
+            iou = f"{_d(c.get('iou_huella_mediana'))} · {_d(c.get('iou_perimetro_mediana'))}"
+            L.append(f"| {t} | {c['effis']} | {c['detectados']}{pct} | {ret} | {c['antes_que_effis']} | {rat} | {iou} |")
         L += ["", "Incendios del vigía que coinciden con algún perímetro EFFIS, según su número de focos:", "",
               "| Focos | Con perímetro EFFIS | Total |", "|---:|---:|---:|"]
         for n, (con, tot) in r["vigia_con_effis_por_focos"].items():

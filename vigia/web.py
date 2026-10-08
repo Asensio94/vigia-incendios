@@ -20,8 +20,11 @@ def relevante(i: dict) -> bool:
 
 def _ligero(i: dict) -> dict:
     claves = ("id", "estado", "primera", "ultima", "n_focos", "pasadas", "satelites", "frp_max",
-              "ha_focos", "centro", "lugar", "cobertura", "natura", "effis", "effis_ha", "unidos")
+              "ha_focos", "centro", "lugar", "cobertura", "natura", "effis", "effis_ha", "unidos",
+              "perimeter_ha", "front_km", "front_t", "max_growth_ha_h")
     out = {k: i[k] for k in claves if i.get(k) is not None}
+    if i.get("progression"):
+        out["progression"] = [[r["t"], r["ha"]] for r in i["progression"]]
     out["tipo"] = I.tipo(i)
     out["relevante"] = relevante(i)
     if i.get("perimetro"):
@@ -57,7 +60,9 @@ def construir(reg: dict, todos: list[dict], areas: list[dict]) -> None:
     vivos = [i for i in reg["incendios"] if i.get("estado") != "unido" and i.get("ultima")]
     visibles = [i for i in vivos if i["estado"] in ("activo", "reciente")
                 or (relevante(i) and i["ultima"] >= desde)]
-    feats = [{"type": "Feature", "geometry": i["geometry"], "properties": _ligero(i)} for i in visibles]
+    feats = [{"type": "Feature", "geometry": _forma(i), "properties": _ligero(i)} for i in visibles]
+    frentes = [{"type": "Feature", "geometry": i["front"], "properties": {"id": i["id"], "t": i["front_t"]}}
+               for i in visibles if i["estado"] == "activo" and i.get("front")]
 
     hace7 = F.hace(config.RECIENTE_DIAS * 24, F._dt(ahora))
     sats = sorted({f["sat"] for f in todos})
@@ -73,6 +78,7 @@ def construir(reg: dict, todos: list[dict], areas: list[dict]) -> None:
         "incendios": {"type": "FeatureCollection", "features": feats},
         "focos": puntos, "sats": sats,
         "effis": {"type": "FeatureCollection", "features": perimetros},
+        "frentes": {"type": "FeatureCollection", "features": frentes},
         "s2": _quemado(visibles, 0.0002),
         "redir": {i["id"]: i["unido_en"] for i in reg["incendios"] if i.get("unido_en")},
         "estados": I.ESTADOS, "grupos": I.GRUPOS_CLC,
@@ -97,14 +103,19 @@ def construir(reg: dict, todos: list[dict], areas: list[dict]) -> None:
     (config.SITE / "index.html").write_text(html, encoding="utf-8")
     shutil.copy(zonas.NATURA_WEB, config.SITE / "natura.geojson")
     todos_gj = {"type": "FeatureCollection", "features": [
-        {"type": "Feature", "geometry": i["geometry"],
-         "properties": {**{k: v for k, v in i.items() if k not in ("geometry", "perimetro")},
+        {"type": "Feature", "geometry": _forma(i),
+         "properties": {**{k: v for k, v in i.items() if k not in ("geometry", "perimeter", "front", "perimetro")},
                         **({"perimetro_s2": s2_ligero(i["perimetro"])} if i.get("perimetro") else {})}}
         for i in vivos]}
     (config.SITE / "incendios.geojson").write_text(json.dumps(todos_gj, ensure_ascii=False), encoding="utf-8")
     (config.SITE / "quemado.geojson").write_text(json.dumps(_quemado(vivos), ensure_ascii=False), encoding="utf-8")
     (config.SITE / "feed.xml").write_text(_feed(vivos, ahora), encoding="utf-8")
     (config.SITE / ".nojekyll").write_text("")
+
+
+def _forma(i: dict) -> dict:
+    """Perimeter when there is one (three VIIRS pixels or more), else the pixel footprint."""
+    return i.get("perimeter") or i["geometry"]
 
 
 def _titulo(i: dict) -> str:
@@ -122,7 +133,10 @@ def _feed(vivos: list[dict], ahora: str) -> str:
     for i in rel:
         nat = ", ".join(f"{e['tipo']} {e['nombre']}" for e in i.get("natura", [])[:3])
         resumen = (f"{i['n_focos']} focos en {i['pasadas']} pasadas, del {i['primera']} al {i['ultima']} (UTC). "
-                   f"Píxeles con focos: {i['ha_focos']:g} ha. Arde sobre: {I.tipo(i)}."
+                   f"Píxeles con focos: {i['ha_focos']:g} ha."
+                   + (f" Perímetro estimado: {i['perimeter_ha']:g} ha; frente activo de {i['front_km']:g} km"
+                      f" en la última pasada." if i.get("perimeter_ha") else "")
+                   + f" Arde sobre: {I.tipo(i)}."
                    + (f" Red Natura: {nat}." if nat else "")
                    + (f" Superficie quemada estimada con Sentinel-2: {'al menos ' if i['perimetro'].get('nublado') else ''}{i['perimetro']['ha']:g} ha"
                       f"{'' if i['perimetro'].get('definitivo') else ' (provisional)'}"
@@ -158,6 +172,8 @@ def _parametros() -> str:
         ("Activo", f"algún foco en las últimas {config.ACTIVO_HORAS} h"),
         ("Qué arde", f"CORINE Land Cover 2018 en hasta {config.CLC_MUESTRAS} celdas con focos; vegetación natural si bosque, matorral, dehesa y roquedo suman la mitad"),
         ("Perímetro EFFIS", f"área quemada que toca la huella (con {config.EFFIS_HOLGURA_KM:g} km de margen) y empezó entre {config.EFFIS_HOLGURA_DIAS} días antes del primer foco y {config.EFFIS_HOLGURA_DIAS} días después del último"),
+        ("Perímetro estimado", f"con {config.PERIMETER_MIN_VIIRS} píxeles VIIRS o más: cada píxel es un disco de {config.PIXEL_RADIUS_FACTOR:g} veces medio píxel de radio; tras cada pasada se suma a lo anterior y se cierran los huecos de menos de {2 * config.CLOSING_KM:g} km, así que nunca encoge (como FEDS, de la NASA)".replace(".", ",")),
+        ("Frente activo", f"borde del perímetro a menos de {config.FRONT_KM * 1000:g} m de un píxel de la última pasada"),
         ("Quemado (Sentinel-2)", f"dNBR mayor que {_es(config.DNBR_UMBRAL)}, a {config.PERIMETRO_RES_M} m, en manchas que tocan los focos y a menos de {_es(config.PERIMETRO_ANCLA_M)} m de ellos; antes, mediana de hasta {config.PRE_ESCENAS_MAX} escenas de los {config.PRE_DIAS} días previos; después, el segundo NBR más bajo (el más bajo si solo hay una imagen) desde el primer foco hasta {config.POST_ESCENAS_TRAS} escenas tras el último"),
         ("Severidad", "dNBR hasta 0,27 baja; de 0,27 a 0,66 moderada; más de 0,66 alta (Key y Benson, simplificado)"),
         ("Frecuencia", "cada hora; FIRMS publica los focos unas tres horas después de la pasada"),
@@ -287,6 +303,9 @@ dl.medidas dd{margin:0;font:500 15px "IBM Plex Mono",monospace;font-variant-nume
 .barra{display:flex;height:8px;background:var(--linea);overflow:hidden}
 .barra span{display:block;height:100%}
 .reparto{display:grid;gap:4px;font-size:13.5px}
+.progresion{margin:0;color:var(--activo)}
+.progresion svg{width:100%;max-width:300px;height:56px;display:block}
+.progresion figcaption{font-size:12.5px;color:var(--gris)}
 .reparto p{margin:0;color:var(--gris)}
 .espacios{margin:0;padding:0;list-style:none;display:grid;gap:3px;font-size:14.5px}
 .espacios li{padding-left:10px;border-left:2px solid var(--natura)}
@@ -435,9 +454,11 @@ mapa.on("overlayadd", e => { if (e.layer===capaNatura && !naturaCargada){ natura
 const capaS2 = L.geoJSON(D.s2,{style:()=>({color:css("--quemado"),weight:1,fillColor:css("--quemado"),fillOpacity:.35}),
   onEachFeature:(f,l)=>l.bindTooltip(`Quemado según Sentinel-2: ${f.properties.nublado?"al menos ":""}${num(f.properties.ha)} ha${f.properties.definitivo?"":" (provisional)"}`,{sticky:true})}).addTo(mapa);
 const capaEffis = L.geoJSON(D.effis,{style:()=>({color:css("--effis"),weight:1.5,dashArray:"4 3",fill:false})}).addTo(mapa);
+const capaFrentes = L.geoJSON(D.frentes,{style:()=>({color:css("--activo"),weight:4,opacity:.9}),
+  onEachFeature:(f,l)=>l.bindTooltip(`Frente activo en la pasada de ${hora(f.properties.t)}`,{sticky:true})}).addTo(mapa);
 const capaFocos = L.layerGroup().addTo(mapa);
 const capaHuellas = L.layerGroup().addTo(mapa);
-L.control.layers({"Mapa":osm,"Ortofoto PNOA":pnoa},{"Focos (7 días)":capaFocos,"Incendios":capaHuellas,"Quemado (Sentinel-2)":capaS2,"Perímetros EFFIS":capaEffis,"Red Natura 2000":capaNatura},{collapsed:true}).addTo(mapa);
+L.control.layers({"Mapa":osm,"Ortofoto PNOA":pnoa},{"Focos (7 días)":capaFocos,"Incendios":capaHuellas,"Frentes activos":capaFrentes,"Quemado (Sentinel-2)":capaS2,"Perímetros EFFIS":capaEffis,"Red Natura 2000":capaNatura},{collapsed:true}).addTo(mapa);
 
 const colorEdad = t => { const h=(AHORA-ms(t))/36e5; return css(h<6?"--f6":h<24?"--f24":h<72?"--f72":"--fviejo"); };
 const colorEstado = e => css(e==="activo"?"--activo":e==="reciente"?"--reciente":"--inactivo");
@@ -461,6 +482,17 @@ function pintarFocos(){
 const titulo = p => { const l=p.lugar||{}; let s=l.municipio||l.provincia||"lugar sin nombre";
   if (l.provincia && l.provincia!==s) s+=` (${l.provincia})`; return (p.relevante?"Incendio en ":"Foco aislado en ")+s; };
 const COLG = {bosque:"#3f7a3a",matorral:"#8a9a3c",agroforestal:"#b59b45",desnudo:"#9b8c7e",agricola:"#d8b55b",artificial:"#7b6f86",agua:"#3f7fb0"};
+// Superficie del perímetro tras cada pasada: una escalera, porque solo cambia cuando pasa un satélite.
+function progresion(p){
+  const r = p.progression||[]; if (r.length<3) return "";
+  const t0=ms(r[0][0]), t1=Math.max(ms(r[r.length-1][0]),t0+1), hmax=Math.max(...r.map(x=>x[1]));
+  const X=t=>4+292*(ms(t)-t0)/(t1-t0), Y=h=>52-48*h/hmax;
+  let d=`M${X(r[0][0]).toFixed(1)},${Y(r[0][1]).toFixed(1)}`;
+  for (const [t,h] of r.slice(1)) d+=`H${X(t).toFixed(1)}V${Y(h).toFixed(1)}`;
+  return `<figure class="progresion"><svg viewBox="0 0 300 56" role="img" aria-label="Superficie del perímetro tras cada pasada">
+    <path d="${d}" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+    <figcaption>Perímetro tras cada una de las ${r.length} pasadas: de ${num(r[0][1])} a ${num(r[r.length-1][1])} ha.</figcaption></figure>`;
+}
 function ficha(p){
   const reparto = p.cobertura && Object.keys(p.cobertura).length ? `<div class="reparto">
     <div class="barra" role="img" aria-label="Cubierta del suelo">${Object.entries(p.cobertura).map(([k,v])=>`<span style="width:${v*100}%;background:${COLG[k]||"#999"}" title="${esc(D.grupos[k])}"></span>`).join("")}</div>
@@ -495,9 +527,13 @@ function ficha(p){
       <div><dt>Focos</dt><dd>${num(p.n_focos)}</dd></div>
       <div><dt>Pasadas</dt><dd>${num(p.pasadas)}</dd></div>
       <div><dt>Píxeles con focos</dt><dd>${num(p.ha_focos)} ha</dd></div>
+      ${p.perimeter_ha!=null ? `<div><dt>Perímetro estimado</dt><dd>${num(p.perimeter_ha)} ha</dd></div>` : ""}
+      ${p.estado==="activo" && p.front_km ? `<div><dt>Frente activo</dt><dd>${num(p.front_km,1)} km</dd></div>` : ""}
+      ${p.max_growth_ha_h ? `<div><dt>Crecimiento máximo</dt><dd>${num(p.max_growth_ha_h)} ha/h</dd></div>` : ""}
       ${p.s2?.ha ? `<div><dt>Quemado (Sentinel-2)</dt><dd>${p.s2.nublado?"≥ ":""}${num(p.s2.ha)} ha</dd></div>` : ""}
       <div><dt>Potencia máxima</dt><dd>${num(p.frp_max)} MW</dd></div>
     </dl>
+    ${progresion(p)}
     ${reparto}${nat}${s2}${ef}${un}
     <div class="acciones"><button type="button" data-zoom="${esc(p.id)}">Ver en el mapa</button>
       <a href="${firms}">Focos en FIRMS</a><a href="#${esc(p.id)}">Enlace</a></div>
