@@ -13,21 +13,6 @@ Está pensado para que periodistas y entidades de conservación sepan en pocas h
 arde, dónde y si toca un espacio protegido. No sustituye a la información oficial de
 extinción: un foco es un píxel caliente, no un parte.
 
-## Datos de censos de especies
-
-**El vigía no incorpora datos de censos de especies** (colonias, nidos, dormideros,
-territorios ni cualquier otra ubicación precisa de individuos o poblaciones).
-
-- Esa información es interna de las entidades que la producen y les pertenece a ellas.
-- No se publica en la web, no se guarda en este repositorio, ni en su historial ni en sus
-  artefactos, y no interviene en ningún cálculo.
-- Una ubicación precisa de una colonia junto a un incendio, publicada en abierto, puede
-  poner en riesgo a la especie (molestias, expolio, persecución).
-
-Si algún día se cruzara con censos, sería en una instalación privada de la entidad
-propietaria, que leería los incendios de este repositorio (el GeoJSON o la fuente Atom) y
-haría el cruce en su lado. Nada de ese cruce volvería aquí.
-
 ## Cómo funciona
 
 1. **Focos.** Cada hora se descargan los ficheros públicos de FIRMS de las últimas 48 horas
@@ -108,6 +93,21 @@ del vigía no los tapan.
   esté sin controlar.
 - La cubierta del suelo es de 2018.
 
+### Datos de censos de especies
+
+**El vigía no incorpora datos de censos de especies** (colonias, nidos, dormideros,
+territorios ni cualquier otra ubicación precisa de individuos o poblaciones).
+
+- Esa información es interna de las entidades que la producen y les pertenece a ellas.
+- No se publica en la web, no se guarda en este repositorio, ni en su historial ni en sus
+  artefactos, y no interviene en ningún cálculo.
+- Una ubicación precisa de una colonia junto a un incendio, publicada en abierto, puede
+  poner en riesgo a la especie (molestias, expolio, persecución).
+
+Si algún día se cruzara con censos, sería en una instalación privada de la entidad
+propietaria, que leería los incendios de este repositorio (el GeoJSON o la fuente Atom) y
+haría el cruce en su lado. Nada de ese cruce volvería aquí.
+
 ## Pendiente
 
 - **Atlas de aves.** Se cruzará con las cuadrículas de 10×10 km de los atlas de
@@ -130,7 +130,7 @@ El workflow [`vigilancia.yml`](.github/workflows/vigilancia.yml) ejecuta `vigila
 hora en GitHub Actions. Guarda `data/` cuando entran focos nuevos y publica `site/` en la
 rama `gh-pages`.
 
-### Datos que se guardan
+## Datos que se guardan
 
 | Fichero | Contenido |
 |---|---|
@@ -150,3 +150,13 @@ rama `gh-pages`.
 - **Ortofoto:** PNOA, CC BY 4.0 scne.es.
 
 El código se publica bajo licencia MIT.
+
+Forma parte de un conjunto de proyectos hermanos:
+[Observatorio de alegaciones](https://asensio94.github.io/observatorio-alegaciones/) ·
+[Centinela Natura](https://asensio94.github.io/centinela-natura/) ·
+[Vigilancia de humedales](https://asensio94.github.io/vigilancia-humedales/) ·
+[Sub Nocte](https://asensio94.github.io/sub-nocte/) ·
+[Riesgo de tendidos para aves](https://asensio94.github.io/riesgo-tendidos-aves/) ·
+[Grafo de promotores](https://asensio94.github.io/grafo-promotores/) ·
+[Cartera de las cotizadas](https://asensio94.github.io/cartera-cotizadas/) ·
+[Cuaderno de campo](https://asensio94.github.io/cuaderno-campo/).
