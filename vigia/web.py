@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 import shutil
 from datetime import datetime, timezone
+from pathlib import Path
 from xml.sax.saxutils import escape
 
 from shapely.geometry import shape
@@ -11,6 +12,8 @@ from shapely.geometry import shape
 from . import config, focos as F, incendios as I, zonas
 
 TEMPORADA_DIAS = 120
+# Shared stylesheet of the sibling projects, copied verbatim and inlined into the page.
+COMMON_CSS = (Path(__file__).with_name("common.css")).read_text(encoding="utf-8").strip()
 
 
 def relevante(i: dict) -> bool:
@@ -88,6 +91,7 @@ def construir(reg: dict, todos: list[dict], areas: list[dict]) -> None:
     validacion = (json.loads((config.DATA / "validacion.json").read_text(encoding="utf-8"))
                   if (config.DATA / "validacion.json").exists() else {})
     html = (PLANTILLA
+            .replace("__COMMON_CSS__", COMMON_CSS)
             .replace("__ACTIVOS__", str(sum(relevante(i) for i in activos)))
             .replace("__AISLADOS__", str(sum(not relevante(i) for i in activos)))
             .replace("__NATURA__", str(sum(bool(i.get("natura")) for i in activos if relevante(i))))
@@ -228,51 +232,39 @@ PLANTILLA = r"""<!doctype html>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <style>
+__COMMON_CSS__
+:root{--accent:#c2410c;--accent-dark:#fb7b3e}
+/* Spanish tokens point at the common ones; map and state colours stay here. */
 :root{
-  --suelo:#f0edea; --papel:#faf8f6; --tinta:#221d1a; --gris:#6b625c; --linea:#dad2cb;
-  --brasa:#c2410c; --activo:#d0310f; --reciente:#a8660a; --inactivo:#857a72;
-  --natura:#2f7a55; --natura-f:rgba(47,122,85,.10); --effis:#6b3fa0;
+  --suelo:var(--ground); --papel:var(--paper); --tinta:var(--ink); --gris:var(--muted); --linea:var(--line);
+  --brasa:var(--accent); --sombra:var(--shadow);
+  --activo:#d0310f; --reciente:#a8660a; --inactivo:#857a72;
+  --natura-f:rgba(47,122,85,.10); --effis:#6b3fa0;
   --quemado:#6e2a12; --sev-baja:#e3b48c; --sev-mod:#b5582b; --sev-alta:#4f1a0b;
   --f6:#b0140a; --f24:#e8590c; --f72:#f2a33a; --fviejo:#a99d94;
-  --sombra:0 1px 0 rgba(34,29,26,.06), 0 6px 18px -10px rgba(34,29,26,.28);
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --suelo:#15110f; --papel:#1d1815; --tinta:#ede6e0; --gris:#a69a91; --linea:#362d28;
-    --brasa:#fb7b3e; --activo:#ff6b45; --reciente:#e8a547; --inactivo:#8f847c;
-    --natura:#62b88a; --natura-f:rgba(98,184,138,.12); --effis:#b08ce0;
+    --activo:#ff6b45; --reciente:#e8a547; --inactivo:#8f847c;
+    --natura-f:rgba(98,184,138,.12); --effis:#b08ce0;
     --quemado:#e9804e; --sev-baja:#6b4a37; --sev-mod:#b8612f; --sev-alta:#ff9a66;
     --f6:#ff4d3a; --f24:#ff8a3d; --f72:#f5c26b; --fviejo:#6f655e;
-    --sombra:0 1px 0 rgba(0,0,0,.3), 0 8px 22px -12px rgba(0,0,0,.7);
   }
 }
 :root[data-theme="dark"]{
-  --suelo:#15110f; --papel:#1d1815; --tinta:#ede6e0; --gris:#a69a91; --linea:#362d28;
-  --brasa:#fb7b3e; --activo:#ff6b45; --reciente:#e8a547; --inactivo:#8f847c;
-  --natura:#62b88a; --natura-f:rgba(98,184,138,.12); --effis:#b08ce0;
+  --activo:#ff6b45; --reciente:#e8a547; --inactivo:#8f847c;
+  --natura-f:rgba(98,184,138,.12); --effis:#b08ce0;
   --quemado:#e9804e; --sev-baja:#6b4a37; --sev-mod:#b8612f; --sev-alta:#ff9a66;
   --f6:#ff4d3a; --f24:#ff8a3d; --f72:#f5c26b; --fviejo:#6f655e;
-  --sombra:0 1px 0 rgba(0,0,0,.3), 0 8px 22px -12px rgba(0,0,0,.7);
 }
-*{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--suelo);color:var(--tinta);font:17px/1.55 "Source Serif 4",Georgia,serif}
-a{color:inherit;text-decoration-color:var(--brasa);text-underline-offset:3px}
-a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--brasa);outline-offset:2px}
-.rotulo{font-family:"Barlow Condensed","Arial Narrow",sans-serif;text-transform:uppercase;letter-spacing:.08em;font-weight:600}
-.dato{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
-header.cabecera{padding:28px 16px 18px;max-width:1440px;margin:0 auto;display:grid;gap:14px}
+.rotulo{font-family:var(--font-title);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.dato{font-family:var(--font-data);font-variant-numeric:tabular-nums}
 .marca{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
-h1{margin:0;font:700 clamp(40px,6vw,64px)/.9 "Barlow Condensed","Arial Narrow",sans-serif;text-transform:uppercase;letter-spacing:.02em}
-h1 span{color:var(--brasa)}
 .marca .rotulo{color:var(--gris);font-size:14px}
-.lede{margin:0;max-width:70ch;font-size:18px;text-wrap:pretty}
-.cifras{display:flex;flex-wrap:wrap;border-top:1.5px solid var(--tinta);border-bottom:1px solid var(--linea)}
-.cifra{padding:10px 18px 10px 0;margin-right:18px;display:grid;gap:2px}
-.cifra b{font:600 30px/1 "IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
-.cifra.vivo b{color:var(--activo)}
-.cifra span{font-size:12.5px;color:var(--gris)}
-.cifra.meta b{font-size:17px;line-height:1.75}
+.site-header .lede{text-wrap:pretty}
+.figures .vivo b{color:var(--activo)}
+.figures .meta b{font-size:17px;line-height:1.75}
 main{max-width:1440px;margin:0 auto;padding:0 16px;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(360px,1fr);gap:18px;align-items:start}
 .mapa-caja{position:sticky;top:12px;display:grid;gap:6px}
 #mapa{height:calc(100vh - 60px);min-height:420px;border:1px solid var(--linea);background:var(--papel)}
@@ -282,15 +274,15 @@ main{max-width:1440px;margin:0 auto;padding:0 16px;display:grid;grid-template-co
 .lista{display:grid;gap:14px;padding-bottom:40px}
 .filtros{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;padding:10px 0;border-bottom:1px solid var(--linea);position:sticky;top:0;background:var(--suelo);z-index:5}
 .filtros label{font-size:13px;color:var(--gris);display:flex;gap:6px;align-items:center}
-.filtros select{max-width:min(240px,62vw);font:14px "Source Serif 4",serif;background:var(--papel);color:var(--tinta);border:1px solid var(--linea);padding:4px 6px}
+.filtros select{max-width:min(240px,62vw);font:14px var(--font-text);background:var(--papel);color:var(--tinta);border:1px solid var(--linea);padding:4px 6px}
 .filtros input{accent-color:var(--brasa)}
 .cuenta{margin-left:auto;font-size:13px;color:var(--gris)}
 .ficha{background:var(--papel);border:1px solid var(--linea);box-shadow:var(--sombra);padding:14px 16px 16px;display:grid;gap:9px;scroll-margin-top:60px}
 .ficha.sel{border-color:var(--brasa);box-shadow:0 0 0 1px var(--brasa),var(--sombra)}
 .ficha header{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
-.ficha h2{margin:0;font:600 22px/1.15 "Barlow Condensed","Arial Narrow",sans-serif;letter-spacing:.01em;flex:1 1 100%;text-wrap:balance}
+.ficha h2{margin:0;font:600 22px/1.15 var(--font-title);letter-spacing:.01em;flex:1 1 100%;text-wrap:balance}
 .id{font-size:12px;color:var(--gris)}
-.sello{font:600 12px/1 "Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.09em;padding:4px 7px 3px;border:1.5px solid currentColor}
+.sello{font:600 12px/1 var(--font-title);text-transform:uppercase;letter-spacing:.09em;padding:4px 7px 3px;border:1.5px solid currentColor}
 .sello.activo{color:var(--activo);background:color-mix(in srgb,var(--activo) 10%,transparent)}
 .sello.reciente{color:var(--reciente)} .sello.inactivo{color:var(--inactivo)}
 .sello.natura{color:var(--natura)} .sello.effis{color:var(--effis)}
@@ -299,7 +291,7 @@ main{max-width:1440px;margin:0 auto;padding:0 16px;display:grid;grid-template-co
 dl.medidas{margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:8px 12px}
 dl.medidas div{display:grid;gap:1px}
 dl.medidas dt{font-size:11.5px;color:var(--gris)}
-dl.medidas dd{margin:0;font:500 15px "IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+dl.medidas dd{margin:0;font:500 15px var(--font-data);font-variant-numeric:tabular-nums}
 .barra{display:flex;height:8px;background:var(--linea);overflow:hidden}
 .barra span{display:block;height:100%}
 .reparto{display:grid;gap:4px;font-size:13.5px}
@@ -320,48 +312,45 @@ dl.medidas dd{margin:0;font:500 15px "IBM Plex Mono",monospace;font-variant-nume
 .acciones{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14px}
 .acciones button{font:inherit;background:none;border:0;padding:0;color:inherit;text-decoration:underline;text-decoration-color:var(--brasa);text-underline-offset:3px;cursor:pointer}
 .vacio{padding:28px 16px;border:1px dashed var(--linea);color:var(--gris);text-align:center}
-section.metodo{max-width:1440px;margin:24px auto 0;padding:26px 16px 40px;border-top:1.5px solid var(--tinta);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
-section.metodo h2{margin:0 0 6px;font:700 28px/1 "Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.03em}
-section.metodo h3{margin:18px 0 4px;font:600 18px/1.2 "Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.06em}
-section.metodo p{margin:0 0 10px;max-width:66ch}
+.method{margin-top:24px;padding-bottom:40px;border-top:1.5px solid var(--tinta);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
+.method p{margin:0 0 10px}
+.method ol{margin:0 0 10px;padding-left:1.4em}
+.method ol li{margin-bottom:8px}
+.method > div > h3:first-child{margin-top:0}
 .aviso{border-left:3px solid var(--brasa);padding:2px 0 2px 12px}
-table.params{border-collapse:collapse;width:100%;font-size:14.5px}
-table.params th,table.params td{text-align:left;vertical-align:top;padding:7px 10px 7px 0;border-bottom:1px solid var(--linea)}
-table.params th{font-weight:600;width:34%}
-table.valid th{width:auto}
-footer{max-width:1440px;margin:0 auto;padding:16px 16px 40px;font-size:13px;color:var(--gris);border-top:1px solid var(--linea)}
-.leaflet-container{background:var(--papel);font:13px "Source Serif 4",serif}
+.method table.params th{white-space:normal;width:34%}
+.method table.valid th{width:auto}
+.site-footer p{margin:0}
+.leaflet-container{background:var(--papel);font:13px var(--font-text)}
 .leaflet-control-layers,.leaflet-bar a{background:var(--papel);color:var(--tinta)}
 .leaflet-popup-content-wrapper,.leaflet-popup-tip{background:var(--papel);color:var(--tinta)}
 @media (max-width: 900px){
   main{grid-template-columns:1fr}
   .mapa-caja{position:relative;top:0}
   #mapa{height:56vh}
-  section.metodo{grid-template-columns:1fr}
+  .method{grid-template-columns:1fr}
   .filtros{position:static}
 }
 @media (max-width: 560px){
-  .cifras{display:grid;grid-template-columns:1fr 1fr;column-gap:12px}
-  .cifra{margin-right:0;padding-right:0}
-  .cifra b{font-size:26px}
-  .cifra.meta{grid-column:1/-1}
+  .figures{display:grid;grid-template-columns:1fr 1fr;column-gap:12px}
+  .figures .meta{grid-column:1/-1}
 }
 @media (prefers-reduced-motion: reduce){*{scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
-<header class="cabecera">
+<header class="site-header">
   <div class="marca">
     <h1>Vigía de <span>incendios</span></h1>
     <span class="rotulo">España · focos por satélite · cada hora</span>
   </div>
   <p class="lede">Incendios con focos activos vistos desde satélite, agrupados por reglas fijas y cruzados con la Red Natura 2000 y con las áreas quemadas que cartografía EFFIS. Sin esperar a la estadística oficial, y sin sustituirla: un foco es un píxel caliente, no un parte de extinción.</p>
-  <div class="cifras">
-    <div class="cifra vivo"><b>__ACTIVOS__</b><span>incendios con focos en las últimas 24 h</span></div>
-    <div class="cifra"><b>__NATURA__</b><span>de ellos, en la Red Natura 2000</span></div>
-    <div class="cifra"><b>__AISLADOS__</b><span>focos aislados aparte</span></div>
-    <div class="cifra"><b>__FOCOS24__</b><span>focos en las últimas 24 h</span></div>
-    <div class="cifra meta"><b class="dato" id="pasada">—</b><span>último foco visto · revisado a las <span id="actualizado"></span></span></div>
+  <div class="figures">
+    <div class="vivo"><b>__ACTIVOS__</b><span>incendios con focos en las últimas 24 h</span></div>
+    <div><b>__NATURA__</b><span>de ellos, en la Red Natura 2000</span></div>
+    <div><b>__AISLADOS__</b><span>focos aislados aparte</span></div>
+    <div><b>__FOCOS24__</b><span>focos en las últimas 24 h</span></div>
+    <div class="meta"><b class="dato" id="pasada">—</b><span>último foco visto · revisado a las <span id="actualizado"></span></span></div>
   </div>
 </header>
 
@@ -391,26 +380,29 @@ footer{max-width:1440px;margin:0 auto;padding:16px 16px 40px;font-size:13px;colo
   </div>
 </main>
 
-<section class="metodo" id="metodo">
+<section class="method" id="metodo">
   <div>
-    <h2>Cómo vigila</h2>
-    <p>Cada hora se descargan los focos activos que publica NASA FIRMS para la península, Baleares, Canarias, Ceuta y Melilla. Un foco es un píxel de 375 metros (VIIRS) o de un kilómetro (MODIS) donde el satélite ha medido más calor del normal en una pasada. Hay unas diez pasadas útiles al día entre los cinco satélites, y FIRMS publica cada una unas tres horas después.</p>
-    <p>Se quitan los focos de confianza baja, que suelen ser reflejos del sol en tejados e invernaderos, y los que caen junto a fuentes fijas de calor como cementeras, acerías o refinerías. Los demás se agrupan en incendios: dos focos son del mismo incendio si sus píxeles están a menos de dos kilómetros y se vieron con menos de tres días de diferencia, y basta una cadena de focos para unir un frente que avanza. Son reglas fijas: no interviene ningún modelo entrenado ni ninguna inteligencia artificial.</p>
-    <p>De cada incendio se calcula la extensión de sus píxeles, qué cubierta tenía el suelo según CORINE Land Cover 2018, los espacios de la Red Natura 2000 que toca y el municipio. Cuando EFFIS, el servicio europeo de incendios de Copernicus, publica el perímetro quemado, se enlaza.</p>
+    <h2>Cómo se calcula</h2>
+    <ol>
+      <li>Cada hora se descargan los focos activos que publica NASA FIRMS para la península, Baleares, Canarias, Ceuta y Melilla. Un foco es un píxel de 375 metros (VIIRS) o de un kilómetro (MODIS) donde el satélite ha medido más calor del normal en una pasada. Hay unas diez pasadas útiles al día entre los cinco satélites, y FIRMS publica cada una unas tres horas después.</li>
+      <li>Se quitan los focos de confianza baja, que suelen ser reflejos del sol en tejados e invernaderos, y los que caen junto a fuentes fijas de calor como cementeras, acerías o refinerías.</li>
+      <li>Los demás se agrupan en incendios: dos focos son del mismo incendio si sus píxeles están a menos de dos kilómetros y se vieron con menos de tres días de diferencia, y basta una cadena de focos para unir un frente que avanza. Son reglas fijas: no interviene ningún modelo entrenado ni ninguna inteligencia artificial.</li>
+      <li>De cada incendio se calcula la extensión de sus píxeles, qué cubierta tenía el suelo según CORINE Land Cover 2018, los espacios de la Red Natura 2000 que toca y el municipio. Cuando EFFIS, el servicio europeo de incendios de Copernicus, publica el perímetro quemado, se enlaza y su superficie pasa a ser la de referencia.</li>
+    </ol>
+    <h3>Parámetros</h3>
+    __METODO__
+  </div>
+  <div>
     <h3>Superficie quemada con Sentinel-2</h3>
     <p>EFFIS tarda días en cartografiar y apenas dibuja nada por debajo de 30 hectáreas. Para no esperar, el vigía mide lo quemado con las imágenes de Sentinel-2, que pasan cada dos o tres días con píxeles de 20 metros. Compara el índice de área quemada (NBR) de antes y de después del fuego: la vegetación quemada pierde reflectancia en el infrarrojo cercano y la gana en el de onda corta. Solo cuenta lo que cambia junto a los focos y unido a ellos, para que no entren cosechas ni labrados de las mismas semanas. Para que una sombra de nube o una bruma de una sola imagen no pase por ceniza, un píxel solo cuenta como quemado si lo ven al menos dos imágenes. El cálculo se rehace al llegar imágenes nuevas, hasta veinte días después del último foco. Si las nubes tapan más de la mitad de la zona, la cifra se da como mínimo («al menos») o no se da. Si lo quemado solo lo ha visto una imagen, ese filtro no puede actuar: la ficha lo avisa y la cifra no se da por definitiva hasta que llegue otra. Cada ficha enlaza la imagen de antes y la de después en Copernicus Browser, para que cualquiera pueda comprobar a ojo lo que dice el índice.</p>
-    <h3>Lo que hay que saber antes de citarlo</h3>
-    <p class="aviso">La extensión de los píxeles con focos no es la superficie quemada. En incendios pequeños la exagera, porque un fuego de una hectárea enciende un píxel de catorce; en los grandes puede quedarse corta. La superficie de Sentinel-2 es una estimación propia, contrastada con EFFIS más abajo. Como cifra oficial, la de EFFIS o la de la comunidad autónoma.</p>
-    <p>«Activo» quiere decir que el satélite vio calor en las últimas 24 horas, no que el incendio siga sin controlar. Al revés, un incendio puede seguir ardiendo sin focos si el humo o las nubes lo tapan o si arde bajo arbolado. Los focos aislados, uno o dos sin más señales, son a menudo quemas agrícolas o de rastrojos. Por eso no se muestran salvo que se pida.</p>
     <h3>Contraste con 2023 y 2024</h3>
     <p>Las mismas reglas, aplicadas al archivo de FIRMS de esos años, se compararon con los incendios que cartografió EFFIS en España. Un incendio de EFFIS cuenta como visto si su perímetro toca la huella de focos de un incendio del vigía en sus mismas fechas.</p>
     __VALIDACION__
     <p class="nota">Los que se escapan son sobre todo incendios cortos que arden entre dos pasadas o bajo nubes. Detalle en <a href="https://github.com/Asensio94/vigia-incendios/blob/main/docs/validacion.md">docs/validacion.md</a>.</p>
     __VALIDACION_S2__
-  </div>
-  <div>
-    <h2>Parámetros</h2>
-    __METODO__
+    <h3>Lo que hay que saber antes de citarlo</h3>
+    <p class="aviso">La extensión de los píxeles con focos no es la superficie quemada. En incendios pequeños la exagera, porque un fuego de una hectárea enciende un píxel de catorce; en los grandes puede quedarse corta. La superficie de Sentinel-2 es una estimación propia, contrastada con EFFIS más abajo. Como cifra oficial, la de EFFIS o la de la comunidad autónoma.</p>
+    <p>«Activo» quiere decir que el satélite vio calor en las últimas 24 horas, no que el incendio siga sin controlar. Al revés, un incendio puede seguir ardiendo sin focos si el humo o las nubes lo tapan o si arde bajo arbolado. Los focos aislados, uno o dos sin más señales, son a menudo quemas agrícolas o de rastrojos. Por eso no se muestran salvo que se pida.</p>
     <h3>Datos de censos de especies</h3>
     <p>El vigía no incorpora datos de censos de especies (colonias, nidos, dormideros ni territorios). Esa información es interna de las entidades que la producen: no se publica aquí, no se guarda en el repositorio y no se usa en ningún cálculo. Una ubicación precisa de una colonia junto a un incendio puede poner en riesgo a la especie.</p>
     <h3>Datos abiertos</h3>
@@ -418,8 +410,20 @@ footer{max-width:1440px;margin:0 auto;padding:16px 16px 40px;font-size:13px;colo
   </div>
 </section>
 
-<footer>
-  Focos activos: NASA FIRMS (LANCE), parte del Earth Science Data and Information System de la NASA · Áreas quemadas: EFFIS, Copernicus Emergency Management Service, © Unión Europea · Imágenes Sentinel-2: Copernicus, © Unión Europea, vía Earth Search (Element 84) · Red Natura 2000 y CORINE Land Cover 2018: Agencia Europea de Medio Ambiente · Municipios: Nominatim, © colaboradores de OpenStreetMap (ODbL) · Ortofoto PNOA: CC BY 4.0 scne.es.
+<footer class="site-footer">
+  <p class="principle">Datos públicos, reglas a la vista y cada cifra enlazada a su fuente. Indicios, no veredictos.</p>
+  <p>Focos activos: NASA FIRMS (LANCE), parte del Earth Science Data and Information System de la NASA · Áreas quemadas: EFFIS, Copernicus Emergency Management Service, © Unión Europea · Imágenes Sentinel-2: Copernicus, © Unión Europea, vía Earth Search (Element 84) · Red Natura 2000 y CORINE Land Cover 2018: Agencia Europea de Medio Ambiente · Municipios: Nominatim, © colaboradores de OpenStreetMap (ODbL) · Ortofoto PNOA: CC BY 4.0 scne.es.</p>
+  <nav aria-label="Proyectos hermanos"><ul class="siblings">
+    <li><a href="https://asensio94.github.io/observatorio-alegaciones/">Observatorio de alegaciones</a></li>
+    <li aria-current="page"><a href="https://asensio94.github.io/vigia-incendios/">Vigía de incendios</a></li>
+    <li><a href="https://asensio94.github.io/centinela-natura/">Centinela Natura</a></li>
+    <li><a href="https://asensio94.github.io/vigilancia-humedales/">Vigilancia de humedales</a></li>
+    <li><a href="https://asensio94.github.io/sub-nocte/">Sub Nocte</a></li>
+    <li><a href="https://asensio94.github.io/riesgo-tendidos-aves/">Riesgo de tendidos para aves</a></li>
+    <li><a href="https://asensio94.github.io/grafo-promotores/">Grafo de promotores</a></li>
+    <li><a href="https://asensio94.github.io/cartera-cotizadas/">Cartera de las cotizadas</a></li>
+    <li><a href="https://asensio94.github.io/cuaderno-campo/">Cuaderno de campo</a></li>
+  </ul></nav>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
