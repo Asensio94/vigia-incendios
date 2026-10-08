@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import logging
+import os
 
 import typer
 from rich import print
@@ -30,7 +31,8 @@ def _focos_en_juego(ahora: str) -> list[dict]:
 
 @app.command("vigilar")
 def cmd_vigilar(periodo: str = typer.Option("", help="24h, 48h o 7d; por defecto, según la última pasada")) -> None:
-    """Una vuelta completa: focos nuevos, incendios, EFFIS y web."""
+    """Una vuelta completa: focos nuevos, incendios, EFFIS, perímetros de Sentinel-2 y web."""
+    from . import perimetro          # carga GDAL y compañía: solo cuando hace falta
     reg = I.cargar()
     ahora = F.iso(F.ahora())
     if not periodo:
@@ -43,13 +45,18 @@ def cmd_vigilar(periodo: str = typer.Option("", help="24h, 48h o 7d; por defecto
     F.guardar(todos)
     areas = effis.actualizar()
     con = effis.enlazar(reg["incendios"], areas)
+    per = perimetro.actualizar(reg["incendios"], ahora)
+    if os.environ.get("GITHUB_OUTPUT"):        # el workflow guarda data/ si hay perímetros nuevos
+        with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as fh:
+            fh.write(f"perimetros={per['calculados']}\n")
     I.guardar(reg)
     I.guardar_cache()
     web.construir(reg, todos, areas)
     activos = [i for i in reg["incendios"] if i.get("estado") == "activo"]
     print(f"FIRMS {periodo}: {len(nuevos)} focos, {n} nuevos · {res['incendios_nuevos']} incendios nuevos, "
           f"{res['unidos']} unidos · {len(activos)} activos ({sum(web.relevante(i) for i in activos)} no aislados) · "
-          f"{con} con perímetro EFFIS")
+          f"{con} con perímetro EFFIS · Sentinel-2: {per['calculados']} calculados de "
+          f"{per['revisados']} revisados ({per['pendientes']} pendientes, {per['segundos']} s)")
 
 
 @app.command("web")

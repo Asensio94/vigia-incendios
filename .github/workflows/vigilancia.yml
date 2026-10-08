@@ -1,6 +1,7 @@
 name: Vigilancia horaria
 
-# Cada hora: focos nuevos de FIRMS, agrupado en incendios, cruces, EFFIS y web.
+# Cada hora: focos nuevos de FIRMS, agrupado en incendios, cruces, EFFIS, superficie
+# quemada con Sentinel-2 y web.
 #
 # FIRMS publica cada pasada unas tres horas después; con una vuelta por hora un foco tarda
 # como mucho una hora más en salir en la web. El minuto 17 esquiva las horas en punto, que
@@ -34,21 +35,23 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      - name: Focos, incendios y web
+      - name: Focos, incendios, perímetros y web
+        id: vigilar
         run: python -m vigia vigilar --periodo "${{ inputs.periodo }}"
 
       - name: Guardar el registro
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # Solo se guarda si han entrado focos nuevos. Sin focos nuevos lo único que cambia
-          # es la hora de revisión y el estado de los incendios, que se recalcula en cada
-          # vuelta: guardarlo daría un commit por hora sin información.
-          if git diff --quiet -- data/focos; then
-            echo "Sin focos nuevos: no se guarda nada."
+          # Solo se guarda si han entrado focos nuevos o se ha calculado algún perímetro de
+          # Sentinel-2. Si no, lo único que cambia es la hora de revisión y el estado de los
+          # incendios, que se recalcula en cada vuelta: guardarlo daría un commit por hora
+          # sin información.
+          if git diff --quiet -- data/focos && [ "${{ steps.vigilar.outputs.perimetros || 0 }}" = "0" ]; then
+            echo "Sin focos ni perímetros nuevos: no se guarda nada."
           else
             git add data
-            git commit -q -m "Focos hasta el $(date -u +'%Y-%m-%d %H:%M') UTC"
+            git commit -q -m "Vuelta del $(date -u +'%Y-%m-%d %H:%M') UTC"
             git pull -q --rebase --autostash origin main
             git push -q origin HEAD:main
           fi
@@ -84,6 +87,7 @@ jobs:
           for i in sorted(act, key=lambda i: -i["n_focos"])[:20]:
               l = i.get("lugar") or {}
               print(f"- `{i['id']}` {l.get('municipio')} ({l.get('provincia')}) · {i['n_focos']} focos"
-                    + (" · Red Natura" if i.get("natura") else "") + (f" · EFFIS {i['effis_ha']} ha" if i.get("effis_ha") else ""))
+                    + (" · Red Natura" if i.get("natura") else "") + (f" · EFFIS {i['effis_ha']} ha" if i.get("effis_ha") else "")
+                    + (f" · Sentinel-2 {i['perimetro']['ha']} ha" if (i.get("perimetro") or {}).get("ha") else ""))
           print("\nhttps://asensio94.github.io/vigia-incendios/")
           PY
