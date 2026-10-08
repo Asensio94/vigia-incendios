@@ -10,6 +10,7 @@ from xml.sax.saxutils import escape
 from shapely.geometry import shape
 
 from . import config, focos as F, incendios as I, zonas
+from .logo import LOGO_SVG, favicon_link
 
 TEMPORADA_DIAS = 120
 # Shared stylesheet of the sibling projects, copied verbatim and inlined into the page.
@@ -91,6 +92,8 @@ def construir(reg: dict, todos: list[dict], areas: list[dict]) -> None:
     validacion = (json.loads((config.DATA / "validacion.json").read_text(encoding="utf-8"))
                   if (config.DATA / "validacion.json").exists() else {})
     html = (PLANTILLA
+            .replace("__LOGO__", LOGO_SVG)
+            .replace("__FAVICON__", favicon_link("#c2410c", "#fb7b3e"))
             .replace("__COMMON_CSS__", COMMON_CSS)
             .replace("__ACTIVOS__", str(sum(relevante(i) for i in activos)))
             .replace("__AISLADOS__", str(sum(not relevante(i) for i in activos)))
@@ -223,6 +226,7 @@ PLANTILLA = r"""<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+__FAVICON__
 <title>Vigía de incendios</title>
 <meta name="description" content="Incendios con focos activos en España, vistos por satélite cada hora y cruzados con la Red Natura 2000 y las áreas quemadas de EFFIS.">
 <link rel="alternate" type="application/atom+xml" title="Vigía de incendios" href="feed.xml">
@@ -341,7 +345,7 @@ dl.medidas dd{margin:0;font:500 15px var(--font-data);font-variant-numeric:tabul
 <body>
 <header class="site-header">
   <div class="marca">
-    <h1>Vigía de <span>incendios</span></h1>
+    <h1>__LOGO__Vigía de <span>incendios</span></h1>
     <span class="rotulo">España · focos por satélite · cada hora</span>
   </div>
   <p class="lede">Incendios con focos activos vistos desde satélite, agrupados por reglas fijas y cruzados con la Red Natura 2000 y con las áreas quemadas que cartografía EFFIS. Sin esperar a la estadística oficial, y sin sustituirla: un foco es un píxel caliente, no un parte de extinción.</p>
