@@ -2,3 +2,5 @@
 site/
 __pycache__/
 *.pyc
+# Tanda a medias de la validación de perímetros (el resultado va a validacion_perimetro.json)
+data/validacion_perimetro.jsonl
