@@ -9,7 +9,8 @@ superficie quemada se estima con imágenes de Sentinel-2 en cuanto hay una pasad
 **Web:** https://asensio94.github.io/vigia-incendios/ · **Fuente Atom:**
 [feed.xml](https://asensio94.github.io/vigia-incendios/feed.xml) · **GeoJSON:**
 [incendios.geojson](https://asensio94.github.io/vigia-incendios/incendios.geojson) ·
-**Quemado según Sentinel-2:** [quemado.geojson](https://asensio94.github.io/vigia-incendios/quemado.geojson)
+**Quemado según Sentinel-2:** [quemado.geojson](https://asensio94.github.io/vigia-incendios/quemado.geojson) ·
+**Señales para Estado de las IBA:** [signals.json](https://asensio94.github.io/vigia-incendios/signals.json)
 
 Está pensado para que periodistas y entidades de conservación sepan en pocas horas qué
 arde, dónde y si toca un espacio protegido. No sustituye a la información oficial de
