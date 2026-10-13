@@ -34,13 +34,26 @@ def test_without_sentinel2_the_hot_pixels_cross_the_sites():
     assert s["value"] == {"amount": 32.8, "unit": "ha"}
 
 
-def test_burnt_area_outside_natura_keeps_the_hot_pixels():
-    # Sentinel-2 measured the fire but its burnt area touches no site: the sites, and the
-    # hectares, are still those of the hot pixels; the status is the perimeter's.
+def test_a_measured_burnt_area_outside_natura_is_in_no_site():
+    # Sentinel-2 saw the whole fire and none of it burnt inside a site: the hot pixels that
+    # touched one no longer count.
     s = S.signal(_fire(perimetro=_s2([], definitivo=True, ha=3.2)))
-    assert s["precision"] == "focos" and s["status"] == "definitivo"
-    assert [x["code"] for x in s["sites"]] == ["ES0000198", "ES1300001"]
-    assert s["value"] == {"amount": 32.8, "unit": "ha"}
+    assert s["precision"] == "perimetro" and s["status"] == "definitivo"
+    assert s["sites"] == [] and s["value"] == {"amount": 3.2, "unit": "ha"}
+
+
+def test_under_clouds_the_hot_pixels_are_not_ruled_out():
+    s = S.signal(_fire(perimetro={**_s2([{**ZEPA, "ha": 5.0}], ha=5.0), "nublado": True}))
+    assert s["precision"] == "perimetro"
+    assert s["sites"] == [{"code": "ES0000198", "ha": 5.0}, {"code": "ES1300001"}]
+
+
+def test_a_perimeter_that_measured_nothing_leaves_the_hot_pixels():
+    for per in ({**_s2([], ha=0.0), "nublado": True}, {**_s2([]), "ha": None}):
+        s = S.signal(_fire(perimetro=per))
+        assert s["precision"] == "focos" and s["status"] is None
+        assert [x["code"] for x in s["sites"]] == ["ES0000198", "ES1300001"]
+        assert s["value"] == {"amount": 32.8, "unit": "ha"}
 
 
 def test_status_follows_the_perimeter():
