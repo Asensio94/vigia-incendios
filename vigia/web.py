@@ -9,7 +9,7 @@ from xml.sax.saxutils import escape
 
 from shapely.geometry import shape
 
-from . import config, focos as F, incendios as I, zonas
+from . import config, focos as F, incendios as I, signals, zonas
 from .logo import LOGO_SVG, favicon_link
 
 TEMPORADA_DIAS = 120
@@ -115,6 +115,9 @@ def construir(reg: dict, todos: list[dict], areas: list[dict]) -> None:
                         **({"perimetro_s2": s2_ligero(i["perimetro"])} if i.get("perimetro") else {})}}
         for i in vivos]}
     (config.SITE / "incendios.geojson").write_text(json.dumps(todos_gj, ensure_ascii=False), encoding="utf-8")
+    # The same fires in the sibling projects' common format, for Estado de las IBA.
+    (config.SITE / "signals.json").write_text(json.dumps(signals.document(vivos, ahora), ensure_ascii=False),
+                                              encoding="utf-8")
     (config.SITE / "quemado.geojson").write_text(json.dumps(_quemado(vivos), ensure_ascii=False), encoding="utf-8")
     (config.SITE / "feed.xml").write_text(_feed(vivos, ahora), encoding="utf-8")
     (config.SITE / ".nojekyll").write_text("")
