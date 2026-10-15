@@ -25,6 +25,7 @@ from shapely.geometry import box, mapping, shape
 from shapely.ops import unary_union
 
 from . import config, perimeter, focos as F, zonas
+from .config import Country
 
 log = logging.getLogger(__name__)
 
@@ -101,27 +102,29 @@ def huella(fs: list[dict]):
 
 # ── Registro de incendios ───────────────────────────────────────────────────────────────
 
-def cargar() -> dict:
-    if config.INCENDIOS_JSON.exists():
-        return json.loads(config.INCENDIOS_JSON.read_text(encoding="utf-8"))
+def cargar(pais: Country) -> dict:
+    if pais.incendios_json.exists():
+        return json.loads(pais.incendios_json.read_text(encoding="utf-8"))
     return {"incendios": [], "actualizado": None}
 
 
-def guardar(reg: dict) -> None:
+def guardar(reg: dict, pais: Country) -> None:
     reg["incendios"].sort(key=lambda i: i["id"])
-    config.INCENDIOS_JSON.write_text(json.dumps(reg, ensure_ascii=False, indent=1), encoding="utf-8")
+    pais.data.mkdir(parents=True, exist_ok=True)
+    pais.incendios_json.write_text(json.dumps(reg, ensure_ascii=False, indent=1), encoding="utf-8")
 
 
-def _nuevo_id(primera: str, usados: set[str]) -> str:
-    base = "IN-" + primera[:10].replace("-", "")
+def _nuevo_id(primera: str, usados: set[str], prefijo: str = "") -> str:
+    """IN-AAAAMMDD-NNN; en Francia, FR-IN-AAAAMMDD-NNN."""
+    base = prefijo + "IN-" + primera[:10].replace("-", "")
     n = 1
     while f"{base}-{n:03d}" in usados:
         n += 1
     return f"{base}-{n:03d}"
 
 
-def actualizar(reg: dict, todos: list[dict], ahora: str, detalle: bool = True) -> dict:
-    """Reagrupa los focos recientes y rehace los incendios afectados.
+def actualizar(reg: dict, todos: list[dict], ahora: str, pais: Country, detalle: bool = True) -> dict:
+    """Reagrupa los focos recientes de un país y rehace los incendios afectados.
 
     `todos` son los focos de los años en juego; se les escribe el campo «incendio».
     Devuelve un resumen de la pasada.
@@ -164,7 +167,7 @@ def actualizar(reg: dict, todos: list[dict], ahora: str, detalle: bool = True) -
                 unidos += 1
         else:
             primera = min(rec[k]["t"] for k in ks)
-            sid = _nuevo_id(primera, set(por_id))
+            sid = _nuevo_id(primera, set(por_id), pais.id_prefix)
             por_id[sid] = {"id": sid, "primera": primera}
             reg["incendios"].append(por_id[sid])
             nuevos += 1
@@ -183,7 +186,7 @@ def actualizar(reg: dict, todos: list[dict], ahora: str, detalle: bool = True) -
         if f["incendio"] in tocados:
             miembros.setdefault(f["incendio"], []).append(f)
     for iid in tocados:
-        describir(por_id[iid], miembros.get(iid, []), detalle)
+        describir(por_id[iid], miembros.get(iid, []), pais, detalle)
 
     for i in reg["incendios"]:
         if i.get("estado") != "unido" and i.get("ultima"):
@@ -195,7 +198,7 @@ def actualizar(reg: dict, todos: list[dict], ahora: str, detalle: bool = True) -
             "tocados": len(tocados)}
 
 
-def describir(inc: dict, fs: list[dict], detalle: bool = True) -> None:
+def describir(inc: dict, fs: list[dict], pais: Country, detalle: bool = True) -> None:
     """Cifras, huella y cruces de un incendio a partir de sus focos."""
     if not fs:
         return
@@ -224,10 +227,10 @@ def describir(inc: dict, fs: list[dict], detalle: bool = True) -> None:
         inc.update(per)
     if not detalle or antes == len(fs):
         return
-    inc["natura"] = zonas.natura_de(g)
-    inc["cobertura"] = cobertura(fs)
+    inc["natura"] = zonas.natura_de(g, pais)
+    inc["cobertura"] = cobertura(fs, pais)
     if not inc.get("lugar") or len(fs) >= 2 * (inc.get("lugar_focos") or 1):
-        inc["lugar"] = lugar(c.y, c.x) or inc.get("lugar")
+        inc["lugar"] = lugar(c.y, c.x, pais) or inc.get("lugar")
         inc["lugar_focos"] = len(fs)
 
 
@@ -252,23 +255,24 @@ def tipo(inc: dict) -> str:
 
 # ── CORINE y municipio, con caché ───────────────────────────────────────────────────────
 
-_cache: dict | None = None
+_caches: dict[str, dict] = {}
 
 
-def cache() -> dict:
-    global _cache
-    if _cache is None:
-        _cache = (json.loads(config.CACHE_JSON.read_text(encoding="utf-8"))
-                  if config.CACHE_JSON.exists() else {})
-        _cache.setdefault("clc", {})
-        _cache.setdefault("lugar", {})
-    return _cache
+def cache(pais: Country) -> dict:
+    if pais.code not in _caches:
+        p = pais.cache_json
+        c = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
+        c.setdefault("clc", {})
+        c.setdefault("lugar", {})
+        _caches[pais.code] = c
+    return _caches[pais.code]
 
 
 def guardar_cache() -> None:
-    if _cache is not None:
-        config.CACHE_JSON.write_text(json.dumps(_cache, ensure_ascii=False, sort_keys=True),
-                                     encoding="utf-8")
+    for code, c in _caches.items():
+        p = config.COUNTRIES[code].cache_json
+        p.parent.mkdir(parents=True, exist_ok=True)
+        p.write_text(json.dumps(c, ensure_ascii=False, sort_keys=True), encoding="utf-8")
 
 
 def _clc(clave: str) -> str | None:
@@ -284,7 +288,7 @@ def _clc(clave: str) -> str | None:
     return feats[0]["attributes"]["Code_18"] if feats else ""
 
 
-def cobertura(fs: list[dict]) -> dict:
+def cobertura(fs: list[dict], pais: Country) -> dict:
     """Reparto por grupos de CORINE de las celdas con focos (una muestra si son muchas)."""
     cel = config.CLC_CELDA
     cuenta: dict[str, int] = {}
@@ -295,7 +299,7 @@ def cobertura(fs: list[dict]) -> dict:
     if len(claves) > config.CLC_MUESTRAS:
         paso = len(claves) / config.CLC_MUESTRAS
         claves = [claves[int(i * paso)] for i in range(config.CLC_MUESTRAS)]
-    c = cache()["clc"]
+    c = cache(pais)["clc"]
     falta = [k for k in claves if k not in c]
     if falta:
         with ThreadPoolExecutor(6) as ex:
@@ -311,13 +315,22 @@ def cobertura(fs: list[dict]) -> dict:
     return {k: round(v / tot, 2) for k, v in sorted(peso.items(), key=lambda x: -x[1])} if tot else {}
 
 
-def lugar(lat: float, lon: float) -> dict | None:
-    """Municipio, provincia y comunidad de un punto (Nominatim, una consulta por segundo)."""
+def lugar(lat: float, lon: float, pais: Country) -> dict | None:
+    """Municipio, provincia y comunidad de un punto (Nominatim, una consulta por segundo).
+
+    En Francia, la commune, el département y la région de geo.api.gouv.fr, con el código INSEE
+    de la commune, que es el que lleva signals.json.
+    """
     import time
     clave = f"{lat:.2f},{lon:.2f}"
-    c = cache()["lugar"]
+    c = cache(pais)["lugar"]
     if clave in c:
         return c[clave]
+    if pais.code == "FR":
+        out = _commune(lat, lon)
+        if out:
+            c[clave] = out
+        return out
     try:
         time.sleep(1.1)
         r = requests.get(f"{config.NOMINATIM}/reverse", headers=config.UA, timeout=60, params={
@@ -335,3 +348,19 @@ def lugar(lat: float, lon: float) -> dict | None:
         return None
     c[clave] = out
     return out
+
+
+def _commune(lat: float, lon: float) -> dict | None:
+    try:
+        r = requests.get(config.GEO_API_GOUV, headers=config.UA, timeout=60, params={
+            "lat": lat, "lon": lon, "fields": "nom,code,departement,region"})
+        r.raise_for_status()
+        js = r.json()
+    except (requests.RequestException, ValueError):
+        return None
+    if not js:                      # en el mar o fuera de Francia
+        return None
+    a = js[0]
+    return {"municipio": a.get("nom"), "insee": a.get("code"),
+            "provincia": (a.get("departement") or {}).get("nom"),
+            "comunidad": (a.get("region") or {}).get("nom")}

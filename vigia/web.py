@@ -10,6 +10,7 @@ from xml.sax.saxutils import escape
 from shapely.geometry import shape
 
 from . import config, focos as F, incendios as I, signals, zonas
+from .config import Country
 from .logo import LOGO_SVG, favicon_link
 
 TEMPORADA_DIAS = 120
@@ -58,7 +59,8 @@ def _quemado(incs: list[dict], simplificar: float = 0) -> dict:
     return {"type": "FeatureCollection", "features": feats}
 
 
-def construir(reg: dict, todos: list[dict], areas: list[dict]) -> None:
+def construir(reg: dict, todos: list[dict], areas: list[dict], pais: Country) -> list[dict]:
+    """Web de un país en pais.site; devuelve sus incendios vivos para signals.json."""
     ahora = reg["actualizado"]
     desde = F.hace(TEMPORADA_DIAS * 24, F._dt(ahora))
     vivos = [i for i in reg["incendios"] if i.get("estado") != "unido" and i.get("ultima")]
@@ -106,20 +108,28 @@ def construir(reg: dict, todos: list[dict], areas: list[dict]) -> None:
             .replace("__DATOS__", json.dumps(datos, ensure_ascii=False, separators=(",", ":"))
                      .replace("</", "<\\/")))
 
-    config.SITE.mkdir(exist_ok=True)
-    (config.SITE / "index.html").write_text(html, encoding="utf-8")
-    shutil.copy(zonas.NATURA_WEB, config.SITE / "natura.geojson")
+    site = pais.site
+    site.mkdir(parents=True, exist_ok=True)
+    (site / "index.html").write_text(html, encoding="utf-8")
+    shutil.copy(zonas.natura_web_path(pais), site / "natura.geojson")
     todos_gj = {"type": "FeatureCollection", "features": [
         {"type": "Feature", "geometry": _forma(i),
          "properties": {**{k: v for k, v in i.items() if k not in ("geometry", "perimeter", "front", "perimetro")},
                         **({"perimetro_s2": s2_ligero(i["perimetro"])} if i.get("perimetro") else {})}}
         for i in vivos]}
-    (config.SITE / "incendios.geojson").write_text(json.dumps(todos_gj, ensure_ascii=False), encoding="utf-8")
-    # The same fires in the sibling projects' common format, for Estado de las IBA.
-    (config.SITE / "signals.json").write_text(json.dumps(signals.document(vivos, ahora), ensure_ascii=False),
+    (site / "incendios.geojson").write_text(json.dumps(todos_gj, ensure_ascii=False), encoding="utf-8")
+    (site / "quemado.geojson").write_text(json.dumps(_quemado(vivos), ensure_ascii=False), encoding="utf-8")
+    (site / "feed.xml").write_text(_feed(vivos, ahora), encoding="utf-8")
+    return vivos
+
+
+def escribir_signals(vivos: dict[str, list[dict]], ahora: str) -> None:
+    """The fires of every country in the sibling projects' common format, for Estado de las
+    IBA: one file at the root of the site."""
+    config.SITE.mkdir(exist_ok=True)
+    todos = [i for incs in vivos.values() for i in incs]
+    (config.SITE / "signals.json").write_text(json.dumps(signals.document(todos, ahora), ensure_ascii=False),
                                               encoding="utf-8")
-    (config.SITE / "quemado.geojson").write_text(json.dumps(_quemado(vivos), ensure_ascii=False), encoding="utf-8")
-    (config.SITE / "feed.xml").write_text(_feed(vivos, ahora), encoding="utf-8")
     (config.SITE / ".nojekyll").write_text("")
 
 

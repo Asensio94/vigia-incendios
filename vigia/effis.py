@@ -15,13 +15,15 @@ from shapely import STRtree
 from shapely.geometry import shape
 
 from . import config, focos as F, zonas
+from .config import Country
 
 log = logging.getLogger(__name__)
 
 
-def descargar(desde: str, hasta: str | None = None, area_min: float = 0) -> list[dict]:
-    """Áreas quemadas de España con fecha de fuego en [desde, hasta)."""
-    params = {"country": "ES", "limit": 100, "ordering": "firedate",
+def descargar(desde: str, hasta: str | None = None, area_min: float = 0,
+              pais: str = "ES") -> list[dict]:
+    """Áreas quemadas de un país con fecha de fuego en [desde, hasta)."""
+    params = {"country": pais, "limit": 100, "ordering": "firedate",
               "firedate__gte": f"{desde}T00:00:00Z"}
     if hasta:
         params["firedate__lt"] = f"{hasta}T00:00:00Z"
@@ -46,16 +48,21 @@ def descargar(desde: str, hasta: str | None = None, area_min: float = 0) -> list
     return out
 
 
-def actualizar(forzar: bool = False) -> list[dict]:
+def leer(pais: Country) -> list[dict]:
+    p = pais.effis_json
+    return json.loads(p.read_text(encoding="utf-8"))["areas"] if p.exists() else []
+
+
+def actualizar(pais: Country, forzar: bool = False) -> list[dict]:
     """Áreas de los últimos config.EFFIS_DIAS días, como mucho cada EFFIS_CADA_HORAS."""
-    previo = (json.loads(config.EFFIS_JSON.read_text(encoding="utf-8"))
-              if config.EFFIS_JSON.exists() else {"consultado": None, "areas": []})
+    previo = (json.loads(pais.effis_json.read_text(encoding="utf-8"))
+              if pais.effis_json.exists() else {"consultado": None, "areas": []})
     if not forzar and previo["consultado"] and \
             F.horas_entre(previo["consultado"], F.iso(F.ahora())) < config.EFFIS_CADA_HORAS:
         return previo["areas"]
     desde = (datetime.now(timezone.utc) - timedelta(days=config.EFFIS_DIAS)).strftime("%Y-%m-%d")
     try:
-        nuevas = descargar(desde)
+        nuevas = descargar(desde, pais=pais.code)
     except requests.RequestException as e:
         log.warning("EFFIS no responde (%s); se usan las áreas de la consulta anterior", e)
         return previo["areas"]
@@ -63,8 +70,8 @@ def actualizar(forzar: bool = False) -> list[dict]:
     por_id = {a["id"]: a for a in previo["areas"]}
     por_id.update({a["id"]: a for a in nuevas})
     areas = sorted(por_id.values(), key=lambda a: (a["firedate"], a["id"]))
-    config.EFFIS_JSON.write_text(json.dumps({"consultado": F.iso(F.ahora()), "areas": areas},
-                                            ensure_ascii=False), encoding="utf-8")
+    pais.effis_json.write_text(json.dumps({"consultado": F.iso(F.ahora()), "areas": areas},
+                                          ensure_ascii=False), encoding="utf-8")
     return areas
 
 
