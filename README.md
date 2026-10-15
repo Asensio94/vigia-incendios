@@ -159,6 +159,11 @@ commune, no por contorno. El primer foco llega, en mediana, entre 0,2 y 3,5 hora
 de la primera alerta de BDIFF según el año y el tamaño: lo que tarda la siguiente pasada. En
 tiempo real hay que sumar las unas tres horas que tarda FIRMS en publicarla.
 
+El único incendio de 500 ha o más que no se empareja es la reanudación de Landiras de agosto
+de 2022 (6.743 ha). El vigía la siguió como un solo incendio de 1.742 focos entre el 9 y el
+13 de agosto, pero ardió a unos 15 km de la commune de Landiras, que es a la que BDIFF la
+atribuye, y sin contorno el cruce por commune no puede unirlos.
+
 ## Límites
 
 - **La superficie de los píxeles con focos no es superficie quemada.** En incendios pequeños
