@@ -95,8 +95,9 @@ los mismos satélites y los mismos cruces, con su contorno, su Red Natura y su r
 - **Qué cubre:** Francia metropolitana con Córcega. Los departamentos y territorios de
   ultramar quedan fuera: el vigía sigue Europa, donde Natura 2000, CORINE y EFFIS son
   homogéneos.
-- **Focos:** los mismos ficheros de FIRMS. Un foco de la frontera se asigna al país cuyo
-  contorno lo contiene (sin margen), así que no sale en las dos webs.
+- **Focos:** los mismos ficheros de FIRMS. Cada contorno lleva 2 km de margen por los píxeles de
+  costa; en la frontera, donde los márgenes se solapan, decide el contorno sin margen, así
+  que un foco no sale en las dos webs.
 - **Identificadores:** `FR-IN-AAAAMMDD-NNN`. Los de España no cambian.
 - **Communes:** la API Découpage administratif ([geo.api.gouv.fr](https://geo.api.gouv.fr))
   da la commune, su código INSEE (5 caracteres; en Córcega, 2A y 2B), el departamento y la
