@@ -9,7 +9,7 @@ from xml.sax.saxutils import escape
 
 from shapely.geometry import shape
 
-from . import config, focos as F, incendios as I, signals, zonas
+from . import config, focos as F, i18n, incendios as I, signals, zonas
 from .config import Country
 from .logo import LOGO_SVG, favicon_link
 
@@ -62,6 +62,7 @@ def _quemado(incs: list[dict], simplificar: float = 0) -> dict:
 def construir(reg: dict, todos: list[dict], areas: list[dict], pais: Country) -> list[dict]:
     """Web de un país en pais.site; devuelve sus incendios vivos para signals.json."""
     ahora = reg["actualizado"]
+    lang = pais.lang
     desde = F.hace(TEMPORADA_DIAS * 24, F._dt(ahora))
     vivos = [i for i in reg["incendios"] if i.get("estado") != "unido" and i.get("ultima")]
     visibles = [i for i in vivos if i["estado"] in ("activo", "reciente")
@@ -87,13 +88,15 @@ def construir(reg: dict, todos: list[dict], areas: list[dict], pais: Country) ->
         "frentes": {"type": "FeatureCollection", "features": frentes},
         "s2": _quemado(visibles, 0.0002),
         "redir": {i["id"]: i["unido_en"] for i in reg["incendios"] if i.get("unido_en")},
-        "estados": I.ESTADOS, "grupos": I.GRUPOS_CLC,
+        "estados": I.ESTADOS if lang == "es" else i18n.ESTADOS_FR,
+        "grupos": I.GRUPOS_CLC if lang == "es" else i18n.GRUPOS_FR,
         "ahora": ahora, "ultima_pasada": max((f["t"] for f in todos), default=None),
         "temporada_dias": TEMPORADA_DIAS,
     }
-    validacion = (json.loads((config.DATA / "validacion.json").read_text(encoding="utf-8"))
-                  if (config.DATA / "validacion.json").exists() else {})
-    html = (PLANTILLA
+    fv = pais.data / "validacion.json"
+    validacion = json.loads(fv.read_text(encoding="utf-8")) if fv.exists() else {}
+    vista = f"[{pais.map_view[0]},{pais.map_view[1]}],{pais.map_view[2]}"
+    html = (i18n.page(PLANTILLA, lang)
             .replace("__LOGO__", LOGO_SVG)
             .replace("__FAVICON__", favicon_link("#c2410c", "#fb7b3e"))
             .replace("__COMMON_CSS__", COMMON_CSS)
@@ -102,9 +105,10 @@ def construir(reg: dict, todos: list[dict], areas: list[dict], pais: Country) ->
             .replace("__NATURA__", str(sum(bool(i.get("natura")) for i in activos if relevante(i))))
             .replace("__FOCOS24__", str(sum(f["t"] >= F.hace(24, F._dt(ahora)) for f in todos)))
             .replace("__TEMPORADA__", str(TEMPORADA_DIAS))
-            .replace("__METODO__", _parametros())
-            .replace("__VALIDACION__", _validacion(validacion))
-            .replace("__VALIDACION_S2__", _validacion_s2())
+            .replace("__VISTA__", vista)
+            .replace("__METODO__", _parametros(lang))
+            .replace("__VALIDACION__", _validacion(validacion, lang))
+            .replace("__VALIDACION_S2__", _validacion_s2(pais))
             .replace("__DATOS__", json.dumps(datos, ensure_ascii=False, separators=(",", ":"))
                      .replace("</", "<\\/")))
 
@@ -119,7 +123,7 @@ def construir(reg: dict, todos: list[dict], areas: list[dict], pais: Country) ->
         for i in vivos]}
     (site / "incendios.geojson").write_text(json.dumps(todos_gj, ensure_ascii=False), encoding="utf-8")
     (site / "quemado.geojson").write_text(json.dumps(_quemado(vivos), ensure_ascii=False), encoding="utf-8")
-    (site / "feed.xml").write_text(_feed(vivos, ahora), encoding="utf-8")
+    (site / "feed.xml").write_text(_feed(vivos, ahora, pais), encoding="utf-8")
     return vivos
 
 
@@ -138,38 +142,62 @@ def _forma(i: dict) -> dict:
     return i.get("perimeter") or i["geometry"]
 
 
-def _titulo(i: dict) -> str:
+def _titulo(i: dict, lang: str = "es") -> str:
     l = i.get("lugar") or {}
-    sitio = l.get("municipio") or l.get("provincia") or "lugar sin nombre"
+    sitio = l.get("municipio") or l.get("provincia") or ("lugar sin nombre" if lang == "es" else "lieu sans nom")
     if l.get("provincia") and l.get("provincia") != sitio:
         sitio += f" ({l['provincia']})"
+    if lang == "fr":
+        return ("Incendie à " if relevante(i) else "Foyer isolé à ") + sitio
     return ("Incendio en " if relevante(i) else "Foco aislado en ") + sitio
 
 
-def _feed(vivos: list[dict], ahora: str) -> str:
+def _resumen(i: dict) -> str:
+    nat = ", ".join(f"{e['tipo']} {e['nombre']}" for e in i.get("natura", [])[:3])
+    return (f"{i['n_focos']} focos en {i['pasadas']} pasadas, del {i['primera']} al {i['ultima']} (UTC). "
+            f"Píxeles con focos: {i['ha_focos']:g} ha."
+            + (f" Perímetro estimado: {i['perimeter_ha']:g} ha; frente activo de {i['front_km']:g} km"
+               f" en la última pasada." if i.get("perimeter_ha") else "")
+            + f" Arde sobre: {I.tipo(i)}."
+            + (f" Red Natura: {nat}." if nat else "")
+            + (f" Superficie quemada estimada con Sentinel-2: {'al menos ' if i['perimetro'].get('nublado') else ''}{i['perimetro']['ha']:g} ha"
+               f"{'' if i['perimetro'].get('definitivo') else ' (provisional)'}"
+               f"{', medida con una sola imagen' if i['perimetro'].get('una_imagen', 0) > 0.5 else ''}."
+               if (i.get("perimetro") or {}).get("ha") else "")
+            + (f" Perímetro EFFIS: {i['effis_ha']:g} ha." if i.get("effis_ha") else ""))
+
+
+def _resumen_fr(i: dict) -> str:
+    fr = "fr"
+    nat = ", ".join(f"{e['tipo']} {e['nombre']}" for e in i.get("natura", [])[:3])
+    per = i.get("perimetro") or {}
+    return (f"{i18n.n(i['n_focos'], fr)} foyers en {i18n.n(i['pasadas'], fr)} passages, du {i['primera']} au "
+            f"{i['ultima']} (UTC). Pixels avec foyers : {i18n.d(i['ha_focos'], fr)} ha."
+            + (f" Périmètre estimé : {i18n.d(i['perimeter_ha'], fr)} ha ; front actif de "
+               f"{i18n.d(i['front_km'], fr)} km au dernier passage." if i.get("perimeter_ha") else "")
+            + f" Brûle sur : {i18n.TIPOS_FR.get(I.tipo(i), I.tipo(i))}."
+            + (f" Natura 2000 : {nat}." if nat else "")
+            + (f" Surface brûlée estimée avec Sentinel-2 : {'au moins ' if per.get('nublado') else ''}"
+               f"{i18n.d(per['ha'], fr)} ha{'' if per.get('definitivo') else ' (provisoire)'}"
+               f"{', mesurée avec une seule image' if per.get('una_imagen', 0) > 0.5 else ''}." if per.get("ha") else "")
+            + (f" Contour EFFIS : {i18n.d(i['effis_ha'], fr)} ha." if i.get("effis_ha") else ""))
+
+
+def _feed(vivos: list[dict], ahora: str, pais: Country = config.ES) -> str:
+    lang, web = pais.lang, pais.web
     rel = sorted((i for i in vivos if relevante(i) and i["ultima"] >= F.hace(7 * 24, F._dt(ahora))),
                  key=lambda i: i["ultima"], reverse=True)[:60]
     ent = []
     for i in rel:
-        nat = ", ".join(f"{e['tipo']} {e['nombre']}" for e in i.get("natura", [])[:3])
-        resumen = (f"{i['n_focos']} focos en {i['pasadas']} pasadas, del {i['primera']} al {i['ultima']} (UTC). "
-                   f"Píxeles con focos: {i['ha_focos']:g} ha."
-                   + (f" Perímetro estimado: {i['perimeter_ha']:g} ha; frente activo de {i['front_km']:g} km"
-                      f" en la última pasada." if i.get("perimeter_ha") else "")
-                   + f" Arde sobre: {I.tipo(i)}."
-                   + (f" Red Natura: {nat}." if nat else "")
-                   + (f" Superficie quemada estimada con Sentinel-2: {'al menos ' if i['perimetro'].get('nublado') else ''}{i['perimetro']['ha']:g} ha"
-                      f"{'' if i['perimetro'].get('definitivo') else ' (provisional)'}"
-                      f"{', medida con una sola imagen' if i['perimetro'].get('una_imagen', 0) > 0.5 else ''}."
-                      if (i.get("perimetro") or {}).get("ha") else "")
-                   + (f" Perímetro EFFIS: {i['effis_ha']:g} ha." if i.get("effis_ha") else ""))
-        ent.append(f"""<entry><id>{config.WEB}#{i['id']}</id><title>{escape(_titulo(i))}</title>
-<link href="{config.WEB}#{i['id']}"/><updated>{i['ultima'][:16]}:00Z</updated>
+        resumen = _resumen_fr(i) if lang == "fr" else _resumen(i)
+        ent.append(f"""<entry><id>{web}#{i['id']}</id><title>{escape(_titulo(i, lang))}</title>
+<link href="{web}#{i['id']}"/><updated>{i['ultima'][:16]}:00Z</updated>
 <summary>{escape(resumen)}</summary></entry>""")
+    nombre = "Vigie des incendies" if lang == "fr" else "Vigía de incendios"
     return f"""<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Vigía de incendios</title>
-<id>{config.WEB}</id><link href="{config.WEB}"/><link rel="self" href="{config.WEB}feed.xml"/>
-<updated>{ahora[:16]}:00Z</updated><author><name>Vigía de incendios</name></author>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>{nombre}</title>
+<id>{web}</id><link href="{web}"/><link rel="self" href="{web}feed.xml"/>
+<updated>{ahora[:16]}:00Z</updated><author><name>{nombre}</name></author>
 {chr(10).join(ent)}
 </feed>
 """
@@ -182,8 +210,8 @@ def _es(x: float, decimales: int | None = None) -> str:
     return f"{ent},{dec}" if dec else ent
 
 
-def _parametros() -> str:
-    filas = [
+def _filas_es() -> list[tuple[str, str]]:
+    return [
         ("Satélites", "VIIRS en S-NPP, NOAA-20 y NOAA-21 (píxel de 375 m) y MODIS en Terra y Aqua (1 km), vía NASA FIRMS"),
         ("Confianza mínima", f"VIIRS nominal o alta; MODIS {config.MODIS_CONFIANZA_MIN} sobre 100"),
         ("Fuentes fijas", f"fuera los focos a menos de {config.FIJAS_RADIO_KM:g} km de un punto marcado como fuente fija por FIRMS en {config.FIJAS_ANIOS[0]}–{config.FIJAS_ANIOS[-1]}".replace(".", ",")),
@@ -199,17 +227,51 @@ def _parametros() -> str:
         ("Frecuencia", "cada hora; FIRMS publica los focos unas tres horas después de la pasada"),
         ("Horas", "peninsulares; en Canarias, una hora menos"),
     ]
+
+
+def _filas_fr() -> list[tuple[str, str]]:
+    def g(x: float) -> str:          # like :g, with a decimal comma and French thousands
+        return i18n.d(x, "fr", 0) if float(x).is_integer() else f"{x:g}".replace(".", ",")
+    return [
+        ("Satellites", "VIIRS sur S-NPP, NOAA-20 et NOAA-21 (pixel de 375 m) et MODIS sur Terra et Aqua (1 km), via NASA FIRMS"),
+        ("Confiance minimale", f"VIIRS nominale ou haute ; MODIS {config.MODIS_CONFIANZA_MIN} sur 100"),
+        ("Sources fixes", f"foyers écartés à moins de {g(config.FIJAS_RADIO_KM)} km d’un point marqué comme source fixe par FIRMS en {config.FIJAS_ANIOS[0]}–{config.FIJAS_ANIOS[-1]}"),
+        ("Même incendie", f"pixels à moins de {g(config.ENLACE_KM)} km (davantage pour les grands pixels) et vus à moins de {config.ENLACE_HORAS} h d’intervalle, en chaîne"),
+        ("Foyer isolé", "un ou deux foyers, sans contour EFFIS ni Natura 2000"),
+        ("Actif", f"au moins un foyer ces dernières {config.ACTIVO_HORAS} h"),
+        ("Ce qui brûle", f"CORINE Land Cover 2018 dans jusqu’à {config.CLC_MUESTRAS} cellules avec foyers ; végétation naturelle si forêt, landes, mosaïque agroforestière et roches font la moitié"),
+        ("Contour EFFIS", f"surface brûlée qui touche l’empreinte (avec {g(config.EFFIS_HOLGURA_KM)} km de marge) et a commencé entre {config.EFFIS_HOLGURA_DIAS} jours avant le premier foyer et {config.EFFIS_HOLGURA_DIAS} jours après le dernier"),
+        ("Périmètre estimé", f"à partir de {config.PERIMETER_MIN_VIIRS} pixels VIIRS : chaque pixel est un disque de {g(config.PIXEL_RADIUS_FACTOR)} fois le demi-pixel de rayon ; après chaque passage il s’ajoute au précédent et les trous de moins de {g(2 * config.CLOSING_KM)} km sont fermés, donc il ne rétrécit jamais (comme FEDS, de la NASA)"),
+        ("Front actif", f"bord du périmètre à moins de {g(config.FRONT_KM * 1000)} m d’un pixel du dernier passage"),
+        ("Brûlé (Sentinel-2)", f"dNBR supérieur à {g(config.DNBR_UMBRAL)}, à {config.PERIMETRO_RES_M} m, en taches qui touchent les foyers et à moins de {i18n.n(config.PERIMETRO_ANCLA_M, 'fr')} m d’eux ; avant, médiane d’au plus {config.PRE_ESCENAS_MAX} scènes des {config.PRE_DIAS} jours précédents ; après, le deuxième NBR le plus bas (le plus bas s’il n’y a qu’une image) du premier foyer à {config.POST_ESCENAS_TRAS} scènes après le dernier"),
+        ("Sévérité", "dNBR jusqu’à 0,27 faible ; de 0,27 à 0,66 modérée ; au-delà de 0,66 élevée (Key et Benson, simplifié)"),
+        ("Fréquence", "toutes les heures ; FIRMS publie les foyers environ trois heures après le passage"),
+        ("Heures", "heure de Paris"),
+        ("Communes", "commune où tombe le centre des foyers, avec son code INSEE (API Découpage administratif) ; le département et la région entre parenthèses"),
+    ]
+
+
+def _parametros(lang: str = "es") -> str:
+    filas = _filas_fr() if lang == "fr" else _filas_es()
     return '<table class="params">' + "".join(
         f"<tr><th>{escape(a)}</th><td>{escape(b)}</td></tr>" for a, b in filas) + "</table>"
 
 
-def _validacion(v: dict) -> str:
+def _clase(c: dict, lang: str) -> str:
+    if lang == "fr":
+        return f"{c['desde']}–{i18n.n(c['hasta'], 'fr')} ha" if c["hasta"] else f"≥ {i18n.n(c['desde'], 'fr')} ha"
+    return f"{c['desde']}–{c['hasta']} ha" if c["hasta"] else f"≥ {c['desde']} ha"
+
+
+def _validacion(v: dict, lang: str = "es") -> str:
     if not v:
         return ""
+    if lang == "fr":
+        return _validacion_fr(v)
     filas = []
     for anio, r in v.items():
         for c in r["clases"]:
-            t = f"{c['desde']}–{c['hasta']} ha" if c["hasta"] else f"≥ {c['desde']} ha"
+            t = _clase(c, lang)
             pct = round(100 * c["detectados"] / c["effis"]) if c["effis"] else 0
             filas.append(f"<tr><td>{anio}</td><td>{t}</td><td class='dato'>{c['detectados']} de {c['effis']}</td>"
                          f"<td class='dato'>{pct} %</td></tr>")
@@ -217,12 +279,61 @@ def _validacion(v: dict) -> str:
             + "".join(filas) + "</table>")
 
 
-def _validacion_s2() -> str:
-    f = config.DATA / "validacion_perimetro.json"
+def _horas_fr(x: float | None) -> str:
+    return "—" if x is None else ("+" if x >= 0 else "−") + i18n.d(abs(x), "fr") + " h"
+
+
+def _validacion_fr(v: dict) -> str:
+    """Two tables, as in docs/validation_fr.md: against EFFIS and against BDIFF, plus the
+    largest fires of each season one by one."""
+    fr = "fr"
+    pc = lambda a, b: i18n.p(a / b, fr) if b else "—"
+    effis, bdiff, grandes = [], [], []
+    for anio, r in v.items():
+        for c in r["clases"]:
+            effis.append(f"<tr><td>{anio}</td><td>{_clase(c, fr)}</td><td class='dato'>{c['detectados']} sur {c['effis']}</td>"
+                         f"<td class='dato'>{pc(c['detectados'], c['effis'])}</td></tr>")
+        b = r.get("bdiff") or {}
+        for c in b.get("clases", []):
+            bdiff.append(f"<tr><td>{anio}</td><td>{_clase(c, fr)}</td><td class='dato'>{c['detectados']} sur {c['bdiff']}</td>"
+                         f"<td class='dato'>{pc(c['detectados'], c['bdiff'])}</td>"
+                         f"<td class='dato'>{_horas_fr(c['retraso_mediana_h'])}</td></tr>")
+        for f in b.get("destacados", []):
+            grandes.append(f"<tr><td>{escape(f['commune'])} <span class='dato'>({escape(f['departement'])})</span></td>"
+                           f"<td>{anio}</td><td class='dato'>{i18n.n(f['ha'], fr)} ha</td>"
+                           f"<td>{'oui' if f['detectado'] else 'non'}</td><td class='dato'>{_horas_fr(f.get('retraso_h'))}</td></tr>")
+    out = ('<p>Face à EFFIS :</p><table class="params valid"><tr><th>Année</th><th>Taille selon EFFIS</th>'
+           "<th>Détectés</th><th></th></tr>" + "".join(effis) + "</table>")
+    if bdiff:
+        out += ('<p>Face à BDIFF, avec le retard médian de la vigie sur la première alerte (négatif : le satellite '
+                "l’a vu avant l’alerte, à l’heure près du passage) :</p>"
+                '<table class="params valid"><tr><th>Année</th><th>Surface parcourue selon BDIFF</th><th>Détectés</th>'
+                "<th></th><th>Retard médian</th></tr>" + "".join(bdiff) + "</table>")
+    if grandes:
+        out += (f"<p>Les feux de {i18n.n(1000, fr)} ha ou plus selon BDIFF, un par un :</p>"
+                '<table class="params valid"><tr><th>Commune (département)</th><th>Année</th><th>Surface BDIFF</th>'
+                "<th>Vu</th><th>Retard</th></tr>" + "".join(grandes) + "</table>")
+        from .validacion_fr import NOTAS
+        out += "".join(f"<p>{escape(NOTAS[int(a)])}</p>" for a in v if int(a) in NOTAS)
+    return out
+
+
+def _validacion_s2(pais: Country = config.ES) -> str:
+    f = pais.data / "validacion_perimetro.json"
     if not f.exists():
         return ""
     from .validacion import resumen_perimetros
     v = resumen_perimetros(json.loads(f.read_text(encoding="utf-8")), config.DNBR_UMBRAL, config.PERIMETRO_ANCLA_M)
+    if pais.lang == "fr":
+        filas = "".join(
+            f"<tr><td>{'Tous' if c['clase'] == 'Todos' else c['clase']}</td><td class='dato'>{c['n']}</td>"
+            f"<td class='dato'>{i18n.d(c['iou'], 'fr', 2)}</td><td class='dato'>{i18n.p(c['buenos'], 'fr')}</td>"
+            f"<td class='dato'>{i18n.d(c['ratio'], 'fr', 2)}</td></tr>" for c in v["clases"])
+        return (f'<h3>Le brûlé selon Sentinel-2 face à EFFIS</h3><p>Échantillon de {v["n"]} feux de 2022 et 2025 '
+                "avec contour EFFIS. La concordance est la surface commune divisée par la réunion des deux (1 s’ils "
+                "sont identiques) ; au-dessus de 0,5 les deux contours racontent la même histoire.</p>"
+                '<table class="params valid"><tr><th>Taille selon EFFIS</th><th>Feux</th><th>Concordance médiane</th>'
+                "<th>Concordance ≥ 0,5</th><th>Surface face à EFFIS</th></tr>" + filas + "</table>")
     filas = "".join(
         f"<tr><td>{c['clase']}</td><td class='dato'>{c['n']}</td><td class='dato'>{_es(c['iou'], 2)}</td>"
         f"<td class='dato'>{round(100 * c['buenos'])} %</td><td class='dato'>{_es(c['ratio'], 2)}</td></tr>"
@@ -235,14 +346,14 @@ def _validacion_s2() -> str:
 
 
 PLANTILLA = r"""<!doctype html>
-<html lang="es">
+@@lang@@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 __FAVICON__
-<title>Vigía de incendios</title>
-<meta name="description" content="Incendios con focos activos en España, vistos por satélite cada hora y cruzados con la Red Natura 2000 y las áreas quemadas de EFFIS.">
-<link rel="alternate" type="application/atom+xml" title="Vigía de incendios" href="feed.xml">
+@@project_title@@
+<meta name="description" content="@@meta_description@@">
+<link rel="alternate" type="application/atom+xml" @@project_feed@@ href="feed.xml">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23221d1a'/%3E%3Cpath d='M16 5c1 5 7 7 7 14a7 7 0 0 1-14 0c0-4 2-6 4-8 0 3 1 5 3 5-1-4 0-8 0-11z' fill='%23f06a2b'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -279,6 +390,7 @@ html{-webkit-text-size-adjust:100%}
 .dato{font-family:var(--font-data);font-variant-numeric:tabular-nums}
 .marca{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
 .marca .rotulo{color:var(--gris);font-size:14px}
+.marca .pais{margin-left:auto;font-size:14px}
 .site-header .lede{text-wrap:pretty}
 .figures .vivo b{color:var(--activo)}
 .figures .meta b{font-size:17px;line-height:1.75}
@@ -358,39 +470,29 @@ dl.medidas dd{margin:0;font:500 15px var(--font-data);font-variant-numeric:tabul
 <body>
 <header class="site-header">
   <div class="marca">
-    <h1>__LOGO__Vigía de <span>incendios</span></h1>
-    <span class="rotulo">España · focos por satélite · cada hora</span>
+    <h1>__LOGO__@@h1@@</h1>
+    @@tagline@@@@switch@@
   </div>
-  <p class="lede">Incendios con focos activos vistos desde satélite, agrupados por reglas fijas y cruzados con la Red Natura 2000 y con las áreas quemadas que cartografía EFFIS. Sin esperar a la estadística oficial, y sin sustituirla: un foco es un píxel caliente, no un parte de extinción.</p>
+  <p class="lede">@@lede@@</p>
   <div class="figures">
-    <div class="vivo"><b>__ACTIVOS__</b><span>incendios con focos en las últimas 24 h</span></div>
-    <div><b>__NATURA__</b><span>de ellos, en la Red Natura 2000</span></div>
-    <div><b>__AISLADOS__</b><span>focos aislados aparte</span></div>
-    <div><b>__FOCOS24__</b><span>focos en las últimas 24 h</span></div>
-    <div class="meta"><b class="dato" id="pasada">—</b><span>último foco visto · revisado a las <span id="actualizado"></span></span></div>
+    <div class="vivo"><b>__ACTIVOS__</b>@@fig_active@@</div>
+    <div><b>__NATURA__</b>@@fig_natura@@</div>
+    <div><b>__AISLADOS__</b>@@fig_isolated@@</div>
+    <div><b>__FOCOS24__</b>@@fig_focos24@@</div>
+    <div class="meta"><b class="dato" id="pasada">—</b>@@fig_last@@<span id="actualizado"></span></span></div>
   </div>
 </header>
 
 <main>
   <div class="mapa-caja">
-    <div id="mapa" role="region" aria-label="Mapa de incendios"></div>
-    <div class="leyenda" aria-label="Leyenda">
-      <span><i style="background:var(--f6)"></i>foco de hace menos de 6 h</span>
-      <span><i style="background:var(--f24)"></i>6–24 h</span>
-      <span><i style="background:var(--f72)"></i>1–3 días</span>
-      <span><i style="background:var(--fviejo)"></i>3–7 días</span>
-      <span><i class="cuadro relleno"></i>quemado según Sentinel-2</span>
-      <span><i class="cuadro" style="border-color:var(--effis)"></i>perímetro EFFIS</span>
+    <div id="mapa" role="region" @@map_aria@@></div>
+    <div class="leyenda" @@legend_aria@@>
+@@legend@@
     </div>
   </div>
   <div class="lista">
     <div class="filtros">
-      <label>Periodo <select id="f-periodo">
-        <option value="activo">Últimas 24 h</option><option value="semana" selected>Últimos 7 días</option>
-        <option value="temporada">Últimos __TEMPORADA__ días</option></select></label>
-      <label>Arde sobre <select id="f-tipo"><option value="">Cualquier cosa</option></select></label>
-      <label><input type="checkbox" id="f-natura"> Solo Red Natura</label>
-      <label><input type="checkbox" id="f-aislados"> Con focos aislados</label>
+@@filters@@
       <span class="cuenta" id="cuenta" aria-live="polite"></span>
     </div>
     <div id="fichas"></div>
@@ -399,38 +501,30 @@ dl.medidas dd{margin:0;font:500 15px var(--font-data);font-variant-numeric:tabul
 
 <section class="method" id="metodo">
   <div>
-    <h2>Cómo se calcula</h2>
+    @@method_title@@
     <ol>
-      <li>Cada hora se descargan los focos activos que publica NASA FIRMS para la península, Baleares, Canarias, Ceuta y Melilla. Un foco es un píxel de 375 metros (VIIRS) o de un kilómetro (MODIS) donde el satélite ha medido más calor del normal en una pasada. Hay unas diez pasadas útiles al día entre los cinco satélites, y FIRMS publica cada una unas tres horas después.</li>
-      <li>Se quitan los focos de confianza baja, que suelen ser reflejos del sol en tejados e invernaderos, y los que caen junto a fuentes fijas de calor como cementeras, acerías o refinerías.</li>
-      <li>Los demás se agrupan en incendios: dos focos son del mismo incendio si sus píxeles están a menos de dos kilómetros y se vieron con menos de tres días de diferencia, y basta una cadena de focos para unir un frente que avanza. Son reglas fijas: no interviene ningún modelo entrenado ni ninguna inteligencia artificial.</li>
-      <li>De cada incendio se calcula la extensión de sus píxeles, qué cubierta tenía el suelo según CORINE Land Cover 2018, los espacios de la Red Natura 2000 que toca y el municipio. Cuando EFFIS, el servicio europeo de incendios de Copernicus, publica el perímetro quemado, se enlaza y su superficie pasa a ser la de referencia.</li>
+@@steps@@
     </ol>
-    <h3>Parámetros</h3>
+    @@params_title@@
     __METODO__
   </div>
   <div>
-    <h3>Superficie quemada con Sentinel-2</h3>
-    <p>EFFIS tarda días en cartografiar y apenas dibuja nada por debajo de 30 hectáreas. Para no esperar, el vigía mide lo quemado con las imágenes de Sentinel-2, que pasan cada dos o tres días con píxeles de 20 metros. Compara el índice de área quemada (NBR) de antes y de después del fuego: la vegetación quemada pierde reflectancia en el infrarrojo cercano y la gana en el de onda corta. Solo cuenta lo que cambia junto a los focos y unido a ellos, para que no entren cosechas ni labrados de las mismas semanas. Para que una sombra de nube o una bruma de una sola imagen no pase por ceniza, un píxel solo cuenta como quemado si lo ven al menos dos imágenes. El cálculo se rehace al llegar imágenes nuevas, hasta veinte días después del último foco. Si las nubes tapan más de la mitad de la zona, la cifra se da como mínimo («al menos») o no se da. Si lo quemado solo lo ha visto una imagen, ese filtro no puede actuar: la ficha lo avisa y la cifra no se da por definitiva hasta que llegue otra. Cada ficha enlaza la imagen de antes y la de después en Copernicus Browser, para que cualquiera pueda comprobar a ojo lo que dice el índice.</p>
-    <h3>Contraste con 2023 y 2024</h3>
-    <p>Las mismas reglas, aplicadas al archivo de FIRMS de esos años, se compararon con los incendios que cartografió EFFIS en España. Un incendio de EFFIS cuenta como visto si su perímetro toca la huella de focos de un incendio del vigía en sus mismas fechas.</p>
+    @@s2_section@@
+    @@val_title@@
+    @@val_intro@@
     __VALIDACION__
-    <p class="nota">Los que se escapan son sobre todo incendios cortos que arden entre dos pasadas o bajo nubes. Detalle en <a href="https://github.com/Asensio94/vigia-incendios/blob/main/docs/validacion.md">docs/validacion.md</a>.</p>
+    @@val_note@@
     __VALIDACION_S2__
-    <h3>Lo que hay que saber antes de citarlo</h3>
-    <p class="aviso">La extensión de los píxeles con focos no es la superficie quemada. En incendios pequeños la exagera, porque un fuego de una hectárea enciende un píxel de catorce; en los grandes puede quedarse corta. La superficie de Sentinel-2 es una estimación propia, contrastada con EFFIS más abajo. Como cifra oficial, la de EFFIS o la de la comunidad autónoma.</p>
-    <p>«Activo» quiere decir que el satélite vio calor en las últimas 24 horas, no que el incendio siga sin controlar. Al revés, un incendio puede seguir ardiendo sin focos si el humo o las nubes lo tapan o si arde bajo arbolado. Los focos aislados, uno o dos sin más señales, son a menudo quemas agrícolas o de rastrojos. Por eso no se muestran salvo que se pida.</p>
-    <h3>Datos de censos de especies</h3>
-    <p>El vigía no incorpora datos de censos de especies (colonias, nidos, dormideros ni territorios). Esa información es interna de las entidades que la producen: no se publica aquí, no se guarda en el repositorio y no se usa en ningún cálculo. Una ubicación precisa de una colonia junto a un incendio puede poner en riesgo a la especie.</p>
-    <h3>Datos abiertos</h3>
-    <p><a href="incendios.geojson">incendios.geojson</a> con todos los incendios y sus cruces · <a href="quemado.geojson">quemado.geojson</a> con lo quemado según Sentinel-2 · <a href="feed.xml">fuente Atom</a> de los incendios de la última semana · focos por año en CSV en el <a href="https://github.com/Asensio94/vigia-incendios/tree/main/data/focos">repositorio</a> · <a href="https://github.com/Asensio94/vigia-incendios">código</a>.</p>
+    @@caveats@@@@extra@@
+    @@species@@
+    @@open_data@@
   </div>
 </section>
 
 <footer class="site-footer">
-  <p class="principle">Datos públicos, reglas a la vista y cada cifra enlazada a su fuente. Indicios, no veredictos.</p>
-  <p>Focos activos: NASA FIRMS (LANCE), parte del Earth Science Data and Information System de la NASA · Áreas quemadas: EFFIS, Copernicus Emergency Management Service, © Unión Europea · Imágenes Sentinel-2: Copernicus, © Unión Europea, vía Earth Search (Element 84) · Red Natura 2000 y CORINE Land Cover 2018: Agencia Europea de Medio Ambiente · Municipios: Nominatim, © colaboradores de OpenStreetMap (ODbL) · Ortofoto PNOA: CC BY 4.0 scne.es.</p>
-  <nav aria-label="Proyectos hermanos"><ul class="siblings">
+  <p class="principle">@@principle@@</p>
+  @@credits@@
+  <nav @@siblings_aria@@><ul class="siblings">
     <li><a href="https://asensio94.github.io/observatorio-alegaciones/">Observatorio de alegaciones</a></li>
     <li aria-current="page"><a href="https://asensio94.github.io/vigia-incendios/">Vigía de incendios</a></li>
     <li><a href="https://asensio94.github.io/centinela-natura/">Centinela Natura</a></li>
@@ -450,38 +544,38 @@ dl.medidas dd{margin:0;font:500 15px var(--font-data);font-variant-numeric:tabul
 const D = __DATOS__;
 const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 const esc = s => String(s??"").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const num = (x,d=0) => x==null ? "—" : x.toLocaleString("es-ES",{minimumFractionDigits:d,maximumFractionDigits:d});
+const num = (x,d=0) => x==null ? "—" : x.toLocaleString(@@locale@@,{minimumFractionDigits:d,maximumFractionDigits:d});
 const ms = t => Date.parse(t.replace("Z",":00Z"));
 const AHORA = ms(D.ahora);
-const fmt = new Intl.DateTimeFormat("es-ES",{timeZone:"Europe/Madrid",day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"});
+const fmt = new Intl.DateTimeFormat(@@locale@@,{timeZone:@@tz@@,day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"});
 const hora = t => fmt.format(new Date(ms(t)));
-const hace = t => { const h = (AHORA-ms(t))/36e5; return h < 1 ? "hace menos de una hora" : h < 48 ? `hace ${Math.round(h)} h` : `hace ${Math.round(h/24)} días`; };
+const hace = t => { const h = (AHORA-ms(t))/36e5; return @@js_ago@@; };
 
 document.getElementById("pasada").textContent = D.ultima_pasada ? hora(D.ultima_pasada) : "—";
-document.getElementById("actualizado").textContent = hora(D.ahora).split(", ").pop();
+document.getElementById("actualizado").textContent = @@js_updated@@;
 
 const todas = D.incendios.features;
 const tipos = {}; for (const f of todas) tipos[f.properties.tipo] = (tipos[f.properties.tipo]||0)+1;
 for (const t of ["vegetación natural","mixto","cultivos","suelo urbano o industrial","sin datos"]) if (tipos[t])
-  document.getElementById("f-tipo").insertAdjacentHTML("beforeend",`<option value="${t}">${esc(t[0].toUpperCase()+t.slice(1))}</option>`);
+  document.getElementById("f-tipo").insertAdjacentHTML("beforeend",`<option value="${t}">${@@js_tipo_label@@}</option>`);
 
 // ── Mapa ──
-const mapa = L.map("mapa",{zoomControl:true}).setView([40.2,-3.7],6);
+const mapa = L.map("mapa",{zoomControl:true}).setView(__VISTA__);
 const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"© OpenStreetMap"}).addTo(mapa);
-const pnoa = L.tileLayer("https://www.ign.es/wmts/pnoa-ma?service=WMTS&request=GetTile&version=1.0.0&format=image/jpeg&layer=OI.OrthoimageCoverage&style=default&tilematrixset=GoogleMapsCompatible&tilematrix={z}&tilerow={y}&tilecol={x}",{maxZoom:20,attribution:"PNOA © scne.es"});
+@@js_ortho@@
 const capaNatura = L.geoJSON(null,{style:()=>({color:css("--natura"),weight:1,fillColor:css("--natura"),fillOpacity:.10}),
   onEachFeature:(f,l)=>l.bindTooltip(`${esc(f.properties.tipo)} · ${esc(f.properties.nombre)}`,{sticky:true})});
 let naturaCargada = false;
 mapa.on("overlayadd", e => { if (e.layer===capaNatura && !naturaCargada){ naturaCargada = true;
   fetch("natura.geojson").then(r=>r.json()).then(g=>{capaNatura.addData(g); capaNatura.bringToBack();}); }});
 const capaS2 = L.geoJSON(D.s2,{style:()=>({color:css("--quemado"),weight:1,fillColor:css("--quemado"),fillOpacity:.35}),
-  onEachFeature:(f,l)=>l.bindTooltip(`Quemado según Sentinel-2: ${f.properties.nublado?"al menos ":""}${num(f.properties.ha)} ha${f.properties.definitivo?"":" (provisional)"}`,{sticky:true})}).addTo(mapa);
+  onEachFeature:(f,l)=>l.bindTooltip(`@@js_s2_tip@@`,{sticky:true})}).addTo(mapa);
 const capaEffis = L.geoJSON(D.effis,{style:()=>({color:css("--effis"),weight:1.5,dashArray:"4 3",fill:false})}).addTo(mapa);
 const capaFrentes = L.geoJSON(D.frentes,{style:()=>({color:css("--activo"),weight:4,opacity:.9}),
-  onEachFeature:(f,l)=>l.bindTooltip(`Frente activo en la pasada de ${hora(f.properties.t)}`,{sticky:true})}).addTo(mapa);
+  onEachFeature:(f,l)=>l.bindTooltip(`@@js_front_tip@@${hora(f.properties.t)}`,{sticky:true})}).addTo(mapa);
 const capaFocos = L.layerGroup().addTo(mapa);
 const capaHuellas = L.layerGroup().addTo(mapa);
-L.control.layers({"Mapa":osm,"Ortofoto PNOA":pnoa},{"Focos (7 días)":capaFocos,"Incendios":capaHuellas,"Frentes activos":capaFrentes,"Quemado (Sentinel-2)":capaS2,"Perímetros EFFIS":capaEffis,"Red Natura 2000":capaNatura},{collapsed:true}).addTo(mapa);
+L.control.layers(@@js_layers@@,{collapsed:true}).addTo(mapa);
 
 const colorEdad = t => { const h=(AHORA-ms(t))/36e5; return css(h<6?"--f6":h<24?"--f24":h<72?"--f72":"--fviejo"); };
 const colorEstado = e => css(e==="activo"?"--activo":e==="reciente"?"--reciente":"--inactivo");
@@ -502,8 +596,7 @@ function pintarFocos(){
 }
 
 // ── Fichas ──
-const titulo = p => { const l=p.lugar||{}; let s=l.municipio||l.provincia||"lugar sin nombre";
-  if (l.provincia && l.provincia!==s) s+=` (${l.provincia})`; return (p.relevante?"Incendio en ":"Foco aislado en ")+s; };
+const titulo = p => { const l=p.lugar||{}; @@js_title@@ };
 const COLG = {bosque:"#3f7a3a",matorral:"#8a9a3c",agroforestal:"#b59b45",desnudo:"#9b8c7e",agricola:"#d8b55b",artificial:"#7b6f86",agua:"#3f7fb0"};
 // Superficie del perímetro tras cada pasada: una escalera, porque solo cambia cuando pasa un satélite.
 function progresion(p){
@@ -512,14 +605,14 @@ function progresion(p){
   const X=t=>4+292*(ms(t)-t0)/(t1-t0), Y=h=>52-48*h/hmax;
   let d=`M${X(r[0][0]).toFixed(1)},${Y(r[0][1]).toFixed(1)}`;
   for (const [t,h] of r.slice(1)) d+=`H${X(t).toFixed(1)}V${Y(h).toFixed(1)}`;
-  return `<figure class="progresion"><svg viewBox="0 0 300 56" role="img" aria-label="Superficie del perímetro tras cada pasada">
+  return `<figure class="progresion"><svg viewBox="0 0 300 56" role="img" @@js_prog_aria@@>
     <path d="${d}" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-    <figcaption>Perímetro tras cada una de las ${r.length} pasadas: de ${num(r[0][1])} a ${num(r[r.length-1][1])} ha.</figcaption></figure>`;
+    <figcaption>@@js_prog_caption@@</figcaption></figure>`;
 }
 function ficha(p){
   const reparto = p.cobertura && Object.keys(p.cobertura).length ? `<div class="reparto">
-    <div class="barra" role="img" aria-label="Cubierta del suelo">${Object.entries(p.cobertura).map(([k,v])=>`<span style="width:${v*100}%;background:${COLG[k]||"#999"}" title="${esc(D.grupos[k])}"></span>`).join("")}</div>
-    <p>Arde sobre ${Object.entries(p.cobertura).map(([k,v])=>`${esc(D.grupos[k])} ${Math.round(v*100)} %`).join(", ")} <span class="dato">(CORINE 2018)</span></p></div>` : "";
+    <div class="barra" role="img" @@js_cover_aria@@>${Object.entries(p.cobertura).map(([k,v])=>`<span style="width:${v*100}%;background:${COLG[k]||"#999"}" title="${esc(D.grupos[k])}"></span>`).join("")}</div>
+    @@js_burns_on@@${Object.entries(p.cobertura).map(([k,v])=>`${esc(D.grupos[k])} ${Math.round(v*100)} %`).join(", ")} <span class="dato">(CORINE 2018)</span></p></div>` : "";
   // Espacios Natura: los que tocan los focos y los que toca lo quemado, con las hectáreas
   // quemadas de cada uno cuando ya hay perímetro de Sentinel-2.
   const nub = p.s2?.nublado;
@@ -527,67 +620,60 @@ function ficha(p){
   const espacios = [...(p.natura||[])];
   for (const e of (p.s2?.natura||[])) if (!espacios.some(x=>x.codigo===e.codigo)) espacios.push(e);
   if (q) espacios.sort((a,b)=>(q[b.codigo]?.ha||0)-(q[a.codigo]?.ha||0));
-  const enNat = e => q ? (q[e.codigo] ? `${nub?"al menos ":""}${num(q[e.codigo].ha)} ha quemadas`
-                                     : nub ? `${num(e.ha)} ha de píxeles con focos` : "sin superficie quemada dentro")
-                       : `${num(e.ha)} ha de píxeles con focos`;
-  const nat = espacios.length ? `<ul class="espacios">${espacios.slice(0,4).map(e=>`<li>${esc(e.tipo)} <strong>${esc(e.nombre)}</strong> <span class="dato">${esc(e.codigo)} · ${enNat(e)}</span></li>`).join("")}</ul>${espacios.length>4?`<p class="nota">Y ${espacios.length-4} espacios más.</p>`:""}` : "";
+  const enNat = e => @@js_in_natura@@;
+  const nat = espacios.length ? `<ul class="espacios">${espacios.slice(0,4).map(e=>`<li>${esc(e.tipo)} <strong>${esc(e.nombre)}</strong> <span class="dato">${esc(e.codigo)} · ${enNat(e)}</span></li>`).join("")}</ul>${espacios.length>4?`<p class="nota">@@js_more_sites@@</p>`:""}` : "";
   const s2 = bloqueS2(p);
-  const ef = p.effis_ha!=null ? `<p class="nota">Perímetro EFFIS: <strong>${num(p.effis_ha)} ha</strong> quemadas${p.effis.length>1?` en ${p.effis.length} áreas`:""}, actualizado el ${esc(p.effis.map(e=>e.actualizado).sort().pop())}.</p>`
-    : p.relevante ? `<p class="nota">EFFIS aún no ha publicado su perímetro.</p>` : "";
-  const un = (p.unidos||[]).length ? `<p class="nota">Reúne ${p.unidos.length+1} incendios que se vieron por separado y luego se juntaron (${p.unidos.map(esc).join(", ")}).</p>` : "";
+  const ef = p.effis_ha!=null ? @@js_effis@@ : "";
+  const un = (p.unidos||[]).length ? `<p class="nota">@@js_merged@@ (${p.unidos.map(esc).join(", ")}).</p>` : "";
   const d0 = p.primera.slice(0,10), d1 = p.ultima.slice(0,10);
   const firms = `https://firms.modaps.eosdis.nasa.gov/map/#d:${d0}..${d1};@${p.centro[0]},${p.centro[1]},12.0z`;
   return `<article class="ficha" id="${esc(p.id)}">
     <header>
       <h2>${esc(titulo(p))}</h2>
       <span class="sello ${p.estado}">${esc(D.estados[p.estado])}</span>
-      ${(p.natura||[]).length ? `<span class="sello natura">Red Natura</span>` : ""}
-      ${p.effis_ha!=null ? `<span class="sello effis">Perímetro EFFIS</span>` : ""}
+      ${(p.natura||[]).length ? `@@js_seal_natura@@` : ""}
+      ${p.effis_ha!=null ? `@@js_seal_effis@@` : ""}
       <span class="id dato">${esc(p.id)}</span>
     </header>
-    <p class="cuando">Primer foco <strong>${hora(p.primera)}</strong> · último <strong>${hora(p.ultima)}</strong>, ${hace(p.ultima)}</p>
+    <p class="cuando">@@js_when@@${hora(p.ultima)}</strong>, ${hace(p.ultima)}</p>
     <dl class="medidas">
-      <div><dt>Focos</dt><dd>${num(p.n_focos)}</dd></div>
-      <div><dt>Pasadas</dt><dd>${num(p.pasadas)}</dd></div>
-      <div><dt>Píxeles con focos</dt><dd>${num(p.ha_focos)} ha</dd></div>
-      ${p.perimeter_ha!=null ? `<div><dt>Perímetro estimado</dt><dd>${num(p.perimeter_ha)} ha</dd></div>` : ""}
-      ${p.estado==="activo" && p.front_km ? `<div><dt>Frente activo</dt><dd>${num(p.front_km,1)} km</dd></div>` : ""}
-      ${p.max_growth_ha_h ? `<div><dt>Crecimiento máximo</dt><dd>${num(p.max_growth_ha_h)} ha/h</dd></div>` : ""}
-      ${p.s2?.ha ? `<div><dt>Quemado (Sentinel-2)</dt><dd>${p.s2.nublado?"≥ ":""}${num(p.s2.ha)} ha</dd></div>` : ""}
-      <div><dt>Potencia máxima</dt><dd>${num(p.frp_max)} MW</dd></div>
+      <div>@@js_dt_focos@@<dd>${num(p.n_focos)}</dd></div>
+      <div>@@js_dt_passes@@<dd>${num(p.pasadas)}</dd></div>
+      <div>@@js_dt_pixels@@<dd>${num(p.ha_focos)} ha</dd></div>
+      ${p.perimeter_ha!=null ? `<div>@@js_dt_perimeter@@<dd>${num(p.perimeter_ha)} ha</dd></div>` : ""}
+      ${p.estado==="activo" && p.front_km ? `<div>@@js_dt_front@@<dd>${num(p.front_km,1)} km</dd></div>` : ""}
+      ${p.max_growth_ha_h ? `<div>@@js_dt_growth@@<dd>${num(p.max_growth_ha_h)} ha/h</dd></div>` : ""}
+      ${p.s2?.ha ? `<div>@@js_dt_s2@@<dd>${p.s2.nublado?"≥ ":""}${num(p.s2.ha)} ha</dd></div>` : ""}
+      <div>@@js_dt_frp@@<dd>${num(p.frp_max)} MW</dd></div>
     </dl>
     ${progresion(p)}
     ${reparto}${nat}${s2}${ef}${un}
-    <div class="acciones"><button type="button" data-zoom="${esc(p.id)}">Ver en el mapa</button>
-      <a href="${firms}">Focos en FIRMS</a><a href="#${esc(p.id)}">Enlace</a></div>
+    <div class="acciones"><button type="button" data-zoom="${esc(p.id)}"@@js_actions@@</div>
   </article>`;
 }
 
-const fdia = new Intl.DateTimeFormat("es-ES",{day:"numeric",month:"short"});
+const fdia = new Intl.DateTimeFormat(@@locale@@,{day:"numeric",month:"short"});
 const dia = d => fdia.format(new Date(d+"T12:00:00Z"));
 // Copernicus Browser en el compuesto de infrarrojo de onda corta (B12-B8A-B4), donde lo
 // quemado sale granate y la vegetación verde: cualquiera puede comprobar la cifra con sus ojos.
 const urlCB = (f, p) => "https://browser.dataspace.copernicus.eu/?" + new URLSearchParams({zoom:14,
   lat:p.centro[1].toFixed(5), lng:p.centro[0].toFixed(5), themeId:"MONITORING", datasetId:"S2_L2A_CDAS",
   layerId:"6-SWIR", fromTime:`${f}T00:00:00.000Z`, toTime:`${f}T23:59:59.999Z`, dateMode:"SINGLE"});
-const verCB = (s, p) => s.fecha_antes && s.fecha_despues && p.centro ? `<p class="nota ver">Compruébalo con las imágenes:
-  <a href="${urlCB(s.fecha_antes,p)}" target="_blank" rel="noopener">antes (${dia(s.fecha_antes)})</a> ·
-  <a href="${urlCB(s.fecha_despues,p)}" target="_blank" rel="noopener">después (${dia(s.fecha_despues)})</a>
-  en Copernicus Browser. Lo quemado sale granate; la vegetación, verde.</p>` : "";
+const verCB = (s, p) => s.fecha_antes && s.fecha_despues && p.centro ? `<p class="nota ver">@@js_check@@</p>` : "";
 function bloqueS2(p){
   const s = p.s2;
   if (!s) return "";
-  if (s.sin_imagen) return `<div class="quemado"><p class="nota">Aún no hay una imagen despejada de Sentinel-2 para medir lo quemado.</p></div>`;
-  const ult = `${s.imagenes.length} ${s.imagenes.length===1?"imagen":"imágenes"}, la última del ${dia(s.imagenes.at(-1))}`;
-  if (s.nublado && !s.ha) return `<div class="quemado"><p class="nota">Las nubes tapan la zona de los focos en las imágenes de Sentinel-2 (${ult}): aún no se puede medir lo quemado.</p>${verCB(s,p)}</div>`;
-  if (!s.ha) return `<div class="quemado"><p class="nota">Sentinel-2 no ve superficie quemada apreciable junto a los focos (${ult}). Suele pasar con quemas agrícolas, con fuego bajo arbolado o si las nubes taparon la zona.</p>${verCB(s,p)}</div>`;
-  const sev = [["alta","--sev-alta"],["moderada","--sev-mod"],["baja","--sev-baja"]];
+  if (s.sin_imagen) return `<div class="quemado"><p class="nota">@@js_s2_none@@</p></div>`;
+  const ult = `${s.imagenes.length} @@js_s2_images@@${dia(s.imagenes.at(-1))}`;
+  if (s.nublado && !s.ha) return `<div class="quemado"><p class="nota">@@js_s2_cloudy@@</p>${verCB(s,p)}</div>`;
+  if (!s.ha) return `<div class="quemado"><p class="nota">@@js_s2_nothing@@</p>${verCB(s,p)}</div>`;
+  const sev = @@js_sev@@;
   const tot = Object.values(s.severidad).reduce((a,b)=>a+b,0) || 1;
   return `<div class="quemado">
-    <p>Superficie quemada estimada con Sentinel-2: <span class="cifra-q">${s.nublado?"al menos ":""}${num(s.ha)} ha</span>${s.definitivo?"":" · <strong>provisional</strong>"}</p>
-    <div class="barra" role="img" aria-label="Severidad">${sev.map(([k,c])=>`<span style="width:${100*s.severidad[k]/tot}%;background:var(${c})"></span>`).join("")}</div>
-    <div class="sev">${sev.map(([k,c])=>`<span><i style="background:var(${c})"></i>severidad ${k} ${num(s.severidad[k])} ha</span>`).join("")}</div>
-    <p class="nota">${ult}.${s.nublado?" Las nubes tapan buena parte de la zona: es un mínimo, no la superficie total.":s.cobertura<0.8?" Las nubes taparon parte de la zona: la cifra puede quedarse corta.":""}${s.una_imagen>0.5?" Medido con una sola imagen despejada: una bruma o la sombra de una nube junto al fuego pueden pasar por quemado, así que la cifra puede sobrar. Se confirmará con la siguiente.":""}${s.definitivo||s.una_imagen>0.5?"":" Se rehará cuando lleguen imágenes nuevas."}</p>
+    <p>@@js_s2_area@@</p>
+    <div class="barra" role="img" @@js_sev_aria@@>${sev.map(([k,c])=>`<span style="width:${100*s.severidad[k]/tot}%;background:var(${c})"></span>`).join("")}</div>
+    <div class="sev">${sev.map(([k,c])=>`<span><i style="background:var(${c})"></i>@@js_sev_label@@</span>`).join("")}</div>
+    <p class="nota">@@js_s2_notes@@</p>
     ${verCB(s,p)}
   </div>`;
 }
@@ -608,8 +694,8 @@ function filtrar(){
   for (const f of ok){ capas[f.properties.id].addTo(capaHuellas); visibles.add(f.properties.id); }
   pintarFocos();
   document.getElementById("fichas").innerHTML = ok.length ? ok.map(f=>ficha(f.properties)).join("")
-    : `<p class="vacio">Ningún incendio cumple los filtros. ${per==="activo"?"Puede que no haya focos en las últimas 24 horas: prueba con los últimos 7 días.":""}</p>`;
-  document.getElementById("cuenta").textContent = ok.length===1 ? "1 incendio" : `${ok.length} incendios`;
+    : `<p class="vacio">@@js_empty@@</p>`;
+  document.getElementById("cuenta").textContent = @@js_count@@;
 }
 
 function seleccionar(id, zoom, animar=true){
@@ -639,7 +725,7 @@ filtrar();
 const encuadrar = () => {
   if (capas[h]) return seleccionar(h,true,false);
   const b = capaHuellas.getLayers().length ? L.featureGroup(capaHuellas.getLayers()).getBounds() : null;
-  b && b.isValid() ? mapa.fitBounds(b,{padding:[30,30],maxZoom:9,animate:false}) : mapa.setView([40.2,-3.7],6,{animate:false});
+  b && b.isValid() ? mapa.fitBounds(b,{padding:[30,30],maxZoom:9,animate:false}) : mapa.setView(__VISTA__,{animate:false});
 };
 for (const ev of ["mousedown","touchstart","wheel","keydown"]) document.getElementById("mapa").addEventListener(ev,()=>{tocado=true},{passive:true});
 encuadrar();

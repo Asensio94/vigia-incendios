@@ -225,7 +225,8 @@ def _caso_perimetro(c: dict) -> dict | None:
     return out
 
 
-def contrastar_perimetros(anios=(2023, 2024), por_clase: int = 25, hilos: int = 4) -> list[dict]:
+def contrastar_perimetros(anios=(2023, 2024), por_clase: int = 25, hilos: int = 4,
+                          pais: Country = config.ES) -> list[dict]:
     """Calcula el perímetro de Sentinel-2 de una muestra de incendios con perímetro EFFIS.
 
     Muestra estratificada por tamaño (30–100, 100–500 y ≥ 500 ha) y año, con semilla fija.
@@ -233,11 +234,11 @@ def contrastar_perimetros(anios=(2023, 2024), por_clase: int = 25, hilos: int = 
     import random
     from concurrent.futures import ThreadPoolExecutor
 
-    datos = {a: _archivo(a) for a in anios}
+    datos = {a: _archivo(a, pais) for a in anios}
     casos = []
     for a in anios:
-        incs, _ = incendios_archivo(a, datos)
-        areas = effis.descargar(f"{a}-01-01", f"{a + 1}-01-01", 30)
+        incs, _ = incendios_archivo(a, datos, pais)
+        areas = effis.descargar(f"{a}-01-01", f"{a + 1}-01-01", 30, pais=pais.code)
         por_inc: dict[int, list[dict]] = {}
         for ar, h in zip(areas, emparejar(incs, areas)):
             if h is not None:
@@ -252,7 +253,7 @@ def contrastar_perimetros(anios=(2023, 2024), por_clase: int = 25, hilos: int = 
             grupo = [c for c in casos if c["anio"] == a and lo <= c["effis_ha"] < hi]
             muestra += rng.sample(grupo, min(por_clase, len(grupo)))
     # Cada caso se apunta en cuanto termina, para poder retomar una tanda cortada.
-    parcial = config.DATA / "validacion_perimetro.jsonl"
+    parcial = pais.data / "validacion_perimetro.jsonl"
     hechos = {}
     if parcial.exists():
         for linea in parcial.read_text(encoding="utf-8").splitlines():
