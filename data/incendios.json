@@ -94302,7 +94302,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|5|28726889f443",
-    "revisado": "2026-10-15T13:26Z",
+    "revisado": "2026-10-15T22:17Z",
     "calculado": "2026-10-15T01:30Z",
     "definitivo": false,
     "ha": 42.3,
@@ -101217,7 +101217,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|8|f52d3f8b89a8",
-    "revisado": "2026-10-15T13:26Z",
+    "revisado": "2026-10-15T22:17Z",
     "calculado": "2026-10-15T01:30Z",
     "definitivo": false,
     "sin_imagen": true
@@ -101497,11 +101497,229 @@
    "effis": [],
    "effis_ha": null,
    "perimetro": {
-    "clave": "v2|4|61d1728d90cf",
-    "revisado": "2026-10-15T13:26Z",
-    "calculado": "2026-10-14T19:23Z",
+    "clave": "v2|4|1a9e7259f61b",
+    "revisado": "2026-10-15T22:17Z",
+    "calculado": "2026-10-15T22:17Z",
     "definitivo": false,
-    "sin_imagen": true
+    "ha": 6.8,
+    "severidad": {
+     "baja": 6.6,
+     "moderada": 0.2,
+     "alta": 0.0
+    },
+    "imagenes": [
+     "2026-10-15"
+    ],
+    "fecha_antes": "2026-10-10",
+    "fecha_despues": "2026-10-15",
+    "una_imagen": 1.0,
+    "cobertura": 0.99,
+    "natura": [],
+    "geometry": {
+     "type": "MultiPolygon",
+     "coordinates": [
+      [
+       [
+        [
+         -6.65714,
+         38.97344
+        ],
+        [
+         -6.65738,
+         38.97327
+        ],
+        [
+         -6.65737,
+         38.97345
+        ],
+        [
+         -6.65714,
+         38.97344
+        ]
+       ]
+      ],
+      [
+       [
+        [
+         -6.65782,
+         38.97399
+        ],
+        [
+         -6.65803,
+         38.97436
+        ],
+        [
+         -6.6578,
+         38.97435
+        ],
+        [
+         -6.65782,
+         38.97399
+        ]
+       ]
+      ],
+      [
+       [
+        [
+         -6.67073,
+         38.98128
+        ],
+        [
+         -6.67053,
+         38.98038
+        ],
+        [
+         -6.67007,
+         38.98037
+        ],
+        [
+         -6.66963,
+         38.97964
+        ],
+        [
+         -6.66784,
+         38.97816
+        ],
+        [
+         -6.66764,
+         38.97707
+        ],
+        [
+         -6.66718,
+         38.97707
+        ],
+        [
+         -6.66697,
+         38.97634
+        ],
+        [
+         -6.66857,
+         38.97691
+        ],
+        [
+         -6.66878,
+         38.97764
+        ],
+        [
+         -6.66923,
+         38.97783
+        ],
+        [
+         -6.66921,
+         38.97855
+        ],
+        [
+         -6.66989,
+         38.97874
+        ],
+        [
+         -6.67077,
+         38.9802
+        ],
+        [
+         -6.67075,
+         38.98074
+        ],
+        [
+         -6.67143,
+         38.98111
+        ],
+        [
+         -6.67073,
+         38.98128
+        ]
+       ]
+      ],
+      [
+       [
+        [
+         -6.67349,
+         38.9817
+        ],
+        [
+         -6.67371,
+         38.98206
+        ],
+        [
+         -6.67348,
+         38.98206
+        ],
+        [
+         -6.67349,
+         38.9817
+        ]
+       ]
+      ],
+      [
+       [
+        [
+         -6.67325,
+         38.98205
+        ],
+        [
+         -6.67347,
+         38.98224
+        ],
+        [
+         -6.67324,
+         38.98223
+        ],
+        [
+         -6.67325,
+         38.98205
+        ]
+       ]
+      ],
+      [
+       [
+        [
+         -6.67227,
+         38.98383
+        ],
+        [
+         -6.67228,
+         38.98329
+        ],
+        [
+         -6.67139,
+         38.98238
+        ],
+        [
+         -6.67165,
+         38.98166
+        ],
+        [
+         -6.67211,
+         38.98167
+        ],
+        [
+         -6.67255,
+         38.9824
+        ],
+        [
+         -6.67301,
+         38.98241
+        ],
+        [
+         -6.67323,
+         38.98277
+        ],
+        [
+         -6.67295,
+         38.98421
+        ],
+        [
+         -6.67273,
+         38.98384
+        ],
+        [
+         -6.67227,
+         38.98383
+        ]
+       ]
+      ]
+     ]
+    }
    }
   },
   {
@@ -101601,7 +101819,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|cdd66e537385",
-    "revisado": "2026-10-15T13:26Z",
+    "revisado": "2026-10-15T22:17Z",
     "calculado": "2026-10-14T19:23Z",
     "definitivo": false,
     "sin_imagen": true
@@ -101910,6 +102128,13 @@
    "estado": "activo",
    "effis": [],
    "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|3|f52d3f8b89a8",
+    "revisado": "2026-10-15T18:18Z",
+    "calculado": "2026-10-15T18:18Z",
+    "definitivo": false,
+    "sin_imagen": true
+   },
    "perimeter_ha": 23.5,
    "steps": 2,
    "front_km": 1.33,
@@ -102079,13 +102304,6 @@
       ]
      ]
     ]
-   },
-   "perimetro": {
-    "clave": "v2|3|f52d3f8b89a8",
-    "revisado": "2026-10-15T18:18Z",
-    "calculado": "2026-10-15T18:18Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -102591,7 +102809,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|8456773228ea",
-    "revisado": "2026-10-15T13:26Z",
+    "revisado": "2026-10-15T22:17Z",
     "calculado": "2026-10-14T19:23Z",
     "definitivo": false,
     "sin_imagen": true
@@ -106103,6 +106321,13 @@
    "estado": "activo",
    "effis": [],
    "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|4|5fbfa4ce6b01",
+    "revisado": "2026-10-15T18:18Z",
+    "calculado": "2026-10-15T18:18Z",
+    "definitivo": false,
+    "sin_imagen": true
+   },
    "perimeter_ha": 43.8,
    "steps": 2,
    "front_km": 2.62,
@@ -106274,13 +106499,6 @@
       41.72429
      ]
     ]
-   },
-   "perimetro": {
-    "clave": "v2|4|5fbfa4ce6b01",
-    "revisado": "2026-10-15T18:18Z",
-    "calculado": "2026-10-15T18:18Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -106533,7 +106751,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|737f20fa6cd1",
-    "revisado": "2026-10-15T13:26Z",
+    "revisado": "2026-10-15T22:17Z",
     "calculado": "2026-10-15T13:26Z",
     "definitivo": false,
     "sin_imagen": true
@@ -106744,11 +106962,366 @@
    "effis": [],
    "effis_ha": null,
    "perimetro": {
-    "clave": "v2|1|9a0ee89fe8ad",
-    "revisado": "2026-10-15T13:26Z",
-    "calculado": "2026-10-15T13:26Z",
+    "clave": "v2|1|45a2961474ad",
+    "revisado": "2026-10-15T22:17Z",
+    "calculado": "2026-10-15T22:17Z",
     "definitivo": false,
-    "sin_imagen": true
+    "ha": 2.5,
+    "severidad": {
+     "baja": 2.2,
+     "moderada": 0.2,
+     "alta": 0.0
+    },
+    "imagenes": [
+     "2026-10-15"
+    ],
+    "fecha_antes": "2026-09-25",
+    "fecha_despues": "2026-10-15",
+    "una_imagen": 1.0,
+    "cobertura": 0.69,
+    "natura": [
+     {
+      "codigo": "ES4190009",
+      "nombre": "Lago de Sanabria y alrededores - ZEPA",
+      "tipo": "ZEPA",
+      "ha": 2.2
+     },
+     {
+      "codigo": "ES4190105",
+      "nombre": "Lago de Sanabria y alrededores",
+      "tipo": "ZEC",
+      "ha": 2.2
+     }
+    ],
+    "geometry": {
+     "type": "MultiPolygon",
+     "coordinates": [
+      [
+       [
+        [
+         -6.81172,
+         42.13822
+        ],
+        [
+         -6.81173,
+         42.13786
+        ],
+        [
+         -6.81222,
+         42.13769
+        ],
+        [
+         -6.8122,
+         42.13841
+        ],
+        [
+         -6.81172,
+         42.13822
+        ]
+       ]
+      ],
+      [
+       [
+        [
+         -6.80443,
+         42.13916
+        ],
+        [
+         -6.8049,
+         42.13935
+        ],
+        [
+         -6.8049,
+         42.13953
+        ],
+        [
+         -6.80441,
+         42.13952
+        ],
+        [
+         -6.80443,
+         42.13916
+        ]
+       ]
+      ],
+      [
+       [
+        [
+         -6.80877,
+         42.1396
+        ],
+        [
+         -6.80851,
+         42.13996
+        ],
+        [
+         -6.80853,
+         42.1396
+        ],
+        [
+         -6.80877,
+         42.1396
+        ]
+       ]
+      ],
+      [
+       [
+        [
+         -6.80533,
+         42.14098
+        ],
+        [
+         -6.80484,
+         42.14115
+        ],
+        [
+         -6.80485,
+         42.14097
+        ],
+        [
+         -6.80533,
+         42.14098
+        ]
+       ]
+      ],
+      [
+       [
+        [
+         -6.80473,
+         42.14439
+        ],
+        [
+         -6.80497,
+         42.14457
+        ],
+        [
+         -6.80472,
+         42.14475
+        ],
+        [
+         -6.80473,
+         42.14439
+        ]
+       ]
+      ],
+      [
+       [
+        [
+         -6.81052,
+         42.14486
+        ],
+        [
+         -6.81027,
+         42.14503
+        ],
+        [
+         -6.81028,
+         42.14485
+        ],
+        [
+         -6.81052,
+         42.14486
+        ]
+       ]
+      ],
+      [
+       [
+        [
+         -6.8064,
+         42.14496
+        ],
+        [
+         -6.80616,
+         42.14513
+        ],
+        [
+         -6.80616,
+         42.14495
+        ],
+        [
+         -6.8064,
+         42.14496
+        ]
+       ]
+      ],
+      [
+       [
+        [
+         -6.79973,
+         42.13511
+        ],
+        [
+         -6.79996,
+         42.13547
+        ],
+        [
+         -6.79971,
+         42.13547
+        ],
+        [
+         -6.79973,
+         42.13511
+        ]
+       ]
+      ],
+      [
+       [
+        [
+         -6.80093,
+         42.13531
+        ],
+        [
+         -6.80141,
+         42.1355
+        ],
+        [
+         -6.8014,
+         42.13568
+        ],
+        [
+         -6.80092,
+         42.13567
+        ],
+        [
+         -6.80093,
+         42.13531
+        ]
+       ]
+      ],
+      [
+       [
+        [
+         -6.8033,
+         42.13679
+        ],
+        [
+         -6.80379,
+         42.13662
+        ],
+        [
+         -6.80402,
+         42.13699
+        ],
+        [
+         -6.80353,
+         42.13716
+        ],
+        [
+         -6.8033,
+         42.13679
+        ]
+       ]
+      ],
+      [
+       [
+        [
+         -6.80424,
+         42.13753
+        ],
+        [
+         -6.80399,
+         42.13771
+        ],
+        [
+         -6.804,
+         42.13753
+        ],
+        [
+         -6.80424,
+         42.13753
+        ]
+       ]
+      ],
+      [
+       [
+        [
+         -6.78827,
+         42.13741
+        ],
+        [
+         -6.78802,
+         42.13758
+        ],
+        [
+         -6.78803,
+         42.1374
+        ],
+        [
+         -6.78827,
+         42.13741
+        ]
+       ]
+      ],
+      [
+       [
+        [
+         -6.80362,
+         42.14148
+        ],
+        [
+         -6.80341,
+         42.14058
+        ],
+        [
+         -6.80364,
+         42.14094
+        ],
+        [
+         -6.8046,
+         42.14114
+        ],
+        [
+         -6.80458,
+         42.14168
+        ],
+        [
+         -6.80362,
+         42.14148
+        ]
+       ]
+      ],
+      [
+       [
+        [
+         -6.7928,
+         42.14632
+        ],
+        [
+         -6.79328,
+         42.14651
+        ],
+        [
+         -6.79301,
+         42.1474
+        ],
+        [
+         -6.79373,
+         42.14742
+        ],
+        [
+         -6.79375,
+         42.14706
+        ],
+        [
+         -6.79447,
+         42.14707
+        ],
+        [
+         -6.79446,
+         42.14743
+        ],
+        [
+         -6.79299,
+         42.14776
+        ],
+        [
+         -6.7928,
+         42.14632
+        ]
+       ]
+      ]
+     ]
+    }
    }
   },
   {
@@ -106834,6 +107407,34 @@
       ]
      ]
     ]
+   },
+   "natura": [
+    {
+     "codigo": "ES1130002",
+     "nombre": "Macizo Central",
+     "tipo": "ZEC",
+     "ha": 22.3
+    }
+   ],
+   "cobertura": {
+    "matorral": 0.8,
+    "agricola": 0.2
+   },
+   "lugar": {
+    "municipio": "O Bolo",
+    "provincia": "Ourense",
+    "comunidad": "Galicia"
+   },
+   "lugar_focos": 5,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|5|ef52b227b450",
+    "revisado": "2026-10-15T18:18Z",
+    "calculado": "2026-10-15T18:18Z",
+    "definitivo": false,
+    "sin_imagen": true
    },
    "perimeter_ha": 21.5,
    "steps": 2,
@@ -106944,34 +107545,6 @@
       42.32389
      ]
     ]
-   },
-   "natura": [
-    {
-     "codigo": "ES1130002",
-     "nombre": "Macizo Central",
-     "tipo": "ZEC",
-     "ha": 22.3
-    }
-   ],
-   "cobertura": {
-    "matorral": 0.8,
-    "agricola": 0.2
-   },
-   "lugar": {
-    "municipio": "O Bolo",
-    "provincia": "Ourense",
-    "comunidad": "Galicia"
-   },
-   "lugar_focos": 5,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|5|ef52b227b450",
-    "revisado": "2026-10-15T18:18Z",
-    "calculado": "2026-10-15T18:18Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -107073,6 +107646,34 @@
       ]
      ]
     ]
+   },
+   "natura": [
+    {
+     "codigo": "ES1200037",
+     "nombre": "Aller-Lena",
+     "tipo": "ZEC",
+     "ha": 57.0
+    }
+   ],
+   "cobertura": {
+    "bosque": 0.6,
+    "matorral": 0.4
+   },
+   "lugar": {
+    "municipio": "Aller",
+    "provincia": "Asturias",
+    "comunidad": "Asturias"
+   },
+   "lugar_focos": 5,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|5|7cb958766bb4",
+    "revisado": "2026-10-15T18:18Z",
+    "calculado": "2026-10-15T18:18Z",
+    "definitivo": false,
+    "sin_imagen": true
    },
    "perimeter_ha": 21.3,
    "steps": 2,
@@ -107195,34 +107796,6 @@
       43.04046
      ]
     ]
-   },
-   "natura": [
-    {
-     "codigo": "ES1200037",
-     "nombre": "Aller-Lena",
-     "tipo": "ZEC",
-     "ha": 57.0
-    }
-   ],
-   "cobertura": {
-    "bosque": 0.6,
-    "matorral": 0.4
-   },
-   "lugar": {
-    "municipio": "Aller",
-    "provincia": "Asturias",
-    "comunidad": "Asturias"
-   },
-   "lugar_focos": 5,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|5|7cb958766bb4",
-    "revisado": "2026-10-15T18:18Z",
-    "calculado": "2026-10-15T18:18Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -107308,6 +107881,26 @@
       ]
      ]
     ]
+   },
+   "natura": [],
+   "cobertura": {
+    "matorral": 1.0
+   },
+   "lugar": {
+    "municipio": "San Felices de Buelna",
+    "provincia": "Cantabria",
+    "comunidad": "Cantabria"
+   },
+   "lugar_focos": 4,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|4|d08204486c0c",
+    "revisado": "2026-10-15T18:18Z",
+    "calculado": "2026-10-15T18:18Z",
+    "definitivo": false,
+    "sin_imagen": true
    },
    "perimeter_ha": 22.3,
    "steps": 1,
@@ -107422,26 +108015,6 @@
       43.25337
      ]
     ]
-   },
-   "natura": [],
-   "cobertura": {
-    "matorral": 1.0
-   },
-   "lugar": {
-    "municipio": "San Felices de Buelna",
-    "provincia": "Cantabria",
-    "comunidad": "Cantabria"
-   },
-   "lugar_focos": 4,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|4|d08204486c0c",
-    "revisado": "2026-10-15T18:18Z",
-    "calculado": "2026-10-15T18:18Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -107502,6 +108075,26 @@
       ]
      ]
     ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Castilleja de Guzmán",
+    "provincia": "Sevilla",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 4,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|4|28feb1577788",
+    "revisado": "2026-10-15T18:18Z",
+    "calculado": "2026-10-15T18:18Z",
+    "definitivo": false,
+    "sin_imagen": true
    },
    "perimeter_ha": 10.1,
    "steps": 1,
@@ -107592,26 +108185,6 @@
       37.39974
      ]
     ]
-   },
-   "natura": [],
-   "cobertura": {
-    "agricola": 1.0
-   },
-   "lugar": {
-    "municipio": "Castilleja de Guzmán",
-    "provincia": "Sevilla",
-    "comunidad": "Andalucía"
-   },
-   "lugar_focos": 4,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|4|28feb1577788",
-    "revisado": "2026-10-15T18:18Z",
-    "calculado": "2026-10-15T18:18Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -107680,6 +108253,33 @@
       ]
      ]
     ]
+   },
+   "natura": [
+    {
+     "codigo": "ES0000126",
+     "nombre": "Roncesvalles-Selva de Irati",
+     "tipo": "ZEC y ZEPA",
+     "ha": 38.3
+    }
+   ],
+   "cobertura": {
+    "matorral": 1.0
+   },
+   "lugar": {
+    "municipio": "Orbaiceta",
+    "provincia": "Navarra",
+    "comunidad": "Navarra"
+   },
+   "lugar_focos": 3,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|3|b4512b66f632",
+    "revisado": "2026-10-15T18:18Z",
+    "calculado": "2026-10-15T18:18Z",
+    "definitivo": false,
+    "sin_imagen": true
    },
    "perimeter_ha": 10.7,
    "steps": 1,
@@ -107778,33 +108378,6 @@
       42.96091
      ]
     ]
-   },
-   "natura": [
-    {
-     "codigo": "ES0000126",
-     "nombre": "Roncesvalles-Selva de Irati",
-     "tipo": "ZEC y ZEPA",
-     "ha": 38.3
-    }
-   ],
-   "cobertura": {
-    "matorral": 1.0
-   },
-   "lugar": {
-    "municipio": "Orbaiceta",
-    "provincia": "Navarra",
-    "comunidad": "Navarra"
-   },
-   "lugar_focos": 3,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|3|b4512b66f632",
-    "revisado": "2026-10-15T18:18Z",
-    "calculado": "2026-10-15T18:18Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -107881,6 +108454,26 @@
       ]
      ]
     ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Don Benito",
+    "provincia": "Badajoz",
+    "comunidad": "Extremadura"
+   },
+   "lugar_focos": 3,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|3|e47f0b6e56e1",
+    "revisado": "2026-10-15T18:18Z",
+    "calculado": "2026-10-15T18:18Z",
+    "definitivo": false,
+    "sin_imagen": true
    },
    "perimeter_ha": 25.1,
    "steps": 1,
@@ -108011,26 +108604,6 @@
       39.10311
      ]
     ]
-   },
-   "natura": [],
-   "cobertura": {
-    "agricola": 1.0
-   },
-   "lugar": {
-    "municipio": "Don Benito",
-    "provincia": "Badajoz",
-    "comunidad": "Extremadura"
-   },
-   "lugar_focos": 3,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|3|e47f0b6e56e1",
-    "revisado": "2026-10-15T18:18Z",
-    "calculado": "2026-10-15T18:18Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -109330,5 +109903,5 @@
    "effis_ha": null
   }
  ],
- "actualizado": "2026-10-15T18:18Z"
+ "actualizado": "2026-10-15T22:17Z"
 }
