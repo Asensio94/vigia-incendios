@@ -16,6 +16,8 @@ Está pensado para que periodistas y entidades de conservación sepan en pocas h
 arde, dónde y si toca un espacio protegido. No sustituye a la información oficial de
 extinción: un foco es un píxel caliente, no un parte.
 
+> **Estado: activo.** Se actualiza solo y sigue en desarrollo.
+
 ## Cómo funciona
 
 1. **Focos.** Cada hora se descargan los ficheros públicos de FIRMS de las últimas 48 horas
