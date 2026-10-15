@@ -35473,7 +35473,7 @@
     "comunidad": "Cataluña"
    },
    "lugar_focos": 2,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -36537,7 +36537,7 @@
     "comunidad": "Andalucía"
    },
    "lugar_focos": 2,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -36972,7 +36972,7 @@
     "comunidad": "Extremadura"
    },
    "lugar_focos": 2,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -37228,7 +37228,7 @@
     "comunidad": "Región de Murcia"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -37292,7 +37292,7 @@
     "comunidad": "Región de Murcia"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -37369,7 +37369,7 @@
     "comunidad": "Comunidad Valenciana"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -37530,7 +37530,7 @@
     "comunidad": "Islas Baleares"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -37611,7 +37611,7 @@
     "provincia": "Toledo"
    },
    "lugar_focos": 2,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -37675,7 +37675,7 @@
     "comunidad": "Islas Baleares"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -38582,7 +38582,7 @@
     "comunidad": "Comunidad de Madrid"
    },
    "lugar_focos": 10,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -42258,7 +42258,7 @@
     "comunidad": "Castilla-La Mancha"
    },
    "lugar_focos": 3,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -42572,7 +42572,7 @@
     "comunidad": "Castilla-La Mancha"
    },
    "lugar_focos": 3,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -43320,7 +43320,7 @@
     "comunidad": "Andalucía"
    },
    "lugar_focos": 2,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -47983,7 +47983,7 @@
     "comunidad": "Castilla-La Mancha"
    },
    "lugar_focos": 2,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -48353,7 +48353,7 @@
     "provincia": "Región de Murcia"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -48417,7 +48417,7 @@
     "comunidad": "Castilla-La Mancha"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -48494,7 +48494,7 @@
     "comunidad": "Comunidad Valenciana"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -48650,7 +48650,7 @@
     "comunidad": "Castilla-La Mancha"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -52771,7 +52771,7 @@
     "comunidad": "Castilla-La Mancha"
    },
    "lugar_focos": 14,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -57027,7 +57027,7 @@
     "provincia": "Granada"
    },
    "lugar_focos": 6,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -67674,7 +67674,7 @@
     "comunidad": "Extremadura"
    },
    "lugar_focos": 22,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -68444,7 +68444,7 @@
     "comunidad": "Extremadura"
    },
    "lugar_focos": 21,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -71552,7 +71552,7 @@
     "comunidad": "Extremadura"
    },
    "lugar_focos": 9,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -74092,7 +74092,7 @@
     "comunidad": "Extremadura"
    },
    "lugar_focos": 9,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -75398,7 +75398,7 @@
     "comunidad": "Región de Murcia"
    },
    "lugar_focos": 30,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -96150,7 +96150,7 @@
     "provincia": "Región de Murcia"
    },
    "lugar_focos": 6,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -96354,7 +96354,7 @@
     "comunidad": "Castilla-La Mancha"
    },
    "lugar_focos": 3,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -98683,12 +98683,12 @@
     "comunidad": "Extremadura"
    },
    "lugar_focos": 3,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|5|28726889f443",
-    "revisado": "2026-10-15T01:30Z",
+    "revisado": "2026-10-15T13:26Z",
     "calculado": "2026-10-15T01:30Z",
     "definitivo": false,
     "ha": 42.3,
@@ -99582,7 +99582,7 @@
     "provincia": "Ciudad Real"
    },
    "lugar_focos": 2,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -99677,7 +99677,7 @@
     "provincia": "Valladolid"
    },
    "lugar_focos": 2,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -102485,6 +102485,13 @@
    "estado": "activo",
    "effis": [],
    "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|4|52f22dbf2a99",
+    "revisado": "2026-10-15T07:27Z",
+    "calculado": "2026-10-15T07:27Z",
+    "definitivo": false,
+    "sin_imagen": true
+   },
    "perimeter_ha": 32.7,
    "steps": 3,
    "front_km": 2.18,
@@ -102664,13 +102671,6 @@
       ]
      ]
     ]
-   },
-   "perimetro": {
-    "clave": "v2|4|52f22dbf2a99",
-    "revisado": "2026-10-15T07:27Z",
-    "calculado": "2026-10-15T07:27Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -102976,7 +102976,7 @@
     "comunidad": "Castilla-La Mancha"
    },
    "lugar_focos": 2,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -103056,7 +103056,7 @@
     "comunidad": "Navarra"
    },
    "lugar_focos": 2,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -103127,7 +103127,7 @@
     "provincia": "Cádiz"
    },
    "lugar_focos": 2,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -103413,49 +103413,50 @@
   {
    "id": "IN-20261014-012",
    "primera": "2026-10-14T09:26Z",
-   "ultima": "2026-10-14T09:26Z",
-   "n_focos": 1,
-   "n_viirs": 0,
-   "pasadas": 1,
+   "ultima": "2026-10-15T02:19Z",
+   "n_focos": 2,
+   "n_viirs": 1,
+   "pasadas": 2,
    "satelites": [
+    "NOAA-21",
     "Terra"
    ],
    "frp_max": 4.5,
-   "frp_total": 4.5,
-   "ha_focos": 110.2,
+   "frp_total": 5.8,
+   "ha_focos": 15.2,
    "centro": [
-    -4.77064,
-    37.50086
+    -4.76518,
+    37.50146
    ],
    "bbox": [
-    -4.7767,
-    37.4962,
-    -4.76458,
-    37.50552
+    -4.7675,
+    37.49979,
+    -4.76286,
+    37.50313
    ],
    "geometry": {
     "type": "Polygon",
     "coordinates": [
      [
       [
-       -4.76458,
-       37.4962
+       -4.76286,
+       37.49979
       ],
       [
-       -4.76458,
-       37.50552
+       -4.76286,
+       37.50313
       ],
       [
-       -4.7767,
-       37.50552
+       -4.7675,
+       37.50313
       ],
       [
-       -4.7767,
-       37.4962
+       -4.7675,
+       37.49979
       ],
       [
-       -4.76458,
-       37.4962
+       -4.76286,
+       37.49979
       ]
      ]
     ]
@@ -103465,11 +103466,11 @@
     "agricola": 1.0
    },
    "lugar": {
+    "comunidad": "Andalucía",
     "municipio": "Montalbán de Córdoba",
-    "provincia": "Córdoba",
-    "comunidad": "Andalucía"
+    "provincia": "Córdoba"
    },
-   "lugar_focos": 1,
+   "lugar_focos": 2,
    "estado": "activo",
    "effis": [],
    "effis_ha": null
@@ -103534,7 +103535,7 @@
     "comunidad": "Andalucía"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -103605,7 +103606,7 @@
     "comunidad": "Región de Murcia"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -103944,7 +103945,7 @@
     "comunidad": "Castilla-La Mancha"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -104132,7 +104133,7 @@
     "comunidad": "Región de Murcia"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -104196,7 +104197,7 @@
     "comunidad": "Comunidad Valenciana"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -104260,7 +104261,7 @@
     "comunidad": "Extremadura"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -104324,7 +104325,7 @@
     "comunidad": "Extremadura"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -104395,7 +104396,7 @@
     "comunidad": "Castilla-La Mancha"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -105030,7 +105031,7 @@
     "comunidad": "Comunidad Valenciana"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -105101,7 +105102,7 @@
     "comunidad": "Castilla-La Mancha"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -105165,7 +105166,7 @@
     "comunidad": "Castilla-La Mancha"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -105229,7 +105230,7 @@
     "comunidad": "Aragón"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -105293,7 +105294,7 @@
     "comunidad": "Aragón"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -105357,7 +105358,7 @@
     "comunidad": "Aragón"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -105421,7 +105422,7 @@
     "comunidad": "Aragón"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -105536,7 +105537,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|8|f52d3f8b89a8",
-    "revisado": "2026-10-15T01:30Z",
+    "revisado": "2026-10-15T13:26Z",
     "calculado": "2026-10-15T01:30Z",
     "definitivo": false,
     "sin_imagen": true
@@ -105817,7 +105818,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|4|61d1728d90cf",
-    "revisado": "2026-10-15T01:30Z",
+    "revisado": "2026-10-15T13:26Z",
     "calculado": "2026-10-14T19:23Z",
     "definitivo": false,
     "sin_imagen": true
@@ -105920,7 +105921,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|cdd66e537385",
-    "revisado": "2026-10-15T01:30Z",
+    "revisado": "2026-10-15T13:26Z",
     "calculado": "2026-10-14T19:23Z",
     "definitivo": false,
     "sin_imagen": true
@@ -106112,7 +106113,7 @@
     "comunidad": "Andalucía"
    },
    "lugar_focos": 2,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -106192,7 +106193,7 @@
     "comunidad": "Extremadura"
    },
    "lugar_focos": 2,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -106495,7 +106496,7 @@
     "comunidad": "Región de Murcia"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -106559,7 +106560,7 @@
     "comunidad": "Castilla-La Mancha"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -106623,7 +106624,7 @@
     "comunidad": "Extremadura"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -106694,12 +106695,12 @@
     "comunidad": "Castilla-La Mancha"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|8456773228ea",
-    "revisado": "2026-10-15T01:30Z",
+    "revisado": "2026-10-15T13:26Z",
     "calculado": "2026-10-14T19:23Z",
     "definitivo": false,
     "sin_imagen": true
@@ -106765,7 +106766,7 @@
     "comunidad": "Navarra"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -107037,7 +107038,7 @@
     "comunidad": "Aragón"
    },
    "lugar_focos": 5,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -107229,107 +107230,139 @@
   {
    "id": "IN-20261014-044",
    "primera": "2026-10-14T20:32Z",
-   "ultima": "2026-10-15T02:56Z",
-   "n_focos": 7,
-   "n_viirs": 3,
-   "pasadas": 2,
+   "ultima": "2026-10-15T03:17Z",
+   "n_focos": 19,
+   "n_viirs": 15,
+   "pasadas": 5,
    "satelites": [
+    "NOAA-20",
+    "NOAA-21",
     "S-NPP",
     "Terra"
    ],
    "frp_max": 29.3,
-   "frp_total": 101.3,
-   "ha_focos": 45.2,
+   "frp_total": 127.3,
+   "ha_focos": 141.1,
    "centro": [
-    -7.05286,
-    42.99404
+    -7.05606,
+    42.99371
    ],
    "bbox": [
-    -7.05744,
-    42.98804,
-    -7.04926,
-    42.9965
+    -7.06286,
+    42.98627,
+    -7.04805,
+    43.00042
    ],
    "geometry": {
-    "type": "MultiPolygon",
+    "type": "Polygon",
     "coordinates": [
      [
       [
-       [
-        -7.05744,
-        42.98804
-       ],
-       [
-        -7.05744,
-        42.99156
-       ],
-       [
-        -7.05192,
-        42.99156
-       ],
-       [
-        -7.05192,
-        42.98804
-       ],
-       [
-        -7.05744,
-        42.98804
-       ]
-      ]
-     ],
-     [
+       -7.05928,
+       42.98627
+      ],
       [
-       [
-        -7.05646,
-        42.99159
-       ],
-       [
-        -7.05646,
-        42.99511
-       ],
-       [
-        -7.05478,
-        42.99511
-       ],
-       [
-        -7.05478,
-        42.9965
-       ],
-       [
-        -7.04926,
-        42.9965
-       ],
-       [
-        -7.04926,
-        42.99298
-       ],
-       [
-        -7.05094,
-        42.99298
-       ],
-       [
-        -7.05094,
-        42.99159
-       ],
-       [
-        -7.05646,
-        42.99159
-       ]
+       -7.05928,
+       42.98803
+      ],
+      [
+       -7.06286,
+       42.98857
+      ],
+      [
+       -7.06247,
+       42.99826
+      ],
+      [
+       -7.06093,
+       42.99826
+      ],
+      [
+       -7.06093,
+       43.00042
+      ],
+      [
+       -7.05503,
+       43.00042
+      ],
+      [
+       -7.05503,
+       42.99809
+      ],
+      [
+       -7.05092,
+       42.99809
+      ],
+      [
+       -7.05092,
+       42.9965
+      ],
+      [
+       -7.04926,
+       42.9965
+      ],
+      [
+       -7.04926,
+       42.99298
+      ],
+      [
+       -7.05092,
+       42.99298
+      ],
+      [
+       -7.05092,
+       42.99235
+      ],
+      [
+       -7.04805,
+       42.99235
+      ],
+      [
+       -7.04805,
+       42.98901
+      ],
+      [
+       -7.05126,
+       42.98901
+      ],
+      [
+       -7.05126,
+       42.98843
+      ],
+      [
+       -7.05192,
+       42.98843
+      ],
+      [
+       -7.05192,
+       42.98804
+      ],
+      [
+       -7.05338,
+       42.98804
+      ],
+      [
+       -7.05338,
+       42.98627
+      ],
+      [
+       -7.05928,
+       42.98627
       ]
      ]
     ]
    },
    "natura": [],
    "cobertura": {
-    "matorral": 0.71,
-    "bosque": 0.29
+    "matorral": 0.89,
+    "bosque": 0.11
    },
    "lugar": {
     "municipio": "Navia de Suarna",
     "provincia": "Lugo",
     "comunidad": "Galicia"
    },
-   "lugar_focos": 4,
+   "lugar_focos": 19,
    "estado": "activo",
    "effis": [],
    "effis_ha": null,
@@ -107340,18 +107373,26 @@
     "definitivo": false,
     "sin_imagen": true
    },
-   "perimeter_ha": 15.4,
-   "steps": 1,
-   "front_km": 1.86,
+   "perimeter_ha": 78.7,
+   "steps": 2,
+   "front_km": 3.26,
    "front_t": "2026-10-15T02:56Z",
-   "max_growth_ha_h": null,
+   "max_growth_ha_h": 2.5,
    "progression": [
     {
+     "t": "2026-10-15T01:34Z",
+     "ha": 75.3,
+     "pixels": 9,
+     "frp": 21.9,
+     "front_km": 3.4
+    },
+    {
      "t": "2026-10-15T02:56Z",
-     "ha": 15.4,
-     "pixels": 3,
-     "frp": 5.0,
-     "front_km": 1.86
+     "ha": 78.7,
+     "pixels": 6,
+     "frp": 9.1,
+     "front_km": 3.26,
+     "growth_ha_h": 2.5
     }
    ],
    "perimeter": {
@@ -107359,90 +107400,144 @@
     "coordinates": [
      [
       [
-       -7.05592,
-       42.98957
+       -7.06157,
+       42.99127
       ],
       [
-       -7.0548,
-       42.99383
+       -7.0611,
+       42.99367
       ],
       [
-       -7.05268,
-       42.99555
+       -7.06109,
+       42.9958
       ],
       [
-       -7.05183,
-       42.99567
+       -7.05929,
+       42.99827
       ],
       [
-       -7.05107,
-       42.99537
+       -7.05781,
+       42.99872
       ],
       [
-       -7.05082,
-       42.99442
+       -7.05099,
+       42.9953
       ],
       [
-       -7.0527,
-       42.99219
+       -7.05053,
+       42.99305
       ],
       [
-       -7.05358,
-       42.98932
+       -7.04935,
+       42.99068
       ],
       [
-       -7.05487,
-       42.98887
+       -7.04996,
+       42.98993
       ],
       [
-       -7.05592,
-       42.98957
+       -7.05235,
+       42.98947
+      ],
+      [
+       -7.0565,
+       42.98797
+      ],
+      [
+       -7.05741,
+       42.98824
+      ],
+      [
+       -7.06099,
+       42.99054
+      ],
+      [
+       -7.06157,
+       42.99127
       ]
      ]
     ]
    },
    "front": {
-    "type": "LineString",
+    "type": "MultiLineString",
     "coordinates": [
      [
-      -7.05592,
-      42.98957
+      [
+       -7.06157,
+       42.99127
+      ],
+      [
+       -7.0611,
+       42.99388
+      ]
      ],
      [
-      -7.0548,
-      42.99383
+      [
+       -7.0611,
+       42.99397
+      ],
+      [
+       -7.06114,
+       42.99568
+      ],
+      [
+       -7.05948,
+       42.99807
+      ],
+      [
+       -7.05863,
+       42.99863
+      ],
+      [
+       -7.05749,
+       42.99868
+      ],
+      [
+       -7.05494,
+       42.99706
+      ],
+      [
+       -7.05099,
+       42.9953
+      ],
+      [
+       -7.05053,
+       42.99305
+      ],
+      [
+       -7.04961,
+       42.99127
+      ]
      ],
      [
-      -7.05268,
-      42.99555
-     ],
-     [
-      -7.05183,
-      42.99567
-     ],
-     [
-      -7.05107,
-      42.99537
-     ],
-     [
-      -7.05082,
-      42.99442
-     ],
-     [
-      -7.0527,
-      42.99219
-     ],
-     [
-      -7.05358,
-      42.98932
-     ],
-     [
-      -7.05487,
-      42.98887
-     ],
-     [
-      -7.05592,
-      42.98957
+      [
+       -7.04972,
+       42.99005
+      ],
+      [
+       -7.05319,
+       42.98921
+      ],
+      [
+       -7.05553,
+       42.98811
+      ],
+      [
+       -7.0565,
+       42.98797
+      ],
+      [
+       -7.05741,
+       42.98824
+      ],
+      [
+       -7.06099,
+       42.99054
+      ],
+      [
+       -7.06157,
+       42.99127
+      ]
      ]
     ]
    }
@@ -107550,7 +107645,7 @@
     "comunidad": "Extremadura"
    },
    "lugar_focos": 3,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -107785,7 +107880,7 @@
     "comunidad": "Andalucía"
    },
    "lugar_focos": 2,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -107849,7 +107944,7 @@
     "comunidad": "Andalucía"
    },
    "lugar_focos": 2,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -107929,7 +108024,7 @@
     "comunidad": "Región de Murcia"
    },
    "lugar_focos": 2,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -108002,7 +108097,7 @@
     "comunidad": "Región de Murcia"
    },
    "lugar_focos": 2,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -108067,7 +108162,7 @@
     "comunidad": "Castilla-La Mancha"
    },
    "lugar_focos": 2,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -108131,7 +108226,7 @@
     "comunidad": "Extremadura"
    },
    "lugar_focos": 2,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -108204,7 +108299,7 @@
     "comunidad": "Castilla-La Mancha"
    },
    "lugar_focos": 2,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -108277,7 +108372,7 @@
     "comunidad": "Castilla-La Mancha"
    },
    "lugar_focos": 2,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -108341,7 +108436,7 @@
     "comunidad": "Castilla-La Mancha"
    },
    "lugar_focos": 2,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -108405,7 +108500,7 @@
     "comunidad": "Andalucía"
    },
    "lugar_focos": 2,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -108469,7 +108564,7 @@
     "comunidad": "Andalucía"
    },
    "lugar_focos": 2,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -108559,7 +108654,7 @@
     "comunidad": "Extremadura"
    },
    "lugar_focos": 2,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -108639,7 +108734,7 @@
     "comunidad": "Navarra"
    },
    "lugar_focos": 2,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -108937,7 +109032,7 @@
     "comunidad": "Región de Murcia"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -109001,7 +109096,7 @@
     "comunidad": "Extremadura"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -109065,7 +109160,7 @@
     "comunidad": "Comunidad Valenciana"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -109129,7 +109224,7 @@
     "comunidad": "Cataluña"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -109193,7 +109288,7 @@
     "comunidad": "Galicia"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -109257,7 +109352,7 @@
     "comunidad": "Navarra"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -109321,7 +109416,7 @@
     "comunidad": "Región de Murcia"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -109385,7 +109480,7 @@
     "comunidad": "Extremadura"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -109449,7 +109544,7 @@
     "comunidad": "Castilla-La Mancha"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -109532,7 +109627,7 @@
     "comunidad": "Extremadura"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -109603,7 +109698,7 @@
     "comunidad": "Comunidad de Madrid"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -109801,6 +109896,27 @@
      ]
     ]
    },
+   "natura": [],
+   "cobertura": {
+    "agricola": 0.5,
+    "matorral": 0.5
+   },
+   "lugar": {
+    "municipio": "El Ejido",
+    "provincia": "Almería",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 4,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|4|aa99c7610eb2",
+    "revisado": "2026-10-15T07:27Z",
+    "calculado": "2026-10-15T07:27Z",
+    "definitivo": false,
+    "sin_imagen": true
+   },
    "perimeter_ha": 9.3,
    "steps": 1,
    "front_km": 1.27,
@@ -109890,29 +110006,298 @@
       36.81096
      ]
     ]
+   }
+  },
+  {
+   "id": "IN-20261015-002",
+   "primera": "2026-10-15T02:19Z",
+   "ultima": "2026-10-15T02:19Z",
+   "n_focos": 2,
+   "n_viirs": 2,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 0.9,
+   "frp_total": 1.8,
+   "ha_focos": 16.3,
+   "centro": [
+    -4.33048,
+    36.71384
+   ],
+   "bbox": [
+    -4.33289,
+    36.71212,
+    -4.32807,
+    36.71556
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -4.32807,
+       36.71212
+      ],
+      [
+       -4.33289,
+       36.71212
+      ],
+      [
+       -4.33289,
+       36.71556
+      ],
+      [
+       -4.32807,
+       36.71556
+      ],
+      [
+       -4.32807,
+       36.71212
+      ]
+     ]
+    ]
    },
-   "natura": [],
+   "natura": [
+    {
+     "codigo": "ES0000504",
+     "nombre": "Bahía de Málaga-Cerro Gordo",
+     "tipo": "ZEPA",
+     "ha": 4.2
+    }
+   ],
    "cobertura": {
-    "agricola": 0.5,
-    "matorral": 0.5
+    "agua": 1.0
    },
    "lugar": {
-    "municipio": "El Ejido",
-    "provincia": "Almería",
+    "municipio": "Málaga",
+    "provincia": "Málaga",
     "comunidad": "Andalucía"
    },
-   "lugar_focos": 4,
+   "lugar_focos": 2,
    "estado": "activo",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
-    "clave": "v2|4|aa99c7610eb2",
-    "revisado": "2026-10-15T07:27Z",
-    "calculado": "2026-10-15T07:27Z",
+    "clave": "v2|2|737f20fa6cd1",
+    "revisado": "2026-10-15T13:26Z",
+    "calculado": "2026-10-15T13:26Z",
+    "definitivo": false,
+    "sin_imagen": true
+   }
+  },
+  {
+   "id": "IN-20261015-003",
+   "primera": "2026-10-15T02:19Z",
+   "ultima": "2026-10-15T02:19Z",
+   "n_focos": 2,
+   "n_viirs": 2,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 0.6,
+   "frp_total": 1.1,
+   "ha_focos": 14.0,
+   "centro": [
+    -6.0906,
+    36.95069
+   ],
+   "bbox": [
+    -6.09279,
+    36.94906,
+    -6.08841,
+    36.95232
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -6.08841,
+       36.94906
+      ],
+      [
+       -6.09279,
+       36.94906
+      ],
+      [
+       -6.09279,
+       36.95232
+      ],
+      [
+       -6.08841,
+       36.95232
+      ],
+      [
+       -6.08841,
+       36.94906
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Lebrija",
+    "provincia": "Sevilla",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 2,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261015-004",
+   "primera": "2026-10-15T02:19Z",
+   "ultima": "2026-10-15T02:19Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 0.6,
+   "frp_total": 0.6,
+   "ha_focos": 16.3,
+   "centro": [
+    -3.23006,
+    39.62891
+   ],
+   "bbox": [
+    -3.23257,
+    39.62719,
+    -3.22755,
+    39.63063
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -3.22755,
+       39.62719
+      ],
+      [
+       -3.22755,
+       39.63063
+      ],
+      [
+       -3.23257,
+       39.63063
+      ],
+      [
+       -3.23257,
+       39.62719
+      ],
+      [
+       -3.22755,
+       39.62719
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "La Villa de Don Fadrique",
+    "provincia": "Toledo",
+    "comunidad": "Castilla-La Mancha"
+   },
+   "lugar_focos": 1,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261015-005",
+   "primera": "2026-10-15T10:04Z",
+   "ultima": "2026-10-15T10:04Z",
+   "n_focos": 1,
+   "n_viirs": 0,
+   "pasadas": 1,
+   "satelites": [
+    "Terra"
+   ],
+   "frp_max": 11.1,
+   "frp_total": 11.1,
+   "ha_focos": 305.3,
+   "centro": [
+    -6.79907,
+    42.14117
+   ],
+   "bbox": [
+    -6.81209,
+    42.13475,
+    -6.78605,
+    42.14759
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -6.78605,
+       42.13475
+      ],
+      [
+       -6.78605,
+       42.14759
+      ],
+      [
+       -6.81209,
+       42.14759
+      ],
+      [
+       -6.81209,
+       42.13475
+      ],
+      [
+       -6.78605,
+       42.13475
+      ]
+     ]
+    ]
+   },
+   "natura": [
+    {
+     "codigo": "ES4190009",
+     "nombre": "Lago de Sanabria y alrededores - ZEPA",
+     "tipo": "ZEPA",
+     "ha": 305.3
+    },
+    {
+     "codigo": "ES4190105",
+     "nombre": "Lago de Sanabria y alrededores",
+     "tipo": "ZEC",
+     "ha": 305.3
+    }
+   ],
+   "cobertura": {
+    "matorral": 1.0
+   },
+   "lugar": {
+    "municipio": "Galende",
+    "provincia": "Zamora",
+    "comunidad": "Castilla y León"
+   },
+   "lugar_focos": 1,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|1|9a0ee89fe8ad",
+    "revisado": "2026-10-15T13:26Z",
+    "calculado": "2026-10-15T13:26Z",
     "definitivo": false,
     "sin_imagen": true
    }
   }
  ],
- "actualizado": "2026-10-15T07:27Z"
+ "actualizado": "2026-10-15T13:26Z"
 }
