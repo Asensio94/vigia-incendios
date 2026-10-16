@@ -93,3 +93,33 @@ def test_document_keeps_a_year_sorted_by_date_then_id():
     # No source or regions per signal: the hub adds them.
     assert not any({"source", "regions"} & s.keys() for s in doc["signals"])
     assert json.loads(json.dumps(doc, ensure_ascii=False)) == doc
+
+
+def _fire_fr(**kw) -> dict:
+    kw = {"centro": [9.17, 42.24],
+          "natura": [{"codigo": "FR9400578", "nombre": "Massif du Rotondo", "tipo": "ZSC", "ha": 19.0}],
+          "lugar": {"municipio": "Venaco", "insee": "2B341", "provincia": "Haute-Corse", "comunidad": "Corse"},
+          **kw}
+    return _fire(id="FR-IN-20261014-001", primera="2026-10-14T01:40Z", **kw)
+
+
+def test_every_signal_carries_its_country():
+    assert S.signal(_fire())["country"] == "ES"
+    assert S.signal(_fire_fr())["country"] == "FR"
+
+
+def test_french_fire_goes_by_insee_code_with_a_french_title():
+    s = S.signal(_fire_fr())
+    assert s["municipalities"] == ["2B341"] and s["municipality_names"] == ["Venaco"]
+    assert s["provinces"] == ["Haute-Corse"] and s["details"]["province"] == "Haute-Corse"
+    assert s["title"] == "Incendie à Venaco"
+    assert s["url"] == "https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261014-001"
+    assert s["sites"] == [{"code": "FR9400578", "ha": 19.0}]
+    s = S.signal(_fire_fr(lugar=None))
+    assert s["title"] == "Incendie, lieu non identifié" and s["municipalities"] == []
+
+
+def test_document_mixes_both_countries():
+    doc = S.document([_fire(), _fire_fr()], "2026-10-15T07:00Z")
+    assert [(s["id"], s["country"]) for s in doc["signals"]] == \
+        [("IN-20260929-007", "ES"), ("FR-IN-20261014-001", "FR")]

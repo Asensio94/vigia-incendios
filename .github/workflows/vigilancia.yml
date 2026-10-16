@@ -46,8 +46,9 @@ jobs:
           # Solo se guarda si han entrado focos nuevos o se ha calculado algún perímetro de
           # Sentinel-2. Si no, lo único que cambia es la hora de revisión y el estado de los
           # incendios, que se recalcula en cada vuelta: guardarlo daría un commit por hora
-          # sin información.
-          if git diff --quiet -- data/focos && [ "${{ steps.vigilar.outputs.perimetros || 0 }}" = "0" ]; then
+          # sin información. Cuenta también un fichero de focos nuevo (el primero de cada
+          # año o de cada país), que git diff no ve.
+          if [ -z "$(git status --porcelain -- data/focos data/fr/focos)" ] && [ "${{ steps.vigilar.outputs.perimetros || 0 }}" = "0" ]; then
             echo "Sin focos ni perímetros nuevos: no se guarda nada."
           else
             git add data
@@ -75,19 +76,20 @@ jobs:
         if: always()
         run: |
           python - >> "$GITHUB_STEP_SUMMARY" <<'PY'
-          import json, pathlib
-          from vigia import web
-          p = pathlib.Path("data/incendios.json")
+          import json
+          from vigia import config, web
           print("### Vigía de incendios\n")
-          if not p.exists():
-              print("Sin registro."); raise SystemExit
-          r = json.loads(p.read_text(encoding="utf-8"))
-          act = [i for i in r["incendios"] if i.get("estado") == "activo" and web.relevante(i)]
-          print(f"Revisado {r['actualizado']} · **{len(act)} incendios activos** (sin contar focos aislados)\n")
-          for i in sorted(act, key=lambda i: -i["n_focos"])[:20]:
-              l = i.get("lugar") or {}
-              print(f"- `{i['id']}` {l.get('municipio')} ({l.get('provincia')}) · {i['n_focos']} focos"
-                    + (" · Red Natura" if i.get("natura") else "") + (f" · EFFIS {i['effis_ha']} ha" if i.get("effis_ha") else "")
-                    + (f" · Sentinel-2 {i['perimetro']['ha']} ha" if (i.get("perimetro") or {}).get("ha") else ""))
-          print("\nhttps://asensio94.github.io/vigia-incendios/")
+          for c in config.COUNTRIES.values():
+              print(f"#### {c.code}\n")
+              if not c.incendios_json.exists():
+                  print("Sin registro.\n"); continue
+              r = json.loads(c.incendios_json.read_text(encoding="utf-8"))
+              act = [i for i in r["incendios"] if i.get("estado") == "activo" and web.relevante(i)]
+              print(f"Revisado {r['actualizado']} · **{len(act)} incendios activos** (sin contar focos aislados)\n")
+              for i in sorted(act, key=lambda i: -i["n_focos"])[:20]:
+                  l = i.get("lugar") or {}
+                  print(f"- `{i['id']}` {l.get('municipio')} ({l.get('provincia')}) · {i['n_focos']} focos"
+                        + (" · Red Natura" if i.get("natura") else "") + (f" · EFFIS {i['effis_ha']} ha" if i.get("effis_ha") else "")
+                        + (f" · Sentinel-2 {i['perimetro']['ha']} ha" if (i.get("perimetro") or {}).get("ha") else ""))
+              print(f"\n{c.web}\n")
           PY

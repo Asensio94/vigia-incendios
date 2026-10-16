@@ -226,17 +226,21 @@ def _candidato(inc: dict, ahora: str) -> bool:
     return F.horas_entre(inc["ultima"], ahora) <= (config.POST_DIAS + 2) * 24
 
 
-def actualizar(incendios: list[dict], ahora: str) -> dict:
+def actualizar(por_pais: dict[str, list[dict]], ahora: str) -> dict:
     """Calcula o rehace el perímetro de Sentinel-2 de los incendios que lo necesitan.
+
+    `por_pais` lleva los incendios de cada país por su código: el presupuesto es uno solo y
+    los más grandes van primero, sea cual sea su país.
 
     Cada incendio se revisa en el catálogo como mucho cada PERIMETRO_CADA_HORAS y solo se
     recalcula si cambiaron sus focos o sus escenas. Los más grandes van primero; lo que no
     quepa en PERIMETRO_PRESUPUESTO_S queda para la vuelta siguiente.
     """
     inicio = time.monotonic()
-    cand = sorted((i for i in incendios if _candidato(i, ahora)), key=lambda i: -i.get("n_focos", 0))
+    cand = sorted(((i, config.COUNTRIES[code]) for code, incs in por_pais.items() for i in incs
+                   if _candidato(i, ahora)), key=lambda x: -x[0].get("n_focos", 0))
     res = {"candidatos": len(cand), "revisados": 0, "calculados": 0, "pendientes": 0}
-    for inc in cand:
+    for inc, pais in cand:
         prev = inc.get("perimetro") or {}
         al_dia = str(prev.get("clave", "")).startswith(f"v{config.PERIMETRO_VERSION}|")
         if al_dia and prev.get("revisado") and F.horas_entre(prev["revisado"], ahora) < config.PERIMETRO_CADA_HORAS:
@@ -280,7 +284,7 @@ def actualizar(incendios: list[dict], ahora: str) -> dict:
                 # mientras queden días para que llegue otra imagen.
                 nuevo["definitivo"] = F.horas_entre(inc["ultima"], ahora) > config.POST_DIAS * 24
             nuevo["natura"] = [{k: e[k] for k in ("codigo", "nombre", "tipo", "ha") if k in e}
-                               for e in zonas.natura_de(g)] if g is not None else []
+                               for e in zonas.natura_de(g, pais)] if g is not None else []
             nuevo["geometry"] = zonas._redondear(mapping(g), 5) if g is not None else None
         inc["perimetro"] = nuevo
     res["segundos"] = round(time.monotonic() - inicio)

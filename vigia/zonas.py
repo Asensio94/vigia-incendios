@@ -1,8 +1,8 @@
-"""Capas fijas: límite de España, Red Natura 2000 y fuentes fijas de calor.
+"""Capas fijas de cada país: contorno, Red Natura 2000 y fuentes fijas de calor.
 
-Se descargan una vez con `python -m vigia zonas` y van en el repositorio (data/zonas), para
-que la vigilancia de cada hora no dependa de que la EEA, OpenStreetMap o el archivo de
-FIRMS respondan.
+Se descargan una vez con `python -m vigia zonas` y van en el repositorio (data/zonas y
+data/fr/zonas), para que la vigilancia de cada hora no dependa de que la EEA,
+OpenStreetMap o el archivo de FIRMS respondan.
 """
 from __future__ import annotations
 
@@ -18,37 +18,59 @@ import numpy as np
 import requests
 from scipy.spatial import cKDTree
 from shapely import STRtree
-from shapely.geometry import mapping, shape
+from shapely.geometry import box, mapping, shape
 from shapely.ops import unary_union
 
 from . import config
+from .config import Country
 
-ESPANA = config.ZONAS_DIR / "espana.geojson"
-NATURA = config.ZONAS_DIR / "natura.geojson.gz"        # detalle de ~20 m, para los cruces
-NATURA_WEB = config.ZONAS_DIR / "natura_web.geojson"   # simplificada, para el mapa
-FIJAS = config.ZONAS_DIR / "fuentes_fijas.csv"
+# Nombre del contorno en OpenStreetMap, y figuras de Natura 2000 según SITETYPE (A: Directiva
+# Aves, B: Directiva Hábitats, C: las dos sobre el mismo polígono) con las siglas de cada país.
+CONTORNO = {"ES": ("espana.geojson", "España"), "FR": ("france.geojson", "France")}
+FIGURAS = {"ES": {"A": "ZEPA", "B": "ZEC", "C": "ZEC y ZEPA"},
+           "FR": {"A": "ZPS", "B": "ZSC", "C": "ZSC et ZPS"}}
+
+
+def contorno_path(c: Country):
+    return c.zonas_dir / CONTORNO[c.code][0]
+
+
+def natura_path(c: Country):
+    return c.zonas_dir / "natura.geojson.gz"         # detalle de ~20 m, para los cruces
+
+
+def natura_web_path(c: Country):
+    return c.zonas_dir / "natura_web.geojson"        # simplificada, para el mapa
+
+
+def fijas_path(c: Country):
+    return c.zonas_dir / "fuentes_fijas.csv"
 
 
 # ── Descarga ────────────────────────────────────────────────────────────────────────────
 
-def descargar_espana() -> None:
+def descargar_contorno(c: Country) -> None:
+    nombre = CONTORNO[c.code][1]
     r = requests.get(f"{config.NOMINATIM}/search", headers=config.UA, timeout=120, params={
-        "q": "España", "countrycodes": "es", "featuretype": "country",
+        "q": nombre, "countrycodes": c.code.lower(), "featuretype": "country",
         "polygon_geojson": 1, "polygon_threshold": 0.001, "format": "json", "limit": 1})
     r.raise_for_status()
     g = shape(r.json()[0]["geojson"]).buffer(0)
-    ESPANA.write_text(json.dumps({"type": "Feature", "geometry": mapping(g),
-                                  "properties": {"nombre": "España"}}), encoding="utf-8")
+    if c.boundary_clip:
+        g = g.intersection(box(*c.boundary_clip))
+    c.zonas_dir.mkdir(parents=True, exist_ok=True)
+    contorno_path(c).write_text(json.dumps({"type": "Feature", "geometry": mapping(g),
+                                            "properties": {"nombre": nombre}}), encoding="utf-8")
 
 
-def descargar_natura() -> int:
-    """ZEC y ZEPA de España desde el servicio de la EEA, en páginas de 200."""
+def descargar_natura(c: Country) -> int:
+    """Espacios Natura 2000 de un país desde el servicio de la EEA, en páginas de 200."""
     espacios: dict[str, dict] = {}
     for capa in config.NATURA_CAPAS:
         offset = 0
         while True:
             r = requests.get(config.NATURA_URL.format(capa=capa), timeout=300, params={
-                "where": "SITECODE LIKE 'ES%'", "outFields": "SITECODE,SITENAME,SITETYPE",
+                "where": f"SITECODE LIKE '{c.code}%'", "outFields": "SITECODE,SITENAME,SITETYPE",
                 "returnGeometry": "true", "outSR": "4326", "maxAllowableOffset": 0.0002,
                 "orderByFields": "SITECODE", "resultOffset": offset, "resultRecordCount": 200,
                 "f": "geojson"})
@@ -67,16 +89,15 @@ def descargar_natura() -> int:
     for code, e in sorted(espacios.items()):
         g = unary_union(e["geoms"])
         p = e["props"]
-        # SITETYPE: A = ZEPA, B = ZEC, C = ambas figuras sobre el mismo polígono.
-        tipo = {"A": "ZEPA", "B": "ZEC", "C": "ZEC y ZEPA"}.get(p.get("SITETYPE"), p.get("SITETYPE"))
+        tipo = FIGURAS[c.code].get(p.get("SITETYPE"), p.get("SITETYPE"))
         props = {"codigo": code, "nombre": p["SITENAME"], "tipo": tipo}
         feats.append({"type": "Feature", "geometry": mapping(g), "properties": props})
         gw = g.simplify(0.003, preserve_topology=True)
         if not gw.is_empty:
             web.append({"type": "Feature", "geometry": _redondear(mapping(gw)), "properties": props})
-    with gzip.open(NATURA, "wt", encoding="utf-8") as fh:
+    with gzip.open(natura_path(c), "wt", encoding="utf-8") as fh:
         json.dump({"type": "FeatureCollection", "features": feats}, fh, ensure_ascii=False)
-    NATURA_WEB.write_text(json.dumps({"type": "FeatureCollection", "features": web},
+    natura_web_path(c).write_text(json.dumps({"type": "FeatureCollection", "features": web},
                                      ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     return len(feats)
 
@@ -123,16 +144,16 @@ def archivo_firms(producto: str, anio: int, pais: str = "Spain") -> list[dict]:
     return list(csv.DictReader(io.StringIO(z.read(nombre).decode("utf-8"))))
 
 
-def descargar_fijas() -> int:
+def descargar_fijas(c: Country) -> int:
     """Fuentes fijas: los focos «type 2» del archivo de FIRMS, juntados en celdas de ~200 m."""
     celdas: dict[tuple, int] = {}
     for anio in config.FIJAS_ANIOS:
         for prod in config.ARCHIVO_PRODUCTOS:
-            for f in archivo_firms(prod, anio):
+            for f in archivo_firms(prod, anio, c.firms_country):
                 if f.get("type") == "2":
                     k = (round(float(f["latitude"]) / 0.002), round(float(f["longitude"]) / 0.002))
                     celdas[k] = celdas.get(k, 0) + 1
-    with FIJAS.open("w", newline="", encoding="utf-8") as fh:
+    with fijas_path(c).open("w", newline="", encoding="utf-8") as fh:
         w = csv.writer(fh)
         w.writerow(["lat", "lon", "focos"])
         for (a, b), n in sorted(celdas.items()):
@@ -148,27 +169,28 @@ def km_xy(lat, lon):
     return np.column_stack([lon * 111.32 * np.cos(np.radians(lat)), lat * 110.57])
 
 
-@lru_cache(1)
-def espana():
+@lru_cache(None)
+def contorno(c: Country, margen: float = 0.02):
+    """Contorno preparado del país. Por defecto con 2 km de margen: los píxeles de costa y
+    frontera tienen el centro a veces fuera."""
     from shapely.prepared import prep
-    g = shape(json.loads(ESPANA.read_text(encoding="utf-8"))["geometry"])
-    # 2 km de margen: los píxeles de costa y frontera tienen el centro a veces fuera.
-    return prep(g.buffer(0.02))
+    g = shape(json.loads(contorno_path(c).read_text(encoding="utf-8"))["geometry"])
+    return prep(g.buffer(margen) if margen else g)
 
 
-@lru_cache(1)
-def fijas() -> cKDTree | None:
-    if not FIJAS.exists():
+@lru_cache(None)
+def fijas(c: Country) -> cKDTree | None:
+    if not fijas_path(c).exists():
         return None
-    filas = list(csv.DictReader(FIJAS.open(encoding="utf-8")))
+    filas = list(csv.DictReader(fijas_path(c).open(encoding="utf-8")))
     if not filas:
         return None
     return cKDTree(km_xy([float(f["lat"]) for f in filas], [float(f["lon"]) for f in filas]))
 
 
-@lru_cache(1)
-def natura() -> tuple[list[dict], list, STRtree]:
-    with gzip.open(NATURA, "rt", encoding="utf-8") as fh:
+@lru_cache(None)
+def natura(c: Country) -> tuple[list[dict], list, STRtree]:
+    with gzip.open(natura_path(c), "rt", encoding="utf-8") as fh:
         fc = json.load(fh)
     props = [f["properties"] for f in fc["features"]]
     geoms = [shape(f["geometry"]) for f in fc["features"]]
@@ -183,9 +205,9 @@ def ha_geo(g) -> float:
     return g.area * 111.32 * 110.57 * math.cos(math.radians(lat)) * 100
 
 
-def natura_de(g) -> list[dict]:
+def natura_de(g, c: Country) -> list[dict]:
     """Espacios Natura que toca una huella, con las hectáreas dentro de cada uno."""
-    props, geoms, arbol = natura()
+    props, geoms, arbol = natura(c)
     out = []
     for i in arbol.query(g, predicate="intersects"):
         ha = ha_geo(g.intersection(geoms[i]))
