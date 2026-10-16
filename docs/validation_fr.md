@@ -70,3 +70,14 @@ Feux BDIFF de 1 000 ha ou plus :
 |---|---|---:|---|---:|---:|
 | Ribaute (11311) | 2025-08-05 14:16 | 11 133 ha | oui | +5,5 h | 529 |
 | Narbonne (11262) | 2025-07-07 12:45 | 1 551 ha | oui | +0,4 h | 73 |
+
+## Surface brûlée Sentinel-2 face à EFFIS
+
+Échantillon de 59 feux de 2022 et 2025 avec contour EFFIS, stratifié par taille et par année ; 59 avec une image avant et après. Mêmes réglages qu'en Espagne (dNBR > 0,15, à moins de 3 000 m des foyers). IoU : surface commune divisée par la surface des deux réunis (1 = même contour).
+
+| Taille (EFFIS) | Feux | IoU médian | IoU ≥ 0,5 | Surface / EFFIS (médiane) |
+|---|---:|---:|---:|---:|
+| Tous | 59 | 0,54 | 54 % | 0,95 |
+| 30–100 ha | 20 | 0,58 | 55 % | 1,02 |
+| 100–500 ha | 20 | 0,53 | 55 % | 0,97 |
+| ≥ 500 ha | 19 | 0,55 | 53 % | 0,84 |
