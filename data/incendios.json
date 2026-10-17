@@ -61374,7 +61374,7 @@
     "comunidad": "Comunidad Valenciana"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -80810,7 +80810,7 @@
     "comunidad": "Extremadura"
    },
    "lugar_focos": 9,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -123489,6 +123489,53 @@
    "estado": "activo",
    "effis": [],
    "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|12|afa16daa759f",
+    "revisado": "2026-10-17T17:10Z",
+    "calculado": "2026-10-17T17:10Z",
+    "definitivo": false,
+    "ha": 0.4,
+    "severidad": {
+     "baja": 0.1,
+     "moderada": 0.2,
+     "alta": 0.1
+    },
+    "imagenes": [
+     "2026-10-17"
+    ],
+    "fecha_antes": "2026-10-12",
+    "fecha_despues": "2026-10-17",
+    "una_imagen": 1.0,
+    "cobertura": 0.94,
+    "natura": [],
+    "geometry": {
+     "type": "Polygon",
+     "coordinates": [
+      [
+       [
+        -5.4863,
+        37.37776
+       ],
+       [
+        -5.4865,
+        37.37703
+       ],
+       [
+        -5.48582,
+        37.37704
+       ],
+       [
+        -5.48584,
+        37.37777
+       ],
+       [
+        -5.4863,
+        37.37776
+       ]
+      ]
+     ]
+    }
+   },
    "perimeter_ha": 22.0,
    "steps": 3,
    "front_km": 1.43,
@@ -123606,53 +123653,6 @@
       37.37823
      ]
     ]
-   },
-   "perimetro": {
-    "clave": "v2|12|afa16daa759f",
-    "revisado": "2026-10-17T17:10Z",
-    "calculado": "2026-10-17T17:10Z",
-    "definitivo": false,
-    "ha": 0.4,
-    "severidad": {
-     "baja": 0.1,
-     "moderada": 0.2,
-     "alta": 0.1
-    },
-    "imagenes": [
-     "2026-10-17"
-    ],
-    "fecha_antes": "2026-10-12",
-    "fecha_despues": "2026-10-17",
-    "una_imagen": 1.0,
-    "cobertura": 0.94,
-    "natura": [],
-    "geometry": {
-     "type": "Polygon",
-     "coordinates": [
-      [
-       [
-        -5.4863,
-        37.37776
-       ],
-       [
-        -5.4865,
-        37.37703
-       ],
-       [
-        -5.48582,
-        37.37704
-       ],
-       [
-        -5.48584,
-        37.37777
-       ],
-       [
-        -5.4863,
-        37.37776
-       ]
-      ]
-     ]
-    }
    }
   },
   {
@@ -123727,6 +123727,28 @@
    "estado": "activo",
    "effis": [],
    "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|3|dc6524865648",
+    "revisado": "2026-10-17T17:10Z",
+    "calculado": "2026-10-17T17:10Z",
+    "definitivo": false,
+    "ha": 0.0,
+    "severidad": {
+     "baja": 0.0,
+     "moderada": 0.0,
+     "alta": 0.0
+    },
+    "imagenes": [
+     "2026-10-17"
+    ],
+    "fecha_antes": "2026-10-14",
+    "fecha_despues": "2026-10-17",
+    "una_imagen": 0.0,
+    "cobertura": 0.0,
+    "nublado": true,
+    "natura": [],
+    "geometry": null
+   },
    "perimeter_ha": 8.3,
    "steps": 1,
    "front_km": 1.06,
@@ -123824,28 +123846,6 @@
       38.37277
      ]
     ]
-   },
-   "perimetro": {
-    "clave": "v2|3|dc6524865648",
-    "revisado": "2026-10-17T17:10Z",
-    "calculado": "2026-10-17T17:10Z",
-    "definitivo": false,
-    "ha": 0.0,
-    "severidad": {
-     "baja": 0.0,
-     "moderada": 0.0,
-     "alta": 0.0
-    },
-    "imagenes": [
-     "2026-10-17"
-    ],
-    "fecha_antes": "2026-10-14",
-    "fecha_despues": "2026-10-17",
-    "una_imagen": 0.0,
-    "cobertura": 0.0,
-    "nublado": true,
-    "natura": [],
-    "geometry": null
    }
   },
   {
@@ -123929,6 +123929,13 @@
    "estado": "activo",
    "effis": [],
    "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|4|24409ff6553d",
+    "revisado": "2026-10-17T17:10Z",
+    "calculado": "2026-10-17T17:10Z",
+    "definitivo": false,
+    "sin_imagen": true
+   },
    "perimeter_ha": 20.7,
    "steps": 2,
    "front_km": 1.81,
@@ -124042,13 +124049,6 @@
       38.90711
      ]
     ]
-   },
-   "perimetro": {
-    "clave": "v2|4|24409ff6553d",
-    "revisado": "2026-10-17T17:10Z",
-    "calculado": "2026-10-17T17:10Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -124143,6 +124143,26 @@
       ]
      ]
     ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Alcalá de Guadaíra",
+    "provincia": "Sevilla",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 6,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|6|28feb1577788",
+    "revisado": "2026-10-17T17:10Z",
+    "calculado": "2026-10-17T17:10Z",
+    "definitivo": false,
+    "sin_imagen": true
    },
    "perimeter_ha": 15.2,
    "steps": 1,
@@ -124253,26 +124273,6 @@
       37.20069
      ]
     ]
-   },
-   "natura": [],
-   "cobertura": {
-    "agricola": 1.0
-   },
-   "lugar": {
-    "municipio": "Alcalá de Guadaíra",
-    "provincia": "Sevilla",
-    "comunidad": "Andalucía"
-   },
-   "lugar_focos": 6,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|6|28feb1577788",
-    "revisado": "2026-10-17T17:10Z",
-    "calculado": "2026-10-17T17:10Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -124498,6 +124498,26 @@
      ]
     ]
    },
+   "natura": [],
+   "cobertura": {
+    "matorral": 1.0
+   },
+   "lugar": {
+    "municipio": "Castro Laboreiro e Lamas de Mouro",
+    "provincia": null,
+    "comunidad": null
+   },
+   "lugar_focos": 3,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|3|6b4963865e56",
+    "revisado": "2026-10-17T17:10Z",
+    "calculado": "2026-10-17T17:10Z",
+    "definitivo": false,
+    "sin_imagen": true
+   },
    "perimeter_ha": 14.4,
    "steps": 1,
    "front_km": 1.73,
@@ -124619,26 +124639,6 @@
       42.06391
      ]
     ]
-   },
-   "natura": [],
-   "cobertura": {
-    "matorral": 1.0
-   },
-   "lugar": {
-    "municipio": "Castro Laboreiro e Lamas de Mouro",
-    "provincia": null,
-    "comunidad": null
-   },
-   "lugar_focos": 3,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|3|6b4963865e56",
-    "revisado": "2026-10-17T17:10Z",
-    "calculado": "2026-10-17T17:10Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -124715,6 +124715,33 @@
       ]
      ]
     ]
+   },
+   "natura": [
+    {
+     "codigo": "ES0000400",
+     "nombre": "Arrozales de Palazuelo y Guadalperales",
+     "tipo": "ZEPA",
+     "ha": 43.5
+    }
+   ],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Acedera",
+    "provincia": "Badajoz",
+    "comunidad": "Extremadura"
+   },
+   "lugar_focos": 3,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|3|e47f0b6e56e1",
+    "revisado": "2026-10-17T17:10Z",
+    "calculado": "2026-10-17T17:10Z",
+    "definitivo": false,
+    "sin_imagen": true
    },
    "perimeter_ha": 16.6,
    "steps": 1,
@@ -124829,33 +124856,6 @@
       39.06624
      ]
     ]
-   },
-   "natura": [
-    {
-     "codigo": "ES0000400",
-     "nombre": "Arrozales de Palazuelo y Guadalperales",
-     "tipo": "ZEPA",
-     "ha": 43.5
-    }
-   ],
-   "cobertura": {
-    "agricola": 1.0
-   },
-   "lugar": {
-    "municipio": "Acedera",
-    "provincia": "Badajoz",
-    "comunidad": "Extremadura"
-   },
-   "lugar_focos": 3,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|3|e47f0b6e56e1",
-    "revisado": "2026-10-17T17:10Z",
-    "calculado": "2026-10-17T17:10Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -126040,7 +126040,88 @@
    "estado": "activo",
    "effis": [],
    "effis_ha": null
+  },
+  {
+   "id": "IN-20261017-026",
+   "primera": "2026-10-17T20:49Z",
+   "ultima": "2026-10-17T20:49Z",
+   "n_focos": 2,
+   "n_viirs": 0,
+   "pasadas": 1,
+   "satelites": [
+    "Terra"
+   ],
+   "frp_max": 65.9,
+   "frp_total": 120.0,
+   "ha_focos": 211.1,
+   "centro": [
+    -9.11055,
+    43.12853
+   ],
+   "bbox": [
+    -9.12325,
+    43.12316,
+    -9.09786,
+    43.1339
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -9.11033,
+       43.12316
+      ],
+      [
+       -9.12325,
+       43.12316
+      ],
+      [
+       -9.12325,
+       43.13238
+      ],
+      [
+       -9.11078,
+       43.13238
+      ],
+      [
+       -9.11078,
+       43.1339
+      ],
+      [
+       -9.09786,
+       43.1339
+      ],
+      [
+       -9.09786,
+       43.12468
+      ],
+      [
+       -9.11033,
+       43.12468
+      ],
+      [
+       -9.11033,
+       43.12316
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "bosque": 0.5,
+    "agricola": 0.5
+   },
+   "lugar": {
+    "municipio": "Vimianzo",
+    "provincia": "La Coruña",
+    "comunidad": "Galicia"
+   },
+   "lugar_focos": 2,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null
   }
  ],
- "actualizado": "2026-10-17T17:10Z"
+ "actualizado": "2026-10-17T22:18Z"
 }
