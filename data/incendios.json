@@ -126351,11 +126351,185 @@
    "effis": [],
    "effis_ha": null,
    "perimetro": {
-    "clave": "v2|9|f8911fd8385f",
-    "revisado": "2026-10-18T14:34Z",
-    "calculado": "2026-10-18T14:34Z",
+    "clave": "v2|9|8bf52c6a3bd5",
+    "revisado": "2026-10-18T20:43Z",
+    "calculado": "2026-10-18T20:43Z",
     "definitivo": false,
-    "sin_imagen": true
+    "ha": 27.4,
+    "severidad": {
+     "baja": 4.5,
+     "moderada": 11.3,
+     "alta": 11.6
+    },
+    "imagenes": [
+     "2026-10-18"
+    ],
+    "fecha_antes": "2026-10-13",
+    "fecha_despues": "2026-10-18",
+    "una_imagen": 1.0,
+    "cobertura": 1.0,
+    "natura": [],
+    "geometry": {
+     "type": "MultiPolygon",
+     "coordinates": [
+      [
+       [
+        [
+         -9.10894,
+         43.13309
+        ],
+        [
+         -9.10894,
+         43.13273
+        ],
+        [
+         -9.10844,
+         43.13273
+        ],
+        [
+         -9.10795,
+         43.13219
+        ],
+        [
+         -9.10672,
+         43.13201
+        ],
+        [
+         -9.10672,
+         43.13165
+        ],
+        [
+         -9.10623,
+         43.13147
+        ],
+        [
+         -9.10623,
+         43.12985
+        ],
+        [
+         -9.10573,
+         43.12949
+        ],
+        [
+         -9.10573,
+         43.12877
+        ],
+        [
+         -9.10745,
+         43.12859
+        ],
+        [
+         -9.10918,
+         43.12949
+        ],
+        [
+         -9.11016,
+         43.12949
+        ],
+        [
+         -9.1104,
+         43.12913
+        ],
+        [
+         -9.1109,
+         43.12912
+        ],
+        [
+         -9.11114,
+         43.1284
+        ],
+        [
+         -9.11212,
+         43.1284
+        ],
+        [
+         -9.11237,
+         43.12714
+        ],
+        [
+         -9.11384,
+         43.12678
+        ],
+        [
+         -9.1136,
+         43.12606
+        ],
+        [
+         -9.11409,
+         43.12606
+        ],
+        [
+         -9.11409,
+         43.12642
+        ],
+        [
+         -9.11483,
+         43.12696
+        ],
+        [
+         -9.11483,
+         43.1275
+        ],
+        [
+         -9.1136,
+         43.1275
+        ],
+        [
+         -9.11385,
+         43.12876
+        ],
+        [
+         -9.11434,
+         43.12876
+        ],
+        [
+         -9.11385,
+         43.1311
+        ],
+        [
+         -9.11287,
+         43.13128
+        ],
+        [
+         -9.11262,
+         43.132
+        ],
+        [
+         -9.1109,
+         43.13201
+        ],
+        [
+         -9.11066,
+         43.13309
+        ],
+        [
+         -9.10894,
+         43.13309
+        ]
+       ]
+      ],
+      [
+       [
+        [
+         -9.11017,
+         43.13651
+        ],
+        [
+         -9.10993,
+         43.13633
+        ],
+        [
+         -9.11017,
+         43.13633
+        ],
+        [
+         -9.11017,
+         43.13651
+        ]
+       ]
+      ]
+     ]
+    }
    },
    "perimeter_ha": 29.0,
    "steps": 2,
@@ -126852,6 +127026,26 @@
      ]
     ]
    },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Usagre",
+    "provincia": "Badajoz",
+    "comunidad": "Extremadura"
+   },
+   "lugar_focos": 13,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|13|cb65cd539b86",
+    "revisado": "2026-10-18T18:05Z",
+    "calculado": "2026-10-18T18:05Z",
+    "definitivo": false,
+    "sin_imagen": true
+   },
    "perimeter_ha": 177.4,
    "steps": 1,
    "front_km": 6.6,
@@ -127109,26 +127303,6 @@
       38.43236
      ]
     ]
-   },
-   "natura": [],
-   "cobertura": {
-    "agricola": 1.0
-   },
-   "lugar": {
-    "municipio": "Usagre",
-    "provincia": "Badajoz",
-    "comunidad": "Extremadura"
-   },
-   "lugar_focos": 13,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|13|cb65cd539b86",
-    "revisado": "2026-10-18T18:05Z",
-    "calculado": "2026-10-18T18:05Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -127197,6 +127371,26 @@
       ]
      ]
     ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Córdoba",
+    "provincia": "Córdoba",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 3,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|3|871f312d97b4",
+    "revisado": "2026-10-18T18:05Z",
+    "calculado": "2026-10-18T18:05Z",
+    "definitivo": false,
+    "sin_imagen": true
    },
    "perimeter_ha": 11.0,
    "steps": 1,
@@ -127311,26 +127505,6 @@
       37.73065
      ]
     ]
-   },
-   "natura": [],
-   "cobertura": {
-    "agricola": 1.0
-   },
-   "lugar": {
-    "municipio": "Córdoba",
-    "provincia": "Córdoba",
-    "comunidad": "Andalucía"
-   },
-   "lugar_focos": 3,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|3|871f312d97b4",
-    "revisado": "2026-10-18T18:05Z",
-    "calculado": "2026-10-18T18:05Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -127699,5 +127873,5 @@
    "effis_ha": null
   }
  ],
- "actualizado": "2026-10-18T18:05Z"
+ "actualizado": "2026-10-18T20:43Z"
 }
