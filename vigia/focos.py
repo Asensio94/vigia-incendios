@@ -1,4 +1,5 @@
-"""Focos activos: descarga de FIRMS, filtros y registro anual en data/focos/AAAA.csv.
+"""Focos activos: descarga de FIRMS, filtros y registro anual por país en data/focos/AAAA.csv
+(España) y data/fr/focos/AAAA.csv (Francia).
 
 Un foco es un píxel caliente visto por un satélite en una pasada: VIIRS (S-NPP, NOAA-20 y
 NOAA-21, píxel de 375 m) o MODIS (Terra y Aqua, 1 km). No es un incendio: el agrupado en
@@ -16,6 +17,7 @@ import requests
 from shapely.geometry import Point
 
 from . import config, zonas
+from .config import Country
 
 log = logging.getLogger(__name__)
 
@@ -43,19 +45,42 @@ def normalizar(f: dict, sensor: str) -> dict | None:
             "incendio": ""}
 
 
-def filtrar(focos: list[dict]) -> list[dict]:
-    """Solo España y lejos de fuentes fijas de calor."""
-    esp = zonas.espana()
-    focos = [f for f in focos if esp.contains(Point(f["lon"], f["lat"]))]
-    arbol = zonas.fijas()
+def filtrar(focos: list[dict], c: Country) -> list[dict]:
+    """Solo los del país y lejos de fuentes fijas de calor."""
+    dentro = zonas.contorno(c)
+    return sin_fijas([f for f in focos if dentro.contains(Point(f["lon"], f["lat"]))], c)
+
+
+def sin_fijas(focos: list[dict], c: Country) -> list[dict]:
+    arbol = zonas.fijas(c)
     if arbol is None or not focos:
         return focos
     d, _ = arbol.query(zonas.km_xy([f["lat"] for f in focos], [f["lon"] for f in focos]))
     return [f for f, di in zip(focos, d) if di > config.FIJAS_RADIO_KM]
 
 
-def descargar(periodo: str = "48h") -> list[dict]:
-    """Focos de las últimas 24h/48h/7d de todos los satélites, ya filtrados."""
+def repartir(focos: list[dict]) -> dict[str, list[dict]]:
+    """Cada foco a su país, y fuera los de fuentes fijas.
+
+    El contorno de cada país lleva 2 km de margen para no perder los píxeles de costa. En la
+    frontera esos márgenes se solapan: decide entonces el contorno sin margen, y si el centro
+    no cae en ninguno de los dos, el primer país de la lista.
+    """
+    out: dict[str, list[dict]] = {code: [] for code in config.COUNTRIES}
+    for f in focos:
+        p = Point(f["lon"], f["lat"])
+        cands = [c for c in config.COUNTRIES.values()
+                 if c.crop[0] < f["lat"] < c.crop[1] and c.crop[2] < f["lon"] < c.crop[3]
+                 and zonas.contorno(c).contains(p)]
+        if len(cands) > 1:
+            cands = [c for c in cands if zonas.contorno(c, 0).contains(p)] or cands
+        if cands:
+            out[cands[0].code].append(f)
+    return {code: sin_fijas(fs, config.COUNTRIES[code]) for code, fs in out.items()}
+
+
+def descargar(periodo: str = "48h") -> dict[str, list[dict]]:
+    """Focos de las últimas 24h/48h/7d de todos los satélites, filtrados y por país."""
     out = []
     for sat, (carpeta, prefijo) in config.FIRMS_FUENTES.items():
         sensor = "MODIS" if sat == "MODIS" else "VIIRS"
@@ -71,27 +96,28 @@ def descargar(periodo: str = "48h") -> list[dict]:
             # Recorte grueso antes del punto en polígono, que es lo caro.
             for f in filas:
                 la, lo = float(f["latitude"]), float(f["longitude"])
-                if 27.4 < la < 44.2 and -18.6 < lo < 4.6:
+                if any(c.crop[0] < la < c.crop[1] and c.crop[2] < lo < c.crop[3]
+                       for c in config.COUNTRIES.values()):
                     n = normalizar(f, sensor)
                     if n:
                         out.append(n)
-    return filtrar(out)
+    return repartir(out)
 
 
 # ── Registro ────────────────────────────────────────────────────────────────────────────
 
-def _fichero(anio: int):
-    return config.FOCOS_DIR / f"{anio}.csv"
+def _fichero(anio: int, c: Country):
+    return c.focos_dir / f"{anio}.csv"
 
 
-def leer(desde: str | None = None) -> list[dict]:
-    """Focos guardados desde una fecha ISO (todos si no se da)."""
-    anios = sorted(int(p.stem) for p in config.FOCOS_DIR.glob("*.csv"))
+def leer(c: Country, desde: str | None = None) -> list[dict]:
+    """Focos guardados de un país desde una fecha ISO (todos si no se da)."""
+    anios = sorted(int(p.stem) for p in c.focos_dir.glob("*.csv"))
     if desde:
         anios = [a for a in anios if a >= int(desde[:4])]
     out = []
     for a in anios:
-        with _fichero(a).open(encoding="utf-8") as fh:
+        with _fichero(a, c).open(encoding="utf-8") as fh:
             for f in csv.DictReader(fh):
                 if desde and f["t"] < desde:
                     continue
@@ -101,15 +127,15 @@ def leer(desde: str | None = None) -> list[dict]:
     return out
 
 
-def guardar(focos: list[dict]) -> None:
+def guardar(focos: list[dict], c: Country) -> None:
     """Reescribe los años presentes en `focos` (que debe traer todos los de esos años)."""
     por_anio: dict[int, list[dict]] = {}
     for f in focos:
         por_anio.setdefault(int(f["t"][:4]), []).append(f)
-    config.FOCOS_DIR.mkdir(parents=True, exist_ok=True)
+    c.focos_dir.mkdir(parents=True, exist_ok=True)
     for a, fs in por_anio.items():
         fs.sort(key=lambda f: (f["t"], f["clave"]))
-        with _fichero(a).open("w", newline="", encoding="utf-8") as fh:
+        with _fichero(a, c).open("w", newline="", encoding="utf-8") as fh:
             w = csv.DictWriter(fh, fieldnames=CAMPOS, extrasaction="ignore", lineterminator="\n")
             w.writeheader()
             for f in fs:
@@ -117,16 +143,16 @@ def guardar(focos: list[dict]) -> None:
                             "track": f"{f['track']:g}"})
 
 
-def anadir(nuevos: list[dict]) -> int:
-    """Suma al registro los focos que no estaban; devuelve cuántos son nuevos."""
+def anadir(nuevos: list[dict], c: Country) -> int:
+    """Suma al registro del país los focos que no estaban; devuelve cuántos son nuevos."""
     if not nuevos:
         return 0
     desde = min(f["t"] for f in nuevos)[:4] + "-01-01"
-    todos = leer(desde)
+    todos = leer(c, desde)
     vistos = {f["clave"] for f in todos}
     frescos = [f for f in nuevos if f["clave"] not in vistos]
     if frescos:
-        guardar(todos + frescos)
+        guardar(todos + frescos, c)
     return len(frescos)
 
 

@@ -17,16 +17,17 @@ from shapely import STRtree
 from shapely.geometry import Point, shape
 
 from . import config, effis, focos as F, incendios as I, perimeter, zonas
+from .config import Country
 
 CLASES = [(30, 100), (100, 500), (500, 1e9)]
 
 
-def _archivo(anio: int) -> tuple[list[dict], list[dict]]:
-    """Focos normalizados y filas «type 2» (fuentes fijas) de un año."""
+def _archivo(anio: int, pais: Country = config.ES) -> tuple[list[dict], list[dict]]:
+    """Focos normalizados y filas «type 2» (fuentes fijas) de un año y un país."""
     out, fijas = [], []
     for prod in config.ARCHIVO_PRODUCTOS:
         sensor = "MODIS" if prod == "modis" else "VIIRS"
-        for f in zonas.archivo_firms(prod, anio):
+        for f in zonas.archivo_firms(prod, anio, pais.firms_country):
             if f.get("type") == "2":
                 fijas.append(f)
                 continue
@@ -38,14 +39,14 @@ def _archivo(anio: int) -> tuple[list[dict], list[dict]]:
     return out, fijas
 
 
-def incendios_archivo(anio: int, datos: dict) -> tuple[list[dict], int]:
+def incendios_archivo(anio: int, datos: dict, pais: Country = config.ES) -> tuple[list[dict], int]:
     """Incendios del vigía en un año pasado: focos del archivo con las reglas de siempre.
 
     `datos` es {año: _archivo(año)}; la máscara de fuentes fijas sale de los otros años.
     Devuelve los incendios y el número de focos que pasaron los filtros.
     """
-    esp = zonas.espana()
-    focos = [f for f in datos[anio][0] if esp.contains(Point(f["lon"], f["lat"]))]
+    dentro = zonas.contorno(pais)
+    focos = [f for f in datos[anio][0] if dentro.contains(Point(f["lon"], f["lat"]))]
     otras = [r for b in datos if b != anio for r in datos[b][1]]
     if otras:
         arbol = cKDTree(zonas.km_xy([float(r["latitude"]) for r in otras],
@@ -224,7 +225,8 @@ def _caso_perimetro(c: dict) -> dict | None:
     return out
 
 
-def contrastar_perimetros(anios=(2023, 2024), por_clase: int = 25, hilos: int = 4) -> list[dict]:
+def contrastar_perimetros(anios=(2023, 2024), por_clase: int = 25, hilos: int = 4,
+                          pais: Country = config.ES) -> list[dict]:
     """Calcula el perímetro de Sentinel-2 de una muestra de incendios con perímetro EFFIS.
 
     Muestra estratificada por tamaño (30–100, 100–500 y ≥ 500 ha) y año, con semilla fija.
@@ -232,11 +234,11 @@ def contrastar_perimetros(anios=(2023, 2024), por_clase: int = 25, hilos: int = 
     import random
     from concurrent.futures import ThreadPoolExecutor
 
-    datos = {a: _archivo(a) for a in anios}
+    datos = {a: _archivo(a, pais) for a in anios}
     casos = []
     for a in anios:
-        incs, _ = incendios_archivo(a, datos)
-        areas = effis.descargar(f"{a}-01-01", f"{a + 1}-01-01", 30)
+        incs, _ = incendios_archivo(a, datos, pais)
+        areas = effis.descargar(f"{a}-01-01", f"{a + 1}-01-01", 30, pais=pais.code)
         por_inc: dict[int, list[dict]] = {}
         for ar, h in zip(areas, emparejar(incs, areas)):
             if h is not None:
@@ -251,7 +253,7 @@ def contrastar_perimetros(anios=(2023, 2024), por_clase: int = 25, hilos: int = 
             grupo = [c for c in casos if c["anio"] == a and lo <= c["effis_ha"] < hi]
             muestra += rng.sample(grupo, min(por_clase, len(grupo)))
     # Cada caso se apunta en cuanto termina, para poder retomar una tanda cortada.
-    parcial = config.DATA / "validacion_perimetro.jsonl"
+    parcial = pais.data / "validacion_perimetro.jsonl"
     hechos = {}
     if parcial.exists():
         for linea in parcial.read_text(encoding="utf-8").splitlines():

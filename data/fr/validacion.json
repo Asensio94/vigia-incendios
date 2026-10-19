@@ -1,0 +1,337 @@
+{
+ "2022": {
+  "effis_total": 1088,
+  "clases": [
+   {
+    "desde": 30,
+    "hasta": 100,
+    "effis": 206,
+    "detectados": 187,
+    "retraso_mediana_h": 1.0,
+    "antes_que_effis": 40,
+    "ratio_ha_mediana": 2.26,
+    "ratio_perimetro_mediana": 1.28,
+    "iou_huella_mediana": 0.17,
+    "iou_perimetro_mediana": 0.18
+   },
+   {
+    "desde": 100,
+    "hasta": 500,
+    "effis": 69,
+    "detectados": 66,
+    "retraso_mediana_h": 1.0,
+    "antes_que_effis": 12,
+    "ratio_ha_mediana": 1.35,
+    "ratio_perimetro_mediana": 0.82,
+    "iou_huella_mediana": 0.3,
+    "iou_perimetro_mediana": 0.31
+   },
+   {
+    "desde": 500,
+    "hasta": null,
+    "effis": 15,
+    "detectados": 15,
+    "retraso_mediana_h": 2.0,
+    "antes_que_effis": 0,
+    "ratio_ha_mediana": 0.97,
+    "ratio_perimetro_mediana": 0.99,
+    "iou_huella_mediana": 0.56,
+    "iou_perimetro_mediana": 0.67
+   }
+  ],
+  "vigia_total": 4079,
+  "vigia_sin_effis": 3487,
+  "vigia_sin_effis_3_focos": 553,
+  "vigia_sin_effis_10_focos": 34,
+  "vigia_con_effis_por_focos": {
+   "1": [
+    592,
+    4079
+   ],
+   "3": [
+    369,
+    922
+   ],
+   "10": [
+    119,
+    153
+   ],
+   "30": [
+    32,
+    34
+   ]
+  },
+  "focos": 19099,
+  "bdiff": {
+   "bdiff_total": 4433,
+   "bdiff_30ha": 135,
+   "sin_commune": 0,
+   "clases": [
+    {
+     "desde": 30,
+     "hasta": 100,
+     "bdiff": 88,
+     "detectados": 60,
+     "retraso_mediana_h": 0.6,
+     "medidas": 20
+    },
+    {
+     "desde": 100,
+     "hasta": 500,
+     "bdiff": 32,
+     "detectados": 28,
+     "retraso_mediana_h": 1.1,
+     "medidas": 6
+    },
+    {
+     "desde": 500,
+     "hasta": null,
+     "bdiff": 15,
+     "detectados": 14,
+     "retraso_mediana_h": 3.5,
+     "medidas": 7
+    }
+   ],
+   "destacados": [
+    {
+     "insee": "33225",
+     "commune": "Landiras",
+     "departement": "33",
+     "alerta": "2022-07-12T14:31Z",
+     "ha": 12552.0,
+     "precision": "Mesurées",
+     "detectado": true,
+     "retraso_h": 6.6,
+     "focos": 4096,
+     "ha_focos": 15379.2
+    },
+    {
+     "insee": "33225",
+     "commune": "Landiras",
+     "departement": "33",
+     "alerta": "2022-08-12T10:36Z",
+     "ha": 6742.7,
+     "precision": "Mesurées",
+     "detectado": false
+    },
+    {
+     "insee": "33529",
+     "commune": "La Teste-de-Buch",
+     "departement": "33",
+     "alerta": "2022-07-12T12:36Z",
+     "ha": 5709.0,
+     "precision": "Mesurées",
+     "detectado": true,
+     "retraso_h": 8.5,
+     "focos": 1287,
+     "ha_focos": 5651.5
+    },
+    {
+     "insee": "33503",
+     "commune": "Saumos",
+     "departement": "33",
+     "alerta": "2022-09-12T13:21Z",
+     "ha": 3248.0,
+     "precision": "Mesurées",
+     "detectado": true,
+     "retraso_h": 21.5,
+     "focos": 547,
+     "ha_focos": 3404.9
+    },
+    {
+     "insee": "83002",
+     "commune": "Aiguines",
+     "departement": "83",
+     "alerta": "2022-06-18T07:25Z",
+     "ha": 2500.0,
+     "precision": "",
+     "detectado": true,
+     "retraso_h": 3.8,
+     "focos": 231,
+     "ha_focos": 2549.7
+    },
+    {
+     "insee": "29016",
+     "commune": "Brasparts",
+     "departement": "29",
+     "alerta": "2022-07-24T21:28Z",
+     "ha": 1917.0,
+     "precision": "Mesurées",
+     "detectado": true,
+     "retraso_h": -151.9,
+     "focos": 138,
+     "ha_focos": 2009.2
+    },
+    {
+     "insee": "13045",
+     "commune": "Graveson",
+     "departement": "13",
+     "alerta": "2022-07-14T14:16Z",
+     "ha": 1451.53,
+     "precision": "",
+     "detectado": true,
+     "retraso_h": 6.6,
+     "focos": 104,
+     "ha_focos": 1084.8
+    },
+    {
+     "insee": "49018",
+     "commune": "Baugé-en-Anjou",
+     "departement": "49",
+     "alerta": "2022-08-08T11:03Z",
+     "ha": 1450.0,
+     "precision": "Mesurées",
+     "detectado": true,
+     "retraso_h": 0.2,
+     "focos": 319,
+     "ha_focos": 2117.5
+    },
+    {
+     "insee": "48094",
+     "commune": "Massegros Causses Gorges",
+     "departement": "48",
+     "alerta": "2022-08-08T14:21Z",
+     "ha": 1207.0,
+     "precision": "",
+     "detectado": true,
+     "retraso_h": 6.4,
+     "focos": 98,
+     "ha_focos": 1282.9
+    },
+    {
+     "insee": "07145",
+     "commune": "Lussas",
+     "departement": "07",
+     "alerta": "2022-07-27T07:43Z",
+     "ha": 1120.08,
+     "precision": "",
+     "detectado": true,
+     "retraso_h": 3.1,
+     "focos": 85,
+     "ha_focos": 1048.8
+    }
+   ]
+  }
+ },
+ "2025": {
+  "effis_total": 1312,
+  "clases": [
+   {
+    "desde": 30,
+    "hasta": 100,
+    "effis": 186,
+    "detectados": 170,
+    "retraso_mediana_h": 1.0,
+    "antes_que_effis": 45,
+    "ratio_ha_mediana": 2.59,
+    "ratio_perimetro_mediana": 1.33,
+    "iou_huella_mediana": 0.13,
+    "iou_perimetro_mediana": 0.12
+   },
+   {
+    "desde": 100,
+    "hasta": 500,
+    "effis": 64,
+    "detectados": 58,
+    "retraso_mediana_h": 1.0,
+    "antes_que_effis": 19,
+    "ratio_ha_mediana": 1.43,
+    "ratio_perimetro_mediana": 1.0,
+    "iou_huella_mediana": 0.23,
+    "iou_perimetro_mediana": 0.2
+   },
+   {
+    "desde": 500,
+    "hasta": null,
+    "effis": 5,
+    "detectados": 5,
+    "retraso_mediana_h": 2.0,
+    "antes_que_effis": 0,
+    "ratio_ha_mediana": 0.46,
+    "ratio_perimetro_mediana": 0.39,
+    "iou_huella_mediana": 0.26,
+    "iou_perimetro_mediana": 0.23
+   }
+  ],
+  "vigia_total": 3926,
+  "vigia_sin_effis": 3404,
+  "vigia_sin_effis_3_focos": 457,
+  "vigia_sin_effis_10_focos": 18,
+  "vigia_con_effis_por_focos": {
+   "1": [
+    522,
+    3926
+   ],
+   "3": [
+    300,
+    757
+   ],
+   "10": [
+    75,
+    93
+   ],
+   "30": [
+    17,
+    18
+   ]
+  },
+  "focos": 9320,
+  "bdiff": {
+   "bdiff_total": 2541,
+   "bdiff_30ha": 64,
+   "sin_commune": 0,
+   "clases": [
+    {
+     "desde": 30,
+     "hasta": 100,
+     "bdiff": 45,
+     "detectados": 34,
+     "retraso_mediana_h": 0.2,
+     "medidas": 32
+    },
+    {
+     "desde": 100,
+     "hasta": 500,
+     "bdiff": 16,
+     "detectados": 13,
+     "retraso_mediana_h": 0.6,
+     "medidas": 14
+    },
+    {
+     "desde": 500,
+     "hasta": null,
+     "bdiff": 3,
+     "detectados": 3,
+     "retraso_mediana_h": 0.4,
+     "medidas": 3
+    }
+   ],
+   "destacados": [
+    {
+     "insee": "11311",
+     "commune": "Ribaute",
+     "departement": "11",
+     "alerta": "2025-08-05T14:16Z",
+     "ha": 11133.0,
+     "precision": "Mesurées",
+     "detectado": true,
+     "retraso_h": 5.5,
+     "focos": 529,
+     "ha_focos": 5248.9
+    },
+    {
+     "insee": "11262",
+     "commune": "Narbonne",
+     "departement": "11",
+     "alerta": "2025-07-07T12:45Z",
+     "ha": 1551.25,
+     "precision": "Mesurées",
+     "detectado": true,
+     "retraso_h": 0.4,
+     "focos": 73,
+     "ha_focos": 812.3
+    }
+   ]
+  }
+ }
+}

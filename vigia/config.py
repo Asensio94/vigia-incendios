@@ -1,20 +1,67 @@
 """Rutas, fuentes y umbrales. Todo lo que decide qué es un incendio está aquí."""
 from __future__ import annotations
 
+from dataclasses import dataclass
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
 DATA = RAIZ / "data"
-ZONAS_DIR = DATA / "zonas"
-FOCOS_DIR = DATA / "focos"
-INCENDIOS_JSON = DATA / "incendios.json"
-EFFIS_JSON = DATA / "effis.json"
-CACHE_JSON = DATA / "cache.json"          # cobertura CORINE por celda y municipios
 SITE = RAIZ / "site"
 
 REPO = "Asensio94/vigia-incendios"
 WEB = "https://asensio94.github.io/vigia-incendios/"
 UA = {"User-Agent": f"vigia-incendios/0.1 (+https://github.com/{REPO})"}
+
+
+# ── Países ──────────────────────────────────────────────────────────────────────────────
+# Cada país es una dimensión más: las mismas reglas, con su contorno, su Red Natura, sus
+# fuentes fijas, su registro y su web. España conserva las rutas y los identificadores de
+# siempre; Francia vive en data/fr y site/fr, y sus incendios llevan el prefijo «FR-».
+
+@dataclass(frozen=True)
+class Country:
+    code: str                     # ISO 3166-1 alfa-2, como en signals.json
+    lang: str                     # idioma de su web
+    data: Path                    # registro, focos, capas fijas y caché
+    site: Path                    # web publicada
+    web: str
+    id_prefix: str                # delante de IN-AAAAMMDD-NNN
+    firms_country: str            # nombre del país en el archivo anual de FIRMS
+    crop: tuple[float, float, float, float]   # lat mín., lat máx., lon mín., lon máx.
+    boundary_clip: tuple[float, float, float, float] | None   # lon/lat que se queda del contorno
+    tz: str
+    map_view: tuple[float, float, int]        # centro y zoom del mapa sin incendios
+
+    @property
+    def zonas_dir(self) -> Path:
+        return self.data / "zonas"
+
+    @property
+    def focos_dir(self) -> Path:
+        return self.data / "focos"
+
+    @property
+    def incendios_json(self) -> Path:
+        return self.data / "incendios.json"
+
+    @property
+    def effis_json(self) -> Path:
+        return self.data / "effis.json"
+
+    @property
+    def cache_json(self) -> Path:             # cobertura CORINE por celda y municipios
+        return self.data / "cache.json"
+
+
+ES = Country(code="ES", lang="es", data=DATA, site=SITE, web=WEB, id_prefix="",
+             firms_country="Spain", crop=(27.4, 44.2, -18.6, 4.6), boundary_clip=None,
+             tz="Europe/Madrid", map_view=(40.2, -3.7, 6))
+# Francia metropolitana con Córcega. El contorno de OpenStreetMap trae los departamentos y
+# territorios de ultramar: se recorta a Europa.
+FR = Country(code="FR", lang="fr", data=DATA / "fr", site=SITE / "fr", web=WEB + "fr/", id_prefix="FR-",
+             firms_country="France", crop=(41.2, 51.3, -5.6, 9.8), boundary_clip=(-6.0, 41.0, 10.0, 51.6),
+             tz="Europe/Paris", map_view=(46.6, 2.4, 6))
+COUNTRIES = {c.code: c for c in (ES, FR)}
 
 # ── Focos activos de NASA FIRMS ─────────────────────────────────────────────────────────
 # Los ficheros públicos de las últimas 24 h, 48 h y 7 días no piden clave. La región
@@ -71,6 +118,8 @@ EFFIS_HOLGURA_DIAS = 3            # margen de fechas para casar un perímetro co
 EFFIS_HOLGURA_KM = 1.0
 
 NOMINATIM = "https://nominatim.openstreetmap.org"
+# Francia: commune (con su código INSEE), département y région de un punto.
+GEO_API_GOUV = "https://geo.api.gouv.fr/communes"
 
 # ── Perímetro, frente y progresión (después de FEDS, Chen et al. 2022) ─────────────────
 # Calibrados con la temporada 2023 contra EFFIS y comprobados en 2024 (docs/validacion.md).
