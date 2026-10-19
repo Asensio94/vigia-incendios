@@ -17,9 +17,12 @@ so the method can be shown on fires that lasted days, like Landiras 2022.
 from __future__ import annotations
 
 import csv
+import gzip
 import json
 import logging
+import re
 import shutil
+import unicodedata
 from collections import defaultdict
 from datetime import datetime
 from zoneinfo import ZoneInfo
@@ -28,7 +31,7 @@ from shapely.geometry import box, mapping, shape
 
 from . import config, focos as F, i18n, incendios as I, perimeter as P, zonas
 from .config import Country
-from .ficha_plantilla import FICHA_JS, PLANTILLA
+from .ficha_plantilla import FICHA_JS, LISTA, PLANTILLA, TABS_CSS
 
 log = logging.getLogger(__name__)
 
@@ -38,6 +41,9 @@ HUECO_H = 18            # this long without fire pixels in the middle of a fire 
 REACTIVACION_H = 24     # pixels again after this long = flare-up
 SIMPLIFICAR = 0.0002    # ~20 m, as the perimeter on the main map
 HISTORICOS = config.DATA / "historicos.json"
+# Historical fires never change, so their page data is kept in data/historicos/<id>.ficha.json.gz
+# (rebuilding the isochrones of a 30 000 ha fire takes seconds). Bump when `datos` changes.
+DATOS_V = 1
 
 
 def elegible(i: dict) -> bool:
@@ -266,6 +272,8 @@ def html(inc: dict, d: dict, pais: Country, plantilla_web: str, extra: dict | No
         "__LOGO__": LOGO_SVG,
         "__CIFRAS__": figs,
         "__NOTA__": f'<p class="aviso">{escape(nota)}</p>' if nota else "",
+        "__TABS_CSS__": TABS_CSS,
+        "__TABS__": tabs(lang, "", "../"),
         "__MOMENTOS__": lis,
         "__PIE__": pie,
         "__CONFIG__": json.dumps({"datos": datos_url, "tz": pais.tz, "locale": T["locale"],
@@ -291,26 +299,123 @@ def construir(incs: list[dict], todos: list[dict], pais: Country, plantilla_web:
     for f in todos:
         if f.get("incendio"):
             por_inc[f["incendio"]].append(f)
-    hechas = {}
+    hechas, filas, alias = {}, [], {}
+    hist = historicos(pais)
     for inc in incs:
-        if elegible(inc) and por_inc.get(inc["id"]):
-            hechas[inc["id"]] = _escribir(dest, inc, por_inc[inc["id"]], pais, plantilla_web)
-    for h in historicos(pais):
-        hechas[h["id"]] = _escribir(dest, h["inc"], h["focos"], pais, plantilla_web, h)
+        fs = sorted(por_inc.get(inc["id"], []), key=lambda f: f["t"])
+        h = next((h for h in hist if fs and _mismo(h, pais, fs[0])), None)
+        if h:               # already a historical fire (its season was scanned while it burned)
+            alias[inc["id"]] = h["id"]
+            continue
+        if elegible(inc) and fs:
+            hechas[inc["id"]], fila = _escribir(dest, inc, por_inc[inc["id"]], pais, plantilla_web)
+            filas.append(fila)
+    for h in hist:
+        hechas[h["id"]], fila = _escribir(dest, h["inc"], h["focos"], pais, plantilla_web, h)
+        filas.append(fila)
+    hechas.update({a: hechas[b] for a, b in alias.items()})
     (dest / "ficha.js").write_text(FICHA_JS, encoding="utf-8")
+    (dest / "index.html").write_text(lista(filas, pais, plantilla_web), encoding="utf-8")
     return hechas
 
 
-def _escribir(dest, inc: dict, fs: list[dict], pais: Country, plantilla_web: str, extra: dict | None = None) -> str:
-    d = datos(inc, fs, pais)
+def _escribir(dest, inc: dict, fs: list[dict], pais: Country, plantilla_web: str,
+              extra: dict | None = None) -> tuple[str, dict]:
+    """Write one fire's data and page; return its path and its row for the list."""
+    d = _datos_historico(inc, fs, pais) if extra else datos(inc, fs, pais)
     (dest / f"{inc['id']}.json").write_text(json.dumps(d, ensure_ascii=False, separators=(",", ":")),
                                             encoding="utf-8")
     (dest / f"{inc['id']}.html").write_text(html(inc, d, pais, plantilla_web, extra), encoding="utf-8")
-    return f"incendio/{inc['id']}.html"
+    pas = d["pasadas"]
+    l = inc.get("origen") or inc.get("lugar") or {}
+    fila = {"id": inc["id"], "titulo": (extra or {}).get("titulo") or _titulo(inc, pais.lang),
+            "t": pas[0]["t"], "dias": round(F.horas_entre(pas[0]["t"], pas[-1]["t"]) / 24, 1),
+            "ha": d["perimeter_ha"], "pasadas": len(pas), "natura": len(d["natura"]["features"]),
+            "region": l.get("comunidad") or "", "provincia": l.get("provincia") or "",
+            "vivo": extra is None and inc.get("estado") == "activo"}
+    return f"incendio/{inc['id']}.html", fila
+
+
+def _datos_historico(inc: dict, fs: list[dict], pais: Country) -> dict:
+    clave = [DATOS_V, len(fs), fs[-1]["t"], config.PIXEL_RADIUS_FACTOR, config.CLOSING_KM, config.FRONT_KM,
+             SIMPLIFICAR, HUECO_H, REACTIVACION_H]
+    ruta = config.DATA / "historicos" / f"{inc['id']}.ficha.json.gz"
+    if ruta.exists():
+        with gzip.open(ruta, "rt", encoding="utf-8") as fh:
+            c = json.load(fh)
+        if c["clave"] == clave:
+            return c["datos"]
+    d = datos(inc, fs, pais)
+    with gzip.open(ruta, "wt", encoding="utf-8") as fh:
+        json.dump({"clave": clave, "datos": d}, fh, ensure_ascii=False, separators=(",", ":"))
+    return d
+
+
+def tabs(lang: str, actual: str, raiz: str) -> str:
+    """The two tabs of the site header; `raiz` is the path from the page to the country's site."""
+    T = i18n.FICHA[lang]
+    items = [("mapa", raiz or "./", T["tab_mapa"]), ("lista", f"{raiz}incendio/", T["tab_lista"])]
+    cur = ' aria-current="page"'
+    return (f'<nav class="pestanas" aria-label="{T["tab_aria"]}">'
+            + "".join(f'<a href="{h}"{cur if k == actual else ""}>{txt}</a>' for k, h, txt in items) + "</nav>")
+
+
+def lista(filas: list[dict], pais: Country, plantilla_web: str) -> str:
+    """«Mayores incendios»: every fire with a page, largest first."""
+    from xml.sax.saxutils import escape, quoteattr
+    from .logo import LOGO_SVG, favicon_link
+    from .web import COMMON_CSS
+    lang = pais.lang
+    T = i18n.FICHA[lang]
+    n = lambda v: i18n.n(v, lang)
+    filas = sorted(filas, key=lambda f: -f["ha"])
+    tope = max((f["ha"] for f in filas), default=1) or 1
+    html_filas = []
+    for f in filas:
+        dia = _hora(f["t"], pais, lang).split(",")[0]
+        sub = " · ".join(x for x in (f["provincia"], f["region"]) if x and x not in f["titulo"])
+        busca = " ".join((f["titulo"], f["provincia"], f["region"], f["t"][:4]))
+        html_filas.append(
+            f'<tr data-titulo={quoteattr(f["titulo"])} data-t="{f["t"]}" data-anio="{f["t"][:4]}" '
+            f'data-dias="{f["dias"]}" data-ha="{f["ha"]}" data-pasadas="{f["pasadas"]}" '
+            f'data-natura="{f["natura"]}" data-region={quoteattr(f["region"])} data-busca={quoteattr(busca)}>'
+            f'<td><a href="{f["id"]}.html">{escape(f["titulo"])}</a>'
+            + (f'<span class="etq">{T["l_en_curso"]}</span>' if f["vivo"] else "")
+            + (f"<small>{escape(sub)}</small>" if sub else "") + "</td>"
+            f'<td><time datetime="{f["t"]}">{escape(dia)}</time></td>'
+            f'<td class="num">{i18n.d(f["dias"], lang)}</td>'
+            f'<td class="num">{n(f["ha"])}<span class="barra" style="width:{max(2, round(100 * f["ha"] / tope))}%">'
+            f'</span></td>'
+            f'<td class="num c-pas">{f["pasadas"]}</td><td class="num c-nat">{f["natura"] or "—"}</td></tr>')
+    anios = sorted({f["t"][:4] for f in filas}, reverse=True)
+    regiones = sorted({f["region"] for f in filas if f["region"]})
+    total = sum(f["ha"] for f in filas)
+    cifras = [(n(len(filas)), T["l_fig_n"]), (n(total) + " ha", T["l_fig_ha"]),
+              (f"{anios[-1]}–{anios[0]}" if len(anios) > 1 else (anios[0] if anios else "—"), T["l_fig_anios"]),
+              (n(sum(f["natura"] > 0 for f in filas)), T["l_fig_natura"])]
+    pie = plantilla_web[plantilla_web.index('<footer class="site-footer">'):plantilla_web.index("</footer>") + 9]
+    pie = i18n.page(pie, lang).replace("</footer>", f'  <p class="nota">{T["creditos"]}</p>\n</footer>')
+    rep = {
+        "__LANG__": lang,
+        "__FAVICON__": favicon_link("#c2410c", "#fb7b3e"),
+        "__COMMON_CSS__": COMMON_CSS,
+        "__TABS_CSS__": TABS_CSS,
+        "__TABS__": tabs(lang, "lista", "../"),
+        "__LOGO__": LOGO_SVG,
+        "__CIFRAS__": "".join(f"<div><b>{escape(a)}</b><span>{escape(b)}</span></div>" for a, b in cifras),
+        "__ANIOS__": "".join(f'<option value="{a}">{a}</option>' for a in anios),
+        "__REGIONES__": "".join(f"<option value={quoteattr(r)}>{escape(r)}</option>" for r in regiones),
+        "__FILAS__": "".join(html_filas),
+        "__PIE__": pie,
+    }
+    out = i18n.ficha_page(LISTA, lang)
+    for k, v in rep.items():
+        out = out.replace(k, v)
+    return out
 
 
 # ── Historical fires ────────────────────────────────────────────────────────────────────
-# data/historicos.json lists them; each keeps its pixels in data/historicos/<id>.csv and its
+# data/historicos.json lists them; each keeps its pixels in data/historicos/<id>.csv.gz and its
 # described record (place, land cover, Natura) in the list, so the hourly run never downloads.
 
 def _hist_cargar() -> list[dict]:
@@ -319,59 +424,143 @@ def _hist_cargar() -> list[dict]:
     return json.loads(HISTORICOS.read_text(encoding="utf-8"))["historicos"]
 
 
+def _hist_guardar(lista: list[dict]) -> None:
+    HISTORICOS.write_text(json.dumps({"historicos": sorted(lista, key=lambda h: h["id"])}, ensure_ascii=False,
+                                     indent=1), encoding="utf-8")
+
+
 def historicos(pais: Country) -> list[dict]:
     out = []
     for h in _hist_cargar():
         if h["pais"] != pais.code:
             continue
-        f = config.DATA / "historicos" / f"{h['id']}.csv"
-        with f.open(encoding="utf-8") as fh:
+        with gzip.open(config.DATA / "historicos" / f"{h['id']}.csv.gz", "rt", encoding="utf-8") as fh:
             fs = [{**r, **{k: float(r[k]) for k in ("lat", "lon", "frp", "scan", "track")}}
                   for r in csv.DictReader(fh)]
         out.append({**h, "focos": fs})
     return out
 
 
-def anadir_historico(id_: str, pais: Country, anio: int, bbox: tuple[float, float, float, float],
-                     desde: str, hasta: str, titulo: str, nota: str = "") -> dict:
-    """Pixels of one past fire from the FIRMS standard archive (S-NPP, NOAA-20 and MODIS; NOAA-21
-    is not in the archive), grouped with the same rules; the largest group is the fire."""
-    lon0, lat0, lon1, lat1 = bbox
+def focos_archivo(pais: Country, anio: int, desde: str | None = None, hasta: str | None = None,
+                  bbox: tuple[float, float, float, float] | None = None) -> list[dict]:
+    """Fire pixels of one country and year from the FIRMS standard archive (S-NPP, NOAA-20 and
+    MODIS; NOAA-21 is not in the archive), with the same filters as the hourly run."""
     fs = []
     for prod, sensor in (("viirs-snpp", "VIIRS"), ("viirs-jpss1", "VIIRS"), ("modis", "MODIS")):
         for r in zonas.archivo_firms(prod, anio, pais.firms_country):
-            if not (desde <= r["acq_date"] <= hasta):
+            if (desde and r["acq_date"] < desde) or (hasta and r["acq_date"] > hasta):
                 continue
-            if not (lat0 < float(r["latitude"]) < lat1 and lon0 < float(r["longitude"]) < lon1):
+            if bbox and not (bbox[1] < float(r["latitude"]) < bbox[3] and bbox[0] < float(r["longitude"]) < bbox[2]):
                 continue
             f = F.normalizar(r, sensor)
             if f:
                 fs.append(f)
-    fs = F.sin_fijas(sorted(fs, key=lambda f: f["t"]), pais)
+    return F.filtrar(sorted(fs, key=lambda f: f["t"]), pais)
+
+
+def anadir_historico(id_: str, pais: Country, anio: int, bbox: tuple[float, float, float, float],
+                     desde: str, hasta: str, titulo: str, nota: str = "") -> dict:
+    """One past fire by box and dates: the largest group of pixels in them."""
+    fs = focos_archivo(pais, anio, desde, hasta, bbox)
     if not fs:
         raise ValueError("no fire pixels in that box and dates")
     grupos = I.agrupar(fs)
     mayor = max(set(grupos.tolist()), key=lambda g: (grupos == g).sum())
     fs = [f for f, g in zip(fs, grupos) if g == mayor]
+    fuente = {"anio": anio, "bbox": list(bbox), "desde": desde, "hasta": hasta}
+    h = _historico(id_, pais, fs, titulo, nota, fuente)
+    _hist_guardar([x for x in _hist_cargar() if x["id"] != id_] + [h])
+    return h["inc"]
+
+
+def _historico(id_: str, pais: Country, fs: list[dict], titulo: str | None, nota: str, fuente: dict) -> dict:
+    """Describe one past fire, write its pixels and return its entry for historicos.json."""
     for f in fs:
         f["incendio"] = id_
     inc = {"id": id_, "estado": "inactivo"}
     I.describir(inc, fs, pais, detalle=True)
-    I.guardar_cache()
     for k in ("geometry", "perimeter", "front"):
         inc.pop(k, None)
+    # Fires are named after where they started: the place of the first pixels, not the centre.
+    g0 = [f for f in fs if f["t"] == fs[0]["t"]]
+    origen = I.lugar(sum(f["lat"] for f in g0) / len(g0), sum(f["lon"] for f in g0) / len(g0), pais)
+    if origen:
+        inc["origen"] = origen
+    I.guardar_cache()
     destino = config.DATA / "historicos"
     destino.mkdir(exist_ok=True)
-    with (destino / f"{id_}.csv").open("w", newline="", encoding="utf-8") as fh:
+    with gzip.open(destino / f"{id_}.csv.gz", "wt", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=F.CAMPOS)
         w.writeheader()
         w.writerows(fs)
-    lista = [h for h in _hist_cargar() if h["id"] != id_]
-    lista.append({"id": id_, "pais": pais.code, "titulo": titulo, "nota": nota,
-                  "fuente": {"anio": anio, "bbox": list(bbox), "desde": desde, "hasta": hasta}, "inc": inc})
-    HISTORICOS.write_text(json.dumps({"historicos": sorted(lista, key=lambda h: h["id"])}, ensure_ascii=False,
-                                     indent=1), encoding="utf-8")
-    return inc
+    return {"id": id_, "pais": pais.code, "titulo": titulo or titulo_auto(inc, pais.lang), "nota": nota,
+            "fuente": fuente, "inc": inc}
+
+
+def titulo_auto(inc: dict, lang: str, dia: bool = False) -> str:
+    """«Jarilla (Cáceres), agosto de 2025» from the place of origin and the first pixel; with
+    `dia`, «…, 13 de agosto de 2025», for two fires of one place and month."""
+    l = inc.get("origen") or inc.get("lugar") or {}
+    sitio = l.get("municipio") or l.get("provincia") or i18n.FICHA[lang]["sin_nombre"]
+    if l.get("provincia") and l["provincia"] != sitio:
+        sitio += f" ({l['provincia']})"
+    mes = i18n.FICHA[lang]["meses_largos"][int(inc["primera"][5:7]) - 1]
+    return i18n.FICHA[lang]["titulo_hist_dia" if dia else "titulo_hist"].format(
+        sitio=sitio, mes=mes, anio=inc["primera"][:4], dia=int(inc["primera"][8:10]))
+
+
+def _slug(s: str) -> str:
+    s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode().lower()
+    return re.sub(r"[^a-z0-9]+", "-", s).strip("-") or "incendio"
+
+
+def _mismo(h: dict, pais: Country, f0: dict) -> bool:
+    """Whether a listed fire is the one whose first pixel is `f0`: same start and place (two
+    fires seen first on the same overpass, like Landiras and La Teste in 2022, are not)."""
+    b = h["inc"].get("bbox") or [0, 0, 0, 0]
+    return (h["pais"] == pais.code and h["inc"]["primera"] == f0["t"]
+            and b[0] - 0.01 <= f0["lon"] <= b[2] + 0.01 and b[1] - 0.01 <= f0["lat"] <= b[3] + 0.01)
+
+
+def mayores(pais: Country, anio: int, n: int = 10, min_ha: float = 1000) -> list[dict]:
+    """The `n` largest fires of one season (estimated perimeter of at least `min_ha`), added
+    as historical fires. Fires already in the list (same first pixel) keep their entry."""
+    fs = focos_archivo(pais, anio)
+    grupos = I.agrupar(fs)
+    por = defaultdict(list)
+    for f, g in zip(fs, grupos):
+        por[g].append(f)
+    candidatos = []
+    for g in por.values():
+        vi = [f for f in g if f["sensor"] == "VIIRS"]
+        if len(vi) < max(config.PERIMETER_MIN_VIIRS, min_ha / 60):   # a 375 m pixel is ~14 ha
+            continue
+        ha = P.track(g)["perimeter_ha"]
+        if ha >= min_ha:
+            candidatos.append((ha, g))
+    candidatos.sort(key=lambda c: -c[0])
+    lista = _hist_cargar()
+    usados = {h["id"] for h in lista}
+    nuevos = []
+    for ha, g in candidatos[:n]:
+        g.sort(key=lambda f: f["t"])
+        if any(_mismo(h, pais, g[0]) for h in lista):
+            continue
+        tmp = _historico("tmp", pais, g, None, "", {"anio": anio, "temporada": True})
+        l = tmp["inc"].get("origen") or tmp["inc"].get("lugar") or {}
+        base = f"{anio}-{_slug(l.get('municipio') or l.get('provincia') or 'incendio')}"
+        id_ = base
+        while id_ in usados:
+            id_ = f"{base}-{len([u for u in usados if u.startswith(base)]) + 1}"
+        usados.add(id_)
+        (config.DATA / "historicos" / "tmp.csv.gz").rename(config.DATA / "historicos" / f"{id_}.csv.gz")
+        tmp["id"] = tmp["inc"]["id"] = id_
+        if any(h["titulo"] == tmp["titulo"] for h in lista + nuevos):
+            tmp["titulo"] = titulo_auto(tmp["inc"], pais.lang, dia=True)
+        nuevos.append(tmp)
+        log.info("%s: %s ha, %s", id_, ha, tmp["titulo"])
+    _hist_guardar(lista + nuevos)
+    return nuevos
 
 
 # Orthophoto per country: tiles URL and attribution (same services as the main map).

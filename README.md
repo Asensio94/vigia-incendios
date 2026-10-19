@@ -106,10 +106,26 @@ La página explica sus límites. Con VIIRS hay unas dos ventanas al día y entre
 datos. Un píxel de 375 m no son 14 ha quemadas. MODIS enciende focos pero no mueve el
 perímetro.
 
-Hay también ejemplos históricos: Jarilla 2025 y Landiras 2022, este solo en su primera fase.
-Salen del archivo estándar de FIRMS, que no incluye NOAA-21. Se añaden con
-`python -m vigia historico` y se guardan en `data/historicos.json` y
-`data/historicos/<id>.csv`.
+### Mayores incendios
+
+La pestaña **Mayores incendios** (`incendio/`, en cada país) reúne todos los incendios con
+ficha por pasadas. Hay una tabla con buscador, filtros por año y comunidad (o región) y
+orden por cualquier columna. Recoge dos tipos de incendio:
+
+- **Los mayores de cada temporada desde 2022.** `python -m vigia mayores` descarga el
+  archivo estándar de FIRMS de cada año (sin NOAA-21) y los agrupa con las mismas reglas del
+  mapa. Se queda con los diez mayores de más de 1.000 ha y los nombra por el municipio de sus
+  primeros píxeles, que suele ser donde empezó el fuego (no el centro de la mancha).
+- **Los de este año con ficha**, que entran solos.
+
+Los incendios concretos, por caja y fechas, se añaden con `python -m vigia historico`.
+Así se hizo Landiras 2022, que solo cubre su primera fase. Todos se guardan en
+`data/historicos.json` y `data/historicos/<id>.csv.gz`, y la vuelta horaria no descarga nada.
+
+La superficie es la estimada desde el espacio, no la oficial. Las quemas de invierno del
+Pirineo y la cornisa cantábrica, muchas y dispersas, salen como un solo incendio y exageran.
+Los fuegos que corren en pocas horas entre dos pasadas se quedan cortos, como el del Aude en
+2025.
 
 Todo son reglas fijas, escritas en [`vigia/config.py`](vigia/config.py). No hay ningún
 modelo entrenado ni inteligencia artificial.
@@ -242,6 +258,7 @@ python -m vigia vigilar    # una vuelta: focos, incendios, EFFIS, Sentinel-2 y w
 python -m vigia web        # rehacer las webs sin descargar nada
 python -m vigia validar    # contraste con 2023 y 2024 (descarga el archivo de FIRMS)
 python -m vigia historico 2025-jarilla --pais ES --bbox=-6.35,39.90,-5.55,40.45   --desde 2025-08-10 --hasta 2025-08-28 --titulo "Jarilla (Cáceres), agosto de 2025"   # ficha histórica
+python -m vigia mayores --pais ES --anios 2022-2025   # los mayores de cada temporada (archivo de FIRMS)
 python -c "from vigia import validacion_fr; validacion_fr.main()"   # Francia: 2022 y 2025, EFFIS y BDIFF
 ```
 

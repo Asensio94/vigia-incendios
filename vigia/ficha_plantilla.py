@@ -36,6 +36,7 @@ html{-webkit-text-size-adjust:100%}
 .marca h1{text-wrap:balance}
 .site-header .lede{text-wrap:pretty}
 .site-header .lede a{white-space:nowrap}
+__TABS_CSS__
 .aviso{border-left:3px solid var(--brasa);padding:2px 0 2px 12px}
 main.ficha-main{max-width:1440px;margin:0 auto;padding:0 16px;display:grid;grid-template-columns:minmax(0,1.6fr) minmax(300px,1fr);gap:18px;align-items:start}
 .visor{display:grid;gap:8px;min-width:0}
@@ -95,7 +96,8 @@ ol.momentos li.m-hueco button,ol.momentos li.m-reactivacion button{background:co
     <h1>__LOGO__ __TITULO__</h1>
     <span class="rotulo">@@rotulo@@</span>
   </div>
-  <p class="lede">@@lede@@ <a href="../">@@volver@@</a></p>
+  __TABS__
+  <p class="lede">@@lede@@ <a href="./">@@volver@@</a></p>
   <div class="figures">__CIFRAS__</div>
   __NOTA__
 </header>
@@ -374,3 +376,163 @@ FICHA_JS = r"""// Ficha de un incendio: mapa 3D, línea de tiempo por pasada, cu
   ir(m ? +m[1] - 1 : N - 1, false);
 })();
 """
+
+
+# List of every fire with a page («Mayores incendios»): rows are written in Python, so the table
+# works without JavaScript; the script only filters and sorts them.
+LISTA = r"""<!doctype html>
+<html lang="__LANG__">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+__FAVICON__
+<title>@@l_titulo@@ · @@sitio@@</title>
+<meta name="description" content="@@l_descripcion@@">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+__COMMON_CSS__
+:root{--accent:#c2410c;--accent-dark:#fb7b3e}
+html{-webkit-text-size-adjust:100%}
+.rotulo{font-family:var(--font-title);text-transform:uppercase;letter-spacing:.08em;font-weight:600;color:var(--muted);font-size:14px}
+.marca{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.site-header .lede{text-wrap:pretty}
+__TABS_CSS__
+main.lista-main{max-width:1440px;margin:0 auto;padding:0 16px}
+.filtros{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:end;margin:4px 0 12px}
+.filtros label{display:grid;gap:3px;font-size:13px;color:var(--muted)}
+.filtros input,.filtros select{font:15px var(--font-text);color:var(--ink);background:var(--paper);border:1.5px solid var(--line);padding:6px 8px;min-width:0}
+.filtros input{width:min(320px,80vw)}
+.filtros .cuenta{font:500 13px var(--font-data);color:var(--muted);margin-left:auto}
+.tabla{overflow-x:auto;border-top:1.5px solid var(--ink)}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font:600 14px var(--font-title);letter-spacing:.05em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+th button{all:unset;cursor:pointer}
+th button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+th[aria-sort] button::after{content:" ↓";color:var(--accent)}
+th[aria-sort=ascending] button::after{content:" ↑"}
+td.num,th.num{text-align:right;white-space:nowrap}
+td.num{font-family:var(--font-data);font-variant-numeric:tabular-nums}
+td a{font-weight:600}
+td small{display:block;color:var(--muted);font-size:13px}
+td .barra{display:block;height:4px;background:var(--accent);margin-top:5px;margin-left:auto;opacity:.75}
+.etq{font:500 11.5px var(--font-data);text-transform:uppercase;letter-spacing:.04em;border:1px solid var(--accent);color:var(--accent);padding:0 4px;margin-left:6px;vertical-align:1px}
+tr[hidden]{display:none}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.vacio{padding:18px 0;color:var(--muted)}
+.method{max-width:1440px;margin:28px auto 0;padding:0 16px 40px;border-top:1.5px solid var(--ink);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
+.method p{margin:0 0 10px}
+.method ol{margin:0 0 10px;padding-left:1.4em}
+.method ol li{margin-bottom:8px}
+.method > div > h2:first-child,.method > div > h3:first-child{margin-top:18px}
+.nota{font-size:13.5px;color:var(--muted);margin:0}
+.site-footer p{margin:0}
+@media (max-width: 900px){.method{grid-template-columns:1fr}}
+@media (max-width: 640px){
+  .figures{display:grid;grid-template-columns:1fr 1fr;column-gap:12px}
+  .c-pas,.c-nat{display:none}
+  th,td{padding:8px 6px}
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="marca">
+    <h1>__LOGO__@@l_titulo@@</h1>
+    <span class="rotulo">@@l_rotulo@@</span>
+  </div>
+  __TABS__
+  <p class="lede">@@l_lede@@</p>
+  <div class="figures">__CIFRAS__</div>
+</header>
+
+<main class="lista-main">
+  <div class="filtros" role="search">
+    <label>@@l_buscar@@ <input type="search" id="q" placeholder="@@l_buscar_ph@@" autocomplete="off"></label>
+    <label>@@l_anio@@ <select id="anio"><option value="">@@l_todos@@</option>__ANIOS__</select></label>
+    <label>@@l_region@@ <select id="region"><option value="">@@l_todas@@</option>__REGIONES__</select></label>
+    <span class="cuenta" id="cuenta" aria-live="polite"></span>
+  </div>
+  <div class="tabla">
+  <table id="tabla">
+    <caption class="visually-hidden">@@l_caption@@</caption>
+    <thead><tr>
+      <th scope="col" data-k="titulo"><button type="button">@@l_c_incendio@@</button></th>
+      <th scope="col" data-k="t"><button type="button">@@l_c_inicio@@</button></th>
+      <th scope="col" class="num" data-k="dias"><button type="button">@@l_c_dias@@</button></th>
+      <th scope="col" class="num" data-k="ha" aria-sort="descending"><button type="button">@@l_c_ha@@</button></th>
+      <th scope="col" class="num c-pas" data-k="pasadas"><button type="button">@@l_c_pasadas@@</button></th>
+      <th scope="col" class="num c-nat" data-k="natura"><button type="button">@@l_c_natura@@</button></th>
+    </tr></thead>
+    <tbody>__FILAS__</tbody>
+  </table>
+  </div>
+  <p class="vacio" id="vacio" hidden>@@l_vacio@@</p>
+</main>
+
+<section class="method" id="metodo">
+  <div>
+    <h2>@@l_como_h@@</h2>
+    <ol>@@l_como_pasos@@</ol>
+  </div>
+  <div>
+    <h3>@@limites_h@@</h3>
+    <p>@@l_limites@@</p>
+  </div>
+</section>
+
+__PIE__
+
+<script>
+(function () {
+  const tb = document.querySelector("#tabla tbody"), filas = [...tb.rows];
+  const q = document.getElementById("q"), anio = document.getElementById("anio"), reg = document.getElementById("region");
+  const cuenta = document.getElementById("cuenta"), vacio = document.getElementById("vacio");
+  const fmt = n => document.documentElement.lang === "fr" ? n + (n === 1 ? " incendie" : " incendies")
+                                                          : n + (n === 1 ? " incendio" : " incendios");
+  const sin = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  let clave = "ha", desc = true;
+  function pinta() {
+    const t = sin(q.value.trim());
+    let n = 0;
+    for (const f of filas) {
+      const ok = (!t || sin(f.dataset.busca).includes(t)) && (!anio.value || f.dataset.anio === anio.value)
+        && (!reg.value || f.dataset.region === reg.value);
+      f.hidden = !ok; n += ok;
+    }
+    cuenta.textContent = fmt(n); vacio.hidden = n > 0;
+  }
+  function ordena() {
+    const v = f => clave === "titulo" ? sin(f.dataset.titulo) : clave === "t" ? f.dataset.t : +f.dataset[clave];
+    filas.sort((a, b) => (v(a) < v(b) ? -1 : v(a) > v(b) ? 1 : 0) * (desc ? -1 : 1));
+    tb.append(...filas);
+    for (const th of document.querySelectorAll("#tabla th")) {
+      if (th.dataset.k === clave) th.setAttribute("aria-sort", desc ? "descending" : "ascending");
+      else th.removeAttribute("aria-sort");
+    }
+  }
+  document.querySelector("#tabla thead").addEventListener("click", e => {
+    const th = e.target.closest("th"); if (!th) return;
+    desc = th.dataset.k === clave ? !desc : !["titulo"].includes(th.dataset.k);
+    clave = th.dataset.k; ordena();
+  });
+  for (const el of [q, anio, reg]) el.addEventListener("input", pinta);
+  const p = new URLSearchParams(location.search);
+  if (p.get("anio")) anio.value = p.get("anio");
+  if (p.get("q")) q.value = p.get("q");
+  pinta();
+})();
+</script>
+</body>
+</html>
+"""
+
+# Tabs between the live map and the list, on both pages.
+TABS_CSS = (".pestanas{display:flex;gap:4px;margin:6px 0 2px;border-bottom:1.5px solid var(--line)}"
+            ".pestanas a{font:600 16px/1 var(--font-title);letter-spacing:.06em;text-transform:uppercase;"
+            "color:var(--muted);text-decoration:none;padding:9px 12px 8px;border-bottom:3px solid transparent;"
+            "margin-bottom:-1.5px}"
+            ".pestanas a:hover{color:var(--ink)}"
+            ".pestanas a[aria-current=page]{color:var(--accent);border-bottom-color:var(--accent)}")
