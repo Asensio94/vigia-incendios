@@ -116,3 +116,19 @@ def cmd_historico(
     caja = tuple(float(v) for v in bbox.split(","))
     inc = ficha.anadir_historico(id_, c, int(desde[:4]), caja, desde, hasta, titulo, nota)
     print(f"{id_}: {inc['n_focos']} focos, {inc.get('perimeter_ha')} ha, {inc['primera']} → {inc['ultima']}")
+
+
+@app.command("mayores")
+def cmd_mayores(
+    pais: str = typer.Option(..., help="ES o FR"),
+    anios: str = typer.Option(..., help="Temporadas, p. ej. 2022-2025 o 2023"),
+    n: int = typer.Option(10, help="Incendios por temporada"),
+    min_ha: float = typer.Option(1000, help="Superficie estimada mínima (ha)"),
+) -> None:
+    """Añade a las fichas por pasadas los mayores incendios de cada temporada (archivo estándar de FIRMS)."""
+    from . import ficha
+    c = config.COUNTRIES[pais.upper()]
+    a0, _, a1 = anios.partition("-")
+    for anio in range(int(a0), int(a1 or a0) + 1):
+        for h in ficha.mayores(c, anio, n, min_ha):
+            print(f"{h['id']}: {h['inc'].get('perimeter_ha')} ha, {h['titulo']}")

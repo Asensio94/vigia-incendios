@@ -103,6 +103,8 @@ def construir(reg: dict, todos: list[dict], areas: list[dict], pais: Country) ->
             .replace("__LOGO__", LOGO_SVG)
             .replace("__FAVICON__", favicon_link("#c2410c", "#fb7b3e"))
             .replace("__COMMON_CSS__", COMMON_CSS)
+            .replace("__TABS_CSS__", ficha.TABS_CSS)
+            .replace("__TABS__", ficha.tabs(lang, "mapa", ""))
             .replace("__ACTIVOS__", str(sum(relevante(i) for i in activos)))
             .replace("__AISLADOS__", str(sum(not relevante(i) for i in activos)))
             .replace("__NATURA__", str(sum(bool(i.get("natura")) for i in activos if relevante(i))))
@@ -136,6 +138,7 @@ def _ejemplos(pais: Country, fichas: dict[str, str]) -> str:
     if not hs:
         return ""
     T = i18n.FICHA[pais.lang]
+    hs = sorted(hs, key=lambda h: -(h["inc"].get("perimeter_ha") or 0))[:3]
     enlaces = ", ".join(f'<a href="{fichas[h["id"]]}">{h["titulo"]}</a>' for h in hs)
     return f"<p>{T['ejemplos'].format(enlaces=enlaces)}</p>"
 
@@ -404,6 +407,7 @@ html{-webkit-text-size-adjust:100%}
 .marca{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
 .marca .rotulo{color:var(--gris);font-size:14px}
 .marca .pais{margin-left:auto;font-size:14px}
+__TABS_CSS__
 .site-header .lede{text-wrap:pretty}
 .figures .vivo b{color:var(--activo)}
 .figures .meta b{font-size:17px;line-height:1.75}
@@ -486,6 +490,7 @@ dl.medidas dd{margin:0;font:500 15px var(--font-data);font-variant-numeric:tabul
     <h1>__LOGO__@@h1@@</h1>
     @@tagline@@@@switch@@
   </div>
+  __TABS__
   <p class="lede">@@lede@@</p>
   <div class="figures">
     <div class="vivo"><b>__ACTIVOS__</b>@@fig_active@@</div>

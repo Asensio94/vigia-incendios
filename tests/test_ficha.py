@@ -81,9 +81,58 @@ def test_page_has_no_markers_left(code):
 
 def test_ficha_texts_exist_in_both_languages():
     assert set(i18n.FICHA["es"]) == set(i18n.FICHA["fr"])
-    plantilla = ficha.PLANTILLA + ficha.FICHA_JS
+    plantilla = ficha.PLANTILLA + ficha.FICHA_JS + ficha.LISTA
     for k in set(re.findall(r"@@(\w+)@@", plantilla)) | set(re.findall(r"T\.(js_\w+)", plantilla)):
         assert k in i18n.FICHA["es"], k
     for tipo in ("inicio", "salto", "potencia", "frente", "mitad", "noventa", "natura", "hueco", "reactivacion",
                  "ultimo", "s2"):
         assert f"m_{tipo}" in i18n.FICHA["es"]
+
+
+def _fila(id_, titulo, t, ha, region="Extremadura", vivo=False):
+    return {"id": id_, "titulo": titulo, "t": t, "dias": 3.5, "ha": ha, "pasadas": 20, "natura": 2,
+            "region": region, "provincia": "Cáceres", "vivo": vivo}
+
+
+@pytest.mark.parametrize("code", ["ES", "FR"])
+def test_list_page(code):
+    pais = config.COUNTRIES[code]
+    filas = [_fila("a", "Pequeño", "2023-07-01T12:00Z", 1500.0), _fila("b", "Grande", "2025-08-10T13:30Z", 21449.0,
+                                                                         vivo=True)]
+    out = ficha.lista(filas, pais, web.PLANTILLA)
+    assert not re.search(r"@@\w+@@|__[A-Z_]+__", out)
+    assert out.index('href="b.html"') < out.index('href="a.html"')          # largest first
+    assert '<option value="2025">' in out and '<option value="2023">' in out
+    assert 'aria-current="page">' + i18n.FICHA[pais.lang]["tab_lista"] in out
+    assert out.count("<tr data-") == 2
+
+
+def test_auto_title_uses_place_of_origin():
+    inc = {"primera": "2025-08-10T13:30Z", "lugar": {"municipio": "Cabezabellosa", "provincia": "Cáceres"},
+           "origen": {"municipio": "Jarilla", "provincia": "Cáceres"}}
+    assert ficha.titulo_auto(inc, "es") == "Jarilla (Cáceres), agosto de 2025"
+    inc["origen"] = {"municipio": "Landiras", "provincia": "Gironde"}
+    inc["primera"] = "2022-07-12T13:00Z"
+    assert ficha.titulo_auto(inc, "fr") == "Landiras (Gironde), juillet 2022"
+    assert ficha._slug("Baugé-en-Anjou") == "bauge-en-anjou"
+
+
+def test_tabs_mark_the_current_page():
+    t = ficha.tabs("es", "mapa", "")
+    assert '<a href="./" aria-current="page">Mapa en directo</a>' in t and 'href="incendio/"' in t
+    assert "aria-current" not in ficha.tabs("es", "", "../")
+
+
+def test_historical_page_data_is_cached(tmp_path, monkeypatch):
+    monkeypatch.setattr(config, "DATA", tmp_path)
+    (tmp_path / "historicos").mkdir()
+    pais = config.COUNTRIES["ES"]
+    n = []
+    real = ficha.datos
+    monkeypatch.setattr(ficha, "datos", lambda *a: n.append(1) or real(*a))
+    a = ficha._datos_historico(INC, FOCOS, pais)
+    b = ficha._datos_historico(INC, FOCOS, pais)
+    assert a == b and len(n) == 1
+    monkeypatch.setattr(ficha, "DATOS_V", ficha.DATOS_V + 1)           # method changed: recomputed
+    ficha._datos_historico(INC, FOCOS, pais)
+    assert len(n) == 2
