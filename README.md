@@ -84,6 +84,33 @@ extinción: un foco es un píxel caliente, no un parte.
    - **Progresión:** superficie tras cada pasada y crecimiento en ha/h entre pasadas.
    - Código en [`vigia/perimeter.py`](vigia/perimeter.py).
 
+### Análisis por pasadas
+
+Cada incendio de 100 ha o más cuyo perímetro estimado cambió al menos una vez tiene su
+propia página, `incendio/<id>.html`, enlazada desde su tarjeta («Por pasadas»). En ella:
+
+- un mapa en relieve 3D (MapLibre, con el MDT de [Mapterhorn](https://mapterhorn.com):
+  IGN en España y Francia, sin clave);
+- una línea de tiempo que reproduce el incendio pasada a pasada, con los píxeles que se
+  encienden y se apagan dibujados a su tamaño real;
+- las **isocronas**, que son el perímetro estimado tras cada pasada VIIRS, igual que el del
+  mapa principal;
+- una curva de la superficie acumulada;
+- los **momentos clave**: mayor salto, pasada de más potencia, frente más largo, 50 % y 90 %
+  del tamaño final, entrada en cada espacio Red Natura 2000, reactivaciones y huecos de más
+  de 18 h sin observación.
+
+Todo sale de reglas fijas, en [`vigia/ficha.py`](vigia/ficha.py).
+
+La página explica sus límites. Con VIIRS hay unas dos ventanas al día y entre ellas no hay
+datos. Un píxel de 375 m no son 14 ha quemadas. MODIS enciende focos pero no mueve el
+perímetro.
+
+Hay también ejemplos históricos: Jarilla 2025 y Landiras 2022, este solo en su primera fase.
+Salen del archivo estándar de FIRMS, que no incluye NOAA-21. Se añaden con
+`python -m vigia historico` y se guardan en `data/historicos.json` y
+`data/historicos/<id>.csv`.
+
 Todo son reglas fijas, escritas en [`vigia/config.py`](vigia/config.py). No hay ningún
 modelo entrenado ni inteligencia artificial.
 
@@ -214,6 +241,7 @@ python -m vigia zonas      # capas fijas de cada país: contorno, Red Natura 200
 python -m vigia vigilar    # una vuelta: focos, incendios, EFFIS, Sentinel-2 y web en site/ y site/fr/
 python -m vigia web        # rehacer las webs sin descargar nada
 python -m vigia validar    # contraste con 2023 y 2024 (descarga el archivo de FIRMS)
+python -m vigia historico 2025-jarilla --pais ES --bbox=-6.35,39.90,-5.55,40.45   --desde 2025-08-10 --hasta 2025-08-28 --titulo "Jarilla (Cáceres), agosto de 2025"   # ficha histórica
 python -c "from vigia import validacion_fr; validacion_fr.main()"   # Francia: 2022 y 2025, EFFIS y BDIFF
 ```
 
@@ -231,6 +259,7 @@ rama `gh-pages`.
 | `data/incendios.json` | Registro de incendios con cifras, huella, perímetro estimado, frente, progresión, cruces, estado y perímetro de Sentinel-2 |
 | `data/validacion_perimetro.json` | Contraste de los perímetros de Sentinel-2 con EFFIS |
 | `data/effis.json` | Áreas quemadas de EFFIS (perímetros simplificados a ~20 m) |
+| `data/historicos.json`, `data/historicos/` | Incendios históricos con ficha por pasadas: su registro y sus focos del archivo de FIRMS |
 | `data/cache.json` | Cubierta CORINE por celda y municipios ya consultados |
 | `data/zonas/` | Contorno de España, Red Natura 2000 y fuentes fijas |
 | `data/fr/` | Lo mismo para Francia, más `validacion.json` (2022 y 2025 frente a EFFIS y BDIFF) |
@@ -250,6 +279,8 @@ repositorio solo quedan los recuentos de la validación y, uno a uno, los incend
 - **Red Natura 2000 y CORINE Land Cover 2018:** Agencia Europea de Medio Ambiente.
 - **Municipios y contorno de España:** Nominatim, © colaboradores de OpenStreetMap (ODbL).
 - **Ortofoto:** PNOA, CC BY 4.0 scne.es.
+- **Relieve (fichas por pasadas):** Mapterhorn, con los MDT del IGN (CC BY 4.0 scne.es), el
+  RGE ALTI y el LiDAR HD del IGN francés (Licence Ouverte 2.0) y Copernicus GLO-30.
 - **Francia — communes y contorno:** API Découpage administratif (geo.api.gouv.fr, Licence
   Ouverte 2.0) y, para el contorno, OpenStreetMap (ODbL). **Validación:** BDIFF, ministère de
   l'Agriculture et de la Souveraineté alimentaire (Licence Ouverte 2.0). **Ortofoto:** IGN,

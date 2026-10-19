@@ -98,3 +98,21 @@ def cmd_validar() -> None:
     res = validacion.main()
     for a, r in res.items():
         print(a, [f"{c['detectados']}/{c['effis']}" for c in r["clases"]])
+
+
+@app.command("historico")
+def cmd_historico(
+    id_: str = typer.Argument(..., metavar="ID", help="Identificador de la ficha, p. ej. HIST-2025-JARILLA"),
+    pais: str = typer.Option(..., help="ES o FR"),
+    bbox: str = typer.Option(..., help="lon0,lat0,lon1,lat1"),
+    desde: str = typer.Option(..., help="AAAA-MM-DD"),
+    hasta: str = typer.Option(..., help="AAAA-MM-DD"),
+    titulo: str = typer.Option(..., help="Título de la ficha"),
+    nota: str = typer.Option("", help="Aviso que se muestra bajo las cifras"),
+) -> None:
+    """Añade un incendio pasado, con los focos del archivo estándar de FIRMS, a las fichas por pasadas."""
+    from . import ficha
+    c = config.COUNTRIES[pais.upper()]
+    caja = tuple(float(v) for v in bbox.split(","))
+    inc = ficha.anadir_historico(id_, c, int(desde[:4]), caja, desde, hasta, titulo, nota)
+    print(f"{id_}: {inc['n_focos']} focos, {inc.get('perimeter_ha')} ha, {inc['primera']} → {inc['ultima']}")
