@@ -60778,7 +60778,7 @@
     "comunidad": "Castilla-La Mancha"
    },
    "lugar_focos": 2,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -62392,7 +62392,7 @@
     "provincia": "Córdoba"
    },
    "lugar_focos": 16,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -85147,7 +85147,7 @@
     "comunidad": "Andalucía"
    },
    "lugar_focos": 2,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -85211,7 +85211,7 @@
     "comunidad": "Andalucía"
    },
    "lugar_focos": 2,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -85301,7 +85301,7 @@
     "comunidad": "Andalucía"
    },
    "lugar_focos": 2,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -85557,7 +85557,7 @@
     "comunidad": "Andalucía"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -85621,7 +85621,7 @@
     "comunidad": "Andalucía"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -85685,7 +85685,7 @@
     "comunidad": "Extremadura"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -85749,7 +85749,7 @@
     "comunidad": "Extremadura"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -85813,7 +85813,7 @@
     "comunidad": "Extremadura"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -85884,7 +85884,7 @@
     "comunidad": "Extremadura"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -86050,7 +86050,7 @@
     "comunidad": "Andalucía"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -87050,7 +87050,7 @@
     "comunidad": "Extremadura"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -87114,7 +87114,7 @@
     "comunidad": "Castilla-La Mancha"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -87178,7 +87178,7 @@
     "comunidad": "Castilla-La Mancha"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -87242,7 +87242,7 @@
     "comunidad": "Castilla-La Mancha"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -87313,7 +87313,7 @@
     "comunidad": "Castilla-La Mancha"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -119475,25 +119475,25 @@
   {
    "id": "IN-20261016-016",
    "primera": "2026-10-16T13:23Z",
-   "ultima": "2026-10-16T15:39Z",
-   "n_focos": 4,
-   "n_viirs": 3,
-   "pasadas": 3,
+   "ultima": "2026-10-19T12:25Z",
+   "n_focos": 5,
+   "n_viirs": 4,
+   "pasadas": 4,
    "satelites": [
     "Aqua",
     "NOAA-20",
     "NOAA-21"
    ],
    "frp_max": 18.6,
-   "frp_total": 36.7,
-   "ha_focos": 57.3,
+   "frp_total": 39.6,
+   "ha_focos": 84.6,
    "centro": [
     -5.78195,
     39.12209
    ],
    "bbox": [
     -5.79293,
-    39.10674,
+    39.09722,
     -5.77748,
     39.12404
    ],
@@ -119503,9 +119503,29 @@
      [
       [
        [
-        -5.79293,
-        39.10674
+        -5.78764,
+        39.10282
        ],
+       [
+        -5.78254,
+        39.10282
+       ],
+       [
+        -5.78254,
+        39.09722
+       ],
+       [
+        -5.78764,
+        39.09722
+       ],
+       [
+        -5.78764,
+        39.10282
+       ]
+      ]
+     ],
+     [
+      [
        [
         -5.79293,
         39.11252
@@ -119521,6 +119541,10 @@
        [
         -5.79293,
         39.10674
+       ],
+       [
+        -5.79293,
+        39.11252
        ]
       ]
      ],
@@ -119571,7 +119595,7 @@
      "codigo": "ES0000400",
      "nombre": "Arrozales de Palazuelo y Guadalperales",
      "tipo": "ZEPA",
-     "ha": 43.3
+     "ha": 70.5
     }
    ],
    "cobertura": {
@@ -119583,7 +119607,7 @@
     "comunidad": "Extremadura"
    },
    "lugar_focos": 4,
-   "estado": "reciente",
+   "estado": "activo",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -119593,18 +119617,26 @@
     "definitivo": false,
     "sin_imagen": true
    },
-   "perimeter_ha": 14.9,
-   "steps": 1,
-   "front_km": 2.26,
-   "front_t": "2026-10-16T13:23Z",
-   "max_growth_ha_h": null,
+   "perimeter_ha": 21.6,
+   "steps": 2,
+   "front_km": 0.95,
+   "front_t": "2026-10-19T12:25Z",
+   "max_growth_ha_h": 0.1,
    "progression": [
     {
      "t": "2026-10-16T13:23Z",
      "ha": 14.9,
      "pixels": 3,
      "frp": 18.0,
-     "front_km": 2.26
+     "front_km": 2.27
+    },
+    {
+     "t": "2026-10-19T12:25Z",
+     "ha": 21.6,
+     "pixels": 1,
+     "frp": 3.0,
+     "front_km": 0.95,
+     "growth_ha_h": 0.1
     }
    ],
    "perimeter": {
@@ -119614,170 +119646,150 @@
       [
        [
         -5.79179,
-        39.10933
+        39.10939
        ],
        [
-        -5.79179,
-        39.10993
+        -5.79137,
+        39.11049
        ],
        [
-        -5.79132,
-        39.11053
-       ],
-       [
-        -5.78956,
-        39.11104
+        -5.78955,
+        39.11105
        ],
        [
         -5.78872,
-        39.10981
+        39.10975
        ],
        [
-        -5.78893,
-        39.109
+        -5.78919,
+        39.10763
        ],
        [
-        -5.78989,
-        39.10845
-       ],
-       [
-        -5.79107,
-        39.10858
+        -5.79126,
+        39.10869
        ],
        [
         -5.79179,
-        39.10933
+        39.10939
        ]
       ]
      ],
      [
       [
        [
-        -5.78466,
-        39.12079
+        -5.78614,
+        39.10196
        ],
        [
-        -5.78524,
-        39.12181
+        -5.7838,
+        39.10062
        ],
        [
-        -5.78453,
-        39.12256
+        -5.7836,
+        39.09985
        ],
        [
-        -5.77979,
-        39.12325
+        -5.78408,
+        39.09915
        ],
        [
-        -5.7791,
-        39.12308
+        -5.78531,
+        39.09886
        ],
        [
-        -5.7787,
-        39.12261
+        -5.78638,
+        39.09942
        ],
        [
-        -5.77882,
-        39.12198
+        -5.78659,
+        39.10008
        ],
        [
-        -5.77938,
-        39.12162
+        -5.78614,
+        39.10196
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        -5.78467,
+        39.12077
        ],
        [
-        -5.78173,
-        39.12147
+        -5.78519,
+        39.12201
        ],
        [
-        -5.78466,
-        39.12079
+        -5.78448,
+        39.12257
+       ],
+       [
+        -5.77974,
+        39.12324
+       ],
+       [
+        -5.77906,
+        39.12305
+       ],
+       [
+        -5.77869,
+        39.12257
+       ],
+       [
+        -5.7788,
+        39.12202
+       ],
+       [
+        -5.77943,
+        39.12161
+       ],
+       [
+        -5.78219,
+        39.12139
+       ],
+       [
+        -5.78467,
+        39.12077
        ]
       ]
      ]
     ]
    },
    "front": {
-    "type": "MultiLineString",
+    "type": "LineString",
     "coordinates": [
      [
-      [
-       -5.79179,
-       39.10933
-      ],
-      [
-       -5.79179,
-       39.10993
-      ],
-      [
-       -5.79132,
-       39.11053
-      ],
-      [
-       -5.78956,
-       39.11104
-      ],
-      [
-       -5.78872,
-       39.10981
-      ],
-      [
-       -5.78893,
-       39.109
-      ],
-      [
-       -5.78989,
-       39.10845
-      ],
-      [
-       -5.79107,
-       39.10858
-      ],
-      [
-       -5.79179,
-       39.10933
-      ]
+      -5.78614,
+      39.10196
      ],
      [
-      [
-       -5.78466,
-       39.12079
-      ],
-      [
-       -5.78524,
-       39.12181
-      ],
-      [
-       -5.78453,
-       39.12256
-      ],
-      [
-       -5.77979,
-       39.12325
-      ],
-      [
-       -5.7791,
-       39.12308
-      ],
-      [
-       -5.7787,
-       39.12261
-      ],
-      [
-       -5.77882,
-       39.12198
-      ],
-      [
-       -5.77938,
-       39.12162
-      ],
-      [
-       -5.78173,
-       39.12147
-      ],
-      [
-       -5.78466,
-       39.12079
-      ]
+      -5.7838,
+      39.10062
+     ],
+     [
+      -5.7836,
+      39.09985
+     ],
+     [
+      -5.78408,
+      39.09915
+     ],
+     [
+      -5.78531,
+      39.09886
+     ],
+     [
+      -5.78638,
+      39.09942
+     ],
+     [
+      -5.78659,
+      39.10008
+     ],
+     [
+      -5.78614,
+      39.10196
      ]
     ]
    }
@@ -128152,7 +128164,7 @@
     "comunidad": "Castilla y León"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -128361,7 +128373,155 @@
    "estado": "activo",
    "effis": [],
    "effis_ha": null
+  },
+  {
+   "id": "IN-20261019-004",
+   "primera": "2026-10-19T12:25Z",
+   "ultima": "2026-10-19T12:25Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 6.3,
+   "frp_total": 6.3,
+   "ha_focos": 27.7,
+   "centro": [
+    -5.72498,
+    38.86601
+   ],
+   "bbox": [
+    -5.72752,
+    38.86316,
+    -5.72244,
+    38.86886
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -5.72244,
+       38.86316
+      ],
+      [
+       -5.72244,
+       38.86886
+      ],
+      [
+       -5.72752,
+       38.86886
+      ],
+      [
+       -5.72752,
+       38.86316
+      ],
+      [
+       -5.72244,
+       38.86316
+      ]
+     ]
+    ]
+   },
+   "natura": [
+    {
+     "codigo": "ES0000367",
+     "nombre": "La Serena y Sierras Periféricas",
+     "tipo": "ZEPA",
+     "ha": 27.7
+    },
+    {
+     "codigo": "ES4310010",
+     "nombre": "La Serena",
+     "tipo": "ZEC",
+     "ha": 27.7
+    }
+   ],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Magacela",
+    "provincia": "Badajoz",
+    "comunidad": "Extremadura"
+   },
+   "lugar_focos": 1,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|1|e47f0b6e56e1",
+    "revisado": "2026-10-19T15:20Z",
+    "calculado": "2026-10-19T15:20Z",
+    "definitivo": false,
+    "sin_imagen": true
+   }
+  },
+  {
+   "id": "IN-20261019-005",
+   "primera": "2026-10-19T12:25Z",
+   "ultima": "2026-10-19T12:25Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 5.8,
+   "frp_total": 5.8,
+   "ha_focos": 27.7,
+   "centro": [
+    -5.75253,
+    38.96547
+   ],
+   "bbox": [
+    -5.75507,
+    38.96262,
+    -5.74999,
+    38.96832
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -5.74999,
+       38.96262
+      ],
+      [
+       -5.74999,
+       38.96832
+      ],
+      [
+       -5.75507,
+       38.96832
+      ],
+      [
+       -5.75507,
+       38.96262
+      ],
+      [
+       -5.74999,
+       38.96262
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Villanueva de la Serena",
+    "provincia": "Badajoz",
+    "comunidad": "Extremadura"
+   },
+   "lugar_focos": 1,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null
   }
  ],
- "actualizado": "2026-10-19T13:33Z"
+ "actualizado": "2026-10-19T15:20Z"
 }
