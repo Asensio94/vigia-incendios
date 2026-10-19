@@ -474,12 +474,59 @@ FICHA: dict[str, dict] = {
         "sitio": "Vigía de incendios",
         "titulo": "Incendio de {sitio}",
         "sin_nombre": "lugar sin nombre",
+        "meses_largos": ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre",
+                         "octubre", "noviembre", "diciembre"],
+        "titulo_hist": "{sitio}, {mes} de {anio}",
+        "titulo_hist_dia": "{sitio}, {dia} de {mes} de {anio}",
         "descripcion": "{titulo}, pasada a pasada: focos VIIRS y MODIS, perímetro estimado y momentos clave.",
         "rotulo": "Análisis por pasadas",
         "lede": ("El incendio tal como lo vieron los satélites, pasada a pasada: los píxeles con calor, el perímetro "
                  "que van dibujando y los momentos en que cambió. No es una película continua: entre dos pasadas el "
                  "fuego avanza sin que nadie lo mida."),
-        "volver": "← Todos los incendios",
+        "volver": "← Mayores incendios",
+        "tab_aria": "Secciones",
+        "tab_mapa": "Mapa en directo",
+        "tab_lista": "Mayores incendios",
+        "l_titulo": "Mayores incendios",
+        "l_rotulo": "España · desde 2022 · por pasadas de satélite",
+        "l_descripcion": "Los mayores incendios de España desde 2022, cada uno reconstruido pasada a pasada con los focos de FIRMS.",
+        "l_lede": ("Los mayores incendios de cada temporada desde 2022 y los de este año que han crecido lo bastante, "
+                   "con su superficie estimada a partir de los píxeles de satélite. Elige uno para verlo crecer pasada "
+                   "a pasada."),
+        "l_fig_n": "incendios",
+        "l_fig_ha": "estimadas en total",
+        "l_fig_anios": "temporadas",
+        "l_fig_natura": "tocan Red Natura 2000",
+        "l_buscar": "Buscar",
+        "l_buscar_ph": "municipio, provincia, año…",
+        "l_anio": "Año",
+        "l_region": "Comunidad",
+        "l_todos": "Todos",
+        "l_todas": "Todas",
+        "l_caption": "Incendios con ficha por pasadas, ordenados por superficie estimada",
+        "l_c_incendio": "Incendio",
+        "l_c_inicio": "Inicio",
+        "l_c_dias": "Días",
+        "l_c_ha": "Hectáreas",
+        "l_c_pasadas": "Pasadas",
+        "l_c_natura": "Espacios Natura",
+        "l_en_curso": "activo",
+        "l_vacio": "Ningún incendio cumple esos filtros.",
+        "l_como_h": "Cómo se elige",
+        "l_como_pasos": (
+            "<li>Para cada temporada desde 2022 se descargan todos los focos del archivo estándar de FIRMS (VIIRS de "
+            "Suomi NPP y NOAA-20, y MODIS) dentro de España, sin las fuentes fijas de calor.</li>"
+            "<li>Se agrupan en incendios con las mismas reglas que el mapa en directo: focos a menos de 2 km y 72 h "
+            "pertenecen al mismo incendio.</li>"
+            "<li>De cada incendio se estima el perímetro con los píxeles VIIRS y se guardan los diez mayores de cada "
+            "temporada que superan las 1.000 ha.</li>"
+            "<li>Se nombran por el municipio de los primeros píxeles, que suele ser el del inicio del fuego. Los "
+            "incendios de este año entran solos en cuanto superan 100 ha y su perímetro ha cambiado al menos una "
+            "vez.</li>"),
+        "l_limites": ("La superficie es una estimación desde el espacio: píxeles de 375 m, unidos y cerrados. Suele "
+                      "acercarse a la cartografía oficial en incendios grandes y exagerar en los pequeños o con muchas "
+                      "islas sin quemar. Dos incendios que se tocan pueden aparecer como uno. Las cifras oficiales son "
+                      "las de EFFIS y las comunidades autónomas."),
         "fig_perimetro": "perímetro estimado con VIIRS",
         "fig_pasadas": "pasadas con focos ({viirs} de VIIRS)",
         "fig_dias": "días entre el primer y el último foco",
@@ -553,8 +600,8 @@ FICHA: dict[str, dict] = {
         "js_crece": "+{ha} ha desde la pasada VIIRS anterior.",
         "js_sin_perimetro": "Aún sin perímetro VIIRS.",
         "js_hueco": "Tras {h} h sin observación.",
-        "ejemplos": ("Para ver el método en incendios que duraron días, hay ejemplos históricos reproducidos pasada a "
-                     "pasada: {enlaces}."),
+        "ejemplos": ("Para ver el método en incendios que duraron días, los mayores desde 2022 están reproducidos pasada "
+                     "a pasada en <a href=\"incendio/\">Mayores incendios</a>; por ejemplo {enlaces}."),
         "js_sin_webgl": "Este navegador no puede dibujar el mapa en 3D (WebGL). La curva y los momentos siguen funcionando.",
     },
     "fr": {
@@ -563,12 +610,59 @@ FICHA: dict[str, dict] = {
         "sitio": "Vigie des incendies",
         "titulo": "Incendie de {sitio}",
         "sin_nombre": "lieu sans nom",
+        "meses_largos": ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre",
+                         "octobre", "novembre", "décembre"],
+        "titulo_hist": "{sitio}, {mes} {anio}",
+        "titulo_hist_dia": "{sitio}, {dia} {mes} {anio}",
         "descripcion": "{titulo}, passage par passage : foyers VIIRS et MODIS, périmètre estimé et moments clés.",
         "rotulo": "Analyse par passages",
         "lede": ("L’incendie tel que les satellites l’ont vu, passage après passage : les pixels chauds, le périmètre "
                  "qu’ils dessinent et les moments où il a changé. Ce n’est pas un film continu : entre deux passages, "
                  "le feu avance sans que personne ne le mesure."),
-        "volver": "← Tous les incendies",
+        "volver": "← Grands incendies",
+        "tab_aria": "Sections",
+        "tab_mapa": "Carte en direct",
+        "tab_lista": "Grands incendies",
+        "l_titulo": "Grands incendies",
+        "l_rotulo": "France métropolitaine · depuis 2022 · par passages satellite",
+        "l_descripcion": "Les plus grands incendies de France métropolitaine depuis 2022, chacun reconstitué passage après passage avec les foyers FIRMS.",
+        "l_lede": ("Les plus grands incendies de chaque saison depuis 2022 et ceux de cette année qui ont assez grandi, "
+                   "avec leur surface estimée à partir des pixels satellite. Choisissez-en un pour le voir grandir "
+                   "passage après passage."),
+        "l_fig_n": "incendies",
+        "l_fig_ha": "estimés au total",
+        "l_fig_anios": "saisons",
+        "l_fig_natura": "touchent Natura 2000",
+        "l_buscar": "Rechercher",
+        "l_buscar_ph": "commune, département, année…",
+        "l_anio": "Année",
+        "l_region": "Région",
+        "l_todos": "Toutes",
+        "l_todas": "Toutes",
+        "l_caption": "Incendies avec une fiche par passages, classés par surface estimée",
+        "l_c_incendio": "Incendie",
+        "l_c_inicio": "Début",
+        "l_c_dias": "Jours",
+        "l_c_ha": "Hectares",
+        "l_c_pasadas": "Passages",
+        "l_c_natura": "Sites Natura",
+        "l_en_curso": "actif",
+        "l_vacio": "Aucun incendie ne correspond à ces filtres.",
+        "l_como_h": "Comment ils sont choisis",
+        "l_como_pasos": (
+            "<li>Pour chaque saison depuis 2022, on télécharge tous les foyers de l’archive standard de FIRMS (VIIRS "
+            "de Suomi NPP et NOAA-20, et MODIS) en France métropolitaine, sans les sources fixes de chaleur.</li>"
+            "<li>Ils sont regroupés en incendies avec les mêmes règles que la carte en direct : des foyers à moins de "
+            "2 km et 72 h appartiennent au même incendie.</li>"
+            "<li>Pour chaque incendie, le périmètre est estimé avec les pixels VIIRS ; on garde les dix plus grands "
+            "de chaque saison qui dépassent 1 000 ha.</li>"
+            "<li>Ils portent le nom de la commune des premiers pixels, en général celle du départ du feu. Les "
+            "incendies de l’année entrent d’eux-mêmes dès qu’ils dépassent 100 ha et que leur périmètre a changé au "
+            "moins une fois.</li>"),
+        "l_limites": ("La surface est une estimation depuis l’espace : pixels de 375 m, réunis et refermés. Elle "
+                      "s’approche souvent de la cartographie officielle pour les grands feux et exagère les petits ou "
+                      "ceux qui laissent beaucoup d’îlots intacts. Deux feux qui se touchent peuvent apparaître comme "
+                      "un seul. Les chiffres officiels sont ceux d’EFFIS et de la BDIFF."),
         "fig_perimetro": "périmètre estimé avec VIIRS",
         "fig_pasadas": "passages avec foyers ({viirs} VIIRS)",
         "fig_dias": "jours entre le premier et le dernier foyer",
@@ -644,8 +738,9 @@ FICHA: dict[str, dict] = {
         "js_crece": "+{ha} ha depuis le passage VIIRS précédent.",
         "js_sin_perimetro": "Pas encore de périmètre VIIRS.",
         "js_hueco": "Après {h} h sans observation.",
-        "ejemplos": ("Pour voir la méthode sur des incendies qui ont duré plusieurs jours, des exemples historiques "
-                     "sont reconstitués passage par passage : {enlaces}."),
+        "ejemplos": ("Pour voir la méthode sur des incendies qui ont duré plusieurs jours, les plus grands depuis 2022 "
+                     "sont reconstitués passage par passage dans <a href=\"incendio/\">Grands incendies</a> ; par "
+                     "exemple {enlaces}."),
         "js_sin_webgl": "Ce navigateur ne peut pas afficher la carte en 3D (WebGL). La courbe et les moments fonctionnent.",
     },
 }
