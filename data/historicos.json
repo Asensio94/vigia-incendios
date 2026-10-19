@@ -1,0 +1,658 @@
+{
+ "historicos": [
+  {
+   "id": "2022-landiras",
+   "pais": "FR",
+   "titulo": "Landiras (Gironde), juillet 2022",
+   "nota": "Seule la première phase (12–22 juillet) : la reprise d’août est séparée par plus de 72 h sans foyers et forme un autre groupe.",
+   "fuente": {
+    "anio": 2022,
+    "bbox": [
+     -0.85,
+     44.3,
+     -0.2,
+     44.75
+    ],
+    "desde": "2022-07-10",
+    "hasta": "2022-07-25"
+   },
+   "inc": {
+    "id": "2022-landiras",
+    "estado": "inactivo",
+    "primera": "2022-07-12T21:05Z",
+    "ultima": "2022-07-22T13:04Z",
+    "n_focos": 4096,
+    "n_viirs": 3572,
+    "pasadas": 78,
+    "satelites": [
+     "Aqua",
+     "NOAA-20",
+     "S-NPP",
+     "Terra"
+    ],
+    "frp_max": 2391.4,
+    "frp_total": 98495.3,
+    "ha_focos": 15379.2,
+    "centro": [
+     -0.50832,
+     44.52424
+    ],
+    "bbox": [
+     -0.66217,
+     44.45511,
+     -0.44018,
+     44.59295
+    ],
+    "perimeter_ha": 15136.2,
+    "steps": 31,
+    "front_km": 0.0,
+    "front_t": "2022-07-22T13:04Z",
+    "max_growth_ha_h": 266.3,
+    "progression": [
+     {
+      "t": "2022-07-13T01:08Z",
+      "ha": 1041.2,
+      "pixels": 147,
+      "frp": 1844.5,
+      "front_km": 14.13
+     },
+     {
+      "t": "2022-07-13T02:48Z",
+      "ha": 1088.9,
+      "pixels": 74,
+      "frp": 534.4,
+      "front_km": 12.96,
+      "growth_ha_h": 28.6
+     },
+     {
+      "t": "2022-07-13T11:43Z",
+      "ha": 1338.9,
+      "pixels": 77,
+      "frp": 2893.4,
+      "front_km": 11.99,
+      "growth_ha_h": 28.0
+     },
+     {
+      "t": "2022-07-13T13:23Z",
+      "ha": 1492.7,
+      "pixels": 63,
+      "frp": 2021.3,
+      "front_km": 14.22,
+      "growth_ha_h": 92.3
+     },
+     {
+      "t": "2022-07-14T00:49Z",
+      "ha": 2034.1,
+      "pixels": 112,
+      "frp": 534.1,
+      "front_km": 16.27,
+      "growth_ha_h": 47.4
+     },
+     {
+      "t": "2022-07-14T02:29Z",
+      "ha": 2090.9,
+      "pixels": 146,
+      "frp": 512.4,
+      "front_km": 17.1,
+      "growth_ha_h": 34.1
+     },
+     {
+      "t": "2022-07-14T12:14Z",
+      "ha": 2117.1,
+      "pixels": 25,
+      "frp": 496.6,
+      "front_km": 5.48,
+      "growth_ha_h": 2.7
+     },
+     {
+      "t": "2022-07-14T13:55Z",
+      "ha": 2132.6,
+      "pixels": 17,
+      "frp": 182.8,
+      "front_km": 6.56,
+      "growth_ha_h": 9.2
+     },
+     {
+      "t": "2022-07-15T01:20Z",
+      "ha": 4627.7,
+      "pixels": 396,
+      "frp": 5602.2,
+      "front_km": 33.03,
+      "growth_ha_h": 218.5
+     },
+     {
+      "t": "2022-07-15T03:01Z",
+      "ha": 4885.8,
+      "pixels": 164,
+      "frp": 1651.4,
+      "front_km": 27.55,
+      "growth_ha_h": 153.3
+     },
+     {
+      "t": "2022-07-15T11:55Z",
+      "ha": 5260.3,
+      "pixels": 121,
+      "frp": 1770.5,
+      "front_km": 18.8,
+      "growth_ha_h": 42.1
+     },
+     {
+      "t": "2022-07-15T13:36Z",
+      "ha": 5369.5,
+      "pixels": 74,
+      "frp": 1386.9,
+      "front_km": 16.97,
+      "growth_ha_h": 64.9
+     },
+     {
+      "t": "2022-07-16T01:01Z",
+      "ha": 7453.6,
+      "pixels": 538,
+      "frp": 4384.0,
+      "front_km": 30.82,
+      "growth_ha_h": 182.5
+     },
+     {
+      "t": "2022-07-16T02:42Z",
+      "ha": 7605.0,
+      "pixels": 220,
+      "frp": 1413.4,
+      "front_km": 23.21,
+      "growth_ha_h": 90.0
+     },
+     {
+      "t": "2022-07-16T11:37Z",
+      "ha": 7747.3,
+      "pixels": 44,
+      "frp": 1155.5,
+      "front_km": 6.92,
+      "growth_ha_h": 16.0
+     },
+     {
+      "t": "2022-07-16T13:17Z",
+      "ha": 7820.7,
+      "pixels": 28,
+      "frp": 609.5,
+      "front_km": 4.77,
+      "growth_ha_h": 44.0
+     },
+     {
+      "t": "2022-07-17T01:33Z",
+      "ha": 8344.2,
+      "pixels": 247,
+      "frp": 1033.6,
+      "front_km": 19.66,
+      "growth_ha_h": 42.7
+     },
+     {
+      "t": "2022-07-17T03:13Z",
+      "ha": 8416.2,
+      "pixels": 38,
+      "frp": 117.1,
+      "front_km": 9.2,
+      "growth_ha_h": 43.2
+     },
+     {
+      "t": "2022-07-17T12:08Z",
+      "ha": 8484.8,
+      "pixels": 34,
+      "frp": 763.5,
+      "front_km": 7.91,
+      "growth_ha_h": 7.7
+     },
+     {
+      "t": "2022-07-17T13:48Z",
+      "ha": 8609.6,
+      "pixels": 36,
+      "frp": 615.2,
+      "front_km": 7.07,
+      "growth_ha_h": 74.9
+     },
+     {
+      "t": "2022-07-18T01:14Z",
+      "ha": 10220.5,
+      "pixels": 324,
+      "frp": 3001.1,
+      "front_km": 24.69,
+      "growth_ha_h": 140.9
+     },
+     {
+      "t": "2022-07-18T02:54Z",
+      "ha": 10279.3,
+      "pixels": 88,
+      "frp": 640.2,
+      "front_km": 15.25,
+      "growth_ha_h": 35.2
+     },
+     {
+      "t": "2022-07-18T11:49Z",
+      "ha": 11227.4,
+      "pixels": 120,
+      "frp": 3699.9,
+      "front_km": 17.68,
+      "growth_ha_h": 106.3
+     },
+     {
+      "t": "2022-07-18T13:29Z",
+      "ha": 11661.9,
+      "pixels": 87,
+      "frp": 2655.5,
+      "front_km": 18.25,
+      "growth_ha_h": 260.7
+     },
+     {
+      "t": "2022-07-19T00:55Z",
+      "ha": 14706.9,
+      "pixels": 218,
+      "frp": 1659.8,
+      "front_km": 24.39,
+      "growth_ha_h": 266.3
+     },
+     {
+      "t": "2022-07-19T02:36Z",
+      "ha": 14710.1,
+      "pixels": 8,
+      "frp": 14.2,
+      "front_km": 0.53,
+      "growth_ha_h": 1.9
+     },
+     {
+      "t": "2022-07-19T12:20Z",
+      "ha": 15006.5,
+      "pixels": 89,
+      "frp": 761.5,
+      "front_km": 8.64,
+      "growth_ha_h": 30.5
+     },
+     {
+      "t": "2022-07-19T14:01Z",
+      "ha": 15126.1,
+      "pixels": 30,
+      "frp": 353.8,
+      "front_km": 5.75,
+      "growth_ha_h": 71.0
+     },
+     {
+      "t": "2022-07-20T12:52Z",
+      "ha": 15129.0,
+      "pixels": 1,
+      "frp": 8.3,
+      "front_km": 0.8,
+      "growth_ha_h": 0.1
+     },
+     {
+      "t": "2022-07-21T01:58Z",
+      "ha": 15133.4,
+      "pixels": 5,
+      "frp": 5.4,
+      "front_km": 0.83,
+      "growth_ha_h": 0.3
+     },
+     {
+      "t": "2022-07-22T13:04Z",
+      "ha": 15136.2,
+      "pixels": 1,
+      "frp": 4.5,
+      "front_km": 0.0,
+      "growth_ha_h": 0.1
+     }
+    ],
+    "natura": [
+     {
+      "codigo": "FR7200708",
+      "nombre": "Lagunes de Saint-Magne et Louchats",
+      "tipo": "ZSC",
+      "ha": 149.8
+     },
+     {
+      "codigo": "FR7200696",
+      "nombre": "Domaine départemental d'Hostens",
+      "tipo": "ZSC",
+      "ha": 84.3
+     },
+     {
+      "codigo": "FR7200797",
+      "nombre": "Réseau hydrographique du Gat Mort et du Saucats",
+      "tipo": "ZSC",
+      "ha": 55.5
+     }
+    ],
+    "cobertura": {
+     "bosque": 0.49,
+     "matorral": 0.44,
+     "artificial": 0.06,
+     "agricola": 0.02
+    },
+    "lugar": {
+     "municipio": "Origne",
+     "insee": "33310",
+     "provincia": "Gironde",
+     "comunidad": "Nouvelle-Aquitaine"
+    },
+    "lugar_focos": 4096
+   }
+  },
+  {
+   "id": "2025-jarilla",
+   "pais": "ES",
+   "titulo": "Jarilla (Cáceres), agosto de 2025",
+   "nota": "",
+   "fuente": {
+    "anio": 2025,
+    "bbox": [
+     -6.35,
+     39.9,
+     -5.55,
+     40.45
+    ],
+    "desde": "2025-08-10",
+    "hasta": "2025-08-28"
+   },
+   "inc": {
+    "id": "2025-jarilla",
+    "estado": "inactivo",
+    "primera": "2025-08-13T02:54Z",
+    "ultima": "2025-08-21T02:43Z",
+    "n_focos": 2823,
+    "n_viirs": 2465,
+    "pasadas": 84,
+    "satelites": [
+     "Aqua",
+     "NOAA-20",
+     "S-NPP",
+     "Terra"
+    ],
+    "frp_max": 1296.2,
+    "frp_total": 83806.4,
+    "ha_focos": 20700.7,
+    "centro": [
+     -6.01883,
+     40.11284
+    ],
+    "bbox": [
+     -6.06257,
+     40.07436,
+     -5.70686,
+     40.30354
+    ],
+    "perimeter_ha": 21449.4,
+    "steps": 29,
+    "front_km": 2.01,
+    "front_t": "2025-08-21T02:20Z",
+    "max_growth_ha_h": 1207.7,
+    "progression": [
+     {
+      "t": "2025-08-13T03:10Z",
+      "ha": 723.8,
+      "pixels": 36,
+      "frp": 260.6,
+      "front_km": 16.43
+     },
+     {
+      "t": "2025-08-13T12:52Z",
+      "ha": 1090.0,
+      "pixels": 63,
+      "frp": 1074.9,
+      "front_km": 14.92,
+      "growth_ha_h": 37.8
+     },
+     {
+      "t": "2025-08-13T14:33Z",
+      "ha": 1133.2,
+      "pixels": 13,
+      "frp": 234.6,
+      "front_km": 5.76,
+      "growth_ha_h": 25.7
+     },
+     {
+      "t": "2025-08-14T01:11Z",
+      "ha": 3818.7,
+      "pixels": 156,
+      "frp": 1137.7,
+      "front_km": 29.63,
+      "growth_ha_h": 252.6
+     },
+     {
+      "t": "2025-08-14T02:51Z",
+      "ha": 4373.0,
+      "pixels": 274,
+      "frp": 1758.1,
+      "front_km": 31.02,
+      "growth_ha_h": 332.6
+     },
+     {
+      "t": "2025-08-14T12:34Z",
+      "ha": 4711.8,
+      "pixels": 75,
+      "frp": 2550.4,
+      "front_km": 14.38,
+      "growth_ha_h": 34.9
+     },
+     {
+      "t": "2025-08-14T14:14Z",
+      "ha": 4817.0,
+      "pixels": 35,
+      "frp": 308.4,
+      "front_km": 10.2,
+      "growth_ha_h": 63.1
+     },
+     {
+      "t": "2025-08-15T01:15Z",
+      "ha": 4911.2,
+      "pixels": 13,
+      "frp": 138.8,
+      "front_km": 7.22,
+      "growth_ha_h": 8.5
+     },
+     {
+      "t": "2025-08-15T02:33Z",
+      "ha": 5423.6,
+      "pixels": 46,
+      "frp": 250.6,
+      "front_km": 12.58,
+      "growth_ha_h": 394.2
+     },
+     {
+      "t": "2025-08-15T12:15Z",
+      "ha": 5895.6,
+      "pixels": 50,
+      "frp": 2327.4,
+      "front_km": 12.7,
+      "growth_ha_h": 48.7
+     },
+     {
+      "t": "2025-08-15T13:55Z",
+      "ha": 6167.3,
+      "pixels": 60,
+      "frp": 1412.4,
+      "front_km": 10.7,
+      "growth_ha_h": 163.1
+     },
+     {
+      "t": "2025-08-16T02:14Z",
+      "ha": 7244.1,
+      "pixels": 161,
+      "frp": 1722.5,
+      "front_km": 21.86,
+      "growth_ha_h": 87.4
+     },
+     {
+      "t": "2025-08-16T12:19Z",
+      "ha": 8040.3,
+      "pixels": 47,
+      "frp": 2629.8,
+      "front_km": 13.2,
+      "growth_ha_h": 79.0
+     },
+     {
+      "t": "2025-08-16T13:36Z",
+      "ha": 8998.0,
+      "pixels": 108,
+      "frp": 5003.2,
+      "front_km": 28.8,
+      "growth_ha_h": 746.3
+     },
+     {
+      "t": "2025-08-17T01:55Z",
+      "ha": 11784.0,
+      "pixels": 322,
+      "frp": 3500.1,
+      "front_km": 25.74,
+      "growth_ha_h": 226.2
+     },
+     {
+      "t": "2025-08-17T03:35Z",
+      "ha": 13796.9,
+      "pixels": 105,
+      "frp": 1661.5,
+      "front_km": 33.53,
+      "growth_ha_h": 1207.7
+     },
+     {
+      "t": "2025-08-17T13:18Z",
+      "ha": 14862.9,
+      "pixels": 128,
+      "frp": 6332.5,
+      "front_km": 17.5,
+      "growth_ha_h": 109.7
+     },
+     {
+      "t": "2025-08-18T01:36Z",
+      "ha": 16775.3,
+      "pixels": 225,
+      "frp": 1546.9,
+      "front_km": 20.86,
+      "growth_ha_h": 155.5
+     },
+     {
+      "t": "2025-08-18T03:16Z",
+      "ha": 17503.8,
+      "pixels": 37,
+      "frp": 112.0,
+      "front_km": 12.44,
+      "growth_ha_h": 437.1
+     },
+     {
+      "t": "2025-08-18T12:59Z",
+      "ha": 18184.2,
+      "pixels": 52,
+      "frp": 1968.4,
+      "front_km": 12.25,
+      "growth_ha_h": 70.0
+     },
+     {
+      "t": "2025-08-19T01:17Z",
+      "ha": 20323.4,
+      "pixels": 147,
+      "frp": 1715.0,
+      "front_km": 19.97,
+      "growth_ha_h": 173.9
+     },
+     {
+      "t": "2025-08-19T02:58Z",
+      "ha": 20430.9,
+      "pixels": 77,
+      "frp": 725.9,
+      "front_km": 11.79,
+      "growth_ha_h": 63.8
+     },
+     {
+      "t": "2025-08-19T12:40Z",
+      "ha": 20454.5,
+      "pixels": 17,
+      "frp": 188.7,
+      "front_km": 4.25,
+      "growth_ha_h": 2.4
+     },
+     {
+      "t": "2025-08-19T14:21Z",
+      "ha": 20498.4,
+      "pixels": 22,
+      "frp": 701.5,
+      "front_km": 4.13,
+      "growth_ha_h": 26.1
+     },
+     {
+      "t": "2025-08-20T01:21Z",
+      "ha": 21186.4,
+      "pixels": 49,
+      "frp": 708.0,
+      "front_km": 13.25,
+      "growth_ha_h": 62.6
+     },
+     {
+      "t": "2025-08-20T02:39Z",
+      "ha": 21357.8,
+      "pixels": 101,
+      "frp": 1632.7,
+      "front_km": 7.87,
+      "growth_ha_h": 131.8
+     },
+     {
+      "t": "2025-08-20T12:21Z",
+      "ha": 21425.2,
+      "pixels": 10,
+      "frp": 423.3,
+      "front_km": 4.02,
+      "growth_ha_h": 6.9
+     },
+     {
+      "t": "2025-08-20T14:02Z",
+      "ha": 21444.6,
+      "pixels": 27,
+      "frp": 2327.2,
+      "front_km": 2.46,
+      "growth_ha_h": 11.5
+     },
+     {
+      "t": "2025-08-21T02:20Z",
+      "ha": 21449.4,
+      "pixels": 9,
+      "frp": 59.6,
+      "front_km": 2.01,
+      "growth_ha_h": 0.4
+     }
+    ],
+    "natura": [
+     {
+      "codigo": "ES4320038",
+      "nombre": "Sierra de Gredos y Valle del Jerte",
+      "tipo": "ZEC",
+      "ha": 15713.0
+     },
+     {
+      "codigo": "ES4150006",
+      "nombre": "Candelario - ZEPA",
+      "tipo": "ZEPA",
+      "ha": 445.4
+     },
+     {
+      "codigo": "ES4150101",
+      "nombre": "Candelario",
+      "tipo": "ZEC",
+      "ha": 444.7
+     },
+     {
+      "codigo": "ES4320071",
+      "nombre": "Ríos Alagon y Jerte",
+      "tipo": "ZEC",
+      "ha": 62.8
+     }
+    ],
+    "cobertura": {
+     "matorral": 0.66,
+     "desnudo": 0.18,
+     "bosque": 0.1,
+     "agroforestal": 0.03,
+     "agricola": 0.03
+    },
+    "lugar": {
+     "municipio": "Cabezabellosa",
+     "provincia": "Cáceres",
+     "comunidad": "Extremadura"
+    },
+    "lugar_focos": 2823
+   }
+  }
+ ]
+}

@@ -9,7 +9,7 @@ from xml.sax.saxutils import escape
 
 from shapely.geometry import shape
 
-from . import config, focos as F, i18n, incendios as I, signals, zonas
+from . import config, ficha, focos as F, i18n, incendios as I, signals, zonas
 from .config import Country
 from .logo import LOGO_SVG, favicon_link
 
@@ -67,7 +67,10 @@ def construir(reg: dict, todos: list[dict], areas: list[dict], pais: Country) ->
     vivos = [i for i in reg["incendios"] if i.get("estado") != "unido" and i.get("ultima")]
     visibles = [i for i in vivos if i["estado"] in ("activo", "reciente")
                 or (relevante(i) and i["ultima"] >= desde)]
-    feats = [{"type": "Feature", "geometry": _forma(i), "properties": _ligero(i)} for i in visibles]
+    fichas = ficha.construir(visibles, todos, pais, PLANTILLA)
+    feats = [{"type": "Feature", "geometry": _forma(i),
+              "properties": {**_ligero(i), **({"ficha": fichas[i["id"]]} if i["id"] in fichas else {})}}
+             for i in visibles]
     frentes = [{"type": "Feature", "geometry": i["front"], "properties": {"id": i["id"], "t": i["front_t"]}}
                for i in visibles if i["estado"] == "activo" and i.get("front")]
 
@@ -106,7 +109,7 @@ def construir(reg: dict, todos: list[dict], areas: list[dict], pais: Country) ->
             .replace("__FOCOS24__", str(sum(f["t"] >= F.hace(24, F._dt(ahora)) for f in todos)))
             .replace("__TEMPORADA__", str(TEMPORADA_DIAS))
             .replace("__VISTA__", vista)
-            .replace("__METODO__", _parametros(lang))
+            .replace("__METODO__", _parametros(lang) + _ejemplos(pais, fichas))
             .replace("__VALIDACION__", _validacion(validacion, lang))
             .replace("__VALIDACION_S2__", _validacion_s2(pais))
             .replace("__DATOS__", json.dumps(datos, ensure_ascii=False, separators=(",", ":"))
@@ -125,6 +128,16 @@ def construir(reg: dict, todos: list[dict], areas: list[dict], pais: Country) ->
     (site / "quemado.geojson").write_text(json.dumps(_quemado(vivos), ensure_ascii=False), encoding="utf-8")
     (site / "feed.xml").write_text(_feed(vivos, ahora, pais), encoding="utf-8")
     return vivos
+
+
+def _ejemplos(pais: Country, fichas: dict[str, str]) -> str:
+    """Links to the historical fires replayed overpass by overpass (method section)."""
+    hs = [h for h in ficha.historicos(pais) if h["id"] in fichas]
+    if not hs:
+        return ""
+    T = i18n.FICHA[pais.lang]
+    enlaces = ", ".join(f'<a href="{fichas[h["id"]]}">{h["titulo"]}</a>' for h in hs)
+    return f"<p>{T['ejemplos'].format(enlaces=enlaces)}</p>"
 
 
 def escribir_signals(vivos: dict[str, list[dict]], ahora: str) -> None:

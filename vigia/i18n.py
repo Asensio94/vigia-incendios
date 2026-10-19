@@ -189,7 +189,8 @@ UI: dict[str, dict[str, str]] = {
         'js_dt_s2': '<dt>Quemado (Sentinel-2)</dt>',
         'js_dt_frp': '<dt>Potencia máxima</dt>',
         'js_actions': ('>Ver en el mapa</button>\n'
-                       '      <a href="${firms}">Focos en FIRMS</a><a href="#${esc(p.id)}">Enlace</a>'),
+                       '      ${p.ficha?`<a href="${p.ficha}">Por pasadas</a>`:""}'
+                       '<a href="${firms}">Focos en FIRMS</a><a href="#${esc(p.id)}">Enlace</a>'),
         'js_check': ('Compruébalo con las imágenes:\n'
                      '  <a href="${urlCB(s.fecha_antes,p)}" target="_blank" rel="noopener">antes (${dia(s.fecha_antes)})</a> '
                      '·\n'
@@ -397,7 +398,8 @@ UI: dict[str, dict[str, str]] = {
         "js_dt_s2": "<dt>Brûlé (Sentinel-2)</dt>",
         "js_dt_frp": "<dt>Puissance maximale</dt>",
         "js_actions": ('>Voir sur la carte</button>\n'
-                       '      <a href="${firms}">Foyers dans FIRMS</a><a href="#${esc(p.id)}">Lien</a>'),
+                       '      ${p.ficha?`<a href="${p.ficha}">Par passages</a>`:""}'
+                       '<a href="${firms}">Foyers dans FIRMS</a><a href="#${esc(p.id)}">Lien</a>'),
         "js_check": ("Vérifiez avec les images :\n"
                      '  <a href="${urlCB(s.fecha_antes,p)}" target="_blank" rel="noopener">avant (${dia(s.fecha_antes)})</a> ·\n'
                      '  <a href="${urlCB(s.fecha_despues,p)}" target="_blank" rel="noopener">après (${dia(s.fecha_despues)})</a>\n'
@@ -431,4 +433,227 @@ def page(html: str, lang: str) -> str:
     """Fill every @@key@@ marker of the page template in `lang`."""
     for k, v in UI[lang].items():
         html = html.replace(f"@@{k}@@", v)
+    return html
+
+
+# Per-fire analysis page (ficha.py). Template markers @@key@@ are filled by ficha_page; the
+# js_* entries go to the page script; the rest are used from Python.
+_COMO_ES = [
+    "Cada vez que un satélite pasa sobre el fuego, FIRMS (NASA) publica los píxeles con calor anómalo. Esta página "
+    "agrupa en una <strong>pasada</strong> los píxeles de satélites que pasaron con menos de una hora de diferencia.",
+    "Cada píxel VIIRS se dibuja con su tamaño real (unos 375 m en la vertical del satélite, más hacia los bordes de "
+    "la pasada). El fuego está dentro de ese recuadro, no en todo él.",
+    "El <strong>perímetro estimado</strong> se construye pasada a pasada con los píxeles VIIRS: un disco por píxel, un "
+    "cierre morfológico de 0,75 km y nunca encoge. Cada pasada VIIRS deja una <strong>isocrona</strong>, del amarillo "
+    "(primeras) al granate (últimas).",
+    "Las pasadas solo de MODIS (píxeles de 1 km) encienden focos en el mapa pero no mueven el perímetro: lo inflarían.",
+    "Los <strong>momentos clave</strong> salen de reglas fijas sobre esas cifras: el mayor salto del perímetro, la "
+    "pasada de más potencia radiativa (FRP), el frente activo más largo, cuándo llega al 50 % y al 90 % de su tamaño "
+    "final, la entrada en cada espacio Red Natura 2000 y los huecos de más de 18 horas sin observación.",
+]
+_COMO_FR = [
+    "À chaque passage d’un satellite au-dessus du feu, FIRMS (NASA) publie les pixels présentant une chaleur anormale. "
+    "Cette page regroupe en un <strong>passage</strong> les pixels de satellites passés à moins d’une heure d’écart.",
+    "Chaque pixel VIIRS est dessiné à sa taille réelle (environ 375 m à la verticale du satellite, davantage vers les "
+    "bords de la fauchée). Le feu se trouve dans ce rectangle, pas sur toute sa surface.",
+    "Le <strong>périmètre estimé</strong> se construit passage après passage avec les pixels VIIRS : un disque par "
+    "pixel, une fermeture morphologique de 0,75 km, et il ne rétrécit jamais. Chaque passage VIIRS laisse une "
+    "<strong>isochrone</strong>, du jaune (premières) au grenat (dernières).",
+    "Les passages MODIS seuls (pixels de 1 km) allument des foyers sur la carte mais ne font pas avancer le "
+    "périmètre : ils le gonfleraient.",
+    "Les <strong>moments clés</strong> découlent de règles fixes appliquées à ces chiffres : le plus grand bond du "
+    "périmètre, le passage de plus forte puissance radiative (FRP), le front actif le plus long, l’atteinte de 50 % "
+    "et de 90 % de la taille finale, l’entrée dans chaque site Natura 2000 et les trous de plus de 18 heures sans "
+    "observation.",
+]
+
+FICHA: dict[str, dict] = {
+    "es": {
+        "locale": "es-ES",
+        "meses": ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"],
+        "sitio": "Vigía de incendios",
+        "titulo": "Incendio de {sitio}",
+        "sin_nombre": "lugar sin nombre",
+        "descripcion": "{titulo}, pasada a pasada: focos VIIRS y MODIS, perímetro estimado y momentos clave.",
+        "rotulo": "Análisis por pasadas",
+        "lede": ("El incendio tal como lo vieron los satélites, pasada a pasada: los píxeles con calor, el perímetro "
+                 "que van dibujando y los momentos en que cambió. No es una película continua: entre dos pasadas el "
+                 "fuego avanza sin que nadie lo mida."),
+        "volver": "← Todos los incendios",
+        "fig_perimetro": "perímetro estimado con VIIRS",
+        "fig_pasadas": "pasadas con focos ({viirs} de VIIRS)",
+        "fig_dias": "días entre el primer y el último foco",
+        "fig_hueco": "mediana entre pasadas",
+        "fig_s2": "quemado según Sentinel-2",
+        "fig_effis": "superficie según EFFIS",
+        "aria_visor": "Reproducción del incendio",
+        "aria_mapa": "Mapa en relieve del incendio",
+        "sin_js": "El mapa y la línea de tiempo necesitan JavaScript. Los momentos clave están en la lista.",
+        "play": "Reproducir",
+        "anterior": "Pasada anterior",
+        "siguiente": "Pasada siguiente",
+        "aria_paso": "Pasada",
+        "aria_curva": "Superficie del perímetro estimado a lo largo del tiempo",
+        "curva_cap": ("Hectáreas del perímetro estimado. Es una escalera: solo cambia cuando pasa un satélite VIIRS "
+                      "(rayas granates abajo; las grises son pasadas MODIS). Toca la curva para ir a una pasada."),
+        "ley_actual": "píxeles de esta pasada",
+        "ley_ceniza": "píxeles anteriores",
+        "ley_iso": "isocronas, de la primera a la última",
+        "ley_natura": "Red Natura 2000",
+        "ley_s2": "quemado según Sentinel-2",
+        "capa_3d": "Relieve 3D",
+        "capa_orto": "Ortofoto",
+        "capa_natura": "Red Natura",
+        "capa_s2": "Quemado Sentinel-2",
+        "momentos_h": "Momentos clave",
+        "momentos_nota": "Toca uno para ver esa pasada en el mapa. Horas locales.",
+        "como_h": "Cómo se calcula",
+        "como_pasos": "".join(f"<li>{p}</li>" for p in _COMO_ES),
+        "limites_h": "Lo que no puede decir",
+        "limites": (
+            "<p><strong>La resolución temporal la marcan los satélites.</strong> VIIRS va a bordo de tres satélites "
+            "en la misma órbita, que pasan sobre España de madrugada (hacia la 1–3 h UTC) y a mediodía (12–14 h "
+            "UTC): unas dos ventanas al día. MODIS añade pasadas por la mañana y la tarde, con píxeles de 1 km. "
+            "Entre una pasada y otra no hay datos: un salto de 2.000 ha en una pasada nocturna puede haber ocurrido "
+            "en cualquier momento de las horas anteriores.</p>"
+            "<p><strong>La resolución espacial también.</strong> Un píxel VIIRS mide unos 375 m de lado (14 ha), pero "
+            "un píxel encendido no significa 14 ha ardiendo: basta un frente de unos metros si está muy caliente. El "
+            "perímetro estimado es una aproximación; la superficie real la da Sentinel-2 o EFFIS cuando el humo y las "
+            "nubes lo permiten.</p>"
+            "<p><strong>Nubes y humo esconden el fuego.</strong> Una pasada sin focos no quiere decir que el incendio "
+            "se apagara. Los huecos de más de 18 horas aparecen marcados.</p>"
+            "<p>En los incendios históricos se usa el archivo estándar de FIRMS, que no incluye el satélite "
+            "NOAA-21: tienen algo menos de pasadas que los actuales.</p>"),
+        "datos_h": "Datos",
+        "datos_p": ("Focos: NASA FIRMS (VIIRS S-NPP, NOAA-20, NOAA-21 y MODIS). Relieve: Mapterhorn, con los MDT del IGN "
+                    "(CC BY 4.0, scne.es). Red Natura 2000: MITECO / AEE. Los datos de esta página están en el JSON "
+                    "que la acompaña, con el mismo nombre."),
+        "creditos": ("Relieve © Mapterhorn (MDT del IGN, CC BY 4.0 scne.es; Copernicus GLO-30). Mapa base © "
+                     "OpenStreetMap. Ortofoto PNOA © scne.es."),
+        "al_menos": "al menos ",
+        "m_inicio": "Primeros píxeles con calor.",
+        "m_salto": "Mayor salto del perímetro: +{ha} ha en {horas} h{ritmo}.",
+        "m_ritmo": " (unas {v} ha/h)",
+        "m_potencia": "Pasada de más potencia: {frp} MW de energía radiativa.",
+        "m_frente": "Frente activo más largo: {km} km.",
+        "m_mitad": "Alcanza la mitad de su tamaño final ({ha} ha).",
+        "m_noventa": "Llega al 90 % de su tamaño final ({ha} ha).",
+        "m_natura": "El perímetro entra en {tipo} «{nombre}» ({codigo}).",
+        "m_hueco": "{horas} h sin focos: nubes, humo o sin pasada. Pudo crecer sin verse.",
+        "m_reactivacion": "Se reactiva tras {horas} h sin focos.",
+        "m_ultimo": "Últimos píxeles con calor.",
+        "m_s2": "Sentinel-2 mide {ha} ha quemadas.",
+        "js_play": "Reproducir",
+        "js_pausa": "Pausa",
+        "js_pasada": "Pasada {k} de {n}",
+        "js_pixel": "{n} píxel",
+        "js_pixeles": "{n} píxeles",
+        "js_solo_modis": "Solo MODIS (1 km): no mueve el perímetro.",
+        "js_perimetro": "Perímetro estimado: {ha}.",
+        "js_crece": "+{ha} ha desde la pasada VIIRS anterior.",
+        "js_sin_perimetro": "Aún sin perímetro VIIRS.",
+        "js_hueco": "Tras {h} h sin observación.",
+        "ejemplos": ("Para ver el método en incendios que duraron días, hay ejemplos históricos reproducidos pasada a "
+                     "pasada: {enlaces}."),
+        "js_sin_webgl": "Este navegador no puede dibujar el mapa en 3D (WebGL). La curva y los momentos siguen funcionando.",
+    },
+    "fr": {
+        "locale": "fr-FR",
+        "meses": ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."],
+        "sitio": "Vigie des incendies",
+        "titulo": "Incendie de {sitio}",
+        "sin_nombre": "lieu sans nom",
+        "descripcion": "{titulo}, passage par passage : foyers VIIRS et MODIS, périmètre estimé et moments clés.",
+        "rotulo": "Analyse par passages",
+        "lede": ("L’incendie tel que les satellites l’ont vu, passage après passage : les pixels chauds, le périmètre "
+                 "qu’ils dessinent et les moments où il a changé. Ce n’est pas un film continu : entre deux passages, "
+                 "le feu avance sans que personne ne le mesure."),
+        "volver": "← Tous les incendies",
+        "fig_perimetro": "périmètre estimé avec VIIRS",
+        "fig_pasadas": "passages avec foyers ({viirs} VIIRS)",
+        "fig_dias": "jours entre le premier et le dernier foyer",
+        "fig_hueco": "médiane entre passages",
+        "fig_s2": "brûlé selon Sentinel-2",
+        "fig_effis": "surface selon EFFIS",
+        "aria_visor": "Reconstitution de l’incendie",
+        "aria_mapa": "Carte en relief de l’incendie",
+        "sin_js": "La carte et la frise chronologique nécessitent JavaScript. Les moments clés sont dans la liste.",
+        "play": "Lecture",
+        "anterior": "Passage précédent",
+        "siguiente": "Passage suivant",
+        "aria_paso": "Passage",
+        "aria_curva": "Surface du périmètre estimé au fil du temps",
+        "curva_cap": ("Hectares du périmètre estimé. C’est un escalier : il ne change qu’au passage d’un satellite "
+                      "VIIRS (traits grenat en bas ; les gris sont des passages MODIS). Touchez la courbe pour aller "
+                      "à un passage."),
+        "ley_actual": "pixels de ce passage",
+        "ley_ceniza": "pixels précédents",
+        "ley_iso": "isochrones, de la première à la dernière",
+        "ley_natura": "Natura 2000",
+        "ley_s2": "brûlé selon Sentinel-2",
+        "capa_3d": "Relief 3D",
+        "capa_orto": "Orthophoto",
+        "capa_natura": "Natura 2000",
+        "capa_s2": "Brûlé Sentinel-2",
+        "momentos_h": "Moments clés",
+        "momentos_nota": "Touchez-en un pour voir ce passage sur la carte. Heures locales.",
+        "como_h": "Méthode",
+        "como_pasos": "".join(f"<li>{p}</li>" for p in _COMO_FR),
+        "limites_h": "Ce qu’elle ne peut pas dire",
+        "limites": (
+            "<p><strong>La résolution temporelle dépend des satellites.</strong> VIIRS est embarqué sur trois "
+            "satellites de la même orbite, qui passent au-dessus de la France la nuit (vers 1–3 h UTC) et à la "
+            "mi-journée (12–14 h UTC) : environ deux fenêtres par jour. MODIS ajoute des passages le matin et "
+            "l’après-midi, avec des pixels de 1 km. Entre deux passages il n’y a pas de données : un bond de "
+            "2 000 ha lors d’un passage nocturne peut s’être produit à n’importe quel moment des heures "
+            "précédentes.</p>"
+            "<p><strong>La résolution spatiale aussi.</strong> Un pixel VIIRS mesure environ 375 m de côté (14 ha), "
+            "mais un pixel allumé ne signifie pas 14 ha en feu : un front de quelques mètres suffit s’il est très "
+            "chaud. Le périmètre estimé est une approximation ; la surface réelle vient de Sentinel-2 ou d’EFFIS "
+            "quand la fumée et les nuages le permettent.</p>"
+            "<p><strong>Nuages et fumée cachent le feu.</strong> Un passage sans foyers ne veut pas dire que "
+            "l’incendie s’est éteint. Les trous de plus de 18 heures sont signalés.</p>"
+            "<p>Pour les incendies historiques, on utilise l’archive standard de FIRMS, qui n’inclut pas le "
+            "satellite NOAA-21 : ils comptent un peu moins de passages que les incendies actuels.</p>"),
+        "datos_h": "Données",
+        "datos_p": ("Foyers : NASA FIRMS (VIIRS S-NPP, NOAA-20, NOAA-21 et MODIS). Relief : Mapterhorn, avec le RGE "
+                    "ALTI et le LiDAR HD de l’IGN (Licence Ouverte 2.0). Natura 2000 : AEE. Les données de cette page "
+                    "sont dans le JSON qui l’accompagne, du même nom."),
+        "creditos": ("Relief © Mapterhorn (IGN RGE ALTI et LiDAR HD, Licence Ouverte 2.0 ; Copernicus GLO-30). "
+                     "Fond de carte © OpenStreetMap. Orthophoto © IGN."),
+        "al_menos": "au moins ",
+        "m_inicio": "Premiers pixels chauds.",
+        "m_salto": "Plus grand bond du périmètre : +{ha} ha en {horas} h{ritmo}.",
+        "m_ritmo": " (environ {v} ha/h)",
+        "m_potencia": "Passage le plus puissant : {frp} MW d’énergie radiative.",
+        "m_frente": "Front actif le plus long : {km} km.",
+        "m_mitad": "Atteint la moitié de sa taille finale ({ha} ha).",
+        "m_noventa": "Atteint 90 % de sa taille finale ({ha} ha).",
+        "m_natura": "Le périmètre entre dans la {tipo} « {nombre} » ({codigo}).",
+        "m_hueco": "{horas} h sans foyers : nuages, fumée ou pas de passage. Il a pu grandir sans être vu.",
+        "m_reactivacion": "Reprise après {horas} h sans foyers.",
+        "m_ultimo": "Derniers pixels chauds.",
+        "m_s2": "Sentinel-2 mesure {ha} ha brûlés.",
+        "js_play": "Lecture",
+        "js_pausa": "Pause",
+        "js_pasada": "Passage {k} sur {n}",
+        "js_pixel": "{n} pixel",
+        "js_pixeles": "{n} pixels",
+        "js_solo_modis": "MODIS seul (1 km) : ne fait pas avancer le périmètre.",
+        "js_perimetro": "Périmètre estimé : {ha}.",
+        "js_crece": "+{ha} ha depuis le passage VIIRS précédent.",
+        "js_sin_perimetro": "Pas encore de périmètre VIIRS.",
+        "js_hueco": "Après {h} h sans observation.",
+        "ejemplos": ("Pour voir la méthode sur des incendies qui ont duré plusieurs jours, des exemples historiques "
+                     "sont reconstitués passage par passage : {enlaces}."),
+        "js_sin_webgl": "Ce navigateur ne peut pas afficher la carte en 3D (WebGL). La courbe et les moments fonctionnent.",
+    },
+}
+
+
+def ficha_page(html: str, lang: str) -> str:
+    """Fill the @@key@@ markers of the per-fire page template in `lang`."""
+    for k, v in FICHA[lang].items():
+        if isinstance(v, str):
+            html = html.replace(f"@@{k}@@", v)
     return html
