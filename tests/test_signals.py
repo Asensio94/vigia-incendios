@@ -87,8 +87,9 @@ def test_document_keeps_a_year_sorted_by_date_then_id():
     doc = S.document(fires, "2026-10-13T07:02Z")
     assert [s["id"] for s in doc["signals"]] == ["IN-20251013-001", "IN-20261012-001", "IN-20261012-002"]
     assert {k: doc[k] for k in ("source", "version", "generated")} == \
-        {"source": "vigia-incendios", "version": 1, "generated": "2026-10-13T07:02Z"}
-    assert doc["coverage"]["sites"] is None and "365 días" in doc["coverage"]["note"]
+        {"source": "vigia-incendios", "version": 2, "generated": "2026-10-13T07:02Z"}
+    assert doc["coverage"]["ES"]["sites"] is None and "365 días" in doc["coverage"]["ES"]["note"]
+    assert doc["coverage"]["FR"]["sites"] is None and "365 derniers jours" in doc["coverage"]["FR"]["note"]
     assert all(s["kind"] == "fire" and s["deadline"] is None for s in doc["signals"])
     # No source or regions per signal: the hub adds them.
     assert not any({"source", "regions"} & s.keys() for s in doc["signals"])
@@ -123,3 +124,4 @@ def test_document_mixes_both_countries():
     doc = S.document([_fire(), _fire_fr()], "2026-10-15T07:00Z")
     assert [(s["id"], s["country"]) for s in doc["signals"]] == \
         [("IN-20260929-007", "ES"), ("FR-IN-20261014-001", "FR")]
+

@@ -144,7 +144,9 @@ los mismos satélites y los mismos cruces, con su contorno, su Red Natura y su r
 - **Identificadores:** `FR-IN-AAAAMMDD-NNN`. Los de España no cambian.
 - **Communes:** la API Découpage administratif ([geo.api.gouv.fr](https://geo.api.gouv.fr))
   da la commune, su código INSEE (5 caracteres; en Córcega, 2A y 2B), el departamento y la
-  región. En `signals.json` los municipios franceses van por su código INSEE.
+  región. En `signals.json` los municipios franceses van por su código INSEE. El fichero sigue
+  la versión 2 del formato: cada señal lleva su país y la cobertura va por país, así que Estado
+  de las IBA lee los incendios franceses en su página de Francia.
 - **Red Natura 2000:** la misma capa de la AEMA; las figuras se llaman ZPS y ZSC.
 - **Web en francés** en [`/fr/`](https://asensio94.github.io/vigia-incendios/fr/), con la
   tipografía francesa (espacio fino ante «%» y en los miles). Los datos (`incendios.json`,
