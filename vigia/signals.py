@@ -3,7 +3,8 @@
 Estado de las IBA reads site/signals.json to place each fire in its Natura 2000 sites,
 municipalities and regions; the format is described in estado-iba's CONTRATO.md. Spanish and
 French fires go in the same file, each with its "country"; French ones carry the INSEE code
-of their commune. A fire
+of their commune. It is version 2 of the format: coverage goes by country, so the hub reads French
+fires on its French page and never mistakes an INSEE code for an INE one. A fire
 crosses the sites with its Sentinel-2 burnt area once there is one (see sites_of), and until
 then with the extent of its hot pixels, which overstates small fires (a 1 ha fire lights a
 14 ha VIIRS pixel).
@@ -16,9 +17,15 @@ from . import config
 
 SOURCE = "vigia-incendios"
 WINDOW_DAYS = 365                 # the hub shows a year of fires, whoever sends them
-COVERAGE = {"label": "España y Francia metropolitana", "sites": None,
-            "note": f"Focos VIIRS de NASA FIRMS de los últimos {WINDOW_DAYS} días; "
-                    "superficie quemada con Sentinel-2 cuando la hay."}
+# Each country in its own language, as its signals' titles.
+COVERAGE = {
+    "ES": {"label": "Toda España", "sites": None,
+           "note": f"Focos VIIRS de NASA FIRMS de los últimos {WINDOW_DAYS} días; "
+                   "superficie quemada con Sentinel-2 cuando la hay."},
+    "FR": {"label": "Toute la France métropolitaine", "sites": None,
+           "note": f"Foyers VIIRS de NASA FIRMS des {WINDOW_DAYS} derniers jours ; "
+                   "surface brûlée avec Sentinel-2 quand elle est mesurée."},
+}
 
 
 def sites_of(i: dict) -> tuple[list[dict], str, float | None, str | None]:
@@ -80,4 +87,4 @@ def document(fires: list[dict], now: str) -> dict:
     """signals.json for the fires first seen in the WINDOW_DAYS before `now` (the register's time)."""
     since = (date.fromisoformat(now[:10]) - timedelta(days=WINDOW_DAYS)).isoformat()
     signals = sorted((signal(i) for i in fires if i["primera"][:10] >= since), key=lambda s: (s["date"], s["id"]))
-    return {"source": SOURCE, "version": 1, "generated": now, "coverage": COVERAGE, "signals": signals}
+    return {"source": SOURCE, "version": 2, "generated": now, "coverage": COVERAGE, "signals": signals}
