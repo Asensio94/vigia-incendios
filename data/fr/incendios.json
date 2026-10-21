@@ -6739,7 +6739,7 @@
     "comunidad": "Occitanie"
    },
    "lugar_focos": 8,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [
     {
      "id": 864067,
@@ -8300,7 +8300,7 @@
     "comunidad": "Nouvelle-Aquitaine"
    },
    "lugar_focos": 6,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -10533,7 +10533,7 @@
     "comunidad": "Occitanie"
    },
    "lugar_focos": 2,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -10614,7 +10614,7 @@
     "comunidad": "Auvergne-Rhône-Alpes"
    },
    "lugar_focos": 2,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -10696,7 +10696,7 @@
     "comunidad": "Auvergne-Rhône-Alpes"
    },
    "lugar_focos": 2,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -12233,7 +12233,7 @@
     "comunidad": "Auvergne-Rhône-Alpes"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -12298,7 +12298,7 @@
     "comunidad": "Occitanie"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -12363,7 +12363,7 @@
     "comunidad": "Nouvelle-Aquitaine"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -12435,7 +12435,7 @@
     "comunidad": "Auvergne-Rhône-Alpes"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -13159,7 +13159,7 @@
     "comunidad": "Centre-Val de Loire"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -13231,7 +13231,7 @@
     "comunidad": "Centre-Val de Loire"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -13414,7 +13414,7 @@
     "comunidad": "Île-de-France"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -26218,7 +26218,575 @@
    "estado": "activo",
    "effis": [],
    "effis_ha": null
+  },
+  {
+   "id": "FR-IN-20261021-003",
+   "primera": "2026-10-21T12:25Z",
+   "ultima": "2026-10-21T12:46Z",
+   "n_focos": 2,
+   "n_viirs": 2,
+   "pasadas": 2,
+   "satelites": [
+    "NOAA-20",
+    "S-NPP"
+   ],
+   "frp_max": 2.9,
+   "frp_total": 5.7,
+   "ha_focos": 27.9,
+   "centro": [
+    2.4592,
+    43.2277
+   ],
+   "bbox": [
+    2.45618,
+    43.22429,
+    2.46222,
+    43.23039
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       2.46222,
+       43.22827
+      ],
+      [
+       2.46222,
+       43.22429
+      ],
+      [
+       2.45728,
+       43.22429
+      ],
+      [
+       2.45728,
+       43.22713
+      ],
+      [
+       2.45618,
+       43.22713
+      ],
+      [
+       2.45618,
+       43.23039
+      ],
+      [
+       2.46098,
+       43.23039
+      ],
+      [
+       2.46098,
+       43.22827
+      ],
+      [
+       2.46222,
+       43.22827
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Trèbes",
+    "insee": "11397",
+    "provincia": "Aude",
+    "comunidad": "Occitanie"
+   },
+   "lugar_focos": 2,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "FR-IN-20261021-004",
+   "primera": "2026-10-21T12:25Z",
+   "ultima": "2026-10-21T12:46Z",
+   "n_focos": 2,
+   "n_viirs": 2,
+   "pasadas": 2,
+   "satelites": [
+    "NOAA-20",
+    "S-NPP"
+   ],
+   "frp_max": 4.5,
+   "frp_total": 9.0,
+   "ha_focos": 35.9,
+   "centro": [
+    3.0727,
+    43.27822
+   ],
+   "bbox": [
+    3.06832,
+    43.2754,
+    3.07709,
+    43.28166
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.073,
+       43.2754
+      ],
+      [
+       3.06832,
+       43.2754
+      ],
+      [
+       3.06832,
+       43.27866
+      ],
+      [
+       3.07005,
+       43.27866
+      ],
+      [
+       3.07005,
+       43.28166
+      ],
+      [
+       3.07709,
+       43.28166
+      ],
+      [
+       3.07709,
+       43.27778
+      ],
+      [
+       3.073,
+       43.27778
+      ],
+      [
+       3.073,
+       43.2754
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Nissan-lez-Enserune",
+    "insee": "34183",
+    "provincia": "Hérault",
+    "comunidad": "Occitanie"
+   },
+   "lugar_focos": 2,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "FR-IN-20261021-005",
+   "primera": "2026-10-21T12:46Z",
+   "ultima": "2026-10-21T12:46Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-20"
+   ],
+   "frp_max": 6.5,
+   "frp_total": 6.5,
+   "ha_focos": 15.5,
+   "centro": [
+    -0.01005,
+    44.04784
+   ],
+   "bbox": [
+    -0.01267,
+    44.04617,
+    -0.00743,
+    44.04951
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -0.00743,
+       44.04617
+      ],
+      [
+       -0.00743,
+       44.04951
+      ],
+      [
+       -0.01267,
+       44.04951
+      ],
+      [
+       -0.01267,
+       44.04617
+      ],
+      [
+       -0.00743,
+       44.04617
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "bosque": 1.0
+   },
+   "lugar": {
+    "municipio": "Losse",
+    "insee": "40158",
+    "provincia": "Landes",
+    "comunidad": "Nouvelle-Aquitaine"
+   },
+   "lugar_focos": 1,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "FR-IN-20261021-006",
+   "primera": "2026-10-21T12:46Z",
+   "ultima": "2026-10-21T12:46Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-20"
+   ],
+   "frp_max": 4.9,
+   "frp_total": 4.9,
+   "ha_focos": 15.5,
+   "centro": [
+    -0.19013,
+    44.51749
+   ],
+   "bbox": [
+    -0.19278,
+    44.51582,
+    -0.18748,
+    44.51916
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -0.18748,
+       44.51582
+      ],
+      [
+       -0.18748,
+       44.51916
+      ],
+      [
+       -0.19278,
+       44.51916
+      ],
+      [
+       -0.19278,
+       44.51582
+      ],
+      [
+       -0.18748,
+       44.51582
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "bosque": 1.0
+   },
+   "lugar": {
+    "municipio": "Coimères",
+    "insee": "33130",
+    "provincia": "Gironde",
+    "comunidad": "Nouvelle-Aquitaine"
+   },
+   "lugar_focos": 1,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "FR-IN-20261021-007",
+   "primera": "2026-10-21T12:46Z",
+   "ultima": "2026-10-21T12:46Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-20"
+   ],
+   "frp_max": 2.9,
+   "frp_total": 2.9,
+   "ha_focos": 13.7,
+   "centro": [
+    2.25283,
+    46.69167
+   ],
+   "bbox": [
+    2.25034,
+    46.69004,
+    2.25532,
+    46.6933
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       2.25532,
+       46.69004
+      ],
+      [
+       2.25532,
+       46.6933
+      ],
+      [
+       2.25034,
+       46.6933
+      ],
+      [
+       2.25034,
+       46.69004
+      ],
+      [
+       2.25532,
+       46.69004
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Ids-Saint-Roch",
+    "insee": "18112",
+    "provincia": "Cher",
+    "comunidad": "Centre-Val de Loire"
+   },
+   "lugar_focos": 1,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "FR-IN-20261021-008",
+   "primera": "2026-10-21T12:49Z",
+   "ultima": "2026-10-21T12:49Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-20"
+   ],
+   "frp_max": 2.9,
+   "frp_total": 2.9,
+   "ha_focos": 15.2,
+   "centro": [
+    -1.1929,
+    47.72018
+   ],
+   "bbox": [
+    -1.19564,
+    47.71851,
+    -1.19016,
+    47.72185
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -1.19016,
+       47.71851
+      ],
+      [
+       -1.19016,
+       47.72185
+      ],
+      [
+       -1.19564,
+       47.72185
+      ],
+      [
+       -1.19564,
+       47.71851
+      ],
+      [
+       -1.19016,
+       47.71851
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Ombrée d'Anjou",
+    "insee": "49248",
+    "provincia": "Maine-et-Loire",
+    "comunidad": "Pays de la Loire"
+   },
+   "lugar_focos": 1,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "FR-IN-20261021-009",
+   "primera": "2026-10-21T12:49Z",
+   "ultima": "2026-10-21T12:49Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-20"
+   ],
+   "frp_max": 2.3,
+   "frp_total": 2.3,
+   "ha_focos": 16.3,
+   "centro": [
+    -2.18322,
+    47.72775
+   ],
+   "bbox": [
+    -2.18609,
+    47.72603,
+    -2.18035,
+    47.72947
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -2.18035,
+       47.72603
+      ],
+      [
+       -2.18035,
+       47.72947
+      ],
+      [
+       -2.18609,
+       47.72947
+      ],
+      [
+       -2.18609,
+       47.72603
+      ],
+      [
+       -2.18035,
+       47.72603
+      ]
+     ]
+    ]
+   },
+   "natura": [
+    {
+     "codigo": "FR5300002",
+     "nombre": "Marais de Vilaine",
+     "tipo": "ZSC",
+     "ha": 16.3
+    }
+   ],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Les Fougerêts",
+    "insee": "56060",
+    "provincia": "Morbihan",
+    "comunidad": "Bretagne"
+   },
+   "lugar_focos": 1,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|1|891d66e547e1",
+    "revisado": "2026-10-21T18:39Z",
+    "calculado": "2026-10-21T18:39Z",
+    "definitivo": false,
+    "sin_imagen": true
+   }
+  },
+  {
+   "id": "FR-IN-20261021-010",
+   "primera": "2026-10-21T12:49Z",
+   "ultima": "2026-10-21T12:49Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-20"
+   ],
+   "frp_max": 2.5,
+   "frp_total": 2.5,
+   "ha_focos": 15.2,
+   "centro": [
+    -1.61089,
+    48.39897
+   ],
+   "bbox": [
+    -1.61366,
+    48.3973,
+    -1.60812,
+    48.40064
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -1.60812,
+       48.3973
+      ],
+      [
+       -1.60812,
+       48.40064
+      ],
+      [
+       -1.61366,
+       48.40064
+      ],
+      [
+       -1.61366,
+       48.3973
+      ],
+      [
+       -1.60812,
+       48.3973
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Bazouges-la-Pérouse",
+    "insee": "35019",
+    "provincia": "Ille-et-Vilaine",
+    "comunidad": "Bretagne"
+   },
+   "lugar_focos": 1,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null
   }
  ],
- "actualizado": "2026-10-21T13:48Z"
+ "actualizado": "2026-10-21T18:39Z"
 }
