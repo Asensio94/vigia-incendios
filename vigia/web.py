@@ -99,16 +99,23 @@ def construir(reg: dict, todos: list[dict], areas: list[dict], pais: Country) ->
     fv = pais.data / "validacion.json"
     validacion = json.loads(fv.read_text(encoding="utf-8")) if fv.exists() else {}
     vista = f"[{pais.map_view[0]},{pais.map_view[1]}],{pais.map_view[2]}"
-    html = (i18n.page(PLANTILLA, lang)
+    cuentas = {"fig_active": sum(relevante(i) for i in activos),
+               "fig_isolated": sum(not relevante(i) for i in activos),
+               "fig_focos24": sum(f["t"] >= F.hace(24, F._dt(ahora)) for f in todos)}
+    plantilla = PLANTILLA
+    for k, v in cuentas.items():
+        if i18n.singular(v, lang):
+            plantilla = plantilla.replace(f"@@{k}@@", i18n.SINGULAR[lang][k])
+    html = (i18n.page(plantilla, lang)
             .replace("__LOGO__", LOGO_SVG)
             .replace("__FAVICON__", favicon_link("#c2410c", "#fb7b3e"))
             .replace("__COMMON_CSS__", COMMON_CSS)
             .replace("__TABS_CSS__", ficha.TABS_CSS)
             .replace("__TABS__", ficha.tabs(lang, "mapa", ""))
-            .replace("__ACTIVOS__", str(sum(relevante(i) for i in activos)))
-            .replace("__AISLADOS__", str(sum(not relevante(i) for i in activos)))
+            .replace("__ACTIVOS__", str(cuentas["fig_active"]))
+            .replace("__AISLADOS__", str(cuentas["fig_isolated"]))
             .replace("__NATURA__", str(sum(bool(i.get("natura")) for i in activos if relevante(i))))
-            .replace("__FOCOS24__", str(sum(f["t"] >= F.hace(24, F._dt(ahora)) for f in todos)))
+            .replace("__FOCOS24__", str(cuentas["fig_focos24"]))
             .replace("__TEMPORADA__", str(TEMPORADA_DIAS))
             .replace("__VISTA__", vista)
             .replace("__METODO__", _parametros(lang) + _ejemplos(pais, fichas))
@@ -236,9 +243,9 @@ def _filas_es() -> list[tuple[str, str]]:
         ("Activo", f"algún foco en las últimas {config.ACTIVO_HORAS} h"),
         ("Qué arde", f"CORINE Land Cover 2018 en hasta {config.CLC_MUESTRAS} celdas con focos; vegetación natural si bosque, matorral, dehesa y roquedo suman la mitad"),
         ("Perímetro EFFIS", f"área quemada que toca la huella (con {config.EFFIS_HOLGURA_KM:g} km de margen) y empezó entre {config.EFFIS_HOLGURA_DIAS} días antes del primer foco y {config.EFFIS_HOLGURA_DIAS} días después del último"),
-        ("Perímetro estimado", f"con {config.PERIMETER_MIN_VIIRS} píxeles VIIRS o más: cada píxel es un disco de {config.PIXEL_RADIUS_FACTOR:g} veces medio píxel de radio; tras cada pasada se suma a lo anterior y se cierran los huecos de menos de {2 * config.CLOSING_KM:g} km, así que nunca encoge (como FEDS, de la NASA)".replace(".", ",")),
+        ("Perímetro estimado", f"con {config.PERIMETER_MIN_VIIRS} píxeles VIIRS o más: cada píxel es un disco de {config.PIXEL_RADIUS_FACTOR:g} veces medio píxel de radio; tras cada pasada se suma a lo anterior y se cierran los huecos de menos de {2 * config.CLOSING_KM:g} km, así que nunca encoge (como FEDS, el seguimiento de incendios de la NASA; ver siglas)".replace(".", ",")),
         ("Frente activo", f"borde del perímetro a menos de {config.FRONT_KM * 1000:g} m de un píxel de la última pasada"),
-        ("Quemado (Sentinel-2)", f"dNBR mayor que {_es(config.DNBR_UMBRAL)}, a {config.PERIMETRO_RES_M} m, en manchas que tocan los focos y a menos de {_es(config.PERIMETRO_ANCLA_M)} m de ellos; antes, mediana de hasta {config.PRE_ESCENAS_MAX} escenas de los {config.PRE_DIAS} días previos; después, el segundo NBR más bajo (el más bajo si solo hay una imagen) desde el primer foco hasta {config.POST_ESCENAS_TRAS} escenas tras el último"),
+        ("Quemado (Sentinel-2)", f"dNBR (cuánto baja el índice de área quemada entre antes y después) mayor que {_es(config.DNBR_UMBRAL)}, a {config.PERIMETRO_RES_M} m, en manchas que tocan los focos y a menos de {_es(config.PERIMETRO_ANCLA_M)} m de ellos; antes, mediana de hasta {config.PRE_ESCENAS_MAX} escenas de los {config.PRE_DIAS} días previos; después, el segundo NBR más bajo (el más bajo si solo hay una imagen) desde el primer foco hasta {config.POST_ESCENAS_TRAS} escenas tras el último"),
         ("Severidad", "dNBR hasta 0,27 baja; de 0,27 a 0,66 moderada; más de 0,66 alta (Key y Benson, simplificado)"),
         ("Frecuencia", "cada hora; FIRMS publica los focos unas tres horas después de la pasada"),
         ("Horas", "peninsulares; en Canarias, una hora menos"),
@@ -257,9 +264,9 @@ def _filas_fr() -> list[tuple[str, str]]:
         ("Actif", f"au moins un foyer ces dernières {config.ACTIVO_HORAS} h"),
         ("Ce qui brûle", f"CORINE Land Cover 2018 dans jusqu’à {config.CLC_MUESTRAS} cellules avec foyers ; végétation naturelle si forêt, landes, mosaïque agroforestière et roches font la moitié"),
         ("Contour EFFIS", f"surface brûlée qui touche l’empreinte (avec {g(config.EFFIS_HOLGURA_KM)} km de marge) et a commencé entre {config.EFFIS_HOLGURA_DIAS} jours avant le premier foyer et {config.EFFIS_HOLGURA_DIAS} jours après le dernier"),
-        ("Périmètre estimé", f"à partir de {config.PERIMETER_MIN_VIIRS} pixels VIIRS : chaque pixel est un disque de {g(config.PIXEL_RADIUS_FACTOR)} fois le demi-pixel de rayon ; après chaque passage il s’ajoute au précédent et les trous de moins de {g(2 * config.CLOSING_KM)} km sont fermés, donc il ne rétrécit jamais (comme FEDS, de la NASA)"),
+        ("Périmètre estimé", f"à partir de {config.PERIMETER_MIN_VIIRS} pixels VIIRS : chaque pixel est un disque de {g(config.PIXEL_RADIUS_FACTOR)} fois le demi-pixel de rayon ; après chaque passage il s’ajoute au précédent et les trous de moins de {g(2 * config.CLOSING_KM)} km sont fermés, donc il ne rétrécit jamais (comme FEDS, le suivi des incendies de la NASA ; voir les sigles)"),
         ("Front actif", f"bord du périmètre à moins de {g(config.FRONT_KM * 1000)} m d’un pixel du dernier passage"),
-        ("Brûlé (Sentinel-2)", f"dNBR supérieur à {g(config.DNBR_UMBRAL)}, à {config.PERIMETRO_RES_M} m, en taches qui touchent les foyers et à moins de {i18n.n(config.PERIMETRO_ANCLA_M, 'fr')} m d’eux ; avant, médiane d’au plus {config.PRE_ESCENAS_MAX} scènes des {config.PRE_DIAS} jours précédents ; après, le deuxième NBR le plus bas (le plus bas s’il n’y a qu’une image) du premier foyer à {config.POST_ESCENAS_TRAS} scènes après le dernier"),
+        ("Brûlé (Sentinel-2)", f"dNBR (baisse de l’indice de surface brûlée entre avant et après) supérieur à {g(config.DNBR_UMBRAL)}, à {config.PERIMETRO_RES_M} m, en taches qui touchent les foyers et à moins de {i18n.n(config.PERIMETRO_ANCLA_M, 'fr')} m d’eux ; avant, médiane d’au plus {config.PRE_ESCENAS_MAX} scènes des {config.PRE_DIAS} jours précédents ; après, le deuxième NBR le plus bas (le plus bas s’il n’y a qu’une image) du premier foyer à {config.POST_ESCENAS_TRAS} scènes après le dernier"),
         ("Sévérité", "dNBR jusqu’à 0,27 faible ; de 0,27 à 0,66 modérée ; au-delà de 0,66 élevée (Key et Benson, simplifié)"),
         ("Fréquence", "toutes les heures ; FIRMS publie les foyers environ trois heures après le passage"),
         ("Heures", "heure de Paris"),
@@ -525,6 +532,7 @@ dl.medidas dd{margin:0;font:500 15px var(--font-data);font-variant-numeric:tabul
     </ol>
     @@params_title@@
     __METODO__
+    @@glossary@@
   </div>
   <div>
     @@s2_section@@

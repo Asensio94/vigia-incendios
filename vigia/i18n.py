@@ -51,6 +51,85 @@ TIPOS_FR = {"vegetación natural": "végétation naturelle", "mixto": "mixte", "
 ESTADO_SEV_FR = {"alta": "élevée", "moderada": "modérée", "baja": "faible"}
 
 
+# Acronyms and technical terms, explained once per page (main page, list and fire pages).
+GLOSARIO = {
+    "es": (
+        '<h3>Siglas y términos</h3>\n'
+        '    <ul class="glosario">\n'
+        '      <li><strong>FIRMS</strong> (Fire Information for Resource Management System): el servicio de '
+        'la NASA que publica en abierto los focos de calor que ven los satélites, unas horas después de cada '
+        'pasada.</li>\n'
+        '      <li><strong>VIIRS</strong> y <strong>MODIS</strong>: los dos sensores que detectan esos focos.'
+        ' VIIRS va en los satélites S-NPP, NOAA-20 y NOAA-21, con píxeles de 375 m; MODIS, en Terra y Aqua, '
+        'con píxeles de 1 km.</li>\n'
+        '      <li><strong>FRP</strong> (potencia radiativa del fuego): el calor que emite un píxel, en '
+        'megavatios. Sirve para comparar la intensidad de una pasada con otra.</li>\n'
+        '      <li><strong>EFFIS</strong>: el Sistema Europeo de Información sobre Incendios Forestales, de '
+        'Copernicus. Dibuja los perímetros quemados a partir de unas 30 ha.</li>\n'
+        '      <li><strong>NBR</strong> y <strong>dNBR</strong>: el NBR (índice normalizado de área quemada) '
+        'compara en una imagen el infrarrojo cercano con el de onda corta; el dNBR es cuánto baja entre la '
+        'imagen de antes y la de después del fuego. Cuanto más baja, más quemado.</li>\n'
+        '      <li><strong>FEDS</strong> (Fire Event Data Suite): el método de la NASA que sigue cada '
+        'incendio pasada a pasada con los focos VIIRS. El perímetro estimado del vigía sigue la misma '
+        'idea.</li>\n'
+        '      <li><strong>CORINE Land Cover</strong>: el mapa europeo de cubiertas del suelo (bosque, '
+        'matorral, cultivos, ciudad…), en su edición de 2018.</li>\n'
+        '      <li><strong>Red Natura 2000</strong>: la red europea de espacios protegidos. '
+        '<strong>ZEC</strong> es Zona Especial de Conservación (Directiva Hábitats) y <strong>ZEPA</strong>, '
+        'Zona de Especial Protección para las Aves (Directiva Aves).</li>\n'
+        '      <li><strong>Sentinel-2</strong>: los satélites europeos de Copernicus que fotografían el suelo'
+        ' cada dos o tres días con píxeles de 10 a 20 m. <strong>PNOA</strong>: la ortofoto del Plan Nacional'
+        ' de Ortofotografía Aérea.</li>\n'
+        '    </ul>'
+    ),
+    "fr": (
+        '<h3>Sigles et termes</h3>\n'
+        '    <ul class="glosario">\n'
+        '      <li><strong>FIRMS</strong> (Fire Information for Resource Management System) : le service de '
+        'la NASA qui publie en accès libre les foyers de chaleur vus par satellite, quelques heures après '
+        'chaque passage.</li>\n'
+        '      <li><strong>VIIRS</strong> et <strong>MODIS</strong> : les deux capteurs qui détectent ces '
+        'foyers. VIIRS est à bord des satellites S-NPP, NOAA-20 et NOAA-21, avec des pixels de 375 m ; MODIS,'
+        ' à bord de Terra et Aqua, avec des pixels de 1 km.</li>\n'
+        '      <li><strong>FRP</strong> (puissance radiative du feu) : la chaleur émise par un pixel, en '
+        'mégawatts. Elle sert à comparer l’intensité d’un passage à l’autre.</li>\n'
+        '      <li><strong>EFFIS</strong> : le Système européen d’information sur les feux de forêt, de '
+        'Copernicus. Il cartographie les surfaces brûlées à partir d’environ 30 ha.</li>\n'
+        '      <li><strong>NBR</strong> et <strong>dNBR</strong> : le NBR (indice normalisé de surface '
+        'brûlée) compare sur une image le proche infrarouge et l’infrarouge à ondes courtes ; le dNBR est sa '
+        'baisse entre l’image d’avant et celle d’après le feu. Plus il baisse, plus c’est brûlé.</li>\n'
+        '      <li><strong>FEDS</strong> (Fire Event Data Suite) : la méthode de la NASA qui suit chaque '
+        'incendie passage après passage avec les foyers VIIRS. Le périmètre estimé de la vigie suit la même '
+        'idée.</li>\n'
+        '      <li><strong>CORINE Land Cover</strong> : la carte européenne d’occupation du sol (forêt, '
+        'landes, cultures, ville…), dans son édition 2018.</li>\n'
+        '      <li><strong>Natura 2000</strong> : le réseau européen d’espaces protégés. <strong>ZSC</strong>'
+        ' : zone spéciale de conservation (directive Habitats) ; <strong>ZPS</strong> : zone de protection '
+        'spéciale (directive Oiseaux).</li>\n'
+        '      <li><strong>BDIFF</strong> : la Base de données sur les incendies de forêts en France, la '
+        'statistique officielle. <strong>Code INSEE</strong> : le code officiel de chaque commune.</li>\n'
+        '      <li><strong>Sentinel-2</strong> : les satellites européens de Copernicus qui photographient le'
+        ' sol tous les deux ou trois jours avec des pixels de 10 à 20 m.</li>\n'
+        '    </ul>'
+    ),
+}
+
+# Header figures with one item (and zero, in French) take the singular.
+SINGULAR = {
+    "es": {"fig_active": "<span>incendio con focos en las últimas 24 h</span>",
+           "fig_isolated": "<span>foco aislado aparte</span>",
+           "fig_focos24": "<span>foco en las últimas 24 h</span>"},
+    "fr": {"fig_active": "<span>incendie avec des foyers ces dernières 24 h</span>",
+           "fig_isolated": "<span>foyer isolé en plus</span>",
+           "fig_focos24": "<span>foyer ces dernières 24 h</span>"},
+}
+
+
+def singular(v: int, lang: str) -> bool:
+    """Spanish takes the singular only for one; French also for zero."""
+    return v == 1 or (lang == "fr" and v == 0)
+
+
 # Page fragments by marker: web.PLANTILLA carries @@key@@ where the text depends on the
 # language. The Spanish values are the page as it always was, so it renders byte for byte.
 UI: dict[str, dict[str, str]] = {
@@ -101,6 +180,7 @@ UI: dict[str, dict[str, str]] = {
                   'EFFIS, el servicio europeo de incendios de Copernicus, publica el perímetro quemado, se enlaza '
                   'y su superficie pasa a ser la de referencia.</li>'),
         'params_title': '<h3>Parámetros</h3>',
+        'glossary': GLOSARIO['es'],
         's2_section': ('<h3>Superficie quemada con Sentinel-2</h3>\n'
                        '    <p>EFFIS tarda días en cartografiar y apenas dibuja nada por debajo de 30 hectáreas. Para '
                        'no esperar, el vigía mide lo quemado con las imágenes de Sentinel-2, que pasan cada dos o tres '
@@ -214,7 +294,7 @@ UI: dict[str, dict[str, str]] = {
         'js_empty': ('Ningún incendio cumple los filtros. ${per==="activo"?"Puede que no haya focos en las últimas '
                      '24 horas: prueba con los últimos 7 días.":""}'),
         'js_count': 'ok.length===1 ? "1 incendio" : `${ok.length} incendios`',
-        'switch': '\n    <a class="pais" href="fr/" hreflang="fr" lang="fr">France</a>',
+        'switch': '\n    <a class="pais" href="fr/" hreflang="fr">Francia</a>',
         'extra': '',
         'js_updated': 'hora(D.ahora).split(", ").pop()',
     },
@@ -226,13 +306,13 @@ UI: dict[str, dict[str, str]] = {
         "project_feed": 'title="Vigie des incendies"',
         "h1": "Vigie des <span>incendies</span>",
         "tagline": '<span class="rotulo">France métropolitaine · foyers vus par satellite · toutes les heures</span>',
-        "switch": '\n    <a class="pais" href="../" hreflang="es" lang="es">España</a>',
+        "switch": '\n    <a class="pais" href="../" hreflang="es">Espagne</a>',
         "lede": ("Les incendies avec des foyers actifs vus depuis l’espace, regroupés selon des règles fixes et "
                  "croisés avec le réseau Natura 2000 et avec les surfaces brûlées que cartographie EFFIS. Sans "
                  "attendre la statistique officielle, et sans la remplacer : un foyer est un pixel chaud, pas un "
                  "rapport d’intervention."),
         "fig_active": "<span>incendies avec des foyers ces dernières 24 h</span>",
-        "fig_natura": "<span>dont dans le réseau Natura 2000</span>",
+        "fig_natura": "<span>d’entre eux dans le réseau Natura 2000</span>",
         "fig_isolated": "<span>foyers isolés en plus</span>",
         "fig_focos24": "<span>foyers ces dernières 24 h</span>",
         "fig_last": "<span>dernier foyer vu · vérifié à ",
@@ -268,6 +348,7 @@ UI: dict[str, dict[str, str]] = {
                   "code INSEE. Quand EFFIS, le service européen des feux de forêt de Copernicus, publie le "
                   "contour brûlé, il est relié à l’incendie et sa surface devient la référence.</li>"),
         "params_title": "<h3>Paramètres</h3>",
+        "glossary": GLOSARIO["fr"],
         "s2_section": ("<h3>Surface brûlée avec Sentinel-2</h3>\n"
                        "    <p>EFFIS met plusieurs jours à cartographier et ne dessine presque rien en dessous de "
                        "30 hectares. Pour ne pas attendre, la vigie mesure le brûlé avec les images de "
@@ -520,20 +601,22 @@ FICHA: dict[str, dict] = {
         "lede": ("El incendio tal como lo vieron los satélites, pasada a pasada: los píxeles con calor, el perímetro "
                  "que van dibujando y los momentos en que cambió. No es una película continua: entre dos pasadas el "
                  "fuego avanza sin que nadie lo mida."),
-        "volver": "← Mayores incendios",
+        "volver": "← Grandes incendios",
         "tab_aria": "Secciones",
         "tab_mapa": "Mapa en directo",
-        "tab_lista": "Mayores incendios",
-        "l_titulo": "Mayores incendios",
+        "tab_lista": "Grandes incendios",
+        "l_titulo": "Grandes incendios",
         "l_rotulo": "España · desde 2022 · por pasadas de satélite",
-        "l_descripcion": "Los mayores incendios de España desde 2022, cada uno reconstruido pasada a pasada con los focos de FIRMS.",
-        "l_lede": ("Los mayores incendios de cada temporada desde 2022 y los de este año que han crecido lo bastante, "
+        "l_descripcion": ("Los diez mayores incendios de cada temporada en España desde 2022 y los de este año de más de 100 ha, cada uno reconstruido pasada a pasada con los focos de FIRMS."),
+        "l_lede": ("Los diez mayores incendios de cada temporada desde 2022 y los de este año que pasan de 100 ha, "
                    "con su superficie estimada a partir de los píxeles de satélite. Elige uno para verlo crecer pasada "
                    "a pasada."),
         "l_fig_n": "incendios",
+        "l_fig_n_1": "incendio",
         "l_fig_ha": "estimadas en total",
         "l_fig_anios": "temporadas",
         "l_fig_natura": "tocan Red Natura 2000",
+        "l_fig_natura_1": "toca Red Natura 2000",
         "l_buscar": "Buscar",
         "l_buscar_ph": "municipio, provincia, año…",
         "l_anio": "Año",
@@ -609,6 +692,7 @@ FICHA: dict[str, dict] = {
             "<p>En los incendios históricos se usa el archivo estándar de FIRMS, que no incluye el satélite "
             "NOAA-21: tienen algo menos de pasadas que los actuales.</p>"),
         "datos_h": "Datos",
+        "glosario": GLOSARIO["es"],
         "datos_p": ("Focos: NASA FIRMS (VIIRS S-NPP, NOAA-20, NOAA-21 y MODIS). Relieve: Mapterhorn, con los MDT del IGN "
                     "(CC BY 4.0, scne.es). Red Natura 2000: MITECO / AEE. Los datos de esta página están en el JSON "
                     "que la acompaña, con el mismo nombre."),
@@ -638,7 +722,7 @@ FICHA: dict[str, dict] = {
         "js_sin_perimetro": "Aún sin perímetro VIIRS.",
         "js_hueco": "Tras {h} h sin observación.",
         "ejemplos": ("Para ver el método en incendios que duraron días, los mayores desde 2022 están reproducidos pasada "
-                     "a pasada en <a href=\"incendio/\">Mayores incendios</a>; por ejemplo {enlaces}."),
+                     "a pasada en <a href=\"incendio/\">Grandes incendios</a>; por ejemplo {enlaces}."),
         "js_sin_webgl": "Este navegador no puede dibujar el mapa en 3D (WebGL). La curva y los momentos siguen funcionando.",
     },
     "fr": {
@@ -662,14 +746,16 @@ FICHA: dict[str, dict] = {
         "tab_lista": "Grands incendies",
         "l_titulo": "Grands incendies",
         "l_rotulo": "France métropolitaine · depuis 2022 · par passages satellite",
-        "l_descripcion": "Les plus grands incendies de France métropolitaine depuis 2022, chacun reconstitué passage après passage avec les foyers FIRMS.",
-        "l_lede": ("Les plus grands incendies de chaque saison depuis 2022 et ceux de cette année qui ont assez grandi, "
+        "l_descripcion": ("Les dix plus grands incendies de chaque saison en France métropolitaine depuis 2022 et ceux de cette année de plus de 100 ha, chacun reconstitué passage après passage avec les foyers FIRMS."),
+        "l_lede": ("Les dix plus grands incendies de chaque saison depuis 2022 et ceux de cette année qui dépassent 100 ha, "
                    "avec leur surface estimée à partir des pixels satellite. Choisissez-en un pour le voir grandir "
                    "passage après passage."),
         "l_fig_n": "incendies",
+        "l_fig_n_1": "incendie",
         "l_fig_ha": "estimés au total",
         "l_fig_anios": "saisons",
         "l_fig_natura": "touchent Natura 2000",
+        "l_fig_natura_1": "touche Natura 2000",
         "l_buscar": "Rechercher",
         "l_buscar_ph": "commune, département, année…",
         "l_anio": "Année",
@@ -747,6 +833,7 @@ FICHA: dict[str, dict] = {
             "<p>Pour les incendies historiques, on utilise l’archive standard de FIRMS, qui n’inclut pas le "
             "satellite NOAA-21 : ils comptent un peu moins de passages que les incendies actuels.</p>"),
         "datos_h": "Données",
+        "glosario": GLOSARIO["fr"],
         "datos_p": ("Foyers : NASA FIRMS (VIIRS S-NPP, NOAA-20, NOAA-21 et MODIS). Relief : Mapterhorn, avec le RGE "
                     "ALTI et le LiDAR HD de l’IGN (Licence Ouverte 2.0). Natura 2000 : AEE. Les données de cette page "
                     "sont dans le JSON qui l’accompagne, du même nom."),

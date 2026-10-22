@@ -361,7 +361,7 @@ def tabs(lang: str, actual: str, raiz: str) -> str:
 
 
 def lista(filas: list[dict], pais: Country, plantilla_web: str) -> str:
-    """«Mayores incendios»: every fire with a page, largest first."""
+    """«Grandes incendios»: every fire with a page, largest first."""
     from xml.sax.saxutils import escape, quoteattr
     from .logo import LOGO_SVG, favicon_link
     from .web import COMMON_CSS
@@ -390,9 +390,11 @@ def lista(filas: list[dict], pais: Country, plantilla_web: str) -> str:
     anios = sorted({f["t"][:4] for f in filas}, reverse=True)
     regiones = sorted({f["region"] for f in filas if f["region"]})
     total = sum(f["ha"] for f in filas)
-    cifras = [(n(len(filas)), T["l_fig_n"]), (n(total) + " ha", T["l_fig_ha"]),
+    uno = lambda v, k: T[k + "_1"] if i18n.singular(v, lang) else T[k]
+    con_natura = sum(f["natura"] > 0 for f in filas)
+    cifras = [(n(len(filas)), uno(len(filas), "l_fig_n")), (n(total) + " ha", T["l_fig_ha"]),
               (f"{anios[-1]}–{anios[0]}" if len(anios) > 1 else (anios[0] if anios else "—"), T["l_fig_anios"]),
-              (n(sum(f["natura"] > 0 for f in filas)), T["l_fig_natura"])]
+              (n(con_natura), uno(con_natura, "l_fig_natura"))]
     pie = plantilla_web[plantilla_web.index('<footer class="site-footer">'):plantilla_web.index("</footer>") + 9]
     pie = i18n.page(pie, lang).replace("</footer>", f'  <p class="nota">{T["creditos"]}</p>\n</footer>')
     rep = {
