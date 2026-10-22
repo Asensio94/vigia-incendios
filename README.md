@@ -1,7 +1,7 @@
 # Vigía de incendios
 
-Incendios con focos activos en España vistos por satélite cada hora, sin esperar a la
-estadística oficial. Los focos de NASA FIRMS se agrupan en incendios con reglas fijas y se
+Incendios con focos activos en España y en Francia metropolitana (Córcega incluida) vistos
+por satélite cada hora, sin esperar a la estadística oficial. Los focos de NASA FIRMS se agrupan en incendios con reglas fijas y se
 cruzan con la Red Natura 2000, con la cubierta del suelo (CORINE Land Cover 2018) y con las
 áreas quemadas que cartografía EFFIS, el servicio europeo de incendios de Copernicus. La
 superficie quemada se estima con imágenes de Sentinel-2 en cuanto hay una pasada despejada.
@@ -11,6 +11,7 @@ superficie quemada se estima con imágenes de Sentinel-2 en cuanto hay una pasad
 [incendios.geojson](https://asensio94.github.io/vigia-incendios/incendios.geojson) ·
 **Quemado según Sentinel-2:** [quemado.geojson](https://asensio94.github.io/vigia-incendios/quemado.geojson) ·
 **Señales para Estado de las IBA:** [signals.json](https://asensio94.github.io/vigia-incendios/signals.json)
+(los dos países) · **Francia, en francés:** https://asensio94.github.io/vigia-incendios/fr/
 
 Está pensado para que periodistas y entidades de conservación sepan en pocas horas qué
 arde, dónde y si toca un espacio protegido. No sustituye a la información oficial de
@@ -83,8 +84,83 @@ extinción: un foco es un píxel caliente, no un parte.
    - **Progresión:** superficie tras cada pasada y crecimiento en ha/h entre pasadas.
    - Código en [`vigia/perimeter.py`](vigia/perimeter.py).
 
+### Análisis por pasadas
+
+Cada incendio de 100 ha o más cuyo perímetro estimado cambió al menos una vez tiene su
+propia página, `incendio/<id>.html`, enlazada desde su tarjeta («Por pasadas»). En ella:
+
+- un mapa en relieve 3D (MapLibre, con el MDT de [Mapterhorn](https://mapterhorn.com):
+  IGN en España y Francia, sin clave);
+- una línea de tiempo que reproduce el incendio pasada a pasada, con los píxeles que se
+  encienden y se apagan dibujados a su tamaño real;
+- las **isocronas**, que son el perímetro estimado tras cada pasada VIIRS, igual que el del
+  mapa principal;
+- una curva de la superficie acumulada;
+- los **momentos clave**: mayor salto, pasada de más potencia, frente más largo, 50 % y 90 %
+  del tamaño final, entrada en cada espacio Red Natura 2000, reactivaciones y huecos de más
+  de 18 h sin observación.
+
+Todo sale de reglas fijas, en [`vigia/ficha.py`](vigia/ficha.py).
+
+La página explica sus límites. Con VIIRS hay unas dos ventanas al día y entre ellas no hay
+datos. Un píxel de 375 m no son 14 ha quemadas. MODIS enciende focos pero no mueve el
+perímetro.
+
+### Mayores incendios
+
+La pestaña **Mayores incendios** (`incendio/`, en cada país) reúne todos los incendios con
+ficha por pasadas. Hay una tabla con buscador, filtros por año y comunidad (o región) y
+orden por cualquier columna. Recoge dos tipos de incendio:
+
+- **Los mayores de cada temporada desde 2022.** `python -m vigia mayores` descarga el
+  archivo estándar de FIRMS de cada año (sin NOAA-21) y los agrupa con las mismas reglas del
+  mapa. Se queda con los diez mayores de más de 1.000 ha y los nombra por el municipio de sus
+  primeros píxeles, que suele ser donde empezó el fuego (no el centro de la mancha).
+- **Los de este año con ficha**, que entran solos.
+
+Los incendios concretos, por caja y fechas, se añaden con `python -m vigia historico`.
+Así se hizo Landiras 2022, que solo cubre su primera fase. Todos se guardan en
+`data/historicos.json` y `data/historicos/<id>.csv.gz`, y la vuelta horaria no descarga nada.
+
+La superficie es la estimada desde el espacio, no la oficial. Las quemas de invierno del
+Pirineo y la cornisa cantábrica, muchas y dispersas, salen como un solo incendio y exageran.
+Los fuegos que corren en pocas horas entre dos pasadas se quedan cortos, como el del Aude en
+2025.
+
 Todo son reglas fijas, escritas en [`vigia/config.py`](vigia/config.py). No hay ningún
 modelo entrenado ni inteligencia artificial.
+
+## Francia
+
+Francia es una dimensión más del mismo vigía, no un proyecto aparte: las mismas reglas,
+los mismos satélites y los mismos cruces, con su contorno, su Red Natura y su registro.
+
+- **Qué cubre:** Francia metropolitana con Córcega. Los departamentos y territorios de
+  ultramar quedan fuera: el vigía sigue Europa, donde Natura 2000, CORINE y EFFIS son
+  homogéneos.
+- **Focos:** los mismos ficheros de FIRMS. Cada contorno lleva 2 km de margen por los píxeles de
+  costa; en la frontera, donde los márgenes se solapan, decide el contorno sin margen, así
+  que un foco no sale en las dos webs.
+- **Identificadores:** `FR-IN-AAAAMMDD-NNN`. Los de España no cambian.
+- **Communes:** la API Découpage administratif ([geo.api.gouv.fr](https://geo.api.gouv.fr))
+  da la commune, su código INSEE (5 caracteres; en Córcega, 2A y 2B), el departamento y la
+  región. En `signals.json` los municipios franceses van por su código INSEE. El fichero sigue
+  la versión 2 del formato: cada señal lleva su país y la cobertura va por país, así que Estado
+  de las IBA lee los incendios franceses en su página de Francia.
+- **Red Natura 2000:** la misma capa de la AEMA; las figuras se llaman ZPS y ZSC.
+- **Web en francés** en [`/fr/`](https://asensio94.github.io/vigia-incendios/fr/), con la
+  tipografía francesa (espacio fino ante «%» y en los miles). Los datos (`incendios.json`,
+  GeoJSON, `signals.json`) son los mismos en los dos idiomas: claves y valores canónicos.
+- **Validación con BDIFF**, la base de datos de incendios forestales de Francia (ministerio
+  de Agricultura, Licence Ouverte 2.0). Recoge también los incendios del arco mediterráneo
+  que publicaba Prométhée, así que no hace falta descargar Prométhée aparte. No trae
+  contornos: un incendio de BDIFF cuenta como visto si la huella de un incendio del vigía
+  toca su commune y la primera alerta cae en sus fechas. BDIFF se completa una vez al año,
+  así que solo sirve para validar, no en tiempo real.
+- **Certificado de BDIFF:** su servidor envía un certificado intermedio que no es el que
+  firma el suyo. [`vigia/bdiff.py`](vigia/bdiff.py) descarga el intermedio correcto de la
+  dirección AIA del certificado y lo añade a las autoridades de `certifi`; la cadena se
+  sigue comprobando hasta una raíz de confianza.
 
 ## Contraste con temporadas pasadas
 
@@ -109,6 +185,30 @@ del vigía no los tapan.
 
 Los umbrales se eligieron contrastando el cálculo con los perímetros de EFFIS de una
 muestra de 2023 y 2024: [docs/validacion_perimetro.md](docs/validacion_perimetro.md).
+
+### Francia: 2022 y 2025
+
+Las mismas reglas, sin tocar ningún umbral, sobre el archivo de FIRMS de Francia en 2022 (los
+grandes incendios de Gironde y las Landas) y 2025 (Aude), frente a EFFIS y frente a BDIFF.
+Detalle, con los grandes incendios uno a uno, en [docs/validation_fr.md](docs/validation_fr.md)
+(en francés, como la web que lo enlaza).
+
+| Tamaño | EFFIS 2022 | EFFIS 2025 | BDIFF 2022 | BDIFF 2025 |
+|---|---:|---:|---:|---:|
+| 30–100 ha | 187 de 206 (91 %) | 170 de 186 (91 %) | 60 de 88 (68 %) | 34 de 45 (76 %) |
+| 100–500 ha | 66 de 69 (96 %) | 58 de 64 (91 %) | 28 de 32 (88 %) | 13 de 16 (81 %) |
+| ≥ 500 ha | 15 de 15 | 5 de 5 | 14 de 15 | 3 de 3 |
+
+Frente a BDIFF el acierto es menor en los pequeños porque BDIFF cuenta incendios que EFFIS
+no cartografía (muchos de ellos con la superficie solo estimada) y porque el cruce va por
+commune, no por contorno. El primer foco llega, en mediana, entre 0,2 y 3,5 horas después
+de la primera alerta de BDIFF según el año y el tamaño: lo que tarda la siguiente pasada. En
+tiempo real hay que sumar las unas tres horas que tarda FIRMS en publicarla.
+
+El único incendio de 500 ha o más que no se empareja es la reanudación de Landiras de agosto
+de 2022 (6.743 ha). El vigía la siguió como un solo incendio de 1.742 focos entre el 9 y el
+13 de agosto, pero ardió a unos 15 km de la commune de Landiras, que es a la que BDIFF la
+atribuye, y sin contorno el cruce por commune no puede unirlos.
 
 ## Límites
 
@@ -155,11 +255,16 @@ haría el cruce en su lado. Nada de ese cruce volvería aquí.
 
 ```bash
 python -m venv .venv && .venv/bin/pip install -r requirements.txt
-python -m vigia zonas      # capas fijas: España, Red Natura 2000, fuentes fijas (una vez)
-python -m vigia vigilar    # una vuelta: focos, incendios, EFFIS, Sentinel-2 y web en site/
-python -m vigia web        # rehacer la web sin descargar nada
+python -m vigia zonas      # capas fijas de cada país: contorno, Red Natura 2000, fuentes fijas (una vez)
+python -m vigia vigilar    # una vuelta: focos, incendios, EFFIS, Sentinel-2 y web en site/ y site/fr/
+python -m vigia web        # rehacer las webs sin descargar nada
 python -m vigia validar    # contraste con 2023 y 2024 (descarga el archivo de FIRMS)
+python -m vigia historico 2025-jarilla --pais ES --bbox=-6.35,39.90,-5.55,40.45   --desde 2025-08-10 --hasta 2025-08-28 --titulo "Jarilla (Cáceres), agosto de 2025"   # ficha histórica
+python -m vigia mayores --pais ES --anios 2022-2025   # los mayores de cada temporada (archivo de FIRMS)
+python -c "from vigia import validacion_fr; validacion_fr.main()"   # Francia: 2022 y 2025, EFFIS y BDIFF
 ```
+
+`zonas` acepta `--pais ES` o `--pais FR` para rehacer solo uno.
 
 El workflow [`vigilancia.yml`](.github/workflows/vigilancia.yml) ejecuta `vigilar` cada
 hora en GitHub Actions. Guarda `data/` cuando entran focos nuevos y publica `site/` en la
@@ -173,8 +278,15 @@ rama `gh-pages`.
 | `data/incendios.json` | Registro de incendios con cifras, huella, perímetro estimado, frente, progresión, cruces, estado y perímetro de Sentinel-2 |
 | `data/validacion_perimetro.json` | Contraste de los perímetros de Sentinel-2 con EFFIS |
 | `data/effis.json` | Áreas quemadas de EFFIS (perímetros simplificados a ~20 m) |
+| `data/historicos.json`, `data/historicos/` | Incendios históricos con ficha por pasadas: su registro y sus focos del archivo de FIRMS |
 | `data/cache.json` | Cubierta CORINE por celda y municipios ya consultados |
 | `data/zonas/` | Contorno de España, Red Natura 2000 y fuentes fijas |
+| `data/fr/` | Lo mismo para Francia, más `validacion.json` (2022 y 2025 frente a EFFIS y BDIFF) |
+
+De BDIFF solo se usa lo necesario para cruzar y citar el lugar: commune, código INSEE,
+departamento, hora de la primera alerta y superficie. Ni personas ni causas. En el
+repositorio solo quedan los recuentos de la validación y, uno a uno, los incendios de
+1.000 ha o más.
 
 ## Fuentes y licencias
 
@@ -186,6 +298,12 @@ rama `gh-pages`.
 - **Red Natura 2000 y CORINE Land Cover 2018:** Agencia Europea de Medio Ambiente.
 - **Municipios y contorno de España:** Nominatim, © colaboradores de OpenStreetMap (ODbL).
 - **Ortofoto:** PNOA, CC BY 4.0 scne.es.
+- **Relieve (fichas por pasadas):** Mapterhorn, con los MDT del IGN (CC BY 4.0 scne.es), el
+  RGE ALTI y el LiDAR HD del IGN francés (Licence Ouverte 2.0) y Copernicus GLO-30.
+- **Francia — communes y contorno:** API Découpage administratif (geo.api.gouv.fr, Licence
+  Ouverte 2.0) y, para el contorno, OpenStreetMap (ODbL). **Validación:** BDIFF, ministère de
+  l'Agriculture et de la Souveraineté alimentaire (Licence Ouverte 2.0). **Ortofoto:** IGN,
+  Géoplateforme.
 
 El código se publica bajo licencia MIT.
 

@@ -76,6 +76,7 @@ def track(fs: list[dict], factor: float | None = None, closing_km: float | None 
 
     perim = None
     rows = []
+    shapes = []
     front = None
     t_prev = None
     for step in _steps(px):
@@ -93,6 +94,7 @@ def track(fs: list[dict], factor: float | None = None, closing_km: float | None 
             h = F.horas_entre(t_prev["t"], t)
             row["growth_ha_h"] = round((ha - t_prev["ha"]) / h, 1) if h >= 1 else None
         rows.append(row)
+        shapes.append(perim)
         t_prev = {"t": t, "ha": ha}
 
     def to_deg(g):
@@ -108,6 +110,8 @@ def track(fs: list[dict], factor: float | None = None, closing_km: float | None 
         "front_t": rows[-1]["t"],
         "max_growth_ha_h": max(growth) if growth else None,
         "progression": rows[-MAX_STEPS:],
+        # Every step's row and perimeter (isochrones), uncapped, for the per-fire timeline page.
+        "_isochrones": [(r, to_deg(g)) for r, g in zip(rows, shapes)],
     }
     if front is not None:
         lines = front.geoms if hasattr(front, "geoms") else [front]
