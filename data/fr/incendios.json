@@ -8610,7 +8610,7 @@
     "comunidad": "Occitanie"
    },
    "lugar_focos": 4,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -18649,7 +18649,7 @@
     "comunidad": "Occitanie"
    },
    "lugar_focos": 2,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -20091,7 +20091,7 @@
     "comunidad": "Occitanie"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -20156,7 +20156,7 @@
     "comunidad": "Occitanie"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -27854,5 +27854,5 @@
    "effis_ha": null
   }
  ],
- "actualizado": "2026-10-22T13:48Z"
+ "actualizado": "2026-10-22T18:33Z"
 }
