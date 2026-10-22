@@ -542,19 +542,7 @@ dl.medidas dd{margin:0;font:500 15px var(--font-data);font-variant-numeric:tabul
 <footer class="site-footer">
   <p class="principle">@@principle@@</p>
   @@credits@@
-  <nav @@siblings_aria@@><ul class="siblings">
-    <li><a href="https://asensio94.github.io/observatorio-alegaciones/">Observatorio de alegaciones</a></li>
-    <li aria-current="page"><a href="https://asensio94.github.io/vigia-incendios/">Vigía de incendios</a></li>
-    <li><a href="https://asensio94.github.io/centinela-natura/">Centinela Natura</a></li>
-    <li><a href="https://asensio94.github.io/vigilancia-humedales/">Vigilancia de humedales</a></li>
-    <li><a href="https://asensio94.github.io/sub-nocte/">Sub Nocte</a></li>
-    <li><a href="https://asensio94.github.io/riesgo-tendidos-aves/">Riesgo de tendidos para aves</a></li>
-    <li><a href="https://asensio94.github.io/grafo-promotores/">Grafo de promotores</a></li>
-    <li><a href="https://asensio94.github.io/cartera-cotizadas/">Cartera de las cotizadas</a></li>
-    <li><a href="https://asensio94.github.io/cuaderno-campo/">Cuaderno de campo</a></li>
-    <li><a href="https://asensio94.github.io/caudal-ecologico/">Caudal ecológico</a></li>
-    <li><a href="https://asensio94.github.io/estado-iba/">Estado de las IBA</a></li>
-  </ul></nav>
+  @@siblings@@
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>

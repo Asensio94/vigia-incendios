@@ -146,7 +146,6 @@ UI: dict[str, dict[str, str]] = {
                     'Imágenes Sentinel-2: Copernicus, © Unión Europea, vía Earth Search (Element 84) · Red Natura '
                     '2000 y CORINE Land Cover 2018: Agencia Europea de Medio Ambiente · Municipios: Nominatim, © '
                     'colaboradores de OpenStreetMap (ODbL) · Ortofoto PNOA: CC BY 4.0 scne.es.</p>'),
-        'siblings_aria': 'aria-label="Proyectos hermanos"',
         'locale': '"es-ES"',
         'tz': '"Europe/Madrid"',
         'js_ago': ('h < 1 ? "hace menos de una hora" : h < 48 ? `hace ${Math.round(h)} h` : `hace ${Math.round(h/24)} '
@@ -349,7 +348,6 @@ UI: dict[str, dict[str, str]] = {
                     "Communes : API Découpage administratif, geo.api.gouv.fr (Licence Ouverte 2.0) · Validation : "
                     "BDIFF, ministère de l’Agriculture et de la Souveraineté alimentaire (Licence Ouverte 2.0) · "
                     "Orthophotographie : © IGN, Géoplateforme.</p>"),
-        "siblings_aria": 'aria-label="Projets associés"',
         # ── JS ──
         "locale": '"fr-FR"',
         "tz": '"Europe/Paris"',
@@ -427,6 +425,45 @@ UI: dict[str, dict[str, str]] = {
         "js_count": 'ok.length===1 ? "1 incendie" : `${ok.length} incendies`',
     },
 }
+
+
+# The common footer of the Terra Aperta projects, in the hub's menu order. This project is the
+# second one and appears as plain text. French pages link each project's French page when it has one.
+_HUB = {"es": ("https://asensio94.github.io/terra-aperta/", "← Terra Aperta: todos los proyectos", "Proyectos hermanos"),
+        "fr": ("https://asensio94.github.io/terra-aperta/fr/", "← Terra Aperta : tous les projets", "Projets frères")}
+_SIBLINGS = [  # (slug, Spanish name, French name, French page)
+    ("sub-nocte", "Sub Nocte", "Sub Nocte", ""),
+    ("vigia-incendios", "Vigía de incendios", "Vigie des incendies", "fr/"),
+    ("centinela-natura", "Centinela Natura", "Centinela Natura", "fr/"),
+    ("estado-iba", "Estado de las IBA", "État des IBA", "fr/"),
+    ("riesgo-tendidos-aves", "Riesgo de tendidos para aves", "Risque des lignes pour les oiseaux", "regions.fr.html"),
+    ("observatorio-alegaciones", "Observatorio de alegaciones", "Observatoire des consultations", ""),
+    ("grafo-promotores", "Grafo de promotores", "Graphe des porteurs de projet", ""),
+    ("vigilancia-humedales", "Vigilancia de humedales", "Veille des zones humides", "france.html"),
+    ("caudal-ecologico", "Caudal ecológico", "Débit écologique", ""),
+    ("acuiferos-francia", "Acuíferos de Francia", "Nappes de France", ""),
+    ("depuracion-y-bano", "Depuración y baño", "Épuration et baignade", "fr/"),
+    ("zona-inundable", "Construir en zona inundable", "Construire en zone inondable", ""),
+]
+
+
+def siblings(lang: str) -> str:
+    """The hub link and the list of sibling projects for the footer."""
+    hub, back, label = _HUB[lang]
+    items = []
+    for slug, es, fr, fr_page in _SIBLINGS:
+        name = fr if lang == "fr" else es
+        if slug == "vigia-incendios":
+            items.append(f'    <li aria-current="page">{name}</li>')
+        else:
+            href = f"https://asensio94.github.io/{slug}/" + (fr_page if lang == "fr" else "")
+            items.append(f'    <li><a href="{href}">{name}</a></li>')
+    return (f'<p><a href="{hub}">{back}</a></p>\n  <nav aria-label="{label}"><ul class="siblings">\n'
+            + "\n".join(items) + "\n  </ul></nav>")
+
+
+for _lang in UI:
+    UI[_lang]["siblings"] = siblings(_lang)
 
 
 def page(html: str, lang: str) -> str:
