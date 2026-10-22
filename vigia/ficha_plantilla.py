@@ -148,6 +148,7 @@ ol.momentos li.m-hueco button,ol.momentos li.m-reactivacion button{background:co
     @@limites@@
     <h3>@@datos_h@@</h3>
     <p>@@datos_p@@</p>
+    @@glosario@@
   </div>
 </section>
 
@@ -378,7 +379,7 @@ FICHA_JS = r"""// Ficha de un incendio: mapa 3D, línea de tiempo por pasada, cu
 """
 
 
-# List of every fire with a page («Mayores incendios»): rows are written in Python, so the table
+# List of every fire with a page («Grandes incendios»): rows are written in Python, so the table
 # works without JavaScript; the script only filters and sorts them.
 LISTA = r"""<!doctype html>
 <html lang="__LANG__">
@@ -480,6 +481,7 @@ tr[hidden]{display:none}
   <div>
     <h3>@@limites_h@@</h3>
     <p>@@l_limites@@</p>
+    @@glosario@@
   </div>
 </section>
 

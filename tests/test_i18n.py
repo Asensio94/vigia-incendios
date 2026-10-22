@@ -50,3 +50,23 @@ def test_bdiff_export_reads_commune_alert_in_utc_and_hectares_only():
     [f] = bdiff.leer(texto, 2022)
     assert f == {"numero": "11421", "insee": "33225", "commune": "Landiras", "departement": "33",
                  "alerta": "2022-07-12T14:31Z", "ha": 12552.0, "precision": "Mesurées"}
+
+
+def test_header_figures_agree_with_their_number():
+    assert i18n.singular(1, "es") and not i18n.singular(0, "es") and not i18n.singular(2, "es")
+    assert i18n.singular(1, "fr") and i18n.singular(0, "fr") and not i18n.singular(2, "fr")
+    assert set(i18n.SINGULAR["es"]) == set(i18n.SINGULAR["fr"])
+    for k in i18n.SINGULAR["fr"]:
+        assert f"@@{k}@@" in web.PLANTILLA
+
+
+def test_language_switch_names_the_other_country_in_the_page_language():
+    assert ">Espagne</a>" in i18n.page(web.PLANTILLA, "fr") and "España</a>" not in i18n.page(web.PLANTILLA, "fr")
+    assert ">Francia</a>" in i18n.page(web.PLANTILLA, "es")
+
+
+def test_every_page_explains_its_acronyms():
+    for lang in ("es", "fr"):
+        assert 'class="glosario"' in i18n.page(web.PLANTILLA, lang)
+        assert "dNBR" in i18n.GLOSARIO[lang] and "FEDS" in i18n.GLOSARIO[lang]
+        assert i18n.FICHA[lang]["glosario"] == i18n.GLOSARIO[lang]

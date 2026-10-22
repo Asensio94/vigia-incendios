@@ -106,9 +106,9 @@ La página explica sus límites. Con VIIRS hay unas dos ventanas al día y entre
 datos. Un píxel de 375 m no son 14 ha quemadas. MODIS enciende focos pero no mueve el
 perímetro.
 
-### Mayores incendios
+### Grandes incendios
 
-La pestaña **Mayores incendios** (`incendio/`, en cada país) reúne todos los incendios con
+La pestaña **Grandes incendios** (`incendio/`, en cada país) reúne todos los incendios con
 ficha por pasadas. Hay una tabla con buscador, filtros por año y comunidad (o región) y
 orden por cualquier columna. Recoge dos tipos de incendio:
 
@@ -116,7 +116,8 @@ orden por cualquier columna. Recoge dos tipos de incendio:
   archivo estándar de FIRMS de cada año (sin NOAA-21) y los agrupa con las mismas reglas del
   mapa. Se queda con los diez mayores de más de 1.000 ha y los nombra por el municipio de sus
   primeros píxeles, que suele ser donde empezó el fuego (no el centro de la mancha).
-- **Los de este año con ficha**, que entran solos.
+- **Los de este año con ficha**, que entran solos en cuanto pasan de 100 ha y su perímetro ha
+  cambiado al menos una vez.
 
 Los incendios concretos, por caja y fechas, se añaden con `python -m vigia historico`.
 Así se hizo Landiras 2022, que solo cubre su primera fase. Todos se guardan en
