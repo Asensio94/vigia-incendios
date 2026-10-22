@@ -166,7 +166,7 @@
    "effis_ha": 54,
    "perimetro": {
     "clave": "v2|7|0538849dcbf6",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": true,
     "ha": 70.0,
@@ -1230,7 +1230,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|5|55fb6af30d6f",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": true,
     "ha": 0.4,
@@ -1563,7 +1563,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|4|41936373654a",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "ha": 3.3,
@@ -1950,7 +1950,7 @@
    "effis_ha": 5,
    "perimetro": {
     "clave": "v2|2|eeb5830cd98d",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "ha": 4.5,
@@ -2425,7 +2425,7 @@
    "effis_ha": 8,
    "perimetro": {
     "clave": "v2|1|ed63c58f41cd",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-21T22:21Z",
     "definitivo": false,
     "ha": 8.5,
@@ -2678,7 +2678,7 @@
     "comunidad": "Corse"
    },
    "lugar_focos": 8,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [
     {
      "id": 844800,
@@ -2690,7 +2690,7 @@
    "effis_ha": 8,
    "perimetro": {
     "clave": "v2|8|f9753fb0f73e",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": true,
     "ha": 4.2,
@@ -3111,7 +3111,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|6df6a79b0046",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": true,
     "ha": 0.2,
@@ -3247,7 +3247,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|767e11057da1",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "ha": 0.0,
@@ -3504,7 +3504,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|0e5487c399a5",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "ha": 1.5,
@@ -4323,7 +4323,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|22|007e4faec51c",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "ha": 11.0,
@@ -4804,7 +4804,7 @@
    "effis_ha": 37,
    "perimetro": {
     "clave": "v2|17|da613b016673",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "ha": 60.9,
@@ -5390,7 +5390,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|17|2cb183792413",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-22T07:35Z",
     "definitivo": false,
     "ha": 0.1,
@@ -5790,12 +5790,12 @@
     "comunidad": "Provence-Alpes-Côte d'Azur"
    },
    "lugar_focos": 11,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|11|007e4faec51c",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "ha": 4.8,
@@ -6133,7 +6133,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|8|dbf2c0090530",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": true,
     "ha": 5.4,
@@ -6795,7 +6795,7 @@
    "effis_ha": 24,
    "perimetro": {
     "clave": "v2|8|cf95a4188452",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-21T22:21Z",
     "definitivo": false,
     "ha": 8.4,
@@ -7261,7 +7261,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|7|da799a9b6448",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "ha": 0.0,
@@ -7605,12 +7605,12 @@
     "comunidad": "Provence-Alpes-Côte d'Azur"
    },
    "lugar_focos": 6,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|6|3a346684dbc9",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "ha": 21.2,
@@ -8350,7 +8350,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|6|de97b1d92da7",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-21T22:21Z",
     "definitivo": false,
     "ha": 0.0,
@@ -8615,7 +8615,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|4|78bc93049fb9",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-21T22:21Z",
     "definitivo": false,
     "ha": 0.5,
@@ -8852,7 +8852,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|59937880ad56",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "ha": 2.7,
@@ -9045,7 +9045,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|337417af8b19",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "ha": 23.7,
@@ -9501,12 +9501,12 @@
     "comunidad": "Nouvelle-Aquitaine"
    },
    "lugar_focos": 3,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|de97b1d92da7",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-21T22:21Z",
     "definitivo": false,
     "ha": 0.0,
@@ -9871,7 +9871,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|0a88cc534b9c",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "ha": 0.0,
@@ -10013,7 +10013,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|007e4faec51c",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "ha": 0.0,
@@ -10951,7 +10951,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|275f64af7e06",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-21T22:21Z",
     "definitivo": true,
     "ha": 0.0,
@@ -11175,7 +11175,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|007e4faec51c",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "sin_imagen": true
@@ -11579,7 +11579,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|5e564149fa23",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": true,
     "sin_imagen": true
@@ -12178,7 +12178,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|78bc93049fb9",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-21T22:21Z",
     "definitivo": false,
     "ha": 28.5,
@@ -12972,7 +12972,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|8696a64d7a4c",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "ha": 126.0,
@@ -13768,7 +13768,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|59f16e1b5e76",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "ha": 2.4,
@@ -14089,7 +14089,7 @@
    "effis_ha": 64,
    "perimetro": {
     "clave": "v2|19|bd1a9cbfd423",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T19:56Z",
     "definitivo": false,
     "ha": 31.9,
@@ -14596,7 +14596,7 @@
    "effis_ha": 32,
    "perimetro": {
     "clave": "v2|17|ab54f9d24160",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "ha": 48.9,
@@ -15353,7 +15353,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|7|0a88cc534b9c",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "ha": 4.3,
@@ -15752,7 +15752,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|6|9b488dad7093",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-20T19:17Z",
     "definitivo": false,
     "ha": 0.0,
@@ -16002,12 +16002,12 @@
     "comunidad": "Occitanie"
    },
    "lugar_focos": 5,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|5|9921d449e698",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "ha": 10.1,
@@ -16488,7 +16488,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|4|c46115e509ed",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-21T22:21Z",
     "definitivo": false,
     "ha": 36.0,
@@ -17398,12 +17398,12 @@
     "comunidad": "Occitanie"
    },
    "lugar_focos": 3,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|9921d449e698",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "ha": 4.3,
@@ -17808,12 +17808,12 @@
     "comunidad": "Occitanie"
    },
    "lugar_focos": 3,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|6f2f1982a208",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-21T22:21Z",
     "definitivo": false,
     "ha": 0.0,
@@ -18010,12 +18010,12 @@
     "comunidad": "Pays de la Loire"
    },
    "lugar_focos": 3,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|5614aaf0dacd",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-21T22:21Z",
     "definitivo": false,
     "ha": 0.0,
@@ -18242,7 +18242,7 @@
     "comunidad": "Occitanie"
    },
    "lugar_focos": 2,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -18325,7 +18325,7 @@
     "comunidad": "Auvergne-Rhône-Alpes"
    },
    "lugar_focos": 2,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -18398,12 +18398,12 @@
     "comunidad": "Occitanie"
    },
    "lugar_focos": 2,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|9921d449e698",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "ha": 0.0,
@@ -18493,7 +18493,7 @@
     "comunidad": "Nouvelle-Aquitaine"
    },
    "lugar_focos": 2,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -18567,7 +18567,7 @@
     "comunidad": "Pays de la Loire"
    },
    "lugar_focos": 2,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -18974,7 +18974,7 @@
     "comunidad": "Occitanie"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -19039,7 +19039,7 @@
     "comunidad": "Occitanie"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -19104,7 +19104,7 @@
     "comunidad": "Occitanie"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -19169,7 +19169,7 @@
     "comunidad": "Auvergne-Rhône-Alpes"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -19234,7 +19234,7 @@
     "comunidad": "Occitanie"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -19299,7 +19299,7 @@
     "comunidad": "Auvergne-Rhône-Alpes"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -19364,7 +19364,7 @@
     "comunidad": "Auvergne-Rhône-Alpes"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -19429,7 +19429,7 @@
     "comunidad": "Auvergne-Rhône-Alpes"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -19494,7 +19494,7 @@
     "comunidad": "Bourgogne-Franche-Comté"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -19559,7 +19559,7 @@
     "comunidad": "Centre-Val de Loire"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -19624,7 +19624,7 @@
     "comunidad": "Occitanie"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -19689,7 +19689,7 @@
     "comunidad": "Nouvelle-Aquitaine"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -19754,7 +19754,7 @@
     "comunidad": "Pays de la Loire"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -19819,7 +19819,7 @@
     "comunidad": "Normandie"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -19884,7 +19884,7 @@
     "comunidad": "Nouvelle-Aquitaine"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -19956,12 +19956,12 @@
     "comunidad": "Nouvelle-Aquitaine"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|de97b1d92da7",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-21T22:21Z",
     "definitivo": false,
     "ha": 0.5,
@@ -20293,7 +20293,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|4|23543cfac8b5",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "sin_imagen": true
@@ -20858,7 +20858,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|2a0d3ed6cf49",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "sin_imagen": true
@@ -21084,7 +21084,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|ab54f9d24160",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "sin_imagen": true
@@ -21293,7 +21293,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|cf0d29371ab0",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "sin_imagen": true
@@ -21509,7 +21509,7 @@
    "effis_ha": 30,
    "perimetro": {
     "clave": "v2|1|104262b567b5",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T19:56Z",
     "definitivo": false,
     "ha": 21.7,
@@ -22079,7 +22079,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|74158d2e3b66",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "sin_imagen": true
@@ -22223,7 +22223,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|c7d74825d234",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "ha": 1.6,
@@ -22552,7 +22552,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|3c0a7018a766",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T19:56Z",
     "definitivo": false,
     "ha": 10.6,
@@ -23110,7 +23110,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|12|11ab682ed669",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-21T22:21Z",
     "definitivo": false,
     "ha": 6.7,
@@ -23721,7 +23721,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|5|9519ea99ed25",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "sin_imagen": true
@@ -23954,7 +23954,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|939b99ad6cf0",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-20T19:17Z",
     "definitivo": false,
     "ha": 10.2,
@@ -24708,7 +24708,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|2a0d3ed6cf49",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "sin_imagen": true
@@ -24869,7 +24869,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|6cd031487c88",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "sin_imagen": true
@@ -24983,7 +24983,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|12|de97b1d92da7",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-21T22:21Z",
     "definitivo": false,
     "ha": 8.0,
@@ -25437,7 +25437,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|4d985485768c",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "sin_imagen": true
@@ -26144,7 +26144,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|35673a5094de",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-21T22:21Z",
     "definitivo": false,
     "ha": 16.4,
@@ -27216,7 +27216,7 @@
     "comunidad": "Provence-Alpes-Côte d'Azur"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -27298,7 +27298,7 @@
     "comunidad": "Occitanie"
    },
    "lugar_focos": 2,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -27380,7 +27380,7 @@
     "comunidad": "Occitanie"
    },
    "lugar_focos": 2,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -27445,7 +27445,7 @@
     "comunidad": "Nouvelle-Aquitaine"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -27510,7 +27510,7 @@
     "comunidad": "Nouvelle-Aquitaine"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -27575,7 +27575,7 @@
     "comunidad": "Centre-Val de Loire"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -27640,7 +27640,7 @@
     "comunidad": "Pays de la Loire"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -27712,12 +27712,12 @@
     "comunidad": "Bretagne"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|891d66e547e1",
-    "revisado": "2026-10-22T07:35Z",
+    "revisado": "2026-10-22T13:48Z",
     "calculado": "2026-10-21T18:39Z",
     "definitivo": false,
     "sin_imagen": true
@@ -27784,7 +27784,7 @@
     "comunidad": "Bretagne"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -27854,5 +27854,5 @@
    "effis_ha": null
   }
  ],
- "actualizado": "2026-10-22T07:35Z"
+ "actualizado": "2026-10-22T13:48Z"
 }
