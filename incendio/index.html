@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cstyle%3E.b%7Bfill%3A%23221d1a%7D.p%7Bfill%3A%23c2410c%7D.l%7Bstroke%3A%23221d1a%7D%40media%20%28prefers-color-scheme%3Adark%29%7B.b%7Bfill%3A%23ede6e0%7D.p%7Bfill%3A%23fb7b3e%7D.l%7Bstroke%3A%23ede6e0%7D%7D%3C/style%3E%3Cg%20class%3D%22b%22%3E%3Ccircle%20cx%3D%2234%22%20cy%3D%2231%22%20r%3D%2219%22/%3E%3Cpath%20d%3D%22M19%2040%207%2050.5l3.5%204L25%2046z%22/%3E%3Cpath%20d%3D%22M52%2022l8%202.5-8%202.5z%22/%3E%3C/g%3E%3Cpath%20class%3D%22p%22%20d%3D%22M34%2012a19%2019%200%200%201%2015%2030.8C42%2041%2037%2034%2037%2026c0-6%201.5-10.5%204-12.6A19%2019%200%200%200%2034%2012z%22/%3E%3Cg%20fill%3D%22%23221d1a%22%3E%3Ccircle%20cx%3D%2245%22%20cy%3D%2221.5%22%20r%3D%222.1%22/%3E%3C/g%3E%3Cpath%20class%3D%22l%22%20d%3D%22M31%2049.5V60m7-11v11m-10.5.2h6m1.5%200h6%22%20fill%3D%22none%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E">
+<title>Grandes incendios · Vigía de incendios</title>
+<meta name="description" content="Los diez mayores incendios de cada temporada en España desde 2022 y los de este año de más de 100 ha, cada uno reconstruido pasada a pasada con los focos de FIRMS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* common.css v1.1 — shared look of the nine open-data projects (vigia-incendios is the reference).
+   Copy this file verbatim into each repo; change it in all repos at once, never in one.
+   Each repo sets only --accent and --accent-dark below it and adds its own rules after it.
+
+   Type:  Barlow Condensed for titles and labels, Source Serif 4 for reading, IBM Plex Mono for
+          figures, codes and dates. Load them with:
+   https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap */
+
+:root{
+  --ground:#f0edea; --paper:#faf8f6; --ink:#221d1a; --muted:#6b625c; --line:#dad2cb;
+  --accent:#c2410c; --accent-dark:#fb7b3e;
+  --natura:#2f7a55; --natura-dark:#62b88a;
+  --shadow:0 1px 0 rgba(34,29,26,.06), 0 6px 18px -10px rgba(34,29,26,.28);
+  --font-title:"Barlow Condensed","Arial Narrow",sans-serif;
+  --font-text:"Source Serif 4",Georgia,serif;
+  --font-data:"IBM Plex Mono",ui-monospace,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#15110f; --paper:#1d1815; --ink:#ede6e0; --muted:#a69a91; --line:#362d28;
+    --accent:var(--accent-dark); --natura:var(--natura-dark);
+    --shadow:0 1px 0 rgba(0,0,0,.3), 0 8px 22px -12px rgba(0,0,0,.7);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#15110f; --paper:#1d1815; --ink:#ede6e0; --muted:#a69a91; --line:#362d28;
+  --accent:var(--accent-dark); --natura:var(--natura-dark);
+  --shadow:0 1px 0 rgba(0,0,0,.3), 0 8px 22px -12px rgba(0,0,0,.7);
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font:17px/1.55 var(--font-text);overflow-wrap:break-word}
+a{color:inherit;text-decoration-color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+img,svg{max-width:100%}
+
+/* Header: «PROJECT NAME» with the key word in the accent colour, one sentence, then the figures. */
+.site-header{max-width:1440px;margin:0 auto;padding:28px 16px 18px;display:grid;gap:14px}
+.site-header h1{margin:0;font:700 clamp(40px,6vw,64px)/.9 var(--font-title);text-transform:uppercase;letter-spacing:.02em}
+.site-header h1 span{color:var(--accent)}
+/* Logo: the robin from logo.py before the title; same shape everywhere, breast in the accent. */
+.logo{display:inline-block;width:1.05em;height:1.05em;margin-right:.16em;vertical-align:-.13em;color:var(--ink);overflow:visible}
+.logo .logo-breast{fill:var(--accent)}
+.site-header .lede{margin:0;max-width:72ch;font-size:18px}
+.figures{display:flex;flex-wrap:wrap;gap:12px 28px;margin:0;padding:12px 0 0;border-top:1px solid var(--line)}
+.figures div{display:grid;gap:2px}
+.figures b{font:600 30px/1 var(--font-data);font-variant-numeric:tabular-nums;color:var(--accent)}
+.figures span{font:600 13px/1.2 var(--font-title);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+
+/* Text roles */
+.label{font-family:var(--font-title);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.data{font-family:var(--font-data);font-variant-numeric:tabular-nums}
+.note{color:var(--muted);font-size:14.5px}
+.badge{display:inline-block;font:600 12px/1 var(--font-title);text-transform:uppercase;letter-spacing:.09em;padding:4px 7px 3px;border:1.5px solid currentColor;color:var(--accent)}
+
+/* Cards and panels */
+.card{background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);padding:16px}
+
+/* Method section: how every figure is computed, step by step */
+.method{max-width:1440px;margin:0 auto;padding:24px 16px}
+.method h2{margin:0 0 6px;font:700 28px/1 var(--font-title);text-transform:uppercase;letter-spacing:.03em}
+.method h3{margin:18px 0 4px;font:600 18px/1.2 var(--font-title);text-transform:uppercase;letter-spacing:.06em}
+.method p,.method li{max-width:72ch}
+table.params{border-collapse:collapse;font-size:14.5px;width:100%;max-width:900px}
+table.params th,table.params td{text-align:left;vertical-align:top;padding:6px 10px 6px 0;border-bottom:1px solid var(--line)}
+table.params th{font:600 14px/1.3 var(--font-title);text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;padding-right:16px}
+table.params td.num,table.params th.num{text-align:right;font-family:var(--font-data);font-variant-numeric:tabular-nums}
+
+/* Footer: sources, licence, the shared principle and the sibling projects */
+.site-footer{max-width:1440px;margin:0 auto;padding:16px 16px 40px;font-size:13.5px;color:var(--muted);border-top:1px solid var(--line);display:grid;gap:10px}
+.site-footer .principle{margin:0;color:var(--ink);font-style:italic}
+.siblings{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0;padding:0;list-style:none}
+.siblings li a{text-decoration-color:var(--line)}
+.siblings li[aria-current] a{color:var(--ink);text-decoration-color:var(--accent);font-weight:600}
+
+@media (max-width:640px){
+  body{font-size:16px}
+  .figures b{font-size:24px}
+}
+:root{--accent:#c2410c;--accent-dark:#fb7b3e}
+html{-webkit-text-size-adjust:100%}
+.rotulo{font-family:var(--font-title);text-transform:uppercase;letter-spacing:.08em;font-weight:600;color:var(--muted);font-size:14px}
+.marca{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.site-header .lede{text-wrap:pretty}
+.pestanas{display:flex;gap:4px;margin:6px 0 2px;border-bottom:1.5px solid var(--line)}.pestanas a{font:600 16px/1 var(--font-title);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:9px 12px 8px;border-bottom:3px solid transparent;margin-bottom:-1.5px}.pestanas a:hover{color:var(--ink)}.pestanas a[aria-current=page]{color:var(--accent);border-bottom-color:var(--accent)}
+main.lista-main{max-width:1440px;margin:0 auto;padding:0 16px}
+.filtros{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:end;margin:4px 0 12px}
+.filtros label{display:grid;gap:3px;font-size:13px;color:var(--muted)}
+.filtros input,.filtros select{font:15px var(--font-text);color:var(--ink);background:var(--paper);border:1.5px solid var(--line);padding:6px 8px;min-width:0}
+.filtros input{width:min(320px,80vw)}
+.filtros .cuenta{font:500 13px var(--font-data);color:var(--muted);margin-left:auto}
+.tabla{overflow-x:auto;border-top:1.5px solid var(--ink)}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font:600 14px var(--font-title);letter-spacing:.05em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+th button{all:unset;cursor:pointer}
+th button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+th[aria-sort] button::after{content:" ↓";color:var(--accent)}
+th[aria-sort=ascending] button::after{content:" ↑"}
+td.num,th.num{text-align:right;white-space:nowrap}
+td.num{font-family:var(--font-data);font-variant-numeric:tabular-nums}
+td a{font-weight:600}
+td small{display:block;color:var(--muted);font-size:13px}
+td .barra{display:block;height:4px;background:var(--accent);margin-top:5px;margin-left:auto;opacity:.75}
+.etq{font:500 11.5px var(--font-data);text-transform:uppercase;letter-spacing:.04em;border:1px solid var(--accent);color:var(--accent);padding:0 4px;margin-left:6px;vertical-align:1px}
+tr[hidden]{display:none}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.vacio{padding:18px 0;color:var(--muted)}
+.method{max-width:1440px;margin:28px auto 0;padding:0 16px 40px;border-top:1.5px solid var(--ink);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
+.method p{margin:0 0 10px}
+.method ol{margin:0 0 10px;padding-left:1.4em}
+.method ol li{margin-bottom:8px}
+.method > div > h2:first-child,.method > div > h3:first-child{margin-top:18px}
+.nota{font-size:13.5px;color:var(--muted);margin:0}
+.site-footer p{margin:0}
+@media (max-width: 900px){.method{grid-template-columns:1fr}}
+@media (max-width: 640px){
+  .figures{display:grid;grid-template-columns:1fr 1fr;column-gap:12px}
+  .c-pas,.c-nat{display:none}
+  th,td{padding:8px 6px}
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="marca">
+    <h1><svg class="logo" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><g fill="currentColor"><circle cx="34" cy="31" r="19"/><path d="M19 40 7 50.5l3.5 4L25 46z"/><path d="M52 22l8 2.5-8 2.5z"/></g><path class="logo-breast" d="M34 12a19 19 0 0 1 15 30.8C42 41 37 34 37 26c0-6 1.5-10.5 4-12.6A19 19 0 0 0 34 12z"/><g fill="#221d1a"><circle cx="45" cy="21.5" r="2.1"/></g><path d="M31 49.5V60m7-11v11m-10.5.2h6m1.5 0h6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>Grandes incendios</h1>
+    <span class="rotulo">España · desde 2022 · por pasadas de satélite</span>
+  </div>
+  <nav class="pestanas" aria-label="Secciones"><a href="../">Mapa en directo</a><a href="../incendio/" aria-current="page">Grandes incendios</a></nav>
+  <p class="lede">Los diez mayores incendios de cada temporada desde 2022 y los de este año que pasan de 100 ha, con su superficie estimada a partir de los píxeles de satélite. Elige uno para verlo crecer pasada a pasada.</p>
+  <div class="figures"><div><b>47</b><span>incendios</span></div><div><b>441.785 ha</b><span>estimadas en total</span></div><div><b>2022–2026</b><span>temporadas</span></div><div><b>37</b><span>tocan Red Natura 2000</span></div></div>
+</header>
+
+<main class="lista-main">
+  <div class="filtros" role="search">
+    <label>Buscar <input type="search" id="q" placeholder="municipio, provincia, año…" autocomplete="off"></label>
+    <label>Año <select id="anio"><option value="">Todos</option><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option></select></label>
+    <label>Comunidad <select id="region"><option value="">Todas</option><option value="Andalucía">Andalucía</option><option value="Aragón">Aragón</option><option value="Asturias">Asturias</option><option value="Canarias">Canarias</option><option value="Cantabria">Cantabria</option><option value="Castilla y León">Castilla y León</option><option value="Castilla-La Mancha">Castilla-La Mancha</option><option value="Comunidad Valenciana">Comunidad Valenciana</option><option value="Extremadura">Extremadura</option><option value="Galicia">Galicia</option><option value="Navarra">Navarra</option><option value="Región de Murcia">Región de Murcia</option></select></label>
+    <span class="cuenta" id="cuenta" aria-live="polite"></span>
+  </div>
+  <div class="tabla">
+  <table id="tabla">
+    <caption class="visually-hidden">Incendios con ficha por pasadas, ordenados por superficie estimada</caption>
+    <thead><tr>
+      <th scope="col" data-k="titulo"><button type="button">Incendio</button></th>
+      <th scope="col" data-k="t"><button type="button">Inicio</button></th>
+      <th scope="col" class="num" data-k="dias"><button type="button">Días</button></th>
+      <th scope="col" class="num" data-k="ha" aria-sort="descending"><button type="button">Hectáreas</button></th>
+      <th scope="col" class="num c-pas" data-k="pasadas"><button type="button">Pasadas</button></th>
+      <th scope="col" class="num c-nat" data-k="natura"><button type="button">Espacios Natura</button></th>
+    </tr></thead>
+    <tbody><tr data-titulo="Chandrexa de Queixa (Ourense), agosto de 2025" data-t="2025-08-08T14:01Z" data-anio="2025" data-dias="13.5" data-ha="37648.2" data-pasadas="85" data-natura="3" data-region="Galicia" data-busca="Chandrexa de Queixa (Ourense), agosto de 2025 Ourense Galicia 2025"><td><a href="2025-chandrexa-de-queixa.html">Chandrexa de Queixa (Ourense), agosto de 2025</a><small>Galicia</small></td><td><time datetime="2025-08-08T14:01Z">8 ago 2025</time></td><td class="num">13,5</td><td class="num">37.648<span class="barra" style="width:100%"></span></td><td class="num c-pas">85</td><td class="num c-nat">3</td></tr><tr data-titulo="Larouco (Ourense), agosto de 2025" data-t="2025-08-13T21:45Z" data-anio="2025" data-dias="14.2" data-ha="36294.0" data-pasadas="56" data-natura="4" data-region="Galicia" data-busca="Larouco (Ourense), agosto de 2025 Ourense Galicia 2025"><td><a href="2025-larouco.html">Larouco (Ourense), agosto de 2025</a><small>Galicia</small></td><td><time datetime="2025-08-13T21:45Z">13 ago 2025</time></td><td class="num">14,2</td><td class="num">36.294<span class="barra" style="width:96%"></span></td><td class="num c-pas">56</td><td class="num c-nat">4</td></tr><tr data-titulo="Benuza (León), agosto de 2025" data-t="2025-08-08T21:44Z" data-anio="2025" data-dias="14.2" data-ha="30016.6" data-pasadas="91" data-natura="2" data-region="Castilla y León" data-busca="Benuza (León), agosto de 2025 León Castilla y León 2025"><td><a href="2025-benuza.html">Benuza (León), agosto de 2025</a><small>Castilla y León</small></td><td><time datetime="2025-08-08T21:44Z">8 ago 2025</time></td><td class="num">14,2</td><td class="num">30.017<span class="barra" style="width:80%"></span></td><td class="num c-pas">91</td><td class="num c-nat">2</td></tr><tr data-titulo="Oímbra (Ourense), agosto de 2025" data-t="2025-08-12T14:57Z" data-anio="2025" data-dias="8.0" data-ha="28169.3" data-pasadas="52" data-natura="1" data-region="Galicia" data-busca="Oímbra (Ourense), agosto de 2025 Ourense Galicia 2025"><td><a href="2025-oimbra.html">Oímbra (Ourense), agosto de 2025</a><small>Galicia</small></td><td><time datetime="2025-08-12T14:57Z">12 ago 2025</time></td><td class="num">8,0</td><td class="num">28.169<span class="barra" style="width:75%"></span></td><td class="num c-pas">52</td><td class="num c-nat">1</td></tr><tr data-titulo="Porto (Zamora), agosto de 2025" data-t="2025-08-15T02:32Z" data-anio="2025" data-dias="15.8" data-ha="27168.2" data-pasadas="96" data-natura="7" data-region="Castilla y León" data-busca="Porto (Zamora), agosto de 2025 Zamora Castilla y León 2025"><td><a href="2025-porto.html">Porto (Zamora), agosto de 2025</a><small>Castilla y León</small></td><td><time datetime="2025-08-15T02:32Z">15 ago 2025</time></td><td class="num">15,8</td><td class="num">27.168<span class="barra" style="width:72%"></span></td><td class="num c-pas">96</td><td class="num c-nat">7</td></tr><tr data-titulo="Boca de Huérgano (León), agosto de 2025" data-t="2025-08-14T01:10Z" data-anio="2025" data-dias="11.5" data-ha="24021.5" data-pasadas="65" data-natura="5" data-region="Castilla y León" data-busca="Boca de Huérgano (León), agosto de 2025 León Castilla y León 2025"><td><a href="2025-boca-de-huergano.html">Boca de Huérgano (León), agosto de 2025</a><small>Castilla y León</small></td><td><time datetime="2025-08-14T01:10Z">14 ago 2025</time></td><td class="num">11,5</td><td class="num">24.022<span class="barra" style="width:64%"></span></td><td class="num c-pas">65</td><td class="num c-nat">5</td></tr><tr data-titulo="Riofrío de Aliste (Zamora), junio de 2022" data-t="2022-06-16T01:15Z" data-anio="2022" data-dias="3.1" data-ha="22399.3" data-pasadas="15" data-natura="5" data-region="Castilla y León" data-busca="Riofrío de Aliste (Zamora), junio de 2022 Zamora Castilla y León 2022"><td><a href="2022-riofrio-de-aliste.html">Riofrío de Aliste (Zamora), junio de 2022</a><small>Castilla y León</small></td><td><time datetime="2022-06-16T01:15Z">16 jun 2022</time></td><td class="num">3,1</td><td class="num">22.399<span class="barra" style="width:59%"></span></td><td class="num c-pas">15</td><td class="num c-nat">5</td></tr><tr data-titulo="Jarilla (Cáceres), agosto de 2025" data-t="2025-08-13T02:54Z" data-anio="2025" data-dias="8.0" data-ha="21449.4" data-pasadas="52" data-natura="4" data-region="Extremadura" data-busca="Jarilla (Cáceres), agosto de 2025 Cáceres Extremadura 2025"><td><a href="2025-jarilla.html">Jarilla (Cáceres), agosto de 2025</a><small>Extremadura</small></td><td><time datetime="2025-08-13T02:54Z">13 ago 2025</time></td><td class="num">8,0</td><td class="num">21.449<span class="barra" style="width:57%"></span></td><td class="num c-pas">52</td><td class="num c-nat">4</td></tr><tr data-titulo="Ferreruela (Zamora), julio de 2022" data-t="2022-07-17T21:23Z" data-anio="2022" data-dias="2.2" data-ha="19147.6" data-pasadas="15" data-natura="3" data-region="Castilla y León" data-busca="Ferreruela (Zamora), julio de 2022 Zamora Castilla y León 2022"><td><a href="2022-ferreruela.html">Ferreruela (Zamora), julio de 2022</a><small>Castilla y León</small></td><td><time datetime="2022-07-17T21:23Z">17 jul 2022</time></td><td class="num">2,2</td><td class="num">19.148<span class="barra" style="width:51%"></span></td><td class="num c-pas">15</td><td class="num c-nat">3</td></tr><tr data-titulo="A Pobra do Brollón (Lugo), julio de 2022" data-t="2022-07-14T22:31Z" data-anio="2022" data-dias="7.6" data-ha="17969.1" data-pasadas="42" data-natura="1" data-region="Galicia" data-busca="A Pobra do Brollón (Lugo), julio de 2022 Lugo Galicia 2022"><td><a href="2022-a-pobra-do-brollon.html">A Pobra do Brollón (Lugo), julio de 2022</a><small>Galicia</small></td><td><time datetime="2022-07-14T22:31Z">15 jul 2022</time></td><td class="num">7,6</td><td class="num">17.969<span class="barra" style="width:48%"></span></td><td class="num c-pas">42</td><td class="num c-nat">1</td></tr><tr data-titulo="Bejís (Castellón), agosto de 2022" data-t="2022-08-15T22:29Z" data-anio="2022" data-dias="3.6" data-ha="16470.7" data-pasadas="22" data-natura="3" data-region="Comunidad Valenciana" data-busca="Bejís (Castellón), agosto de 2022 Castellón Comunidad Valenciana 2022"><td><a href="2022-bejis.html">Bejís (Castellón), agosto de 2022</a><small>Comunidad Valenciana</small></td><td><time datetime="2022-08-15T22:29Z">16 ago 2022</time></td><td class="num">3,6</td><td class="num">16.471<span class="barra" style="width:44%"></span></td><td class="num c-pas">22</td><td class="num c-nat">3</td></tr><tr data-titulo="Arafo (Santa Cruz de Tenerife), agosto de 2023" data-t="2023-08-15T23:29Z" data-anio="2023" data-dias="7.1" data-ha="16249.4" data-pasadas="30" data-natura="7" data-region="Canarias" data-busca="Arafo (Santa Cruz de Tenerife), agosto de 2023 Santa Cruz de Tenerife Canarias 2023"><td><a href="2023-arafo.html">Arafo (Santa Cruz de Tenerife), agosto de 2023</a><small>Canarias</small></td><td><time datetime="2023-08-15T23:29Z">16 ago 2023</time></td><td class="num">7,1</td><td class="num">16.249<span class="barra" style="width:43%"></span></td><td class="num c-pas">30</td><td class="num c-nat">7</td></tr><tr data-titulo="La Vall d'Ebo (Alicante), agosto de 2022" data-t="2022-08-13T21:03Z" data-anio="2022" data-dias="5.2" data-ha="14370.0" data-pasadas="26" data-natura="3" data-region="Comunidad Valenciana" data-busca="La Vall d'Ebo (Alicante), agosto de 2022 Alicante Comunidad Valenciana 2022"><td><a href="2022-la-vall-d-ebo.html">La Vall d'Ebo (Alicante), agosto de 2022</a><small>Comunidad Valenciana</small></td><td><time datetime="2022-08-13T21:03Z">13 ago 2022</time></td><td class="num">5,2</td><td class="num">14.370<span class="barra" style="width:38%"></span></td><td class="num c-pas">26</td><td class="num c-nat">3</td></tr><tr data-titulo="A Mezquita (Ourense), agosto de 2025" data-t="2025-08-12T10:01Z" data-anio="2025" data-dias="8.2" data-ha="13757.2" data-pasadas="38" data-natura="4" data-region="Galicia" data-busca="A Mezquita (Ourense), agosto de 2025 Ourense Galicia 2025"><td><a href="2025-a-mezquita.html">A Mezquita (Ourense), agosto de 2025</a><small>Galicia</small></td><td><time datetime="2025-08-12T10:01Z">12 ago 2025</time></td><td class="num">8,2</td><td class="num">13.757<span class="barra" style="width:37%"></span></td><td class="num c-pas">38</td><td class="num c-nat">4</td></tr><tr data-titulo="Pinofranqueado (Cáceres), mayo de 2023" data-t="2023-05-17T22:49Z" data-anio="2023" data-dias="2.2" data-ha="12808.2" data-pasadas="13" data-natura="7" data-region="Extremadura" data-busca="Pinofranqueado (Cáceres), mayo de 2023 Cáceres Extremadura 2023"><td><a href="2023-pinofranqueado.html">Pinofranqueado (Cáceres), mayo de 2023</a><small>Extremadura</small></td><td><time datetime="2023-05-17T22:49Z">18 may 2023</time></td><td class="num">2,2</td><td class="num">12.808<span class="barra" style="width:34%"></span></td><td class="num c-pas">13</td><td class="num c-nat">7</td></tr><tr data-titulo="Carballeda de Valdeorras (Ourense), julio de 2022" data-t="2022-07-15T01:21Z" data-anio="2022" data-dias="7.0" data-ha="12620.3" data-pasadas="37" data-natura="0" data-region="Galicia" data-busca="Carballeda de Valdeorras (Ourense), julio de 2022 Ourense Galicia 2022"><td><a href="2022-carballeda-de-valdeorras.html">Carballeda de Valdeorras (Ourense), julio de 2022</a><small>Galicia</small></td><td><time datetime="2022-07-15T01:21Z">15 jul 2022</time></td><td class="num">7,0</td><td class="num">12.620<span class="barra" style="width:34%"></span></td><td class="num c-pas">37</td><td class="num c-nat">—</td></tr><tr data-titulo="Ladrillar (Cáceres), julio de 2022" data-t="2022-07-11T21:59Z" data-anio="2022" data-dias="6.6" data-ha="12061.0" data-pasadas="30" data-natura="5" data-region="Extremadura" data-busca="Ladrillar (Cáceres), julio de 2022 Cáceres Extremadura 2022"><td><a href="2022-ladrillar.html">Ladrillar (Cáceres), julio de 2022</a><small>Extremadura</small></td><td><time datetime="2022-07-11T21:59Z">11 jul 2022</time></td><td class="num">6,6</td><td class="num">12.061<span class="barra" style="width:32%"></span></td><td class="num c-pas">30</td><td class="num c-nat">5</td></tr><tr data-titulo="Ateca (Zaragoza), julio de 2022" data-t="2022-07-18T22:05Z" data-anio="2022" data-dias="2.0" data-ha="9455.7" data-pasadas="14" data-natura="1" data-region="Aragón" data-busca="Ateca (Zaragoza), julio de 2022 Zaragoza Aragón 2022"><td><a href="2022-ateca.html">Ateca (Zaragoza), julio de 2022</a><small>Aragón</small></td><td><time datetime="2022-07-18T22:05Z">19 jul 2022</time></td><td class="num">2,0</td><td class="num">9.456<span class="barra" style="width:25%"></span></td><td class="num c-pas">14</td><td class="num c-nat">1</td></tr><tr data-titulo="Páramo del Sil (León), agosto de 2025" data-t="2025-08-09T20:46Z" data-anio="2025" data-dias="17.2" data-ha="9387.5" data-pasadas="92" data-natura="4" data-region="Castilla y León" data-busca="Páramo del Sil (León), agosto de 2025 León Castilla y León 2025"><td><a href="2025-paramo-del-sil.html">Páramo del Sil (León), agosto de 2025</a><small>Castilla y León</small></td><td><time datetime="2025-08-09T20:46Z">9 ago 2025</time></td><td class="num">17,2</td><td class="num">9.388<span class="barra" style="width:25%"></span></td><td class="num c-pas">92</td><td class="num c-nat">4</td></tr><tr data-titulo="Tineo (Asturias), 28 de marzo de 2023" data-t="2023-03-28T01:23Z" data-anio="2023" data-dias="3.5" data-ha="8914.4" data-pasadas="9" data-natura="4" data-region="Asturias" data-busca="Tineo (Asturias), 28 de marzo de 2023 Asturias Asturias 2023"><td><a href="2023-tineo.html">Tineo (Asturias), 28 de marzo de 2023</a></td><td><time datetime="2023-03-28T01:23Z">28 mar 2023</time></td><td class="num">3,5</td><td class="num">8.914<span class="barra" style="width:24%"></span></td><td class="num c-pas">9</td><td class="num c-nat">4</td></tr><tr data-titulo="Murias de Paredes (León), agosto de 2025" data-t="2025-08-09T12:28Z" data-anio="2025" data-dias="19.0" data-ha="8616.3" data-pasadas="115" data-natura="3" data-region="Castilla y León" data-busca="Murias de Paredes (León), agosto de 2025 León Castilla y León 2025"><td><a href="2025-murias-de-paredes.html">Murias de Paredes (León), agosto de 2025</a><small>Castilla y León</small></td><td><time datetime="2025-08-09T12:28Z">9 ago 2025</time></td><td class="num">19,0</td><td class="num">8.616<span class="barra" style="width:23%"></span></td><td class="num c-pas">115</td><td class="num c-nat">3</td></tr><tr data-titulo="Vilariño de Conso (Ourense), julio de 2022" data-t="2022-07-15T02:12Z" data-anio="2022" data-dias="9.5" data-ha="8480.1" data-pasadas="49" data-natura="1" data-region="Galicia" data-busca="Vilariño de Conso (Ourense), julio de 2022 Ourense Galicia 2022"><td><a href="2022-vilarino-de-conso.html">Vilariño de Conso (Ourense), julio de 2022</a><small>Galicia</small></td><td><time datetime="2022-07-15T02:12Z">15 jul 2022</time></td><td class="num">9,5</td><td class="num">8.480<span class="barra" style="width:23%"></span></td><td class="num c-pas">49</td><td class="num c-nat">1</td></tr><tr data-titulo="San Martín de Unx (Navarra), junio de 2022" data-t="2022-06-19T01:08Z" data-anio="2022" data-dias="2.5" data-ha="6503.0" data-pasadas="13" data-natura="2" data-region="Navarra" data-busca="San Martín de Unx (Navarra), junio de 2022 Navarra Navarra 2022"><td><a href="2022-san-martin-de-unx.html">San Martín de Unx (Navarra), junio de 2022</a></td><td><time datetime="2022-06-19T01:08Z">19 jun 2022</time></td><td class="num">2,5</td><td class="num">6.503<span class="barra" style="width:17%"></span></td><td class="num c-pas">13</td><td class="num c-nat">2</td></tr><tr data-titulo="Villanueva de Viver (Castellón), marzo de 2023" data-t="2023-03-23T11:48Z" data-anio="2023" data-dias="5.6" data-ha="5132.1" data-pasadas="24" data-natura="3" data-region="Comunidad Valenciana" data-busca="Villanueva de Viver (Castellón), marzo de 2023 Castellón Comunidad Valenciana 2023"><td><a href="2023-villanueva-de-viver.html">Villanueva de Viver (Castellón), marzo de 2023</a><small>Comunidad Valenciana</small></td><td><time datetime="2023-03-23T11:48Z">23 mar 2023</time></td><td class="num">5,6</td><td class="num">5.132<span class="barra" style="width:14%"></span></td><td class="num c-pas">24</td><td class="num c-nat">3</td></tr><tr data-titulo="Puntagorda (Santa Cruz de Tenerife), julio de 2023" data-t="2023-07-15T02:23Z" data-anio="2023" data-dias="4.0" data-ha="4328.9" data-pasadas="13" data-natura="4" data-region="Canarias" data-busca="Puntagorda (Santa Cruz de Tenerife), julio de 2023 Santa Cruz de Tenerife Canarias 2023"><td><a href="2023-puntagorda.html">Puntagorda (Santa Cruz de Tenerife), julio de 2023</a><small>Canarias</small></td><td><time datetime="2023-07-15T02:23Z">15 jul 2023</time></td><td class="num">4,0</td><td class="num">4.329<span class="barra" style="width:11%"></span></td><td class="num c-pas">13</td><td class="num c-nat">4</td></tr><tr data-titulo="Ponga (Asturias), marzo de 2023" data-t="2023-03-28T21:27Z" data-anio="2023" data-dias="2.7" data-ha="2326.0" data-pasadas="11" data-natura="2" data-region="Asturias" data-busca="Ponga (Asturias), marzo de 2023 Asturias Asturias 2023"><td><a href="2023-ponga.html">Ponga (Asturias), marzo de 2023</a></td><td><time datetime="2023-03-28T21:27Z">28 mar 2023</time></td><td class="num">2,7</td><td class="num">2.326<span class="barra" style="width:6%"></span></td><td class="num c-pas">11</td><td class="num c-nat">2</td></tr><tr data-titulo="Níjar (Almería), junio de 2024" data-t="2024-06-06T20:54Z" data-anio="2024" data-dias="0.7" data-ha="2148.2" data-pasadas="5" data-natura="1" data-region="Andalucía" data-busca="Níjar (Almería), junio de 2024 Almería Andalucía 2024"><td><a href="2024-nijar.html">Níjar (Almería), junio de 2024</a><small>Andalucía</small></td><td><time datetime="2024-06-06T20:54Z">6 jun 2024</time></td><td class="num">0,7</td><td class="num">2.148<span class="barra" style="width:6%"></span></td><td class="num c-pas">5</td><td class="num c-nat">1</td></tr><tr data-titulo="Montichelvo (Valencia), noviembre de 2023" data-t="2023-11-02T13:27Z" data-anio="2023" data-dias="1.5" data-ha="2112.6" data-pasadas="6" data-natura="2" data-region="Comunidad Valenciana" data-busca="Montichelvo (Valencia), noviembre de 2023 Valencia Comunidad Valenciana 2023"><td><a href="2023-montichelvo.html">Montichelvo (Valencia), noviembre de 2023</a><small>Comunidad Valenciana</small></td><td><time datetime="2023-11-02T13:27Z">2 nov 2023</time></td><td class="num">1,5</td><td class="num">2.113<span class="barra" style="width:6%"></span></td><td class="num c-pas">6</td><td class="num c-nat">2</td></tr><tr data-titulo="Espinosa de Henares (Guadalajara), enero de 2023" data-t="2023-01-31T11:56Z" data-anio="2023" data-dias="22.0" data-ha="1469.7" data-pasadas="25" data-natura="1" data-region="Castilla-La Mancha" data-busca="Espinosa de Henares (Guadalajara), enero de 2023 Guadalajara Castilla-La Mancha 2023"><td><a href="2023-espinosa-de-henares.html">Espinosa de Henares (Guadalajara), enero de 2023</a><small>Castilla-La Mancha</small></td><td><time datetime="2023-01-31T11:56Z">31 ene 2023</time></td><td class="num">22,0</td><td class="num">1.470<span class="barra" style="width:4%"></span></td><td class="num c-pas">25</td><td class="num c-nat">1</td></tr><tr data-titulo="Tineo (Asturias), 27 de marzo de 2023" data-t="2023-03-27T01:42Z" data-anio="2023" data-dias="4.5" data-ha="1454.6" data-pasadas="8" data-natura="2" data-region="Asturias" data-busca="Tineo (Asturias), 27 de marzo de 2023 Asturias Asturias 2023"><td><a href="2023-tineo-2.html">Tineo (Asturias), 27 de marzo de 2023</a></td><td><time datetime="2023-03-27T01:42Z">27 mar 2023</time></td><td class="num">4,5</td><td class="num">1.455<span class="barra" style="width:4%"></span></td><td class="num c-pas">8</td><td class="num c-nat">2</td></tr><tr data-titulo="Arredondo (Cantabria), enero de 2024" data-t="2024-01-26T12:45Z" data-anio="2024" data-dias="4.6" data-ha="1453.0" data-pasadas="10" data-natura="1" data-region="Cantabria" data-busca="Arredondo (Cantabria), enero de 2024 Cantabria Cantabria 2024"><td><a href="2024-arredondo.html">Arredondo (Cantabria), enero de 2024</a></td><td><time datetime="2024-01-26T12:45Z">26 ene 2024</time></td><td class="num">4,6</td><td class="num">1.453<span class="barra" style="width:4%"></span></td><td class="num c-pas">10</td><td class="num c-nat">1</td></tr><tr data-titulo="Tineo (Asturias), 29 de marzo de 2023" data-t="2023-03-29T13:17Z" data-anio="2023" data-dias="2.0" data-ha="1423.1" data-pasadas="7" data-natura="1" data-region="Asturias" data-busca="Tineo (Asturias), 29 de marzo de 2023 Asturias Asturias 2023"><td><a href="2023-tineo-3.html">Tineo (Asturias), 29 de marzo de 2023</a></td><td><time datetime="2023-03-29T13:17Z">29 mar 2023</time></td><td class="num">2,0</td><td class="num">1.423<span class="barra" style="width:4%"></span></td><td class="num c-pas">7</td><td class="num c-nat">1</td></tr><tr data-titulo="La Estrella (Toledo), agosto de 2024" data-t="2024-08-06T12:26Z" data-anio="2024" data-dias="0.6" data-ha="1212.9" data-pasadas="5" data-natura="1" data-region="Castilla-La Mancha" data-busca="La Estrella (Toledo), agosto de 2024 Toledo Castilla-La Mancha 2024"><td><a href="2024-la-estrella.html">La Estrella (Toledo), agosto de 2024</a><small>Castilla-La Mancha</small></td><td><time datetime="2024-08-06T12:26Z">6 ago 2024</time></td><td class="num">0,6</td><td class="num">1.213<span class="barra" style="width:3%"></span></td><td class="num c-pas">5</td><td class="num c-nat">1</td></tr><tr data-titulo="Cabeza del Buey (Badajoz), julio de 2024" data-t="2024-07-05T11:19Z" data-anio="2024" data-dias="0.1" data-ha="1048.2" data-pasadas="3" data-natura="1" data-region="Extremadura" data-busca="Cabeza del Buey (Badajoz), julio de 2024 Badajoz Extremadura 2024"><td><a href="2024-cabeza-del-buey.html">Cabeza del Buey (Badajoz), julio de 2024</a><small>Extremadura</small></td><td><time datetime="2024-07-05T11:19Z">5 jul 2024</time></td><td class="num">0,1</td><td class="num">1.048<span class="barra" style="width:3%"></span></td><td class="num c-pas">3</td><td class="num c-nat">1</td></tr><tr data-titulo="Incendio de Usagre (Badajoz)" data-t="2026-10-22T09:45Z" data-anio="2026" data-dias="1.2" data-ha="824.0" data-pasadas="3" data-natura="0" data-region="Extremadura" data-busca="Incendio de Usagre (Badajoz) Badajoz Extremadura 2026"><td><a href="IN-20261022-013.html">Incendio de Usagre (Badajoz)</a><span class="etq">activo</span><small>Extremadura</small></td><td><time datetime="2026-10-22T09:45Z">22 oct 2026</time></td><td class="num">1,2</td><td class="num">824<span class="barra" style="width:2%"></span></td><td class="num c-pas">3</td><td class="num c-nat">—</td></tr><tr data-titulo="Incendio de Alcántara (Cáceres)" data-t="2026-10-11T13:16Z" data-anio="2026" data-dias="3.0" data-ha="519.9" data-pasadas="3" data-natura="3" data-region="Extremadura" data-busca="Incendio de Alcántara (Cáceres) Cáceres Extremadura 2026"><td><a href="IN-20261011-009.html">Incendio de Alcántara (Cáceres)</a><small>Extremadura</small></td><td><time datetime="2026-10-11T13:16Z">11 oct 2026</time></td><td class="num">3,0</td><td class="num">520<span class="barra" style="width:2%"></span></td><td class="num c-pas">3</td><td class="num c-nat">3</td></tr><tr data-titulo="Incendio de Mula (Región de Murcia)" data-t="2026-10-12T12:57Z" data-anio="2026" data-dias="3.0" data-ha="493.0" data-pasadas="3" data-natura="0" data-region="Región de Murcia" data-busca="Incendio de Mula (Región de Murcia) Región de Murcia Región de Murcia 2026"><td><a href="IN-20261012-011.html">Incendio de Mula (Región de Murcia)</a></td><td><time datetime="2026-10-12T12:57Z">12 oct 2026</time></td><td class="num">3,0</td><td class="num">493<span class="barra" style="width:2%"></span></td><td class="num c-pas">3</td><td class="num c-nat">—</td></tr><tr data-titulo="Incendio de Cedillo (Cáceres)" data-t="2026-10-11T13:16Z" data-anio="2026" data-dias="5.9" data-ha="433.6" data-pasadas="3" data-natura="2" data-region="Extremadura" data-busca="Incendio de Cedillo (Cáceres) Cáceres Extremadura 2026"><td><a href="IN-20261011-008.html">Incendio de Cedillo (Cáceres)</a><small>Extremadura</small></td><td><time datetime="2026-10-11T13:16Z">11 oct 2026</time></td><td class="num">5,9</td><td class="num">434<span class="barra" style="width:2%"></span></td><td class="num c-pas">3</td><td class="num c-nat">2</td></tr><tr data-titulo="Incendio de Villar de Rena (Badajoz)" data-t="2026-10-16T13:23Z" data-anio="2026" data-dias="7.0" data-ha="284.1" data-pasadas="10" data-natura="1" data-region="Extremadura" data-busca="Incendio de Villar de Rena (Badajoz) Badajoz Extremadura 2026"><td><a href="IN-20261016-016.html">Incendio de Villar de Rena (Badajoz)</a><span class="etq">activo</span><small>Extremadura</small></td><td><time datetime="2026-10-16T13:23Z">16 oct 2026</time></td><td class="num">7,0</td><td class="num">284<span class="barra" style="width:2%"></span></td><td class="num c-pas">10</td><td class="num c-nat">1</td></tr><tr data-titulo="Incendio de Pinos Puente (Granada)" data-t="2026-10-09T13:10Z" data-anio="2026" data-dias="4.0" data-ha="214.0" data-pasadas="3" data-natura="0" data-region="Andalucía" data-busca="Incendio de Pinos Puente (Granada) Granada Andalucía 2026"><td><a href="IN-20261009-005.html">Incendio de Pinos Puente (Granada)</a><small>Andalucía</small></td><td><time datetime="2026-10-09T13:10Z">9 oct 2026</time></td><td class="num">4,0</td><td class="num">214<span class="barra" style="width:2%"></span></td><td class="num c-pas">3</td><td class="num c-nat">—</td></tr><tr data-titulo="Incendio de Don Benito (Badajoz)" data-t="2026-10-13T12:38Z" data-anio="2026" data-dias="3.1" data-ha="158.0" data-pasadas="6" data-natura="0" data-region="Extremadura" data-busca="Incendio de Don Benito (Badajoz) Badajoz Extremadura 2026"><td><a href="IN-20261013-027.html">Incendio de Don Benito (Badajoz)</a><small>Extremadura</small></td><td><time datetime="2026-10-13T12:38Z">13 oct 2026</time></td><td class="num">3,1</td><td class="num">158<span class="barra" style="width:2%"></span></td><td class="num c-pas">6</td><td class="num c-nat">—</td></tr><tr data-titulo="Incendio de Usagre (Badajoz)" data-t="2026-10-11T13:16Z" data-anio="2026" data-dias="3.0" data-ha="151.1" data-pasadas="2" data-natura="0" data-region="Extremadura" data-busca="Incendio de Usagre (Badajoz) Badajoz Extremadura 2026"><td><a href="IN-20261011-016.html">Incendio de Usagre (Badajoz)</a><small>Extremadura</small></td><td><time datetime="2026-10-11T13:16Z">11 oct 2026</time></td><td class="num">3,0</td><td class="num">151<span class="barra" style="width:2%"></span></td><td class="num c-pas">2</td><td class="num c-nat">—</td></tr><tr data-titulo="Incendio de Osuna (Sevilla)" data-t="2026-10-16T01:17Z" data-anio="2026" data-dias="1.5" data-ha="146.7" data-pasadas="5" data-natura="1" data-region="Andalucía" data-busca="Incendio de Osuna (Sevilla) Sevilla Andalucía 2026"><td><a href="IN-20261016-002.html">Incendio de Osuna (Sevilla)</a><small>Andalucía</small></td><td><time datetime="2026-10-16T01:17Z">16 oct 2026</time></td><td class="num">1,5</td><td class="num">147<span class="barra" style="width:2%"></span></td><td class="num c-pas">5</td><td class="num c-nat">1</td></tr><tr data-titulo="Incendio de Puertollano (Ciudad Real)" data-t="2026-10-09T13:10Z" data-anio="2026" data-dias="5.0" data-ha="125.7" data-pasadas="4" data-natura="0" data-region="Castilla-La Mancha" data-busca="Incendio de Puertollano (Ciudad Real) Ciudad Real Castilla-La Mancha 2026"><td><a href="IN-20261009-008.html">Incendio de Puertollano (Ciudad Real)</a><small>Castilla-La Mancha</small></td><td><time datetime="2026-10-09T13:10Z">9 oct 2026</time></td><td class="num">5,0</td><td class="num">126<span class="barra" style="width:2%"></span></td><td class="num c-pas">4</td><td class="num c-nat">—</td></tr><tr data-titulo="Incendio de Navia de Suarna (Lugo)" data-t="2026-10-14T20:32Z" data-anio="2026" data-dias="0.7" data-ha="122.1" data-pasadas="5" data-natura="0" data-region="Galicia" data-busca="Incendio de Navia de Suarna (Lugo) Lugo Galicia 2026"><td><a href="IN-20261014-044.html">Incendio de Navia de Suarna (Lugo)</a><small>Galicia</small></td><td><time datetime="2026-10-14T20:32Z">14 oct 2026</time></td><td class="num">0,7</td><td class="num">122<span class="barra" style="width:2%"></span></td><td class="num c-pas">5</td><td class="num c-nat">—</td></tr><tr data-titulo="Incendio de Villanueva de la Serena (Badajoz)" data-t="2026-10-14T12:55Z" data-anio="2026" data-dias="5.0" data-ha="113.7" data-pasadas="4" data-natura="0" data-region="Extremadura" data-busca="Incendio de Villanueva de la Serena (Badajoz) Badajoz Extremadura 2026"><td><a href="IN-20261014-028.html">Incendio de Villanueva de la Serena (Badajoz)</a><small>Extremadura</small></td><td><time datetime="2026-10-14T12:55Z">14 oct 2026</time></td><td class="num">5,0</td><td class="num">114<span class="barra" style="width:2%"></span></td><td class="num c-pas">4</td><td class="num c-nat">—</td></tr><tr data-titulo="Incendio de Villagarcía de la Torre (Badajoz)" data-t="2026-10-08T14:14Z" data-anio="2026" data-dias="2.9" data-ha="113.0" data-pasadas="4" data-natura="0" data-region="Extremadura" data-busca="Incendio de Villagarcía de la Torre (Badajoz) Badajoz Extremadura 2026"><td><a href="IN-20261008-022.html">Incendio de Villagarcía de la Torre (Badajoz)</a><small>Extremadura</small></td><td><time datetime="2026-10-08T14:14Z">8 oct 2026</time></td><td class="num">2,9</td><td class="num">113<span class="barra" style="width:2%"></span></td><td class="num c-pas">4</td><td class="num c-nat">—</td></tr></tbody>
+  </table>
+  </div>
+  <p class="vacio" id="vacio" hidden>Ningún incendio cumple esos filtros.</p>
+</main>
+
+<section class="method" id="metodo">
+  <div>
+    <h2>Cómo se elige</h2>
+    <ol><li>Para cada temporada desde 2022 se descargan todos los focos del archivo estándar de FIRMS (VIIRS de Suomi NPP y NOAA-20, y MODIS) dentro de España, sin las fuentes fijas de calor.</li><li>Se agrupan en incendios con las mismas reglas que el mapa en directo: focos a menos de 2 km y 72 h pertenecen al mismo incendio.</li><li>De cada incendio se estima el perímetro con los píxeles VIIRS y se guardan los diez mayores de cada temporada que superan las 1.000 ha.</li><li>Se nombran por el municipio de los primeros píxeles, que suele ser el del inicio del fuego. Los incendios de este año entran solos en cuanto superan 100 ha y su perímetro ha cambiado al menos una vez.</li></ol>
+  </div>
+  <div>
+    <h3>Lo que no puede decir</h3>
+    <p>La superficie es una estimación desde el espacio: píxeles de 375 m, unidos y cerrados. Suele acercarse a la cartografía oficial en incendios grandes y exagerar en los pequeños o con muchas islas sin quemar. Dos incendios que se tocan pueden aparecer como uno. Las cifras oficiales son las de EFFIS y las comunidades autónomas.</p>
+    <h3>Siglas y términos</h3>
+    <ul class="glosario">
+      <li><strong>FIRMS</strong> (Fire Information for Resource Management System): el servicio de la NASA que publica en abierto los focos de calor que ven los satélites, unas horas después de cada pasada.</li>
+      <li><strong>VIIRS</strong> y <strong>MODIS</strong>: los dos sensores que detectan esos focos. VIIRS va en los satélites S-NPP, NOAA-20 y NOAA-21, con píxeles de 375 m; MODIS, en Terra y Aqua, con píxeles de 1 km.</li>
+      <li><strong>FRP</strong> (potencia radiativa del fuego): el calor que emite un píxel, en megavatios. Sirve para comparar la intensidad de una pasada con otra.</li>
+      <li><strong>EFFIS</strong>: el Sistema Europeo de Información sobre Incendios Forestales, de Copernicus. Dibuja los perímetros quemados a partir de unas 30 ha.</li>
+      <li><strong>NBR</strong> y <strong>dNBR</strong>: el NBR (índice normalizado de área quemada) compara en una imagen el infrarrojo cercano con el de onda corta; el dNBR es cuánto baja entre la imagen de antes y la de después del fuego. Cuanto más baja, más quemado.</li>
+      <li><strong>FEDS</strong> (Fire Event Data Suite): el método de la NASA que sigue cada incendio pasada a pasada con los focos VIIRS. El perímetro estimado del vigía sigue la misma idea.</li>
+      <li><strong>CORINE Land Cover</strong>: el mapa europeo de cubiertas del suelo (bosque, matorral, cultivos, ciudad…), en su edición de 2018.</li>
+      <li><strong>Red Natura 2000</strong>: la red europea de espacios protegidos. <strong>ZEC</strong> es Zona Especial de Conservación (Directiva Hábitats) y <strong>ZEPA</strong>, Zona de Especial Protección para las Aves (Directiva Aves).</li>
+      <li><strong>Sentinel-2</strong>: los satélites europeos de Copernicus que fotografían el suelo cada dos o tres días con píxeles de 10 a 20 m. <strong>PNOA</strong>: la ortofoto del Plan Nacional de Ortofotografía Aérea.</li>
+    </ul>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p class="principle">Datos públicos, reglas a la vista y cada cifra enlazada a su fuente. Indicios, no veredictos.</p>
+  <p>Focos activos: NASA FIRMS (LANCE), parte del Earth Science Data and Information System de la NASA · Áreas quemadas: EFFIS, Copernicus Emergency Management Service, © Unión Europea · Imágenes Sentinel-2: Copernicus, © Unión Europea, vía Earth Search (Element 84) · Red Natura 2000 y CORINE Land Cover 2018: Agencia Europea de Medio Ambiente · Municipios: Nominatim, © colaboradores de OpenStreetMap (ODbL) · Ortofoto PNOA: CC BY 4.0 scne.es.</p>
+  <p><a href="https://asensio94.github.io/terra-aperta/">← Terra Aperta: todos los proyectos</a></p>
+  <nav aria-label="Proyectos hermanos"><ul class="siblings">
+    <li><a href="https://asensio94.github.io/sub-nocte/">Sub Nocte</a></li>
+    <li aria-current="page">Vigía de incendios</li>
+    <li><a href="https://asensio94.github.io/centinela-natura/">Centinela Natura</a></li>
+    <li><a href="https://asensio94.github.io/estado-iba/">Estado de las IBA</a></li>
+    <li><a href="https://asensio94.github.io/riesgo-tendidos-aves/">Riesgo de tendidos para aves</a></li>
+    <li><a href="https://asensio94.github.io/observatorio-alegaciones/">Observatorio de alegaciones</a></li>
+    <li><a href="https://asensio94.github.io/grafo-promotores/">Grafo de promotores</a></li>
+    <li><a href="https://asensio94.github.io/vigilancia-humedales/">Vigilancia de humedales</a></li>
+    <li><a href="https://asensio94.github.io/caudal-ecologico/">Caudal ecológico</a></li>
+    <li><a href="https://asensio94.github.io/acuiferos-francia/">Acuíferos de Francia</a></li>
+    <li><a href="https://asensio94.github.io/depuracion-y-bano/">Depuración y baño</a></li>
+    <li><a href="https://asensio94.github.io/zona-inundable/">Construir en zona inundable</a></li>
+  </ul></nav>
+  <p class="nota">Relieve © Mapterhorn (MDT del IGN, CC BY 4.0 scne.es; Copernicus GLO-30). Mapa base © OpenStreetMap. Ortofoto PNOA © scne.es.</p>
+</footer>
+
+<script>
+(function () {
+  const tb = document.querySelector("#tabla tbody"), filas = [...tb.rows];
+  const q = document.getElementById("q"), anio = document.getElementById("anio"), reg = document.getElementById("region");
+  const cuenta = document.getElementById("cuenta"), vacio = document.getElementById("vacio");
+  const fmt = n => document.documentElement.lang === "fr" ? n + (n === 1 ? " incendie" : " incendies")
+                                                          : n + (n === 1 ? " incendio" : " incendios");
+  const sin = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  let clave = "ha", desc = true;
+  function pinta() {
+    const t = sin(q.value.trim());
+    let n = 0;
+    for (const f of filas) {
+      const ok = (!t || sin(f.dataset.busca).includes(t)) && (!anio.value || f.dataset.anio === anio.value)
+        && (!reg.value || f.dataset.region === reg.value);
+      f.hidden = !ok; n += ok;
+    }
+    cuenta.textContent = fmt(n); vacio.hidden = n > 0;
+  }
+  function ordena() {
+    const v = f => clave === "titulo" ? sin(f.dataset.titulo) : clave === "t" ? f.dataset.t : +f.dataset[clave];
+    filas.sort((a, b) => (v(a) < v(b) ? -1 : v(a) > v(b) ? 1 : 0) * (desc ? -1 : 1));
+    tb.append(...filas);
+    for (const th of document.querySelectorAll("#tabla th")) {
+      if (th.dataset.k === clave) th.setAttribute("aria-sort", desc ? "descending" : "ascending");
+      else th.removeAttribute("aria-sort");
+    }
+  }
+  document.querySelector("#tabla thead").addEventListener("click", e => {
+    const th = e.target.closest("th"); if (!th) return;
+    desc = th.dataset.k === clave ? !desc : !["titulo"].includes(th.dataset.k);
+    clave = th.dataset.k; ordena();
+  });
+  for (const el of [q, anio, reg]) el.addEventListener("input", pinta);
+  const p = new URLSearchParams(location.search);
+  if (p.get("anio")) anio.value = p.get("anio");
+  if (p.get("q")) q.value = p.get("q");
+  pinta();
+})();
+</script>
+</body>
+</html>
