@@ -2426,7 +2426,7 @@
    "effis_ha": 8,
    "perimetro": {
     "clave": "v2|1|ed63c58f41cd",
-    "revisado": "2026-10-25T06:08Z",
+    "revisado": "2026-10-25T16:18Z",
     "calculado": "2026-10-21T22:21Z",
     "definitivo": false,
     "ha": 8.5,
@@ -3512,7 +3512,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|884ffc3c6cde",
-    "revisado": "2026-10-25T06:08Z",
+    "revisado": "2026-10-25T16:18Z",
     "calculado": "2026-10-23T18:21Z",
     "definitivo": true,
     "ha": 1.5,
@@ -10943,7 +10943,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|275f64af7e06",
-    "revisado": "2026-10-25T06:08Z",
+    "revisado": "2026-10-25T16:18Z",
     "calculado": "2026-10-21T22:21Z",
     "definitivo": true,
     "ha": 0.0,
@@ -11167,7 +11167,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|8ffa3185d717",
-    "revisado": "2026-10-25T06:08Z",
+    "revisado": "2026-10-25T16:18Z",
     "calculado": "2026-10-23T18:21Z",
     "definitivo": false,
     "ha": 0.7,
@@ -11618,7 +11618,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|5e564149fa23",
-    "revisado": "2026-10-25T06:08Z",
+    "revisado": "2026-10-25T16:18Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": true,
     "sin_imagen": true
@@ -12217,7 +12217,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|78bc93049fb9",
-    "revisado": "2026-10-25T06:08Z",
+    "revisado": "2026-10-25T16:18Z",
     "calculado": "2026-10-21T22:21Z",
     "definitivo": false,
     "ha": 28.5,
@@ -13011,7 +13011,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|8696a64d7a4c",
-    "revisado": "2026-10-25T06:08Z",
+    "revisado": "2026-10-25T16:18Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "ha": 126.0,
@@ -13807,7 +13807,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|59f16e1b5e76",
-    "revisado": "2026-10-25T06:08Z",
+    "revisado": "2026-10-25T16:18Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "ha": 2.4,
@@ -20586,7 +20586,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|5cf6ddcbc80b",
-    "revisado": "2026-10-25T06:08Z",
+    "revisado": "2026-10-25T16:18Z",
     "calculado": "2026-10-24T18:09Z",
     "definitivo": false,
     "ha": 0.5,
@@ -21740,7 +21740,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|ab54f9d24160",
-    "revisado": "2026-10-25T06:08Z",
+    "revisado": "2026-10-25T16:18Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "sin_imagen": true
@@ -21949,7 +21949,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|cf0d29371ab0",
-    "revisado": "2026-10-25T06:08Z",
+    "revisado": "2026-10-25T16:18Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "sin_imagen": true
@@ -22165,7 +22165,7 @@
    "effis_ha": 30,
    "perimetro": {
     "clave": "v2|1|7dc454184a8d",
-    "revisado": "2026-10-25T06:08Z",
+    "revisado": "2026-10-25T16:18Z",
     "calculado": "2026-10-24T18:09Z",
     "definitivo": false,
     "ha": 21.7,
@@ -22735,7 +22735,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|dece99ac54a4",
-    "revisado": "2026-10-25T06:08Z",
+    "revisado": "2026-10-25T16:18Z",
     "calculado": "2026-10-23T18:21Z",
     "definitivo": false,
     "ha": 0.0,
@@ -22894,7 +22894,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|c7d74825d234",
-    "revisado": "2026-10-25T06:08Z",
+    "revisado": "2026-10-25T16:18Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "ha": 1.6,
@@ -23223,7 +23223,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|f3c910dc8ee1",
-    "revisado": "2026-10-25T06:08Z",
+    "revisado": "2026-10-25T16:18Z",
     "calculado": "2026-10-22T22:20Z",
     "definitivo": false,
     "ha": 10.8,
@@ -26198,7 +26198,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|f9b548363298",
-    "revisado": "2026-10-25T06:08Z",
+    "revisado": "2026-10-25T16:18Z",
     "calculado": "2026-10-23T18:21Z",
     "definitivo": false,
     "ha": 0.0,
@@ -27126,7 +27126,7 @@
     "comunidad": "Nouvelle-Aquitaine"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -27191,7 +27191,7 @@
     "comunidad": "Nouvelle-Aquitaine"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -29664,7 +29664,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|891d66e547e1",
-    "revisado": "2026-10-25T06:08Z",
+    "revisado": "2026-10-25T16:18Z",
     "calculado": "2026-10-21T18:39Z",
     "definitivo": false,
     "sin_imagen": true
@@ -30279,7 +30279,599 @@
    "estado": "reciente",
    "effis": [],
    "effis_ha": null
+  },
+  {
+   "id": "FR-IN-20261025-001",
+   "primera": "2026-10-25T11:30Z",
+   "ultima": "2026-10-25T12:14Z",
+   "n_focos": 5,
+   "n_viirs": 5,
+   "pasadas": 2,
+   "satelites": [
+    "NOAA-20",
+    "NOAA-21"
+   ],
+   "frp_max": 28.2,
+   "frp_total": 71.3,
+   "ha_focos": 62.3,
+   "centro": [
+    9.4635,
+    42.91643
+   ],
+   "bbox": [
+    9.4579,
+    42.90962,
+    9.47277,
+    42.91915
+   ],
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        9.46811,
+        42.91288
+       ],
+       [
+        9.47277,
+        42.91288
+       ],
+       [
+        9.47277,
+        42.90962
+       ],
+       [
+        9.46811,
+        42.90962
+       ],
+       [
+        9.46811,
+        42.91288
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        9.4579,
+        42.91472
+       ],
+       [
+        9.45942,
+        42.91472
+       ],
+       [
+        9.45942,
+        42.91814
+       ],
+       [
+        9.46161,
+        42.91814
+       ],
+       [
+        9.46161,
+        42.9187
+       ],
+       [
+        9.46304,
+        42.9187
+       ],
+       [
+        9.46304,
+        42.91915
+       ],
+       [
+        9.46758,
+        42.91915
+       ],
+       [
+        9.46758,
+        42.91391
+       ],
+       [
+        9.46396,
+        42.91391
+       ],
+       [
+        9.46396,
+        42.9129
+       ],
+       [
+        9.46256,
+        42.9129
+       ],
+       [
+        9.46256,
+        42.91146
+       ],
+       [
+        9.4579,
+        42.91146
+       ],
+       [
+        9.4579,
+        42.91472
+       ]
+      ]
+     ]
+    ]
+   },
+   "perimeter_ha": 39.7,
+   "steps": 1,
+   "front_km": 2.84,
+   "front_t": "2026-10-25T11:30Z",
+   "max_growth_ha_h": null,
+   "progression": [
+    {
+     "t": "2026-10-25T11:30Z",
+     "ha": 39.7,
+     "pixels": 5,
+     "frp": 71.3,
+     "front_km": 2.84
+    }
+   ],
+   "perimeter": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.45912,
+       42.91297
+      ],
+      [
+       9.46056,
+       42.91614
+      ],
+      [
+       9.46336,
+       42.91778
+      ],
+      [
+       9.46421,
+       42.91787
+      ],
+      [
+       9.46644,
+       42.91715
+      ],
+      [
+       9.46815,
+       42.914
+      ],
+      [
+       9.47127,
+       42.91181
+      ],
+      [
+       9.47155,
+       42.91113
+      ],
+      [
+       9.47111,
+       42.91058
+      ],
+      [
+       9.47017,
+       42.91045
+      ],
+      [
+       9.4659,
+       42.9123
+      ],
+      [
+       9.46322,
+       42.91259
+      ],
+      [
+       9.46007,
+       42.91227
+      ],
+      [
+       9.45912,
+       42.91297
+      ]
+     ]
+    ]
+   },
+   "front": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       9.45912,
+       42.91297
+      ],
+      [
+       9.46056,
+       42.91614
+      ],
+      [
+       9.46336,
+       42.91778
+      ],
+      [
+       9.46421,
+       42.91787
+      ],
+      [
+       9.46644,
+       42.91715
+      ],
+      [
+       9.46815,
+       42.914
+      ],
+      [
+       9.47127,
+       42.91181
+      ],
+      [
+       9.47155,
+       42.91113
+      ],
+      [
+       9.47111,
+       42.91058
+      ],
+      [
+       9.47017,
+       42.91045
+      ],
+      [
+       9.46756,
+       42.91179
+      ],
+      [
+       9.46585,
+       42.91231
+      ]
+     ],
+     [
+      [
+       9.46497,
+       42.91246
+      ],
+      [
+       9.46007,
+       42.91227
+      ],
+      [
+       9.45912,
+       42.91297
+      ]
+     ]
+    ]
+   },
+   "natura": [
+    {
+     "codigo": "FR9402013",
+     "nombre": "Plateau du Cap Corse",
+     "tipo": "ZSC",
+     "ha": 3.3
+    },
+    {
+     "codigo": "FR9412009",
+     "nombre": "Plateau du Cap Corse",
+     "tipo": "ZPS",
+     "ha": 3.3
+    }
+   ],
+   "cobertura": {
+    "desnudo": 0.6,
+    "agua": 0.2,
+    "matorral": 0.2
+   },
+   "lugar": {
+    "municipio": "Meria",
+    "insee": "2B159",
+    "provincia": "Haute-Corse",
+    "comunidad": "Corse"
+   },
+   "lugar_focos": 5,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|5|c1af58684bc2",
+    "revisado": "2026-10-25T16:18Z",
+    "calculado": "2026-10-25T16:18Z",
+    "definitivo": false,
+    "sin_imagen": true
+   }
+  },
+  {
+   "id": "FR-IN-20261025-002",
+   "primera": "2026-10-25T12:17Z",
+   "ultima": "2026-10-25T13:12Z",
+   "n_focos": 3,
+   "n_viirs": 3,
+   "pasadas": 2,
+   "satelites": [
+    "NOAA-20",
+    "NOAA-21"
+   ],
+   "frp_max": 36.3,
+   "frp_total": 68.0,
+   "ha_focos": 46.3,
+   "centro": [
+    6.53795,
+    48.80887
+   ],
+   "bbox": [
+    6.5324,
+    48.80604,
+    6.54229,
+    48.81375
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       6.54229,
+       48.81084
+      ],
+      [
+       6.54229,
+       48.80604
+      ],
+      [
+       6.53397,
+       48.80604
+      ],
+      [
+       6.5336,
+       48.81049
+      ],
+      [
+       6.5324,
+       48.81049
+      ],
+      [
+       6.5324,
+       48.81375
+      ],
+      [
+       6.53772,
+       48.81375
+      ],
+      [
+       6.53772,
+       48.81084
+      ],
+      [
+       6.54229,
+       48.81084
+      ]
+     ]
+    ]
+   },
+   "perimeter_ha": 15.7,
+   "steps": 1,
+   "front_km": 1.7,
+   "front_t": "2026-10-25T12:17Z",
+   "max_growth_ha_h": null,
+   "progression": [
+    {
+     "t": "2026-10-25T12:17Z",
+     "ha": 15.7,
+     "pixels": 3,
+     "frp": 68.0,
+     "front_km": 1.7
+    }
+   ],
+   "perimeter": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       6.53381,
+       48.812
+      ],
+      [
+       6.53391,
+       48.81248
+      ],
+      [
+       6.53452,
+       48.81288
+      ],
+      [
+       6.536,
+       48.81268
+      ],
+      [
+       6.53742,
+       48.81086
+      ],
+      [
+       6.53978,
+       48.8091
+      ],
+      [
+       6.54006,
+       48.8085
+      ],
+      [
+       6.53987,
+       48.80789
+      ],
+      [
+       6.53912,
+       48.80734
+      ],
+      [
+       6.53785,
+       48.80717
+      ],
+      [
+       6.53532,
+       48.80832
+      ],
+      [
+       6.53381,
+       48.812
+      ]
+     ]
+    ]
+   },
+   "front": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      6.53381,
+      48.812
+     ],
+     [
+      6.53391,
+      48.81248
+     ],
+     [
+      6.53452,
+      48.81288
+     ],
+     [
+      6.536,
+      48.81268
+     ],
+     [
+      6.53742,
+      48.81086
+     ],
+     [
+      6.53978,
+      48.8091
+     ],
+     [
+      6.54006,
+      48.8085
+     ],
+     [
+      6.53987,
+      48.80789
+     ],
+     [
+      6.53912,
+      48.80734
+     ],
+     [
+      6.53785,
+      48.80717
+     ],
+     [
+      6.53532,
+      48.80832
+     ],
+     [
+      6.53381,
+      48.812
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Morville-lès-Vic",
+    "insee": "57485",
+    "provincia": "Moselle",
+    "comunidad": "Grand Est"
+   },
+   "lugar_focos": 3,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|3|4d1038fc6db8",
+    "revisado": "2026-10-25T16:18Z",
+    "calculado": "2026-10-25T16:18Z",
+    "definitivo": false,
+    "sin_imagen": true
+   }
+  },
+  {
+   "id": "FR-IN-20261025-003",
+   "primera": "2026-10-25T12:14Z",
+   "ultima": "2026-10-25T12:14Z",
+   "n_focos": 2,
+   "n_viirs": 2,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 3.6,
+   "frp_total": 6.3,
+   "ha_focos": 27.3,
+   "centro": [
+    9.51108,
+    42.51037
+   ],
+   "bbox": [
+    9.50645,
+    42.50838,
+    9.5157,
+    42.51236
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       9.51109,
+       42.50838
+      ],
+      [
+       9.50645,
+       42.50838
+      ],
+      [
+       9.50645,
+       42.51164
+      ],
+      [
+       9.51106,
+       42.51164
+      ],
+      [
+       9.51106,
+       42.51236
+      ],
+      [
+       9.5157,
+       42.51236
+      ],
+      [
+       9.5157,
+       42.5091
+      ],
+      [
+       9.51109,
+       42.5091
+      ],
+      [
+       9.51109,
+       42.50838
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Venzolasca",
+    "insee": "2B343",
+    "provincia": "Haute-Corse",
+    "comunidad": "Corse"
+   },
+   "lugar_focos": 2,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null
   }
  ],
- "actualizado": "2026-10-25T11:28Z"
+ "actualizado": "2026-10-25T16:18Z"
 }
