@@ -189748,10 +189748,10 @@
   {
    "id": "IN-20261025-033",
    "primera": "2026-10-25T21:06Z",
-   "ultima": "2026-10-26T15:26Z",
-   "n_focos": 21,
+   "ultima": "2026-10-26T20:06Z",
+   "n_focos": 22,
    "n_viirs": 16,
-   "pasadas": 12,
+   "pasadas": 13,
    "satelites": [
     "Aqua",
     "NOAA-20",
@@ -189760,7 +189760,7 @@
     "Terra"
    ],
    "frp_max": 96.2,
-   "frp_total": 406.9,
+   "frp_total": 420.5,
    "ha_focos": 119.4,
    "centro": [
     -3.53214,
@@ -189857,8 +189857,8 @@
    },
    "natura": [],
    "cobertura": {
-    "agricola": 0.62,
-    "matorral": 0.38
+    "agricola": 0.64,
+    "matorral": 0.36
    },
    "lugar": {
     "comunidad": "Castilla y León",
@@ -191386,144 +191386,6 @@
    "estado": "activo",
    "effis": [],
    "effis_ha": null,
-   "perimeter_ha": 47.6,
-   "steps": 2,
-   "front_km": 1.24,
-   "front_t": "2026-10-26T13:36Z",
-   "max_growth_ha_h": 6.0,
-   "progression": [
-    {
-     "t": "2026-10-26T11:55Z",
-     "ha": 37.6,
-     "pixels": 8,
-     "frp": 69.1,
-     "front_km": 2.67
-    },
-    {
-     "t": "2026-10-26T13:36Z",
-     "ha": 47.6,
-     "pixels": 2,
-     "frp": 15.3,
-     "front_km": 1.24,
-     "growth_ha_h": 6.0
-    }
-   ],
-   "perimeter": {
-    "type": "Polygon",
-    "coordinates": [
-     [
-      [
-       -0.196,
-       39.82531
-      ],
-      [
-       -0.19549,
-       39.82641
-      ],
-      [
-       -0.19312,
-       39.82763
-      ],
-      [
-       -0.1907,
-       39.83002
-      ],
-      [
-       -0.18975,
-       39.83041
-      ],
-      [
-       -0.18884,
-       39.83031
-      ],
-      [
-       -0.18702,
-       39.82929
-      ],
-      [
-       -0.1838,
-       39.82822
-      ],
-      [
-       -0.18302,
-       39.82721
-      ],
-      [
-       -0.18322,
-       39.82643
-      ],
-      [
-       -0.18394,
-       39.82587
-      ],
-      [
-       -0.18692,
-       39.82532
-      ],
-      [
-       -0.19027,
-       39.82394
-      ],
-      [
-       -0.19475,
-       39.82413
-      ],
-      [
-       -0.19561,
-       39.82457
-      ],
-      [
-       -0.196,
-       39.82531
-      ]
-     ]
-    ]
-   },
-   "front": {
-    "type": "MultiLineString",
-    "coordinates": [
-     [
-      [
-       -0.19472,
-       39.8268
-      ],
-      [
-       -0.19255,
-       39.82805
-      ],
-      [
-       -0.1907,
-       39.83002
-      ],
-      [
-       -0.18991,
-       39.83039
-      ],
-      [
-       -0.18884,
-       39.83031
-      ],
-      [
-       -0.18702,
-       39.82929
-      ],
-      [
-       -0.1845,
-       39.82846
-      ]
-     ],
-     [
-      [
-       -0.18713,
-       39.82526
-      ],
-      [
-       -0.18857,
-       39.82471
-      ]
-     ]
-    ]
-   },
    "perimetro": {
     "clave": "v2|12|e6954d6533e4",
     "revisado": "2026-10-26T19:19Z",
@@ -191852,6 +191714,144 @@
       ]
      ]
     }
+   },
+   "perimeter_ha": 47.6,
+   "steps": 2,
+   "front_km": 1.24,
+   "front_t": "2026-10-26T13:36Z",
+   "max_growth_ha_h": 6.0,
+   "progression": [
+    {
+     "t": "2026-10-26T11:55Z",
+     "ha": 37.6,
+     "pixels": 8,
+     "frp": 69.1,
+     "front_km": 2.67
+    },
+    {
+     "t": "2026-10-26T13:36Z",
+     "ha": 47.6,
+     "pixels": 2,
+     "frp": 15.3,
+     "front_km": 1.24,
+     "growth_ha_h": 6.0
+    }
+   ],
+   "perimeter": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -0.196,
+       39.82531
+      ],
+      [
+       -0.19549,
+       39.82641
+      ],
+      [
+       -0.19312,
+       39.82763
+      ],
+      [
+       -0.1907,
+       39.83002
+      ],
+      [
+       -0.18975,
+       39.83041
+      ],
+      [
+       -0.18884,
+       39.83031
+      ],
+      [
+       -0.18702,
+       39.82929
+      ],
+      [
+       -0.1838,
+       39.82822
+      ],
+      [
+       -0.18302,
+       39.82721
+      ],
+      [
+       -0.18322,
+       39.82643
+      ],
+      [
+       -0.18394,
+       39.82587
+      ],
+      [
+       -0.18692,
+       39.82532
+      ],
+      [
+       -0.19027,
+       39.82394
+      ],
+      [
+       -0.19475,
+       39.82413
+      ],
+      [
+       -0.19561,
+       39.82457
+      ],
+      [
+       -0.196,
+       39.82531
+      ]
+     ]
+    ]
+   },
+   "front": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       -0.19472,
+       39.8268
+      ],
+      [
+       -0.19255,
+       39.82805
+      ],
+      [
+       -0.1907,
+       39.83002
+      ],
+      [
+       -0.18991,
+       39.83039
+      ],
+      [
+       -0.18884,
+       39.83031
+      ],
+      [
+       -0.18702,
+       39.82929
+      ],
+      [
+       -0.1845,
+       39.82846
+      ]
+     ],
+     [
+      [
+       -0.18713,
+       39.82526
+      ],
+      [
+       -0.18857,
+       39.82471
+      ]
+     ]
+    ]
    }
   },
   {
@@ -193478,6 +193478,33 @@
      ]
     ]
    },
+   "natura": [
+    {
+     "codigo": "ES0000325",
+     "nombre": "Campiña sur - Embalse de Arroyo Conejos",
+     "tipo": "ZEPA",
+     "ha": 131.8
+    }
+   ],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Campillo de Llerena",
+    "provincia": "Badajoz",
+    "comunidad": "Extremadura"
+   },
+   "lugar_focos": 8,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|8|bdb83f6a4725",
+    "revisado": "2026-10-26T19:19Z",
+    "calculado": "2026-10-26T19:19Z",
+    "definitivo": false,
+    "sin_imagen": true
+   },
    "perimeter_ha": 63.5,
    "steps": 1,
    "front_km": 3.04,
@@ -193607,33 +193634,6 @@
       38.45583
      ]
     ]
-   },
-   "natura": [
-    {
-     "codigo": "ES0000325",
-     "nombre": "Campiña sur - Embalse de Arroyo Conejos",
-     "tipo": "ZEPA",
-     "ha": 131.8
-    }
-   ],
-   "cobertura": {
-    "agricola": 1.0
-   },
-   "lugar": {
-    "municipio": "Campillo de Llerena",
-    "provincia": "Badajoz",
-    "comunidad": "Extremadura"
-   },
-   "lugar_focos": 8,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|8|bdb83f6a4725",
-    "revisado": "2026-10-26T19:19Z",
-    "calculado": "2026-10-26T19:19Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -193734,6 +193734,26 @@
       ]
      ]
     ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Badajoz",
+    "provincia": "Badajoz",
+    "comunidad": "Extremadura"
+   },
+   "lugar_focos": 8,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|8|969914d62878",
+    "revisado": "2026-10-26T19:19Z",
+    "calculado": "2026-10-26T19:19Z",
+    "definitivo": false,
+    "sin_imagen": true
    },
    "perimeter_ha": 84.2,
    "steps": 2,
@@ -193880,26 +193900,6 @@
       38.80031
      ]
     ]
-   },
-   "natura": [],
-   "cobertura": {
-    "agricola": 1.0
-   },
-   "lugar": {
-    "municipio": "Badajoz",
-    "provincia": "Badajoz",
-    "comunidad": "Extremadura"
-   },
-   "lugar_focos": 8,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|8|969914d62878",
-    "revisado": "2026-10-26T19:19Z",
-    "calculado": "2026-10-26T19:19Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -193970,6 +193970,26 @@
       ]
      ]
     ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Sádaba",
+    "provincia": "Zaragoza",
+    "comunidad": "Aragón"
+   },
+   "lugar_focos": 7,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|7|7ebe297f12fc",
+    "revisado": "2026-10-26T19:19Z",
+    "calculado": "2026-10-26T19:19Z",
+    "definitivo": false,
+    "sin_imagen": true
    },
    "perimeter_ha": 48.4,
    "steps": 2,
@@ -194124,26 +194144,6 @@
       ]
      ]
     ]
-   },
-   "natura": [],
-   "cobertura": {
-    "agricola": 1.0
-   },
-   "lugar": {
-    "municipio": "Sádaba",
-    "provincia": "Zaragoza",
-    "comunidad": "Aragón"
-   },
-   "lugar_focos": 7,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|7|7ebe297f12fc",
-    "revisado": "2026-10-26T19:19Z",
-    "calculado": "2026-10-26T19:19Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -194283,6 +194283,33 @@
       ]
      ]
     ]
+   },
+   "natura": [
+    {
+     "codigo": "ES0000400",
+     "nombre": "Arrozales de Palazuelo y Guadalperales",
+     "tipo": "ZEPA",
+     "ha": 119.2
+    }
+   ],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Villar de Rena",
+    "provincia": "Badajoz",
+    "comunidad": "Extremadura"
+   },
+   "lugar_focos": 6,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|6|da0191035767",
+    "revisado": "2026-10-26T19:19Z",
+    "calculado": "2026-10-26T19:19Z",
+    "definitivo": false,
+    "sin_imagen": true
    },
    "perimeter_ha": 73.6,
    "steps": 2,
@@ -194449,33 +194476,6 @@
       ]
      ]
     ]
-   },
-   "natura": [
-    {
-     "codigo": "ES0000400",
-     "nombre": "Arrozales de Palazuelo y Guadalperales",
-     "tipo": "ZEPA",
-     "ha": 119.2
-    }
-   ],
-   "cobertura": {
-    "agricola": 1.0
-   },
-   "lugar": {
-    "municipio": "Villar de Rena",
-    "provincia": "Badajoz",
-    "comunidad": "Extremadura"
-   },
-   "lugar_focos": 6,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|6|da0191035767",
-    "revisado": "2026-10-26T19:19Z",
-    "calculado": "2026-10-26T19:19Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -194609,6 +194609,27 @@
       ]
      ]
     ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 0.8,
+    "matorral": 0.2
+   },
+   "lugar": {
+    "municipio": "Ayora",
+    "provincia": "Valencia",
+    "comunidad": "Comunidad Valenciana"
+   },
+   "lugar_focos": 5,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|5|c0b9fe096ace",
+    "revisado": "2026-10-26T19:19Z",
+    "calculado": "2026-10-26T19:19Z",
+    "definitivo": false,
+    "sin_imagen": true
    },
    "perimeter_ha": 37.9,
    "steps": 1,
@@ -194837,27 +194858,6 @@
       ]
      ]
     ]
-   },
-   "natura": [],
-   "cobertura": {
-    "agricola": 0.8,
-    "matorral": 0.2
-   },
-   "lugar": {
-    "municipio": "Ayora",
-    "provincia": "Valencia",
-    "comunidad": "Comunidad Valenciana"
-   },
-   "lugar_focos": 5,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|5|c0b9fe096ace",
-    "revisado": "2026-10-26T19:19Z",
-    "calculado": "2026-10-26T19:19Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -194942,6 +194942,33 @@
       ]
      ]
     ]
+   },
+   "natura": [
+    {
+     "codigo": "ES0000400",
+     "nombre": "Arrozales de Palazuelo y Guadalperales",
+     "tipo": "ZEPA",
+     "ha": 80.9
+    }
+   ],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Villar de Rena",
+    "provincia": "Badajoz",
+    "comunidad": "Extremadura"
+   },
+   "lugar_focos": 5,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|5|da0191035767",
+    "revisado": "2026-10-26T19:19Z",
+    "calculado": "2026-10-26T19:19Z",
+    "definitivo": false,
+    "sin_imagen": true
    },
    "perimeter_ha": 24.9,
    "steps": 2,
@@ -195072,33 +195099,6 @@
       39.10299
      ]
     ]
-   },
-   "natura": [
-    {
-     "codigo": "ES0000400",
-     "nombre": "Arrozales de Palazuelo y Guadalperales",
-     "tipo": "ZEPA",
-     "ha": 80.9
-    }
-   ],
-   "cobertura": {
-    "agricola": 1.0
-   },
-   "lugar": {
-    "municipio": "Villar de Rena",
-    "provincia": "Badajoz",
-    "comunidad": "Extremadura"
-   },
-   "lugar_focos": 5,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|5|da0191035767",
-    "revisado": "2026-10-26T19:19Z",
-    "calculado": "2026-10-26T19:19Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -195166,6 +195166,26 @@
       ]
      ]
     ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Montefrío",
+    "provincia": "Granada",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 4,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|4|6eba8051918e",
+    "revisado": "2026-10-26T19:19Z",
+    "calculado": "2026-10-26T19:19Z",
+    "definitivo": false,
+    "sin_imagen": true
    },
    "perimeter_ha": 15.8,
    "steps": 1,
@@ -195264,26 +195284,6 @@
       37.38882
      ]
     ]
-   },
-   "natura": [],
-   "cobertura": {
-    "agricola": 1.0
-   },
-   "lugar": {
-    "municipio": "Montefrío",
-    "provincia": "Granada",
-    "comunidad": "Andalucía"
-   },
-   "lugar_focos": 4,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|4|6eba8051918e",
-    "revisado": "2026-10-26T19:19Z",
-    "calculado": "2026-10-26T19:19Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -195361,6 +195361,26 @@
       ]
      ]
     ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Córdoba",
+    "provincia": "Córdoba",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 4,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|4|5625f8591aa6",
+    "revisado": "2026-10-26T19:19Z",
+    "calculado": "2026-10-26T19:19Z",
+    "definitivo": false,
+    "sin_imagen": true
    },
    "perimeter_ha": 16.3,
    "steps": 2,
@@ -195467,26 +195487,6 @@
       37.79307
      ]
     ]
-   },
-   "natura": [],
-   "cobertura": {
-    "agricola": 1.0
-   },
-   "lugar": {
-    "municipio": "Córdoba",
-    "provincia": "Córdoba",
-    "comunidad": "Andalucía"
-   },
-   "lugar_focos": 4,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|4|5625f8591aa6",
-    "revisado": "2026-10-26T19:19Z",
-    "calculado": "2026-10-26T19:19Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -195553,6 +195553,26 @@
       ]
      ]
     ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Zaidín",
+    "provincia": "Huesca",
+    "comunidad": "Aragón"
+   },
+   "lugar_focos": 4,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|4|13d280670eb4",
+    "revisado": "2026-10-26T19:19Z",
+    "calculado": "2026-10-26T19:19Z",
+    "definitivo": false,
+    "sin_imagen": true
    },
    "perimeter_ha": 8.2,
    "steps": 2,
@@ -195659,26 +195679,6 @@
       41.57694
      ]
     ]
-   },
-   "natura": [],
-   "cobertura": {
-    "agricola": 1.0
-   },
-   "lugar": {
-    "municipio": "Zaidín",
-    "provincia": "Huesca",
-    "comunidad": "Aragón"
-   },
-   "lugar_focos": 4,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|4|13d280670eb4",
-    "revisado": "2026-10-26T19:19Z",
-    "calculado": "2026-10-26T19:19Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -195746,6 +195746,26 @@
       ]
      ]
     ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "La Palma del Condado",
+    "provincia": "Huelva",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 4,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|4|0ea28c44c768",
+    "revisado": "2026-10-26T19:19Z",
+    "calculado": "2026-10-26T19:19Z",
+    "definitivo": false,
+    "sin_imagen": true
    },
    "perimeter_ha": 11.8,
    "steps": 1,
@@ -195844,26 +195864,6 @@
       37.40697
      ]
     ]
-   },
-   "natura": [],
-   "cobertura": {
-    "agricola": 1.0
-   },
-   "lugar": {
-    "municipio": "La Palma del Condado",
-    "provincia": "Huelva",
-    "comunidad": "Andalucía"
-   },
-   "lugar_focos": 4,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|4|0ea28c44c768",
-    "revisado": "2026-10-26T19:19Z",
-    "calculado": "2026-10-26T19:19Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -195940,6 +195940,26 @@
       ]
      ]
     ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Valdepeñas",
+    "provincia": "Ciudad Real",
+    "comunidad": "Castilla-La Mancha"
+   },
+   "lugar_focos": 3,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|3|5ca7e19b1cb0",
+    "revisado": "2026-10-26T19:19Z",
+    "calculado": "2026-10-26T19:19Z",
+    "definitivo": false,
+    "sin_imagen": true
    },
    "perimeter_ha": 21.6,
    "steps": 1,
@@ -196054,26 +196074,6 @@
       38.69692
      ]
     ]
-   },
-   "natura": [],
-   "cobertura": {
-    "agricola": 1.0
-   },
-   "lugar": {
-    "municipio": "Valdepeñas",
-    "provincia": "Ciudad Real",
-    "comunidad": "Castilla-La Mancha"
-   },
-   "lugar_focos": 3,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|3|5ca7e19b1cb0",
-    "revisado": "2026-10-26T19:19Z",
-    "calculado": "2026-10-26T19:19Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -196143,6 +196143,26 @@
       ]
      ]
     ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Talavera la Real",
+    "provincia": "Badajoz",
+    "comunidad": "Extremadura"
+   },
+   "lugar_focos": 3,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|3|59cf43535ba6",
+    "revisado": "2026-10-26T19:19Z",
+    "calculado": "2026-10-26T19:19Z",
+    "definitivo": false,
+    "sin_imagen": true
    },
    "perimeter_ha": 19.0,
    "steps": 2,
@@ -196261,26 +196281,6 @@
       ]
      ]
     ]
-   },
-   "natura": [],
-   "cobertura": {
-    "agricola": 1.0
-   },
-   "lugar": {
-    "municipio": "Talavera la Real",
-    "provincia": "Badajoz",
-    "comunidad": "Extremadura"
-   },
-   "lugar_focos": 3,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|3|59cf43535ba6",
-    "revisado": "2026-10-26T19:19Z",
-    "calculado": "2026-10-26T19:19Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -196357,6 +196357,27 @@
       ]
      ]
     ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agroforestal": 0.67,
+    "agricola": 0.33
+   },
+   "lugar": {
+    "municipio": "Galar",
+    "provincia": "Navarra",
+    "comunidad": "Navarra"
+   },
+   "lugar_focos": 3,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|3|286e663078cd",
+    "revisado": "2026-10-26T19:19Z",
+    "calculado": "2026-10-26T19:19Z",
+    "definitivo": false,
+    "sin_imagen": true
    },
    "perimeter_ha": 20.5,
    "steps": 1,
@@ -196495,27 +196516,6 @@
       42.72144
      ]
     ]
-   },
-   "natura": [],
-   "cobertura": {
-    "agroforestal": 0.67,
-    "agricola": 0.33
-   },
-   "lugar": {
-    "municipio": "Galar",
-    "provincia": "Navarra",
-    "comunidad": "Navarra"
-   },
-   "lugar_focos": 3,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|3|286e663078cd",
-    "revisado": "2026-10-26T19:19Z",
-    "calculado": "2026-10-26T19:19Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -200332,7 +200332,85 @@
    "estado": "activo",
    "effis": [],
    "effis_ha": null
+  },
+  {
+   "id": "IN-20261026-086",
+   "primera": "2026-10-26T20:08Z",
+   "ultima": "2026-10-26T20:08Z",
+   "n_focos": 2,
+   "n_viirs": 0,
+   "pasadas": 1,
+   "satelites": [
+    "Terra"
+   ],
+   "frp_max": 15.9,
+   "frp_total": 25.1,
+   "ha_focos": 213.1,
+   "centro": [
+    -4.10956,
+    43.16892
+   ],
+   "bbox": [
+    -4.12046,
+    43.16236,
+    -4.09865,
+    43.17548
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -4.09865,
+       43.17212
+      ],
+      [
+       -4.09865,
+       43.16236
+      ],
+      [
+       -4.11319,
+       43.16236
+      ],
+      [
+       -4.11319,
+       43.16572
+      ],
+      [
+       -4.12046,
+       43.16572
+      ],
+      [
+       -4.12046,
+       43.17548
+      ],
+      [
+       -4.10592,
+       43.17548
+      ],
+      [
+       -4.10592,
+       43.17212
+      ],
+      [
+       -4.09865,
+       43.17212
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {},
+   "lugar": {
+    "municipio": "Arenas de Iguña",
+    "provincia": "Cantabria",
+    "comunidad": "Cantabria"
+   },
+   "lugar_focos": 2,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null
   }
  ],
- "actualizado": "2026-10-26T19:19Z"
+ "actualizado": "2026-10-26T23:53Z"
 }

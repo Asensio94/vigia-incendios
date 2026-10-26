@@ -30211,6 +30211,29 @@
    "estado": "activo",
    "effis": [],
    "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|3|8966218505c9",
+    "revisado": "2026-10-26T19:19Z",
+    "calculado": "2026-10-26T19:19Z",
+    "definitivo": false,
+    "ha": 0.0,
+    "severidad": {
+     "baja": 0.0,
+     "moderada": 0.0,
+     "alta": 0.0
+    },
+    "imagenes": [
+     "2026-10-25",
+     "2026-10-26"
+    ],
+    "fecha_antes": "2026-10-15",
+    "fecha_despues": "2026-10-26",
+    "una_imagen": 0.0,
+    "cobertura": 0.0,
+    "nublado": true,
+    "natura": [],
+    "geometry": null
+   },
    "perimeter_ha": 8.2,
    "steps": 2,
    "front_km": 0.83,
@@ -30358,29 +30381,6 @@
       43.18629
      ]
     ]
-   },
-   "perimetro": {
-    "clave": "v2|3|8966218505c9",
-    "revisado": "2026-10-26T19:19Z",
-    "calculado": "2026-10-26T19:19Z",
-    "definitivo": false,
-    "ha": 0.0,
-    "severidad": {
-     "baja": 0.0,
-     "moderada": 0.0,
-     "alta": 0.0
-    },
-    "imagenes": [
-     "2026-10-25",
-     "2026-10-26"
-    ],
-    "fecha_antes": "2026-10-15",
-    "fecha_despues": "2026-10-26",
-    "una_imagen": 0.0,
-    "cobertura": 0.0,
-    "nublado": true,
-    "natura": [],
-    "geometry": null
    }
   },
   {
@@ -31852,6 +31852,28 @@
    "estado": "activo",
    "effis": [],
    "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|12|638d5f05ac2e",
+    "revisado": "2026-10-26T19:19Z",
+    "calculado": "2026-10-26T19:19Z",
+    "definitivo": false,
+    "ha": 0.0,
+    "severidad": {
+     "baja": 0.0,
+     "moderada": 0.0,
+     "alta": 0.0
+    },
+    "imagenes": [
+     "2026-10-26"
+    ],
+    "fecha_antes": "2026-10-16",
+    "fecha_despues": "2026-10-26",
+    "una_imagen": 0.0,
+    "cobertura": 0.0,
+    "nublado": true,
+    "natura": [],
+    "geometry": null
+   },
    "perimeter_ha": 42.5,
    "steps": 2,
    "front_km": 2.58,
@@ -31981,28 +32003,6 @@
       43.23327
      ]
     ]
-   },
-   "perimetro": {
-    "clave": "v2|12|638d5f05ac2e",
-    "revisado": "2026-10-26T19:19Z",
-    "calculado": "2026-10-26T19:19Z",
-    "definitivo": false,
-    "ha": 0.0,
-    "severidad": {
-     "baja": 0.0,
-     "moderada": 0.0,
-     "alta": 0.0
-    },
-    "imagenes": [
-     "2026-10-26"
-    ],
-    "fecha_antes": "2026-10-16",
-    "fecha_despues": "2026-10-26",
-    "una_imagen": 0.0,
-    "cobertura": 0.0,
-    "nublado": true,
-    "natura": [],
-    "geometry": null
    }
   },
   {
@@ -32087,6 +32087,13 @@
    "estado": "activo",
    "effis": [],
    "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|5|d4bd64b4167f",
+    "revisado": "2026-10-26T19:19Z",
+    "calculado": "2026-10-26T19:19Z",
+    "definitivo": false,
+    "sin_imagen": true
+   },
    "perimeter_ha": 8.3,
    "steps": 2,
    "front_km": 1.07,
@@ -32200,13 +32207,6 @@
       42.68325
      ]
     ]
-   },
-   "perimetro": {
-    "clave": "v2|5|d4bd64b4167f",
-    "revisado": "2026-10-26T19:19Z",
-    "calculado": "2026-10-26T19:19Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -32875,5 +32875,5 @@
    "effis_ha": null
   }
  ],
- "actualizado": "2026-10-26T19:19Z"
+ "actualizado": "2026-10-26T23:53Z"
 }
