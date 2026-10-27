@@ -32344,7 +32344,7 @@
     "comunidad": "Provence-Alpes-Côte d'Azur"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -32416,7 +32416,7 @@
     "comunidad": "Provence-Alpes-Côte d'Azur"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -32966,6 +32966,32 @@
      ]
     ]
    },
+   "natura": [
+    {
+     "codigo": "FR9400582",
+     "nombre": "Plateau du Coscione et massif de l'Incudine",
+     "tipo": "ZSC",
+     "ha": 85.5
+    }
+   ],
+   "cobertura": {},
+   "lugar": {
+    "municipio": "Zicavo",
+    "insee": "2A359",
+    "provincia": "Corse-du-Sud",
+    "comunidad": "Corse"
+   },
+   "lugar_focos": 6,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|6|eafc56164520",
+    "revisado": "2026-10-27T05:04Z",
+    "calculado": "2026-10-27T05:04Z",
+    "definitivo": false,
+    "sin_imagen": true
+   },
    "perimeter_ha": 38.5,
    "steps": 2,
    "front_km": 1.38,
@@ -33075,32 +33101,6 @@
       41.8868
      ]
     ]
-   },
-   "natura": [
-    {
-     "codigo": "FR9400582",
-     "nombre": "Plateau du Coscione et massif de l'Incudine",
-     "tipo": "ZSC",
-     "ha": 85.5
-    }
-   ],
-   "cobertura": {},
-   "lugar": {
-    "municipio": "Zicavo",
-    "insee": "2A359",
-    "provincia": "Corse-du-Sud",
-    "comunidad": "Corse"
-   },
-   "lugar_focos": 6,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|6|eafc56164520",
-    "revisado": "2026-10-27T05:04Z",
-    "calculado": "2026-10-27T05:04Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -33230,5 +33230,5 @@
    "effis_ha": null
   }
  ],
- "actualizado": "2026-10-27T05:04Z"
+ "actualizado": "2026-10-27T10:34Z"
 }
