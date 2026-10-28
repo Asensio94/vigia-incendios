@@ -166,7 +166,7 @@
    "effis_ha": 54,
    "perimetro": {
     "clave": "v2|7|0538849dcbf6",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": true,
     "ha": 70.0,
@@ -1230,7 +1230,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|5|55fb6af30d6f",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": true,
     "ha": 0.4,
@@ -1563,7 +1563,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|4|f1b4d06cb0f9",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-23T18:21Z",
     "definitivo": false,
     "ha": 3.3,
@@ -1951,7 +1951,7 @@
    "effis_ha": 5,
    "perimetro": {
     "clave": "v2|2|eeb5830cd98d",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "ha": 4.5,
@@ -2426,7 +2426,7 @@
    "effis_ha": 8,
    "perimetro": {
     "clave": "v2|1|f423e3cad9dd",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-26T19:19Z",
     "definitivo": false,
     "ha": 8.2,
@@ -2698,7 +2698,7 @@
    "effis_ha": 47,
    "perimetro": {
     "clave": "v2|8|f9753fb0f73e",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": true,
     "ha": 4.2,
@@ -3119,7 +3119,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|6df6a79b0046",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": true,
     "ha": 0.2,
@@ -3255,7 +3255,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|887757f86beb",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-23T18:21Z",
     "definitivo": false,
     "ha": 0.0,
@@ -3513,7 +3513,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|884ffc3c6cde",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-23T18:21Z",
     "definitivo": true,
     "ha": 1.5,
@@ -4333,7 +4333,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|22|8ffa3185d717",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-23T18:21Z",
     "definitivo": false,
     "ha": 11.0,
@@ -4815,7 +4815,7 @@
    "effis_ha": 67,
    "perimetro": {
     "clave": "v2|17|da613b016673",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "ha": 60.9,
@@ -5401,7 +5401,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|17|42d36dd0950d",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-25T19:36Z",
     "definitivo": false,
     "ha": 0.1,
@@ -5807,7 +5807,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|11|8ffa3185d717",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-23T18:21Z",
     "definitivo": false,
     "ha": 4.8,
@@ -6146,7 +6146,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|8|dbf2c0090530",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": true,
     "ha": 5.4,
@@ -6808,7 +6808,7 @@
    "effis_ha": 24,
    "perimetro": {
     "clave": "v2|8|3c4ef65a4bc9",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-26T19:19Z",
     "definitivo": true,
     "ha": 7.1,
@@ -7271,7 +7271,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|7|7a6b38b2eb46",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-26T19:19Z",
     "definitivo": false,
     "ha": 0.0,
@@ -7621,7 +7621,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|6|0d16394474ec",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-25T19:36Z",
     "definitivo": false,
     "ha": 10.7,
@@ -8210,7 +8210,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|6|5cf6ddcbc80b",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-24T18:09Z",
     "definitivo": true,
     "ha": 0.0,
@@ -8476,7 +8476,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|4|719ba254368e",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-26T19:19Z",
     "definitivo": false,
     "ha": 0.5,
@@ -8713,7 +8713,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|b7dfc0fe3b04",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-25T19:36Z",
     "definitivo": false,
     "ha": 0.2,
@@ -8869,7 +8869,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|ef619955484a",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-23T18:21Z",
     "definitivo": false,
     "ha": 46.4,
@@ -9309,7 +9309,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|5cf6ddcbc80b",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-24T18:09Z",
     "definitivo": true,
     "ha": 0.0,
@@ -9674,7 +9674,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|9c26a12af78e",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-23T18:21Z",
     "definitivo": false,
     "ha": 0.1,
@@ -9816,7 +9816,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|8ffa3185d717",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-23T18:21Z",
     "definitivo": false,
     "ha": 0.0,
@@ -10755,7 +10755,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|275f64af7e06",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-21T22:21Z",
     "definitivo": true,
     "ha": 0.0,
@@ -10979,7 +10979,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|8ffa3185d717",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-23T18:21Z",
     "definitivo": false,
     "ha": 0.7,
@@ -11430,7 +11430,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|5e564149fa23",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": true,
     "sin_imagen": true
@@ -12029,7 +12029,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|719ba254368e",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-26T19:19Z",
     "definitivo": false,
     "ha": 27.8,
@@ -12792,7 +12792,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|8696a64d7a4c",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "ha": 126.0,
@@ -13588,7 +13588,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|59f16e1b5e76",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "ha": 2.4,
@@ -13909,7 +13909,7 @@
    "effis_ha": 67,
    "perimetro": {
     "clave": "v2|19|2a330dfa7143",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-26T19:19Z",
     "definitivo": true,
     "ha": 33.8,
@@ -14577,7 +14577,7 @@
    "effis_ha": 32,
    "perimetro": {
     "clave": "v2|17|c788215cec8a",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-26T19:19Z",
     "definitivo": false,
     "ha": 48.0,
@@ -15247,7 +15247,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|7|9c26a12af78e",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-23T18:21Z",
     "definitivo": false,
     "ha": 4.3,
@@ -15647,7 +15647,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|6|65d158e8cd25",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-22T22:20Z",
     "definitivo": false,
     "ha": 38.3,
@@ -16487,7 +16487,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|5|40f953834320",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-26T19:19Z",
     "definitivo": false,
     "ha": 5.6,
@@ -16878,7 +16878,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|4|c46115e509ed",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-21T22:21Z",
     "definitivo": false,
     "ha": 36.0,
@@ -17793,7 +17793,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|40f953834320",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-26T19:19Z",
     "definitivo": false,
     "ha": 3.9,
@@ -18140,7 +18140,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|b0100c8d30b5",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-26T19:19Z",
     "definitivo": true,
     "ha": 0.0,
@@ -18342,7 +18342,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|5614aaf0dacd",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-21T22:21Z",
     "definitivo": false,
     "ha": 0.0,
@@ -18730,7 +18730,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|40f953834320",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-26T19:19Z",
     "definitivo": false,
     "ha": 0.0,
@@ -18990,7 +18990,7 @@
    "effis_ha": 47,
    "perimetro": {
     "clave": "v2|2|ac5f0a42284b",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-27T16:39Z",
     "definitivo": true,
     "ha": 36.6,
@@ -20501,7 +20501,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|5cf6ddcbc80b",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-24T18:09Z",
     "definitivo": false,
     "ha": 0.5,
@@ -20834,7 +20834,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|4|c8c3e8bf4e38",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-23T18:21Z",
     "definitivo": false,
     "ha": 0.0,
@@ -21414,7 +21414,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|cdd81afd3fb3",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-23T18:21Z",
     "definitivo": false,
     "ha": 0.0,
@@ -21655,7 +21655,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|c788215cec8a",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-26T19:19Z",
     "definitivo": false,
     "ha": 0.0,
@@ -21878,7 +21878,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|982c5b71a5e8",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-25T22:33Z",
     "definitivo": false,
     "ha": 4.1,
@@ -22200,7 +22200,7 @@
    "effis_ha": 30,
    "perimetro": {
     "clave": "v2|1|7dc454184a8d",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-24T18:09Z",
     "definitivo": false,
     "ha": 21.7,
@@ -22770,7 +22770,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|dece99ac54a4",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-23T18:21Z",
     "definitivo": false,
     "ha": 0.0,
@@ -22929,7 +22929,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|c7d74825d234",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-19T13:33Z",
     "definitivo": false,
     "ha": 1.6,
@@ -23258,7 +23258,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|f3c910dc8ee1",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-22T22:20Z",
     "definitivo": false,
     "ha": 10.8,
@@ -23845,7 +23845,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|12|11ab682ed669",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-21T22:21Z",
     "definitivo": false,
     "ha": 6.7,
@@ -24456,7 +24456,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|5|727f38bf0be6",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-25T19:36Z",
     "definitivo": false,
     "ha": 5.0,
@@ -25303,7 +25303,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|939b99ad6cf0",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-20T19:17Z",
     "definitivo": false,
     "ha": 10.2,
@@ -26057,7 +26057,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|cdd81afd3fb3",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-23T18:21Z",
     "definitivo": false,
     "ha": 0.0,
@@ -26233,7 +26233,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|8044b33deb2a",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-25T22:33Z",
     "definitivo": false,
     "ha": 0.0,
@@ -26362,7 +26362,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|12|5cf6ddcbc80b",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-24T18:09Z",
     "definitivo": false,
     "ha": 8.0,
@@ -26817,7 +26817,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|cfdfb9a1fbce",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-25T19:36Z",
     "definitivo": false,
     "ha": 0.0,
@@ -27560,7 +27560,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|35673a5094de",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-21T22:21Z",
     "definitivo": false,
     "ha": 16.4,
@@ -28244,7 +28244,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|5|a3c40a4b8404",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-26T13:04Z",
     "definitivo": false,
     "ha": 26.5,
@@ -29263,7 +29263,7 @@
     "comunidad": "Provence-Alpes-Côte d'Azur"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -29345,7 +29345,7 @@
     "comunidad": "Occitanie"
    },
    "lugar_focos": 2,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -29427,7 +29427,7 @@
     "comunidad": "Occitanie"
    },
    "lugar_focos": 2,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -29492,7 +29492,7 @@
     "comunidad": "Nouvelle-Aquitaine"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -29557,7 +29557,7 @@
     "comunidad": "Nouvelle-Aquitaine"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -29622,7 +29622,7 @@
     "comunidad": "Centre-Val de Loire"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -29687,7 +29687,7 @@
     "comunidad": "Pays de la Loire"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -29759,12 +29759,12 @@
     "comunidad": "Bretagne"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|891d66e547e1",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-21T18:39Z",
     "definitivo": false,
     "sin_imagen": true
@@ -29831,7 +29831,7 @@
     "comunidad": "Bretagne"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -29984,7 +29984,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|8966218505c9",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-26T19:19Z",
     "definitivo": false,
     "ha": 0.0,
@@ -30203,7 +30203,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|b91d4475ef28",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-23T18:21Z",
     "definitivo": false,
     "sin_imagen": true
@@ -30424,7 +30424,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|8966218505c9",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-26T19:19Z",
     "definitivo": false,
     "ha": 0.0,
@@ -30766,7 +30766,7 @@
    "effis_ha": 69,
    "perimetro": {
     "clave": "v2|6|1818e73b40ae",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-28T01:21Z",
     "definitivo": false,
     "ha": 67.8,
@@ -31300,12 +31300,12 @@
     "comunidad": "Grand Est"
    },
    "lugar_focos": 9,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|11|4d1038fc6db8",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-28T08:31Z",
     "definitivo": false,
     "sin_imagen": true
@@ -31665,7 +31665,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|4|d4a4269c41a9",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-26T06:13Z",
     "definitivo": false,
     "sin_imagen": true
@@ -32029,12 +32029,12 @@
     "provincia": "Aude"
    },
    "lugar_focos": 12,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|14|aff168d00e20",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-28T08:31Z",
     "definitivo": false,
     "ha": 0.0,
@@ -32315,7 +32315,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|5|d4bd64b4167f",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-26T19:19Z",
     "definitivo": false,
     "sin_imagen": true
@@ -32638,7 +32638,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|676fea624948",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-28T01:21Z",
     "definitivo": false,
     "ha": 0.1,
@@ -33267,7 +33267,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|9|5ef873c67d20",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-28T01:21Z",
     "definitivo": false,
     "ha": 142.8,
@@ -34693,12 +34693,19 @@
     "comunidad": "Corse"
    },
    "lugar_focos": 3,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
+   "estado": "reciente",
+   "effis": [
+    {
+     "id": 871087,
+     "firedate": "2026-10-27T10:36Z",
+     "area_ha": 19,
+     "actualizado": "2026-10-28"
+    }
+   ],
+   "effis_ha": 19,
    "perimetro": {
     "clave": "v2|4|7a4cbde21bd2",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-28T08:31Z",
     "definitivo": false,
     "sin_imagen": true
@@ -34919,7 +34926,7 @@
     "comunidad": "Provence-Alpes-Côte d'Azur"
    },
    "lugar_focos": 2,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -34999,7 +35006,7 @@
     "comunidad": "Corse"
    },
    "lugar_focos": 2,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -35062,7 +35069,7 @@
     "comunidad": "Occitanie"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -35125,7 +35132,7 @@
     "comunidad": "Occitanie"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -35204,12 +35211,12 @@
     "provincia": "Bouches-du-Rhône"
    },
    "lugar_focos": 2,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|ebb5f9cf3d9c",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-28T08:31Z",
     "definitivo": false,
     "sin_imagen": true
@@ -35274,7 +35281,7 @@
     "comunidad": "Provence-Alpes-Côte d'Azur"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -35350,12 +35357,12 @@
     "comunidad": "Grand Est"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|dff48b19b205",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-27T21:19Z",
     "definitivo": false,
     "sin_imagen": true
@@ -35420,7 +35427,7 @@
     "comunidad": "Occitanie"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -35483,7 +35490,7 @@
     "comunidad": "Occitanie"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -35553,17 +35560,17 @@
     "comunidad": "Occitanie"
    },
    "lugar_focos": 1,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|d4bd64b4167f",
-    "revisado": "2026-10-28T08:31Z",
+    "revisado": "2026-10-28T16:02Z",
     "calculado": "2026-10-27T21:19Z",
     "definitivo": false,
     "sin_imagen": true
    }
   }
  ],
- "actualizado": "2026-10-28T08:31Z"
+ "actualizado": "2026-10-28T16:02Z"
 }
