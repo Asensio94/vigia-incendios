@@ -182684,7 +182684,7 @@
     "comunidad": "Andalucía"
    },
    "lugar_focos": 4,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -182909,7 +182909,7 @@
     "comunidad": "Región de Murcia"
    },
    "lugar_focos": 2,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -182973,7 +182973,7 @@
     "comunidad": "Andalucía"
    },
    "lugar_focos": 2,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -183037,7 +183037,7 @@
     "comunidad": "Comunidad Valenciana"
    },
    "lugar_focos": 1,
-   "estado": "reciente",
+   "estado": "inactivo",
    "effis": [],
    "effis_ha": null
   },
@@ -212631,7 +212631,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|5|f7ba817bc8a5",
-    "revisado": "2026-10-30T19:22Z",
+    "revisado": "2026-10-31T05:40Z",
     "calculado": "2026-10-30T19:22Z",
     "definitivo": false,
     "sin_imagen": true
@@ -230285,7 +230285,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|4|a8cc6d6a7ed2",
-    "revisado": "2026-10-30T19:22Z",
+    "revisado": "2026-10-31T05:40Z",
     "calculado": "2026-10-30T19:22Z",
     "definitivo": false,
     "ha": 63.3,
@@ -240598,7 +240598,7 @@
     "comunidad": "Andalucía"
    },
    "lugar_focos": 2,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null,
    "perimetro": {
@@ -240733,7 +240733,7 @@
     "comunidad": "Andalucía"
    },
    "lugar_focos": 2,
-   "estado": "activo",
+   "estado": "reciente",
    "effis": [],
    "effis_ha": null
   },
@@ -240828,7 +240828,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|4|5d7aa970cee6",
-    "revisado": "2026-10-30T19:22Z",
+    "revisado": "2026-10-31T05:40Z",
     "calculado": "2026-10-30T19:22Z",
     "definitivo": false,
     "sin_imagen": true
@@ -241023,7 +241023,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|03a436f461c3",
-    "revisado": "2026-10-30T19:22Z",
+    "revisado": "2026-10-31T05:40Z",
     "calculado": "2026-10-30T19:22Z",
     "definitivo": false,
     "sin_imagen": true
@@ -241289,7 +241289,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|d92b0da0bf95",
-    "revisado": "2026-10-30T19:22Z",
+    "revisado": "2026-10-31T05:40Z",
     "calculado": "2026-10-30T19:22Z",
     "definitivo": false,
     "sin_imagen": true
@@ -241457,7 +241457,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|6ecdc922b55d",
-    "revisado": "2026-10-30T19:22Z",
+    "revisado": "2026-10-31T05:40Z",
     "calculado": "2026-10-30T19:22Z",
     "definitivo": false,
     "sin_imagen": true
@@ -241727,7 +241727,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|c69ea609666c",
-    "revisado": "2026-10-30T19:22Z",
+    "revisado": "2026-10-31T05:40Z",
     "calculado": "2026-10-30T19:22Z",
     "definitivo": false,
     "sin_imagen": true
@@ -242116,7 +242116,135 @@
    "estado": "activo",
    "effis": [],
    "effis_ha": null
+  },
+  {
+   "id": "IN-20261031-001",
+   "primera": "2026-10-31T01:34Z",
+   "ultima": "2026-10-31T01:34Z",
+   "n_focos": 2,
+   "n_viirs": 2,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-20"
+   ],
+   "frp_max": 2.8,
+   "frp_total": 5.6,
+   "ha_focos": 19.9,
+   "centro": [
+    -5.3865,
+    37.2453
+   ],
+   "bbox": [
+    -5.38847,
+    37.24272,
+    -5.38453,
+    37.24788
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -5.38453,
+       37.24272
+      ],
+      [
+       -5.38847,
+       37.24272
+      ],
+      [
+       -5.38847,
+       37.24788
+      ],
+      [
+       -5.38453,
+       37.24788
+      ],
+      [
+       -5.38453,
+       37.24272
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Marchena",
+    "provincia": "Sevilla",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 2,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261031-002",
+   "primera": "2026-10-31T01:37Z",
+   "ultima": "2026-10-31T01:37Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-20"
+   ],
+   "frp_max": 0.4,
+   "frp_total": 0.4,
+   "ha_focos": 17.6,
+   "centro": [
+    -4.19667,
+    39.79494
+   ],
+   "bbox": [
+    -4.19854,
+    39.79245,
+    -4.1948,
+    39.79743
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -4.1948,
+       39.79245
+      ],
+      [
+       -4.1948,
+       39.79743
+      ],
+      [
+       -4.19854,
+       39.79743
+      ],
+      [
+       -4.19854,
+       39.79245
+      ],
+      [
+       -4.1948,
+       39.79245
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Polán",
+    "provincia": "Toledo",
+    "comunidad": "Castilla-La Mancha"
+   },
+   "lugar_focos": 1,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null
   }
  ],
- "actualizado": "2026-10-30T23:46Z"
+ "actualizado": "2026-10-31T05:40Z"
 }
