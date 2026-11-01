@@ -36005,20 +36005,21 @@
    ],
    "effis_ha": 1,
    "perimetro": {
-    "clave": "v2|1|e81af80f5a45",
-    "revisado": "2026-11-01T07:32Z",
-    "calculado": "2026-10-30T23:46Z",
-    "definitivo": false,
-    "ha": 0.8,
+    "clave": "v2|1|c7a1e910c6c0",
+    "revisado": "2026-11-01T19:39Z",
+    "calculado": "2026-11-01T19:39Z",
+    "definitivo": true,
+    "ha": 0.9,
     "severidad": {
-     "baja": 0.8,
+     "baja": 0.9,
      "moderada": 0.0,
      "alta": 0.0
     },
     "imagenes": [
      "2026-10-27",
      "2026-10-29",
-     "2026-10-30"
+     "2026-10-30",
+     "2026-11-01"
     ],
     "fecha_antes": "2026-10-25",
     "fecha_despues": "2026-10-29",
@@ -36040,14 +36041,6 @@
        [
         7.01311,
         43.87961
-       ],
-       [
-        7.01361,
-        43.87962
-       ],
-       [
-        7.0136,
-        43.87998
        ],
        [
         7.0146,
@@ -38296,7 +38289,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|7fd3f91b61ce",
-    "revisado": "2026-11-01T07:32Z",
+    "revisado": "2026-11-01T19:39Z",
     "calculado": "2026-11-01T01:09Z",
     "definitivo": false,
     "ha": 0.8,
@@ -38589,7 +38582,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|f1c2d526b18b",
-    "revisado": "2026-11-01T07:32Z",
+    "revisado": "2026-11-01T19:39Z",
     "calculado": "2026-10-29T07:05Z",
     "definitivo": false,
     "ha": 0.0,
@@ -42384,7 +42377,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|f525131517fb",
-    "revisado": "2026-11-01T07:32Z",
+    "revisado": "2026-11-01T19:39Z",
     "calculado": "2026-11-01T01:09Z",
     "definitivo": false,
     "ha": 0.0,
@@ -42547,9 +42540,9 @@
    "effis": [],
    "effis_ha": null,
    "perimetro": {
-    "clave": "v2|1|f12bf137fc78",
-    "revisado": "2026-11-01T07:32Z",
-    "calculado": "2026-10-30T23:46Z",
+    "clave": "v2|1|5c6131f22c7c",
+    "revisado": "2026-11-01T19:39Z",
+    "calculado": "2026-11-01T19:39Z",
     "definitivo": false,
     "ha": 0.0,
     "severidad": {
@@ -42558,10 +42551,11 @@
      "alta": 0.0
     },
     "imagenes": [
-     "2026-10-30"
+     "2026-10-30",
+     "2026-11-01"
     ],
     "fecha_antes": "2026-10-28",
-    "fecha_despues": "2026-10-30",
+    "fecha_despues": "2026-11-01",
     "una_imagen": 0.0,
     "cobertura": 0.0,
     "nublado": true,
@@ -42883,7 +42877,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|5b21530c1513",
-    "revisado": "2026-11-01T07:32Z",
+    "revisado": "2026-11-01T19:39Z",
     "calculado": "2026-11-01T01:09Z",
     "definitivo": false,
     "ha": 8.5,
@@ -43389,7 +43383,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|ce2487758702",
-    "revisado": "2026-11-01T07:32Z",
+    "revisado": "2026-11-01T19:39Z",
     "calculado": "2026-11-01T01:09Z",
     "definitivo": false,
     "ha": 0.1,
@@ -43597,7 +43591,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|ff8838fda3bb",
-    "revisado": "2026-11-01T07:32Z",
+    "revisado": "2026-11-01T19:39Z",
     "calculado": "2026-11-01T01:09Z",
     "definitivo": false,
     "ha": 28.7,
@@ -45764,11 +45758,144 @@
    "effis": [],
    "effis_ha": null,
    "perimetro": {
-    "clave": "v2|1|6e2aa00c0640",
-    "revisado": "2026-11-01T07:32Z",
-    "calculado": "2026-10-31T17:43Z",
+    "clave": "v2|1|015810e049b0",
+    "revisado": "2026-11-01T19:39Z",
+    "calculado": "2026-11-01T19:39Z",
     "definitivo": false,
-    "sin_imagen": true
+    "ha": 6.6,
+    "severidad": {
+     "baja": 3.6,
+     "moderada": 3.0,
+     "alta": 0.0
+    },
+    "imagenes": [
+     "2026-11-01"
+    ],
+    "fecha_antes": "2026-10-30",
+    "fecha_despues": "2026-11-01",
+    "una_imagen": 1.0,
+    "cobertura": 1.0,
+    "natura": [
+     {
+      "codigo": "FR2112011",
+      "nombre": "Bassigny",
+      "tipo": "ZPS",
+      "ha": 6.3
+     }
+    ],
+    "geometry": {
+     "type": "MultiPolygon",
+     "coordinates": [
+      [
+       [
+        [
+         5.67717,
+         47.96825
+        ],
+        [
+         5.67738,
+         47.96716
+        ],
+        [
+         5.679,
+         47.96731
+        ],
+        [
+         5.67894,
+         47.96623
+        ],
+        [
+         5.68028,
+         47.9662
+        ],
+        [
+         5.68025,
+         47.96566
+        ],
+        [
+         5.68,
+         47.96602
+        ],
+        [
+         5.6792,
+         47.96604
+        ],
+        [
+         5.6789,
+         47.96533
+        ],
+        [
+         5.68022,
+         47.96512
+        ],
+        [
+         5.68046,
+         47.96457
+        ],
+        [
+         5.67885,
+         47.96443
+        ],
+        [
+         5.67836,
+         47.96534
+        ],
+        [
+         5.67675,
+         47.9652
+        ],
+        [
+         5.67625,
+         47.96593
+        ],
+        [
+         5.67519,
+         47.96614
+        ],
+        [
+         5.6752,
+         47.9665
+        ],
+        [
+         5.67602,
+         47.96666
+        ],
+        [
+         5.67604,
+         47.96702
+        ],
+        [
+         5.67684,
+         47.967
+        ],
+        [
+         5.67717,
+         47.96825
+        ]
+       ]
+      ],
+      [
+       [
+        [
+         5.6773,
+         47.97077
+        ],
+        [
+         5.67756,
+         47.97058
+        ],
+        [
+         5.67729,
+         47.97059
+        ],
+        [
+         5.6773,
+         47.97077
+        ]
+       ]
+      ]
+     ]
+    }
    }
   },
   {
@@ -46040,7 +46167,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|3240cbfac679",
-    "revisado": "2026-11-01T07:32Z",
+    "revisado": "2026-11-01T19:39Z",
     "calculado": "2026-10-31T17:43Z",
     "definitivo": false,
     "sin_imagen": true
@@ -46279,13 +46406,762 @@
    "effis": [],
    "effis_ha": null,
    "perimetro": {
-    "clave": "v2|1|32709539f6c2",
-    "revisado": "2026-11-01T07:32Z",
-    "calculado": "2026-11-01T07:32Z",
+    "clave": "v2|1|23ef7d7c0e91",
+    "revisado": "2026-11-01T19:39Z",
+    "calculado": "2026-11-01T19:39Z",
+    "definitivo": false,
+    "ha": 0.0,
+    "severidad": {
+     "baja": 0.0,
+     "moderada": 0.0,
+     "alta": 0.0
+    },
+    "imagenes": [
+     "2026-11-01"
+    ],
+    "fecha_antes": "2026-10-31",
+    "fecha_despues": "2026-11-01",
+    "una_imagen": 0.0,
+    "cobertura": 0.99,
+    "natura": [],
+    "geometry": null
+   }
+  },
+  {
+   "id": "FR-IN-20261101-003",
+   "primera": "2026-11-01T12:40Z",
+   "ultima": "2026-11-01T13:25Z",
+   "n_focos": 3,
+   "n_viirs": 3,
+   "pasadas": 2,
+   "satelites": [
+    "NOAA-20",
+    "NOAA-21"
+   ],
+   "frp_max": 3.9,
+   "frp_total": 9.7,
+   "ha_focos": 32.5,
+   "centro": [
+    0.13466,
+    43.85549
+   ],
+   "bbox": [
+    0.13032,
+    43.85276,
+    0.13901,
+    43.85748
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       0.1328,
+       43.85284
+      ],
+      [
+       0.1328,
+       43.85396
+      ],
+      [
+       0.13032,
+       43.85396
+      ],
+      [
+       0.13032,
+       43.85748
+      ],
+      [
+       0.13606,
+       43.85748
+      ],
+      [
+       0.13606,
+       43.85702
+      ],
+      [
+       0.13901,
+       43.85702
+      ],
+      [
+       0.13901,
+       43.85276
+      ],
+      [
+       0.1328,
+       43.85284
+      ]
+     ]
+    ]
+   },
+   "perimeter_ha": 9.8,
+   "steps": 1,
+   "front_km": 1.22,
+   "front_t": "2026-11-01T12:40Z",
+   "max_growth_ha_h": null,
+   "progression": [
+    {
+     "t": "2026-11-01T12:40Z",
+     "ha": 9.8,
+     "pixels": 3,
+     "frp": 9.7,
+     "front_km": 1.22
+    }
+   ],
+   "perimeter": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       0.13192,
+       43.85549
+      ],
+      [
+       0.13222,
+       43.85636
+      ],
+      [
+       0.13338,
+       43.85666
+      ],
+      [
+       0.13688,
+       43.85579
+      ],
+      [
+       0.13758,
+       43.85484
+      ],
+      [
+       0.137,
+       43.85405
+      ],
+      [
+       0.13548,
+       43.85366
+      ],
+      [
+       0.13241,
+       43.85496
+      ],
+      [
+       0.13192,
+       43.85549
+      ]
+     ]
+    ]
+   },
+   "front": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      0.13192,
+      43.85549
+     ],
+     [
+      0.13222,
+      43.85636
+     ],
+     [
+      0.13338,
+      43.85666
+     ],
+     [
+      0.13688,
+      43.85579
+     ],
+     [
+      0.13758,
+      43.85484
+     ],
+     [
+      0.137,
+      43.85405
+     ],
+     [
+      0.13548,
+      43.85366
+     ],
+     [
+      0.13241,
+      43.85496
+     ],
+     [
+      0.13192,
+      43.85549
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Eauze",
+    "insee": "32119",
+    "provincia": "Gers",
+    "comunidad": "Occitanie"
+   },
+   "lugar_focos": 3,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|3|b7421d3d3603",
+    "revisado": "2026-11-01T19:39Z",
+    "calculado": "2026-11-01T19:39Z",
     "definitivo": false,
     "sin_imagen": true
    }
+  },
+  {
+   "id": "FR-IN-20261101-004",
+   "primera": "2026-11-01T12:21Z",
+   "ultima": "2026-11-01T12:21Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "S-NPP"
+   ],
+   "frp_max": 5.5,
+   "frp_total": 5.5,
+   "ha_focos": 22.7,
+   "centro": [
+    4.63046,
+    44.4173
+   ],
+   "bbox": [
+    4.62706,
+    44.4154,
+    4.63386,
+    44.4192
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       4.63386,
+       44.4154
+      ],
+      [
+       4.63386,
+       44.4192
+      ],
+      [
+       4.62706,
+       44.4192
+      ],
+      [
+       4.62706,
+       44.4154
+      ],
+      [
+       4.63386,
+       44.4154
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Saint-Montan",
+    "insee": "07279",
+    "provincia": "Ardèche",
+    "comunidad": "Auvergne-Rhône-Alpes"
+   },
+   "lugar_focos": 1,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "FR-IN-20261101-005",
+   "primera": "2026-11-01T12:23Z",
+   "ultima": "2026-11-01T12:23Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "S-NPP"
+   ],
+   "frp_max": 3.1,
+   "frp_total": 3.1,
+   "ha_focos": 17.2,
+   "centro": [
+    2.75198,
+    46.60957
+   ],
+   "bbox": [
+    2.74943,
+    46.60758,
+    2.75453,
+    46.61156
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       2.75453,
+       46.60758
+      ],
+      [
+       2.75453,
+       46.61156
+      ],
+      [
+       2.74943,
+       46.61156
+      ],
+      [
+       2.74943,
+       46.60758
+      ],
+      [
+       2.75453,
+       46.60758
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Le Brethon",
+    "insee": "03041",
+    "provincia": "Allier",
+    "comunidad": "Auvergne-Rhône-Alpes"
+   },
+   "lugar_focos": 1,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "FR-IN-20261101-006",
+   "primera": "2026-11-01T12:40Z",
+   "ultima": "2026-11-01T12:40Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-20"
+   ],
+   "frp_max": 3.5,
+   "frp_total": 3.5,
+   "ha_focos": 13.7,
+   "centro": [
+    3.52047,
+    45.87606
+   ],
+   "bbox": [
+    3.51802,
+    45.87443,
+    3.52292,
+    45.87769
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.52292,
+       45.87443
+      ],
+      [
+       3.52292,
+       45.87769
+      ],
+      [
+       3.51802,
+       45.87769
+      ],
+      [
+       3.51802,
+       45.87443
+      ],
+      [
+       3.52292,
+       45.87443
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Thiers",
+    "insee": "63430",
+    "provincia": "Puy-de-Dôme",
+    "comunidad": "Auvergne-Rhône-Alpes"
+   },
+   "lugar_focos": 1,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "FR-IN-20261101-007",
+   "primera": "2026-11-01T14:20Z",
+   "ultima": "2026-11-01T14:20Z",
+   "n_focos": 1,
+   "n_viirs": 0,
+   "pasadas": 1,
+   "satelites": [
+    "Aqua"
+   ],
+   "frp_max": 16.9,
+   "frp_total": 16.9,
+   "ha_focos": 240.2,
+   "centro": [
+    5.39644,
+    45.73779
+   ],
+   "bbox": [
+    5.38473,
+    45.73182,
+    5.40815,
+    45.74376
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       5.40815,
+       45.73182
+      ],
+      [
+       5.40815,
+       45.74376
+      ],
+      [
+       5.38473,
+       45.74376
+      ],
+      [
+       5.38473,
+       45.73182
+      ],
+      [
+       5.40815,
+       45.73182
+      ]
+     ]
+    ]
+   },
+   "natura": [
+    {
+     "codigo": "FR8201727",
+     "nombre": "L'Isle Crémieu",
+     "tipo": "ZSC",
+     "ha": 31.3
+    }
+   ],
+   "cobertura": {
+    "bosque": 1.0
+   },
+   "lugar": {
+    "municipio": "Courtenay",
+    "insee": "38135",
+    "provincia": "Isère",
+    "comunidad": "Auvergne-Rhône-Alpes"
+   },
+   "lugar_focos": 1,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|1|9820926b7b0c",
+    "revisado": "2026-11-01T19:39Z",
+    "calculado": "2026-11-01T19:39Z",
+    "definitivo": false,
+    "sin_imagen": true
+   }
+  },
+  {
+   "id": "FR-IN-20261101-008",
+   "primera": "2026-11-01T14:22Z",
+   "ultima": "2026-11-01T14:22Z",
+   "n_focos": 1,
+   "n_viirs": 0,
+   "pasadas": 1,
+   "satelites": [
+    "Aqua"
+   ],
+   "frp_max": 41.5,
+   "frp_total": 41.5,
+   "ha_focos": 297.5,
+   "centro": [
+    3.61579,
+    46.80836
+   ],
+   "bbox": [
+    3.60194,
+    46.80198,
+    3.62964,
+    46.81474
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.62964,
+       46.80198
+      ],
+      [
+       3.62964,
+       46.81474
+      ],
+      [
+       3.60194,
+       46.81474
+      ],
+      [
+       3.60194,
+       46.80198
+      ],
+      [
+       3.62964,
+       46.80198
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Charrin",
+    "insee": "58060",
+    "provincia": "Nièvre",
+    "comunidad": "Bourgogne-Franche-Comté"
+   },
+   "lugar_focos": 1,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "FR-IN-20261101-009",
+   "primera": "2026-11-01T14:22Z",
+   "ultima": "2026-11-01T14:22Z",
+   "n_focos": 1,
+   "n_viirs": 0,
+   "pasadas": 1,
+   "satelites": [
+    "Aqua"
+   ],
+   "frp_max": 41.4,
+   "frp_total": 41.4,
+   "ha_focos": 257.8,
+   "centro": [
+    4.2067,
+    47.23087
+   ],
+   "bbox": [
+    4.19407,
+    47.22477,
+    4.21933,
+    47.23697
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       4.21933,
+       47.22477
+      ],
+      [
+       4.21933,
+       47.23697
+      ],
+      [
+       4.19407,
+       47.23697
+      ],
+      [
+       4.19407,
+       47.22477
+      ],
+      [
+       4.21933,
+       47.22477
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Saint-Martin-de-la-Mer",
+    "insee": "21560",
+    "provincia": "Côte-d'Or",
+    "comunidad": "Bourgogne-Franche-Comté"
+   },
+   "lugar_focos": 1,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "FR-IN-20261101-010",
+   "primera": "2026-11-01T14:22Z",
+   "ultima": "2026-11-01T14:22Z",
+   "n_focos": 1,
+   "n_viirs": 0,
+   "pasadas": 1,
+   "satelites": [
+    "Aqua"
+   ],
+   "frp_max": 44.9,
+   "frp_total": 44.9,
+   "ha_focos": 257.8,
+   "centro": [
+    3.98962,
+    47.59794
+   ],
+   "bbox": [
+    3.9769,
+    47.59184,
+    4.00234,
+    47.60404
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       4.00234,
+       47.59184
+      ],
+      [
+       4.00234,
+       47.60404
+      ],
+      [
+       3.9769,
+       47.60404
+      ],
+      [
+       3.9769,
+       47.59184
+      ],
+      [
+       4.00234,
+       47.59184
+      ]
+     ]
+    ]
+   },
+   "natura": [
+    {
+     "codigo": "FR2600974",
+     "nombre": "Pelouses, forêts et habitats à chauve-souris du sud de la vallée de l'Yonne et de ses affluents",
+     "tipo": "ZSC",
+     "ha": 147.3
+    }
+   ],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Massangis",
+    "insee": "89246",
+    "provincia": "Yonne",
+    "comunidad": "Bourgogne-Franche-Comté"
+   },
+   "lugar_focos": 1,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|1|ae1d0dd65f1f",
+    "revisado": "2026-11-01T19:39Z",
+    "calculado": "2026-11-01T19:39Z",
+    "definitivo": false,
+    "sin_imagen": true
+   }
+  },
+  {
+   "id": "FR-IN-20261101-011",
+   "primera": "2026-11-01T14:22Z",
+   "ultima": "2026-11-01T14:22Z",
+   "n_focos": 1,
+   "n_viirs": 0,
+   "pasadas": 1,
+   "satelites": [
+    "Aqua"
+   ],
+   "frp_max": 58.8,
+   "frp_total": 58.8,
+   "ha_focos": 246.0,
+   "centro": [
+    3.73231,
+    48.48774
+   ],
+   "bbox": [
+    3.71977,
+    48.48173,
+    3.74485,
+    48.49375
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.74485,
+       48.48173
+      ],
+      [
+       3.74485,
+       48.49375
+      ],
+      [
+       3.71977,
+       48.49375
+      ],
+      [
+       3.71977,
+       48.48173
+      ],
+      [
+       3.74485,
+       48.48173
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "artificial": 1.0
+   },
+   "lugar": {
+    "municipio": "Pars-lès-Romilly",
+    "insee": "10280",
+    "provincia": "Aube",
+    "comunidad": "Grand Est"
+   },
+   "lugar_focos": 1,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null
   }
  ],
- "actualizado": "2026-11-01T15:07Z"
+ "actualizado": "2026-11-01T19:39Z"
 }
