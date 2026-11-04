@@ -289793,6 +289793,27 @@
    "estado": "activo",
    "effis": [],
    "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|3|0247f8ae971e",
+    "revisado": "2026-11-04T17:14Z",
+    "calculado": "2026-11-04T17:14Z",
+    "definitivo": false,
+    "ha": 0.0,
+    "severidad": {
+     "baja": 0.0,
+     "moderada": 0.0,
+     "alta": 0.0
+    },
+    "imagenes": [
+     "2026-11-03"
+    ],
+    "fecha_antes": "2026-11-01",
+    "fecha_despues": "2026-11-03",
+    "una_imagen": 0.0,
+    "cobertura": 1.0,
+    "natura": [],
+    "geometry": null
+   },
    "perimeter_ha": 8.8,
    "steps": 2,
    "front_km": 1.17,
@@ -290016,27 +290037,6 @@
       ]
      ]
     ]
-   },
-   "perimetro": {
-    "clave": "v2|3|0247f8ae971e",
-    "revisado": "2026-11-04T17:14Z",
-    "calculado": "2026-11-04T17:14Z",
-    "definitivo": false,
-    "ha": 0.0,
-    "severidad": {
-     "baja": 0.0,
-     "moderada": 0.0,
-     "alta": 0.0
-    },
-    "imagenes": [
-     "2026-11-03"
-    ],
-    "fecha_antes": "2026-11-01",
-    "fecha_despues": "2026-11-03",
-    "una_imagen": 0.0,
-    "cobertura": 1.0,
-    "natura": [],
-    "geometry": null
    }
   },
   {
@@ -291346,6 +291346,28 @@
    "estado": "activo",
    "effis": [],
    "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|5|0247f8ae971e",
+    "revisado": "2026-11-04T17:14Z",
+    "calculado": "2026-11-04T17:14Z",
+    "definitivo": false,
+    "ha": 0.0,
+    "severidad": {
+     "baja": 0.0,
+     "moderada": 0.0,
+     "alta": 0.0
+    },
+    "imagenes": [
+     "2026-11-03"
+    ],
+    "fecha_antes": "2026-11-01",
+    "fecha_despues": "2026-11-03",
+    "una_imagen": 0.0,
+    "cobertura": 0.0,
+    "nublado": true,
+    "natura": [],
+    "geometry": null
+   },
    "perimeter_ha": 37.8,
    "steps": 2,
    "front_km": 3.26,
@@ -291541,28 +291563,6 @@
       38.92832
      ]
     ]
-   },
-   "perimetro": {
-    "clave": "v2|5|0247f8ae971e",
-    "revisado": "2026-11-04T17:14Z",
-    "calculado": "2026-11-04T17:14Z",
-    "definitivo": false,
-    "ha": 0.0,
-    "severidad": {
-     "baja": 0.0,
-     "moderada": 0.0,
-     "alta": 0.0
-    },
-    "imagenes": [
-     "2026-11-03"
-    ],
-    "fecha_antes": "2026-11-01",
-    "fecha_despues": "2026-11-03",
-    "una_imagen": 0.0,
-    "cobertura": 0.0,
-    "nublado": true,
-    "natura": [],
-    "geometry": null
    }
   },
   {
@@ -298747,6 +298747,27 @@
    "estado": "activo",
    "effis": [],
    "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|3|0f57df0f17c6",
+    "revisado": "2026-11-04T17:14Z",
+    "calculado": "2026-11-04T17:14Z",
+    "definitivo": false,
+    "ha": 0.0,
+    "severidad": {
+     "baja": 0.0,
+     "moderada": 0.0,
+     "alta": 0.0
+    },
+    "imagenes": [
+     "2026-11-04"
+    ],
+    "fecha_antes": "2026-11-01",
+    "fecha_despues": "2026-11-04",
+    "una_imagen": 0.0,
+    "cobertura": 1.0,
+    "natura": [],
+    "geometry": null
+   },
    "perimeter_ha": 22.3,
    "steps": 2,
    "front_km": 1.94,
@@ -298892,27 +298913,6 @@
       ]
      ]
     ]
-   },
-   "perimetro": {
-    "clave": "v2|3|0f57df0f17c6",
-    "revisado": "2026-11-04T17:14Z",
-    "calculado": "2026-11-04T17:14Z",
-    "definitivo": false,
-    "ha": 0.0,
-    "severidad": {
-     "baja": 0.0,
-     "moderada": 0.0,
-     "alta": 0.0
-    },
-    "imagenes": [
-     "2026-11-04"
-    ],
-    "fecha_antes": "2026-11-01",
-    "fecha_despues": "2026-11-04",
-    "una_imagen": 0.0,
-    "cobertura": 1.0,
-    "natura": [],
-    "geometry": null
    }
   },
   {
@@ -300316,6 +300316,26 @@
      ]
     ]
    },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Épila",
+    "provincia": "Zaragoza",
+    "comunidad": "Aragón"
+   },
+   "lugar_focos": 9,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|9|8935f5d12d78",
+    "revisado": "2026-11-04T17:14Z",
+    "calculado": "2026-11-04T17:14Z",
+    "definitivo": false,
+    "sin_imagen": true
+   },
    "perimeter_ha": 69.3,
    "steps": 1,
    "front_km": 3.42,
@@ -300477,26 +300497,6 @@
       41.56369
      ]
     ]
-   },
-   "natura": [],
-   "cobertura": {
-    "agricola": 1.0
-   },
-   "lugar": {
-    "municipio": "Épila",
-    "provincia": "Zaragoza",
-    "comunidad": "Aragón"
-   },
-   "lugar_focos": 9,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|9|8935f5d12d78",
-    "revisado": "2026-11-04T17:14Z",
-    "calculado": "2026-11-04T17:14Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -300670,6 +300670,26 @@
       ]
      ]
     ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Guillena",
+    "provincia": "Sevilla",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 8,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|8|1ebc408425b4",
+    "revisado": "2026-11-04T17:14Z",
+    "calculado": "2026-11-04T17:14Z",
+    "definitivo": false,
+    "sin_imagen": true
    },
    "perimeter_ha": 86.2,
    "steps": 1,
@@ -300910,26 +300930,6 @@
       ]
      ]
     ]
-   },
-   "natura": [],
-   "cobertura": {
-    "agricola": 1.0
-   },
-   "lugar": {
-    "municipio": "Guillena",
-    "provincia": "Sevilla",
-    "comunidad": "Andalucía"
-   },
-   "lugar_focos": 8,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|8|1ebc408425b4",
-    "revisado": "2026-11-04T17:14Z",
-    "calculado": "2026-11-04T17:14Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -301023,6 +301023,26 @@
       ]
      ]
     ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "La Palma del Condado",
+    "provincia": "Huelva",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 6,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|6|a32d3e22aada",
+    "revisado": "2026-11-04T17:14Z",
+    "calculado": "2026-11-04T17:14Z",
+    "definitivo": false,
+    "sin_imagen": true
    },
    "perimeter_ha": 21.0,
    "steps": 1,
@@ -301137,26 +301157,6 @@
       37.37883
      ]
     ]
-   },
-   "natura": [],
-   "cobertura": {
-    "agricola": 1.0
-   },
-   "lugar": {
-    "municipio": "La Palma del Condado",
-    "provincia": "Huelva",
-    "comunidad": "Andalucía"
-   },
-   "lugar_focos": 6,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|6|a32d3e22aada",
-    "revisado": "2026-11-04T17:14Z",
-    "calculado": "2026-11-04T17:14Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -301255,6 +301255,26 @@
       ]
      ]
     ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Almonacid de la Sierra",
+    "provincia": "Zaragoza",
+    "comunidad": "Aragón"
+   },
+   "lugar_focos": 5,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|5|269b92248827",
+    "revisado": "2026-11-04T17:14Z",
+    "calculado": "2026-11-04T17:14Z",
+    "definitivo": false,
+    "sin_imagen": true
    },
    "perimeter_ha": 26.5,
    "steps": 1,
@@ -301423,26 +301443,6 @@
       ]
      ]
     ]
-   },
-   "natura": [],
-   "cobertura": {
-    "agricola": 1.0
-   },
-   "lugar": {
-    "municipio": "Almonacid de la Sierra",
-    "provincia": "Zaragoza",
-    "comunidad": "Aragón"
-   },
-   "lugar_focos": 5,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|5|269b92248827",
-    "revisado": "2026-11-04T17:14Z",
-    "calculado": "2026-11-04T17:14Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -301545,6 +301545,27 @@
       ]
      ]
     ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 0.6,
+    "agroforestal": 0.4
+   },
+   "lugar": {
+    "municipio": "Ontiñena",
+    "provincia": "Huesca",
+    "comunidad": "Aragón"
+   },
+   "lugar_focos": 5,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|5|a54946526b35",
+    "revisado": "2026-11-04T17:14Z",
+    "calculado": "2026-11-04T17:14Z",
+    "definitivo": false,
+    "sin_imagen": true
    },
    "perimeter_ha": 35.6,
    "steps": 1,
@@ -301675,27 +301696,6 @@
       41.63477
      ]
     ]
-   },
-   "natura": [],
-   "cobertura": {
-    "agricola": 0.6,
-    "agroforestal": 0.4
-   },
-   "lugar": {
-    "municipio": "Ontiñena",
-    "provincia": "Huesca",
-    "comunidad": "Aragón"
-   },
-   "lugar_focos": 5,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|5|a54946526b35",
-    "revisado": "2026-11-04T17:14Z",
-    "calculado": "2026-11-04T17:14Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -301756,6 +301756,34 @@
       ]
      ]
     ]
+   },
+   "natura": [
+    {
+     "codigo": "ES5120011",
+     "nombre": "Riberes del Baix Ter",
+     "tipo": "ZEC",
+     "ha": 12.4
+    }
+   ],
+   "cobertura": {
+    "agricola": 0.67,
+    "agua": 0.33
+   },
+   "lugar": {
+    "municipio": "Torroella de Montgrí",
+    "provincia": "Gerona",
+    "comunidad": "Cataluña"
+   },
+   "lugar_focos": 3,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|3|51426582628e",
+    "revisado": "2026-11-04T17:14Z",
+    "calculado": "2026-11-04T17:14Z",
+    "definitivo": false,
+    "sin_imagen": true
    },
    "perimeter_ha": 24.7,
    "steps": 1,
@@ -301886,34 +301914,6 @@
       42.02513
      ]
     ]
-   },
-   "natura": [
-    {
-     "codigo": "ES5120011",
-     "nombre": "Riberes del Baix Ter",
-     "tipo": "ZEC",
-     "ha": 12.4
-    }
-   ],
-   "cobertura": {
-    "agricola": 0.67,
-    "agua": 0.33
-   },
-   "lugar": {
-    "municipio": "Torroella de Montgrí",
-    "provincia": "Gerona",
-    "comunidad": "Cataluña"
-   },
-   "lugar_focos": 3,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|3|51426582628e",
-    "revisado": "2026-11-04T17:14Z",
-    "calculado": "2026-11-04T17:14Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -301998,6 +301998,33 @@
       ]
      ]
     ]
+   },
+   "natura": [
+    {
+     "codigo": "ES0000408",
+     "nombre": "Vegas del Ruecas, Cubilar y Moheda Alta",
+     "tipo": "ZEPA",
+     "ha": 43.6
+    }
+   ],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Logrosán",
+    "provincia": "Cáceres",
+    "comunidad": "Extremadura"
+   },
+   "lugar_focos": 3,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|3|6650ae884fa6",
+    "revisado": "2026-11-04T17:14Z",
+    "calculado": "2026-11-04T17:14Z",
+    "definitivo": false,
+    "sin_imagen": true
    },
    "perimeter_ha": 13.9,
    "steps": 1,
@@ -302112,33 +302139,6 @@
       39.19413
      ]
     ]
-   },
-   "natura": [
-    {
-     "codigo": "ES0000408",
-     "nombre": "Vegas del Ruecas, Cubilar y Moheda Alta",
-     "tipo": "ZEPA",
-     "ha": 43.6
-    }
-   ],
-   "cobertura": {
-    "agricola": 1.0
-   },
-   "lugar": {
-    "municipio": "Logrosán",
-    "provincia": "Cáceres",
-    "comunidad": "Extremadura"
-   },
-   "lugar_focos": 3,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|3|6650ae884fa6",
-    "revisado": "2026-11-04T17:14Z",
-    "calculado": "2026-11-04T17:14Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -305260,7 +305260,71 @@
    "estado": "activo",
    "effis": [],
    "effis_ha": null
+  },
+  {
+   "id": "IN-20261104-055",
+   "primera": "2026-11-04T16:11Z",
+   "ultima": "2026-11-04T16:11Z",
+   "n_focos": 1,
+   "n_viirs": 0,
+   "pasadas": 1,
+   "satelites": [
+    "Aqua"
+   ],
+   "frp_max": 13.3,
+   "frp_total": 13.3,
+   "ha_focos": 207.9,
+   "centro": [
+    -7.0571,
+    38.85443
+   ],
+   "bbox": [
+    -7.06662,
+    38.84873,
+    -7.04758,
+    38.86013
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -7.04758,
+       38.84873
+      ],
+      [
+       -7.04758,
+       38.86013
+      ],
+      [
+       -7.06662,
+       38.86013
+      ],
+      [
+       -7.06662,
+       38.84873
+      ],
+      [
+       -7.04758,
+       38.84873
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Badajoz",
+    "provincia": "Badajoz",
+    "comunidad": "Extremadura"
+   },
+   "lugar_focos": 1,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null
   }
  ],
- "actualizado": "2026-11-04T17:14Z"
+ "actualizado": "2026-11-04T22:38Z"
 }
