@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cstyle%3E.b%7Bfill%3A%23221d1a%7D.p%7Bfill%3A%23c2410c%7D.l%7Bstroke%3A%23221d1a%7D%40media%20%28prefers-color-scheme%3Adark%29%7B.b%7Bfill%3A%23ede6e0%7D.p%7Bfill%3A%23fb7b3e%7D.l%7Bstroke%3A%23ede6e0%7D%7D%3C/style%3E%3Cg%20class%3D%22b%22%3E%3Ccircle%20cx%3D%2234%22%20cy%3D%2231%22%20r%3D%2219%22/%3E%3Cpath%20d%3D%22M19%2040%207%2050.5l3.5%204L25%2046z%22/%3E%3Cpath%20d%3D%22M52%2022l8%202.5-8%202.5z%22/%3E%3C/g%3E%3Cpath%20class%3D%22p%22%20d%3D%22M34%2012a19%2019%200%200%201%2015%2030.8C42%2041%2037%2034%2037%2026c0-6%201.5-10.5%204-12.6A19%2019%200%200%200%2034%2012z%22/%3E%3Cg%20fill%3D%22%23221d1a%22%3E%3Ccircle%20cx%3D%2245%22%20cy%3D%2221.5%22%20r%3D%222.1%22/%3E%3C/g%3E%3Cpath%20class%3D%22l%22%20d%3D%22M31%2049.5V60m7-11v11m-10.5.2h6m1.5%200h6%22%20fill%3D%22none%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E">
+<title>Riofrío de Aliste (Zamora), junio de 2022 · Vigía de incendios</title>
+<meta name="description" content="Riofrío de Aliste (Zamora), junio de 2022, pasada a pasada: focos VIIRS y MODIS, perímetro estimado y momentos clave.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/5.6.0/maplibre-gl.min.css">
+<style>
+/* common.css v1.1 — shared look of the nine open-data projects (vigia-incendios is the reference).
+   Copy this file verbatim into each repo; change it in all repos at once, never in one.
+   Each repo sets only --accent and --accent-dark below it and adds its own rules after it.
+
+   Type:  Barlow Condensed for titles and labels, Source Serif 4 for reading, IBM Plex Mono for
+          figures, codes and dates. Load them with:
+   https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap */
+
+:root{
+  --ground:#f0edea; --paper:#faf8f6; --ink:#221d1a; --muted:#6b625c; --line:#dad2cb;
+  --accent:#c2410c; --accent-dark:#fb7b3e;
+  --natura:#2f7a55; --natura-dark:#62b88a;
+  --shadow:0 1px 0 rgba(34,29,26,.06), 0 6px 18px -10px rgba(34,29,26,.28);
+  --font-title:"Barlow Condensed","Arial Narrow",sans-serif;
+  --font-text:"Source Serif 4",Georgia,serif;
+  --font-data:"IBM Plex Mono",ui-monospace,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#15110f; --paper:#1d1815; --ink:#ede6e0; --muted:#a69a91; --line:#362d28;
+    --accent:var(--accent-dark); --natura:var(--natura-dark);
+    --shadow:0 1px 0 rgba(0,0,0,.3), 0 8px 22px -12px rgba(0,0,0,.7);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#15110f; --paper:#1d1815; --ink:#ede6e0; --muted:#a69a91; --line:#362d28;
+  --accent:var(--accent-dark); --natura:var(--natura-dark);
+  --shadow:0 1px 0 rgba(0,0,0,.3), 0 8px 22px -12px rgba(0,0,0,.7);
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font:17px/1.55 var(--font-text);overflow-wrap:break-word}
+a{color:inherit;text-decoration-color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+img,svg{max-width:100%}
+
+/* Header: «PROJECT NAME» with the key word in the accent colour, one sentence, then the figures. */
+.site-header{max-width:1440px;margin:0 auto;padding:28px 16px 18px;display:grid;gap:14px}
+.site-header h1{margin:0;font:700 clamp(40px,6vw,64px)/.9 var(--font-title);text-transform:uppercase;letter-spacing:.02em}
+.site-header h1 span{color:var(--accent)}
+/* Logo: the robin from logo.py before the title; same shape everywhere, breast in the accent. */
+.logo{display:inline-block;width:1.05em;height:1.05em;margin-right:.16em;vertical-align:-.13em;color:var(--ink);overflow:visible}
+.logo .logo-breast{fill:var(--accent)}
+.site-header .lede{margin:0;max-width:72ch;font-size:18px}
+.figures{display:flex;flex-wrap:wrap;gap:12px 28px;margin:0;padding:12px 0 0;border-top:1px solid var(--line)}
+.figures div{display:grid;gap:2px}
+.figures b{font:600 30px/1 var(--font-data);font-variant-numeric:tabular-nums;color:var(--accent)}
+.figures span{font:600 13px/1.2 var(--font-title);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+
+/* Text roles */
+.label{font-family:var(--font-title);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.data{font-family:var(--font-data);font-variant-numeric:tabular-nums}
+.note{color:var(--muted);font-size:14.5px}
+.badge{display:inline-block;font:600 12px/1 var(--font-title);text-transform:uppercase;letter-spacing:.09em;padding:4px 7px 3px;border:1.5px solid currentColor;color:var(--accent)}
+
+/* Cards and panels */
+.card{background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);padding:16px}
+
+/* Method section: how every figure is computed, step by step */
+.method{max-width:1440px;margin:0 auto;padding:24px 16px}
+.method h2{margin:0 0 6px;font:700 28px/1 var(--font-title);text-transform:uppercase;letter-spacing:.03em}
+.method h3{margin:18px 0 4px;font:600 18px/1.2 var(--font-title);text-transform:uppercase;letter-spacing:.06em}
+.method p,.method li{max-width:72ch}
+table.params{border-collapse:collapse;font-size:14.5px;width:100%;max-width:900px}
+table.params th,table.params td{text-align:left;vertical-align:top;padding:6px 10px 6px 0;border-bottom:1px solid var(--line)}
+table.params th{font:600 14px/1.3 var(--font-title);text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;padding-right:16px}
+table.params td.num,table.params th.num{text-align:right;font-family:var(--font-data);font-variant-numeric:tabular-nums}
+
+/* Footer: sources, licence, the shared principle and the sibling projects */
+.site-footer{max-width:1440px;margin:0 auto;padding:16px 16px 40px;font-size:13.5px;color:var(--muted);border-top:1px solid var(--line);display:grid;gap:10px}
+.site-footer .principle{margin:0;color:var(--ink);font-style:italic}
+.siblings{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0;padding:0;list-style:none}
+.siblings li a{text-decoration-color:var(--line)}
+.siblings li[aria-current] a{color:var(--ink);text-decoration-color:var(--accent);font-weight:600}
+
+@media (max-width:640px){
+  body{font-size:16px}
+  .figures b{font-size:24px}
+}
+:root{--accent:#c2410c;--accent-dark:#fb7b3e}
+:root{
+  --suelo:var(--ground); --papel:var(--paper); --tinta:var(--ink); --gris:var(--muted); --linea:var(--line);
+  --brasa:var(--accent);
+  --encendido:#ff3b1f; --ceniza:#4a3b34; --iso0:#f6c453; --iso1:#7a1c0c; --actual:#d0310f;
+  --natura-l:#2f7a55; --s2:#3a2a8c;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --encendido:#ff6b45; --ceniza:#b9a79c; --iso0:#f5d27a; --iso1:#c2410c; --actual:#ff6b45; --natura-l:#62b88a; --s2:#b8a6ff; }
+}
+:root[data-theme="dark"]{ --encendido:#ff6b45; --ceniza:#b9a79c; --iso0:#f5d27a; --iso1:#c2410c; --actual:#ff6b45; --natura-l:#62b88a; --s2:#b8a6ff; }
+html{-webkit-text-size-adjust:100%}
+.rotulo{font-family:var(--font-title);text-transform:uppercase;letter-spacing:.08em;font-weight:600;color:var(--gris);font-size:14px}
+.marca{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.marca h1{text-wrap:balance}
+.site-header .lede{text-wrap:pretty}
+.site-header .lede a{white-space:nowrap}
+.pestanas{display:flex;gap:4px;margin:6px 0 2px;border-bottom:1.5px solid var(--line)}.pestanas a{font:600 16px/1 var(--font-title);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:9px 12px 8px;border-bottom:3px solid transparent;margin-bottom:-1.5px}.pestanas a:hover{color:var(--ink)}.pestanas a[aria-current=page]{color:var(--accent);border-bottom-color:var(--accent)}
+.aviso{border-left:3px solid var(--brasa);padding:2px 0 2px 12px}
+main.ficha-main{max-width:1440px;margin:0 auto;padding:0 16px;display:grid;grid-template-columns:minmax(0,1.6fr) minmax(300px,1fr);gap:18px;align-items:start}
+.visor{display:grid;gap:8px;min-width:0}
+#mapa{height:min(64vh,640px);min-height:340px;border:1px solid var(--linea);background:var(--papel);position:relative}
+#mapa .sin-mapa{position:absolute;inset:0;display:grid;place-items:center;padding:16px;text-align:center;color:var(--gris)}
+.reproductor{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center}
+.reproductor button{font:600 15px/1 var(--font-title);letter-spacing:.06em;text-transform:uppercase;background:var(--papel);color:var(--tinta);border:1.5px solid var(--linea);padding:7px 11px;cursor:pointer;min-width:40px}
+.reproductor button#play{border-color:var(--brasa);color:var(--brasa);min-width:96px}
+.reproductor input[type=range]{flex:1 1 180px;accent-color:var(--brasa);min-width:120px}
+.cuando{font:500 14px var(--font-data);font-variant-numeric:tabular-nums;flex:1 1 100%}
+.estado{margin:0;font-size:14.5px;min-height:2.6em}
+.estado b{font-family:var(--font-data);font-weight:500}
+.estado .hueco{color:var(--brasa)}
+.curva{margin:0}
+.curva svg{width:100%;height:auto;display:block;cursor:pointer;touch-action:manipulation}
+.curva figcaption{font-size:12.5px;color:var(--gris)}
+.curva .eje{font:11px var(--font-data);fill:var(--gris)}
+.leyenda{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12.5px;color:var(--gris);align-items:center}
+.leyenda i{display:inline-block;width:11px;height:11px;margin-right:5px;vertical-align:-1px}
+.capas{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13px;color:var(--gris)}
+.capas label{display:flex;gap:6px;align-items:center}
+.capas input{accent-color:var(--brasa)}
+.momentos-caja{position:sticky;top:12px;max-height:calc(100vh - 24px);overflow:auto;padding-bottom:12px}
+.momentos-caja h2{margin:0 0 4px;font:600 22px/1.15 var(--font-title)}
+.momentos-caja > p{margin:0 0 10px;font-size:13px;color:var(--gris)}
+ol.momentos{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+ol.momentos button{all:unset;box-sizing:border-box;display:grid;gap:2px;width:100%;padding:8px 10px;background:var(--papel);border:1px solid var(--linea);border-left:3px solid var(--linea);cursor:pointer;font-size:14.5px;line-height:1.35}
+ol.momentos button:focus-visible{outline:2px solid var(--brasa);outline-offset:2px}
+ol.momentos time{font:500 12.5px var(--font-data);color:var(--gris)}
+ol.momentos li.pasado button{border-left-color:var(--iso1)}
+ol.momentos li.actual button{border-color:var(--brasa);border-left-color:var(--brasa);box-shadow:0 0 0 1px var(--brasa)}
+ol.momentos li.m-hueco button,ol.momentos li.m-reactivacion button{background:color-mix(in srgb,var(--brasa) 6%,var(--papel))}
+.method{max-width:1440px;margin:24px auto 0;padding:0 16px 40px;border-top:1.5px solid var(--tinta);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
+.method p{margin:0 0 10px}
+.method ol{margin:0 0 10px;padding-left:1.4em}
+.method ol li{margin-bottom:8px}
+.method > div > h2:first-child,.method > div > h3:first-child{margin-top:18px}
+.nota{font-size:13.5px;color:var(--gris);margin:0}
+.site-footer p{margin:0}
+.maplibregl-ctrl-attrib{font-size:11px}
+@media (max-width: 900px){
+  main.ficha-main{grid-template-columns:1fr}
+  .momentos-caja{position:static;max-height:none}
+  #mapa{height:58vh}
+  .method{grid-template-columns:1fr}
+}
+@media (max-width: 560px){
+  .figures{display:grid;grid-template-columns:1fr 1fr;column-gap:12px}
+  .reproductor input[type=range]{order:-1;flex-basis:100%}
+  .reproductor button#play{flex:1}
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="marca">
+    <h1><svg class="logo" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><g fill="currentColor"><circle cx="34" cy="31" r="19"/><path d="M19 40 7 50.5l3.5 4L25 46z"/><path d="M52 22l8 2.5-8 2.5z"/></g><path class="logo-breast" d="M34 12a19 19 0 0 1 15 30.8C42 41 37 34 37 26c0-6 1.5-10.5 4-12.6A19 19 0 0 0 34 12z"/><g fill="#221d1a"><circle cx="45" cy="21.5" r="2.1"/></g><path d="M31 49.5V60m7-11v11m-10.5.2h6m1.5 0h6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg> Riofrío de Aliste (Zamora), junio de 2022</h1>
+    <span class="rotulo">Análisis por pasadas</span>
+  </div>
+  <nav class="pestanas" aria-label="Secciones"><a href="../">Mapa en directo</a><a href="../incendio/">Grandes incendios</a></nav>
+  <p class="lede">El incendio tal como lo vieron los satélites, pasada a pasada: los píxeles con calor, el perímetro que van dibujando y los momentos en que cambió. No es una película continua: entre dos pasadas el fuego avanza sin que nadie lo mida. <a href="./">← Grandes incendios</a></p>
+  <div class="figures"><div><b>22.399 ha</b><span>perímetro estimado con VIIRS</span></div><div><b>15</b><span>pasadas con focos (13 de VIIRS)</span></div><div><b>3,1</b><span>días entre el primer y el último foco</span></div><div><b>3,6 h</b><span>mediana entre pasadas</span></div></div>
+  
+</header>
+
+<main class="ficha-main">
+  <section class="visor" aria-label="Reproducción del incendio">
+    <div id="mapa" role="region" aria-label="Mapa en relieve del incendio"><noscript><p class="sin-mapa">El mapa y la línea de tiempo necesitan JavaScript. Los momentos clave están en la lista.</p></noscript></div>
+    <div class="reproductor">
+      <button type="button" id="play" aria-pressed="false">Reproducir</button>
+      <button type="button" id="prev" aria-label="Pasada anterior">‹</button>
+      <input type="range" id="paso" min="0" max="0" value="0" aria-label="Pasada">
+      <button type="button" id="next" aria-label="Pasada siguiente">›</button>
+      <output class="cuando" id="cuando" for="paso"></output>
+    </div>
+    <p class="estado" id="estado" aria-live="polite"></p>
+    <figure class="curva">
+      <svg id="curva" viewBox="0 0 640 170" role="img" aria-label="Superficie del perímetro estimado a lo largo del tiempo"></svg>
+      <figcaption>Hectáreas del perímetro estimado. Es una escalera: solo cambia cuando pasa un satélite VIIRS (rayas granates abajo; las grises son pasadas MODIS). Toca la curva para ir a una pasada.</figcaption>
+    </figure>
+    <div class="leyenda">
+      <span><i style="background:var(--encendido)"></i>píxeles de esta pasada</span>
+      <span><i style="background:var(--ceniza);opacity:.5"></i>píxeles anteriores</span>
+      <span><i style="background:linear-gradient(90deg,var(--iso0),var(--iso1))"></i>isocronas, de la primera a la última</span>
+      <span><i style="border:2px solid var(--natura-l)"></i>Red Natura 2000</span>
+      <span><i style="border:2px dashed var(--s2)"></i>quemado según Sentinel-2</span>
+    </div>
+    <div class="capas">
+      <label><input type="checkbox" id="c-3d" checked> Relieve 3D</label>
+      <label><input type="checkbox" id="c-orto"> Ortofoto</label>
+      <label><input type="checkbox" id="c-natura" checked> Red Natura</label>
+      <label><input type="checkbox" id="c-s2"> Quemado Sentinel-2</label>
+    </div>
+  </section>
+  <aside class="momentos-caja" aria-labelledby="momentos-h">
+    <h2 id="momentos-h">Momentos clave</h2>
+    <p>Toca uno para ver esa pasada en el mapa. Horas locales.</p>
+    <ol class="momentos" id="momentos"><li data-k="0" class="m-inicio"><button type="button"><time datetime="2022-06-16T01:15Z">16 jun 2022, 03:15</time><span>Primeros píxeles con calor.</span></button></li><li data-k="0" class="m-natura"><button type="button"><time datetime="2022-06-16T01:15Z">16 jun 2022, 03:15</time><span>El perímetro entra en ZEC «Sierra de la Culebra» (ES4190033).</span></button></li><li data-k="4" class="m-natura"><button type="button"><time datetime="2022-06-17T01:46Z">17 jun 2022, 03:46</time><span>El perímetro entra en ZEC «Riberas del Río Aliste y afluentes» (ES4190074).</span></button></li><li data-k="4" class="m-natura"><button type="button"><time datetime="2022-06-17T01:46Z">17 jun 2022, 03:46</time><span>El perímetro entra en ZEPA «Campo de Aliste» (ES0000358).</span></button></li><li data-k="4" class="m-natura"><button type="button"><time datetime="2022-06-17T01:46Z">17 jun 2022, 03:46</time><span>El perímetro entra en ZEC «Campo Alto de Aliste» (ES4190133).</span></button></li><li data-k="4" class="m-salto"><button type="button"><time datetime="2022-06-17T01:46Z">17 jun 2022, 03:46</time><span>Mayor salto del perímetro: +13.832 ha en 13,1 h (unas 1.056 ha/h).</span></button></li><li data-k="4" class="m-potencia"><button type="button"><time datetime="2022-06-17T01:46Z">17 jun 2022, 03:46</time><span>Pasada de más potencia: 17.861 MW de energía radiativa.</span></button></li><li data-k="4" class="m-frente"><button type="button"><time datetime="2022-06-17T01:46Z">17 jun 2022, 03:46</time><span>Frente activo más largo: 66,4 km.</span></button></li><li data-k="4" class="m-mitad"><button type="button"><time datetime="2022-06-17T01:46Z">17 jun 2022, 03:46</time><span>Alcanza la mitad de su tamaño final (14.697 ha).</span></button></li><li data-k="11" class="m-noventa"><button type="button"><time datetime="2022-06-18T12:51Z">18 jun 2022, 14:51</time><span>Llega al 90 % de su tamaño final (20.362 ha).</span></button></li><li data-k="12" class="m-natura"><button type="button"><time datetime="2022-06-18T14:31Z">18 jun 2022, 16:31</time><span>El perímetro entra en ZEC «Lagunas de Tera y Vidriales» (ES4190134).</span></button></li><li data-k="14" class="m-ultimo"><button type="button"><time datetime="2022-06-19T02:49Z">19 jun 2022, 04:49</time><span>Últimos píxeles con calor.</span></button></li></ol>
+  </aside>
+</main>
+
+<section class="method" id="metodo">
+  <div>
+    <h2>Cómo se calcula</h2>
+    <ol><li>Cada vez que un satélite pasa sobre el fuego, FIRMS (NASA) publica los píxeles con calor anómalo. Esta página agrupa en una <strong>pasada</strong> los píxeles de satélites que pasaron con menos de una hora de diferencia.</li><li>Cada píxel VIIRS se dibuja con su tamaño real (unos 375 m en la vertical del satélite, más hacia los bordes de la pasada). El fuego está dentro de ese recuadro, no en todo él.</li><li>El <strong>perímetro estimado</strong> se construye pasada a pasada con los píxeles VIIRS: un disco por píxel, un cierre morfológico de 0,75 km y nunca encoge. Cada pasada VIIRS deja una <strong>isocrona</strong>, del amarillo (primeras) al granate (últimas).</li><li>Las pasadas solo de MODIS (píxeles de 1 km) encienden focos en el mapa pero no mueven el perímetro: lo inflarían.</li><li>Los <strong>momentos clave</strong> salen de reglas fijas sobre esas cifras: el mayor salto del perímetro, la pasada de más potencia radiativa (FRP), el frente activo más largo, cuándo llega al 50 % y al 90 % de su tamaño final, la entrada en cada espacio Red Natura 2000 y los huecos de más de 18 horas sin observación.</li></ol>
+  </div>
+  <div>
+    <h3>Lo que no puede decir</h3>
+    <p><strong>La resolución temporal la marcan los satélites.</strong> VIIRS va a bordo de tres satélites en la misma órbita, que pasan sobre España de madrugada (hacia la 1–3 h UTC) y a mediodía (12–14 h UTC): unas dos ventanas al día. MODIS añade pasadas por la mañana y la tarde, con píxeles de 1 km. Entre una pasada y otra no hay datos: un salto de 2.000 ha en una pasada nocturna puede haber ocurrido en cualquier momento de las horas anteriores.</p><p><strong>La resolución espacial también.</strong> Un píxel VIIRS mide unos 375 m de lado (14 ha), pero un píxel encendido no significa 14 ha ardiendo: basta un frente de unos metros si está muy caliente. El perímetro estimado es una aproximación; la superficie real la da Sentinel-2 o EFFIS cuando el humo y las nubes lo permiten.</p><p><strong>Nubes y humo esconden el fuego.</strong> Una pasada sin focos no quiere decir que el incendio se apagara. Los huecos de más de 18 horas aparecen marcados.</p><p>En los incendios históricos se usa el archivo estándar de FIRMS, que no incluye el satélite NOAA-21: tienen algo menos de pasadas que los actuales.</p>
+    <h3>Datos</h3>
+    <p>Focos: NASA FIRMS (VIIRS S-NPP, NOAA-20, NOAA-21 y MODIS). Relieve: Mapterhorn, con los MDT del IGN (CC BY 4.0, scne.es). Red Natura 2000: MITECO / AEE. Los datos de esta página están en el JSON que la acompaña, con el mismo nombre.</p>
+    <h3>Siglas y términos</h3>
+    <ul class="glosario">
+      <li><strong>FIRMS</strong> (Fire Information for Resource Management System): el servicio de la NASA que publica en abierto los focos de calor que ven los satélites, unas horas después de cada pasada.</li>
+      <li><strong>VIIRS</strong> y <strong>MODIS</strong>: los dos sensores que detectan esos focos. VIIRS va en los satélites S-NPP, NOAA-20 y NOAA-21, con píxeles de 375 m; MODIS, en Terra y Aqua, con píxeles de 1 km.</li>
+      <li><strong>FRP</strong> (potencia radiativa del fuego): el calor que emite un píxel, en megavatios. Sirve para comparar la intensidad de una pasada con otra.</li>
+      <li><strong>EFFIS</strong>: el Sistema Europeo de Información sobre Incendios Forestales, de Copernicus. Dibuja los perímetros quemados a partir de unas 30 ha.</li>
+      <li><strong>NBR</strong> y <strong>dNBR</strong>: el NBR (índice normalizado de área quemada) compara en una imagen el infrarrojo cercano con el de onda corta; el dNBR es cuánto baja entre la imagen de antes y la de después del fuego. Cuanto más baja, más quemado.</li>
+      <li><strong>FEDS</strong> (Fire Event Data Suite): el método de la NASA que sigue cada incendio pasada a pasada con los focos VIIRS. El perímetro estimado del vigía sigue la misma idea.</li>
+      <li><strong>CORINE Land Cover</strong>: el mapa europeo de cubiertas del suelo (bosque, matorral, cultivos, ciudad…), en su edición de 2018.</li>
+      <li><strong>Red Natura 2000</strong>: la red europea de espacios protegidos. <strong>ZEC</strong> es Zona Especial de Conservación (Directiva Hábitats) y <strong>ZEPA</strong>, Zona de Especial Protección para las Aves (Directiva Aves).</li>
+      <li><strong>Sentinel-2</strong>: los satélites europeos de Copernicus que fotografían el suelo cada dos o tres días con píxeles de 10 a 20 m. <strong>PNOA</strong>: la ortofoto del Plan Nacional de Ortofotografía Aérea.</li>
+    </ul>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p class="principle">Datos públicos, reglas a la vista y cada cifra enlazada a su fuente. Indicios, no veredictos.</p>
+  <p>Focos activos: NASA FIRMS (LANCE), parte del Earth Science Data and Information System de la NASA · Áreas quemadas: EFFIS, Copernicus Emergency Management Service, © Unión Europea · Imágenes Sentinel-2: Copernicus, © Unión Europea, vía Earth Search (Element 84) · Red Natura 2000 y CORINE Land Cover 2018: Agencia Europea de Medio Ambiente · Municipios: Nominatim, © colaboradores de OpenStreetMap (ODbL) · Ortofoto PNOA: CC BY 4.0 scne.es.</p>
+  <p><a href="https://asensio94.github.io/terra-aperta/">← Terra Aperta: todos los proyectos</a></p>
+  <nav aria-label="Proyectos hermanos"><ul class="siblings">
+    <li><a href="https://asensio94.github.io/sub-nocte/">Sub Nocte</a></li>
+    <li aria-current="page">Vigía de incendios</li>
+    <li><a href="https://asensio94.github.io/centinela-natura/">Centinela Natura</a></li>
+    <li><a href="https://asensio94.github.io/estado-iba/">Estado de las IBA</a></li>
+    <li><a href="https://asensio94.github.io/riesgo-tendidos-aves/">Riesgo de tendidos para aves</a></li>
+    <li><a href="https://asensio94.github.io/observatorio-alegaciones/">Observatorio de alegaciones</a></li>
+    <li><a href="https://asensio94.github.io/grafo-promotores/">Grafo de promotores</a></li>
+    <li><a href="https://asensio94.github.io/vigilancia-humedales/">Vigilancia de humedales</a></li>
+    <li><a href="https://asensio94.github.io/caudal-ecologico/">Caudal ecológico</a></li>
+    <li><a href="https://asensio94.github.io/acuiferos-francia/">Acuíferos de Francia</a></li>
+    <li><a href="https://asensio94.github.io/depuracion-y-bano/">Depuración y baño</a></li>
+    <li><a href="https://asensio94.github.io/zona-inundable/">Construir en zona inundable</a></li>
+  </ul></nav>
+  <p class="nota">Relieve © Mapterhorn (MDT del IGN, CC BY 4.0 scne.es; Copernicus GLO-30). Mapa base © OpenStreetMap. Ortofoto PNOA © scne.es.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/5.6.0/maplibre-gl.min.js"></script>
+<script>const CFG = {"datos": "2022-riofrio-de-aliste.json", "tz": "Europe/Madrid", "locale": "es-ES", "orto": ["https://www.ign.es/wmts/pnoa-ma?service=WMTS&request=GetTile&version=1.0.0&format=image/jpeg&layer=OI.OrthoimageCoverage&style=default&tilematrixset=GoogleMapsCompatible&tilematrix={z}&tilerow={y}&tilecol={x}", "PNOA © scne.es"], "t": {"js_play": "Reproducir", "js_pausa": "Pausa", "js_pasada": "Pasada {k} de {n}", "js_pixel": "{n} píxel", "js_pixeles": "{n} píxeles", "js_solo_modis": "Solo MODIS (1 km): no mueve el perímetro.", "js_perimetro": "Perímetro estimado: {ha}.", "js_crece": "+{ha} ha desde la pasada VIIRS anterior.", "js_sin_perimetro": "Aún sin perímetro VIIRS.", "js_hueco": "Tras {h} h sin observación.", "js_sin_webgl": "Este navegador no puede dibujar el mapa en 3D (WebGL). La curva y los momentos siguen funcionando."}};</script>
+<script src="ficha.js"></script>
+</body>
+</html>

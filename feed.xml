@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Vigía de incendios</title>
+<id>https://asensio94.github.io/vigia-incendios/</id><link href="https://asensio94.github.io/vigia-incendios/"/><link rel="self" href="https://asensio94.github.io/vigia-incendios/feed.xml"/>
+<updated>2026-11-07T10:07:00Z</updated><author><name>Vigía de incendios</name></author>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261031-003</id><title>Incendio en Málaga</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261031-003"/><updated>2026-11-07T02:47:00Z</updated>
+<summary>16 focos en 8 pasadas, del 2026-10-31T02:58Z al 2026-11-07T02:47Z (UTC). Píxeles con focos: 67.3 ha. Perímetro estimado: 31 ha; frente activo de 1.07 km en la última pasada. Arde sobre: suelo urbano o industrial. Red Natura: ZEPA Bahía de Málaga-Cerro Gordo. Superficie quemada estimada con Sentinel-2: 0.2 ha (provisional), medida con una sola imagen.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261107-001</id><title>Incendio en La Campana (Sevilla)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261107-001"/><updated>2026-11-07T02:47:00Z</updated>
+<summary>4 focos en 2 pasadas, del 2026-11-07T01:47Z al 2026-11-07T02:47Z (UTC). Píxeles con focos: 55 ha. Perímetro estimado: 25.5 ha; frente activo de 2.02 km en la última pasada. Arde sobre: cultivos.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261106-006</id><title>Incendio en Valladolid</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261106-006"/><updated>2026-11-06T13:29:00Z</updated>
+<summary>3 focos en 2 pasadas, del 2026-11-06T12:46Z al 2026-11-06T13:29Z (UTC). Píxeles con focos: 51.7 ha. Perímetro estimado: 17.1 ha; frente activo de 2.08 km en la última pasada. Arde sobre: cultivos.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261106-005</id><title>Incendio en Córdoba</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261106-005"/><updated>2026-11-06T13:27:00Z</updated>
+<summary>3 focos en 2 pasadas, del 2026-11-06T12:46Z al 2026-11-06T13:27Z (UTC). Píxeles con focos: 39.7 ha. Perímetro estimado: 10.6 ha; frente activo de 1.2 km en la última pasada. Arde sobre: cultivos.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261103-033</id><title>Incendio en Cabañas de la Sagra (Toledo)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261103-033"/><updated>2026-11-06T12:46:00Z</updated>
+<summary>3 focos en 2 pasadas, del 2026-11-03T12:46Z al 2026-11-06T12:46Z (UTC). Píxeles con focos: 40.8 ha. Perímetro estimado: 13.5 ha; frente activo de 1.52 km en la última pasada. Arde sobre: cultivos. Superficie quemada estimada con Sentinel-2: 3.4 ha (provisional), medida con una sola imagen.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261106-003</id><title>Incendio en Marchena (Sevilla)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261106-003"/><updated>2026-11-06T12:46:00Z</updated>
+<summary>4 focos en 1 pasadas, del 2026-11-06T12:46Z al 2026-11-06T12:46Z (UTC). Píxeles con focos: 43.6 ha. Perímetro estimado: 10.5 ha; frente activo de 1.18 km en la última pasada. Arde sobre: cultivos.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261106-002</id><title>Incendio en Ventas de Huelma (Granada)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261106-002"/><updated>2026-11-06T09:41:00Z</updated>
+<summary>4 focos en 1 pasadas, del 2026-11-06T09:41Z al 2026-11-06T09:41Z (UTC). Píxeles con focos: 506.5 ha. Arde sobre: cultivos.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261106-001</id><title>Incendio en Badajoz</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261106-001"/><updated>2026-11-06T03:04:00Z</updated>
+<summary>4 focos en 2 pasadas, del 2026-11-06T01:24Z al 2026-11-06T03:04Z (UTC). Píxeles con focos: 111.7 ha. Perímetro estimado: 47.9 ha; frente activo de 2.98 km en la última pasada. Arde sobre: cultivos.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261106-004</id><title>Incendio en Descargamaría (Cáceres)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261106-004"/><updated>2026-11-06T03:04:00Z</updated>
+<summary>3 focos en 2 pasadas, del 2026-11-06T01:21Z al 2026-11-06T03:04Z (UTC). Píxeles con focos: 66.5 ha. Perímetro estimado: 18.3 ha; frente activo de 1.63 km en la última pasada. Arde sobre: vegetación natural. Red Natura: ZEPA Sierra de Gata y Valle de las Pilas, ZEC Sierra de Gata.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261105-005</id><title>Incendio en Badajoz</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261105-005"/><updated>2026-11-05T15:11:00Z</updated>
+<summary>7 focos en 2 pasadas, del 2026-11-05T13:48Z al 2026-11-05T15:11Z (UTC). Píxeles con focos: 51.9 ha. Perímetro estimado: 16.5 ha; frente activo de 1.7 km en la última pasada. Arde sobre: vegetación natural.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261105-009</id><title>Incendio en Pantoja (Toledo)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261105-009"/><updated>2026-11-05T15:11:00Z</updated>
+<summary>4 focos en 3 pasadas, del 2026-11-05T13:03Z al 2026-11-05T15:11Z (UTC). Píxeles con focos: 55.9 ha. Perímetro estimado: 20.8 ha; frente activo de 1.78 km en la última pasada. Arde sobre: cultivos. Superficie quemada estimada con Sentinel-2: 20 ha (provisional), medida con una sola imagen.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261105-013</id><title>Incendio en Medellín (Badajoz)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261105-013"/><updated>2026-11-05T15:11:00Z</updated>
+<summary>3 focos en 2 pasadas, del 2026-11-05T13:48Z al 2026-11-05T15:11Z (UTC). Píxeles con focos: 18.9 ha. Arde sobre: cultivos.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261026-022</id><title>Incendio en Villar de Rena (Badajoz)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261026-022"/><updated>2026-11-05T13:48:00Z</updated>
+<summary>50 focos en 25 pasadas, del 2026-10-26T12:32Z al 2026-11-05T13:48Z (UTC). Píxeles con focos: 857.1 ha. Perímetro estimado: 728.8 ha; frente activo de 1.71 km en la última pasada. Arde sobre: cultivos. Red Natura: ZEPA Arrozales de Palazuelo y Guadalperales. Superficie quemada estimada con Sentinel-2: 381.9 ha (provisional).</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261031-039</id><title>Incendio en Don Benito (Badajoz)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261031-039"/><updated>2026-11-05T13:48:00Z</updated>
+<summary>4 focos en 4 pasadas, del 2026-10-31T12:57Z al 2026-11-05T13:48Z (UTC). Píxeles con focos: 63.5 ha. Perímetro estimado: 36.9 ha; frente activo de 1.38 km en la última pasada. Arde sobre: cultivos. Superficie quemada estimada con Sentinel-2: 50.3 ha (provisional).</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261031-040</id><title>Incendio en Acedera (Badajoz)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261031-040"/><updated>2026-11-05T13:48:00Z</updated>
+<summary>8 focos en 6 pasadas, del 2026-10-31T12:57Z al 2026-11-05T13:48Z (UTC). Píxeles con focos: 166.5 ha. Perímetro estimado: 86.6 ha; frente activo de 1.22 km en la última pasada. Arde sobre: cultivos. Red Natura: ZEPA Arrozales de Palazuelo y Guadalperales. Superficie quemada estimada con Sentinel-2: 67.4 ha (provisional).</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261102-009</id><title>Incendio en Villar de Rena (Badajoz)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261102-009"/><updated>2026-11-05T13:48:00Z</updated>
+<summary>12 focos en 8 pasadas, del 2026-11-02T12:21Z al 2026-11-05T13:48Z (UTC). Píxeles con focos: 239.2 ha. Perímetro estimado: 267.4 ha; frente activo de 2.76 km en la última pasada. Arde sobre: cultivos. Red Natura: ZEPA Arrozales de Palazuelo y Guadalperales. Superficie quemada estimada con Sentinel-2: 18.8 ha (provisional).</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261102-017</id><title>Incendio en Guareña (Badajoz)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261102-017"/><updated>2026-11-05T13:48:00Z</updated>
+<summary>13 focos en 8 pasadas, del 2026-11-02T13:03Z al 2026-11-05T13:48Z (UTC). Píxeles con focos: 166.4 ha. Perímetro estimado: 60.9 ha; frente activo de 0.67 km en la última pasada. Arde sobre: cultivos. Superficie quemada estimada con Sentinel-2: 21.5 ha (provisional), medida con una sola imagen.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261103-030</id><title>Incendio en Don Benito (Badajoz)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261103-030"/><updated>2026-11-05T13:48:00Z</updated>
+<summary>6 focos en 5 pasadas, del 2026-11-03T12:46Z al 2026-11-05T13:48Z (UTC). Píxeles con focos: 89.9 ha. Perímetro estimado: 25.1 ha; frente activo de 1.64 km en la última pasada. Arde sobre: cultivos.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261105-008</id><title>Incendio en Badajoz</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261105-008"/><updated>2026-11-05T13:48:00Z</updated>
+<summary>4 focos en 2 pasadas, del 2026-11-05T13:03Z al 2026-11-05T13:48Z (UTC). Píxeles con focos: 68 ha. Perímetro estimado: 34.1 ha; frente activo de 2.52 km en la última pasada. Arde sobre: vegetación natural.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261105-010</id><title>Incendio en Escacena del Campo (Huelva)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261105-010"/><updated>2026-11-05T13:48:00Z</updated>
+<summary>4 focos en 1 pasadas, del 2026-11-05T13:48Z al 2026-11-05T13:48Z (UTC). Píxeles con focos: 32.7 ha. Perímetro estimado: 9.9 ha; frente activo de 1.41 km en la última pasada. Arde sobre: cultivos. Superficie quemada estimada con Sentinel-2: 8.1 ha (provisional), medida con una sola imagen.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261105-012</id><title>Incendio en Alcalá del Río (Sevilla)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261105-012"/><updated>2026-11-05T13:48:00Z</updated>
+<summary>3 focos en 2 pasadas, del 2026-11-05T13:03Z al 2026-11-05T13:48Z (UTC). Píxeles con focos: 39.9 ha. Perímetro estimado: 14.8 ha; frente activo de 1.59 km en la última pasada. Arde sobre: cultivos. Superficie quemada estimada con Sentinel-2: 1.6 ha (provisional), medida con una sola imagen.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261105-050</id><title>Incendio en Azuaga (Badajoz)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261105-050"/><updated>2026-11-05T13:48:00Z</updated>
+<summary>1 focos en 1 pasadas, del 2026-11-05T13:48Z al 2026-11-05T13:48Z (UTC). Píxeles con focos: 18.9 ha. Arde sobre: cultivos. Red Natura: ZEPA Campiña sur - Embalse de Arroyo Conejos. Superficie quemada estimada con Sentinel-2: 24.1 ha (provisional), medida con una sola imagen.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261105-052</id><title>Incendio en Montijo (Badajoz)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261105-052"/><updated>2026-11-05T13:48:00Z</updated>
+<summary>1 focos en 1 pasadas, del 2026-11-05T13:48Z al 2026-11-05T13:48Z (UTC). Píxeles con focos: 17.2 ha. Arde sobre: cultivos. Red Natura: ZEPA Embalse de los Canchales.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261031-011</id><title>Incendio en Don Benito (Badajoz)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261031-011"/><updated>2026-11-05T13:03:00Z</updated>
+<summary>12 focos en 7 pasadas, del 2026-10-31T12:38Z al 2026-11-05T13:03Z (UTC). Píxeles con focos: 167.8 ha. Perímetro estimado: 103.8 ha; frente activo de 1.19 km en la última pasada. Arde sobre: cultivos. Superficie quemada estimada con Sentinel-2: 16.8 ha (provisional).</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261103-027</id><title>Incendio en Medellín (Badajoz)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261103-027"/><updated>2026-11-05T13:03:00Z</updated>
+<summary>3 focos en 3 pasadas, del 2026-11-03T12:44Z al 2026-11-05T13:03Z (UTC). Píxeles con focos: 62.3 ha. Perímetro estimado: 16.7 ha; frente activo de 1.3 km en la última pasada. Arde sobre: cultivos.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261103-029</id><title>Incendio en Santa Amalia (Badajoz)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261103-029"/><updated>2026-11-05T13:03:00Z</updated>
+<summary>9 focos en 6 pasadas, del 2026-11-03T12:46Z al 2026-11-05T13:03Z (UTC). Píxeles con focos: 146.2 ha. Perímetro estimado: 130.8 ha; frente activo de 0.83 km en la última pasada. Arde sobre: cultivos.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261104-003</id><title>Incendio en Épila (Zaragoza)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261104-003"/><updated>2026-11-05T13:03:00Z</updated>
+<summary>10 focos en 3 pasadas, del 2026-11-04T12:25Z al 2026-11-05T13:03Z (UTC). Píxeles con focos: 121.3 ha. Perímetro estimado: 69.7 ha; frente activo de 0.79 km en la última pasada. Arde sobre: cultivos. Superficie quemada estimada con Sentinel-2: 3.1 ha (provisional), medida con una sola imagen.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261104-009</id><title>Incendio en Logrosán (Cáceres)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261104-009"/><updated>2026-11-05T13:03:00Z</updated>
+<summary>7 focos en 4 pasadas, del 2026-11-04T12:25Z al 2026-11-05T13:03Z (UTC). Píxeles con focos: 156.4 ha. Perímetro estimado: 66.1 ha; frente activo de 2.91 km en la última pasada. Arde sobre: cultivos. Red Natura: ZEPA Vegas del Ruecas, Cubilar y Moheda Alta. Superficie quemada estimada con Sentinel-2: 36.1 ha (provisional), medida con una sola imagen.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261104-010</id><title>Incendio en Almonte (Huelva)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261104-010"/><updated>2026-11-05T13:03:00Z</updated>
+<summary>10 focos en 2 pasadas, del 2026-11-04T12:25Z al 2026-11-05T13:03Z (UTC). Píxeles con focos: 59.7 ha. Perímetro estimado: 25.9 ha; frente activo de 1.96 km en la última pasada. Arde sobre: vegetación natural. Red Natura: ZEC Doñana Norte y Oeste. Superficie quemada estimada con Sentinel-2: 26.9 ha (provisional), medida con una sola imagen.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261104-013</id><title>Incendio en Pozaldez (Valladolid)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261104-013"/><updated>2026-11-05T13:03:00Z</updated>
+<summary>3 focos en 2 pasadas, del 2026-11-04T12:25Z al 2026-11-05T13:03Z (UTC). Píxeles con focos: 51.8 ha. Perímetro estimado: 16.2 ha; frente activo de 0.96 km en la última pasada. Arde sobre: cultivos.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261104-055</id><title>Incendio en Badajoz</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261104-055"/><updated>2026-11-05T13:03:00Z</updated>
+<summary>2 focos en 2 pasadas, del 2026-11-04T16:11Z al 2026-11-05T13:03Z (UTC). Píxeles con focos: 18.5 ha. Arde sobre: cultivos. Red Natura: ZEC Río Guadiana Internacional.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261105-004</id><title>Incendio en Cantoria (Almería)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261105-004"/><updated>2026-11-05T13:03:00Z</updated>
+<summary>8 focos en 1 pasadas, del 2026-11-05T13:03Z al 2026-11-05T13:03Z (UTC). Píxeles con focos: 63 ha. Perímetro estimado: 32.9 ha; frente activo de 2.25 km en la última pasada. Arde sobre: suelo urbano o industrial.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261105-006</id><title>Incendio en Santa Fe (Granada)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261105-006"/><updated>2026-11-05T13:03:00Z</updated>
+<summary>4 focos en 1 pasadas, del 2026-11-05T13:03Z al 2026-11-05T13:03Z (UTC). Píxeles con focos: 37.4 ha. Perímetro estimado: 11.2 ha; frente activo de 1.5 km en la última pasada. Arde sobre: cultivos.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261105-007</id><title>Incendio en Escacena del Campo (Huelva)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261105-007"/><updated>2026-11-05T13:03:00Z</updated>
+<summary>4 focos en 1 pasadas, del 2026-11-05T13:03Z al 2026-11-05T13:03Z (UTC). Píxeles con focos: 36.6 ha. Perímetro estimado: 11.6 ha; frente activo de 1.6 km en la última pasada. Arde sobre: cultivos. Superficie quemada estimada con Sentinel-2: 11.4 ha (provisional), medida con una sola imagen.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261105-011</id><title>Incendio en Alzira (Valencia)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261105-011"/><updated>2026-11-05T13:03:00Z</updated>
+<summary>3 focos en 2 pasadas, del 2026-11-05T12:08Z al 2026-11-05T13:03Z (UTC). Píxeles con focos: 40 ha. Perímetro estimado: 10.5 ha; frente activo de 1.25 km en la última pasada. Arde sobre: cultivos. Red Natura: ZEC Serra de Corbera.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261105-020</id><title>Incendio en Villarrasa (Huelva)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261105-020"/><updated>2026-11-05T13:03:00Z</updated>
+<summary>2 focos en 1 pasadas, del 2026-11-05T13:03Z al 2026-11-05T13:03Z (UTC). Píxeles con focos: 18.9 ha. Arde sobre: cultivos. Red Natura: ZEC Corredor Ecológico del Río Tinto.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261105-034</id><title>Incendio en Piornal (Cáceres)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261105-034"/><updated>2026-11-05T13:03:00Z</updated>
+<summary>1 focos en 1 pasadas, del 2026-11-05T13:03Z al 2026-11-05T13:03Z (UTC). Píxeles con focos: 21.3 ha. Arde sobre: cultivos. Red Natura: ZEC Sierra de Gredos y Valle del Jerte. Superficie quemada estimada con Sentinel-2: 9.3 ha (provisional), medida con una sola imagen.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261105-035</id><title>Incendio en El Casar (Guadalajara)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261105-035"/><updated>2026-11-05T13:03:00Z</updated>
+<summary>1 focos en 1 pasadas, del 2026-11-05T13:03Z al 2026-11-05T13:03Z (UTC). Píxeles con focos: 15.5 ha. Arde sobre: vegetación natural. Red Natura: ZEPA Estepas cerealistas de los ríos Jarama y Henares, ZEC Cuencas de los ríos Jarama y Henares.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261105-046</id><title>Incendio en Orbaiceta (Navarra)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261105-046"/><updated>2026-11-05T13:03:00Z</updated>
+<summary>1 focos en 1 pasadas, del 2026-11-05T13:03Z al 2026-11-05T13:03Z (UTC). Píxeles con focos: 13.7 ha. Arde sobre: vegetación natural. Red Natura: ZEC y ZEPA Roncesvalles-Selva de Irati.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261104-029</id><title>Incendio en Valdecaballeros (Badajoz)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261104-029"/><updated>2026-11-05T12:08:00Z</updated>
+<summary>2 focos en 2 pasadas, del 2026-11-04T12:25Z al 2026-11-05T12:08Z (UTC). Píxeles con focos: 62.6 ha. Arde sobre: vegetación natural. Red Natura: ZEC y ZEPA Puerto Peña - los Golondrinos.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261105-016</id><title>Incendio en Zaragoza</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261105-016"/><updated>2026-11-05T12:08:00Z</updated>
+<summary>2 focos en 1 pasadas, del 2026-11-05T12:08Z al 2026-11-05T12:08Z (UTC). Píxeles con focos: 25.5 ha. Arde sobre: vegetación natural. Red Natura: ZEC El Castellar.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261105-028</id><title>Incendio en Fraga (Huesca)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261105-028"/><updated>2026-11-05T12:08:00Z</updated>
+<summary>1 focos en 1 pasadas, del 2026-11-05T12:08Z al 2026-11-05T12:08Z (UTC). Píxeles con focos: 17.6 ha. Arde sobre: cultivos. Red Natura: ZEC Ríos cinca y Alcanadre.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261105-029</id><title>Incendio en Urraúl Alto (Navarra)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261105-029"/><updated>2026-11-05T12:08:00Z</updated>
+<summary>1 focos en 1 pasadas, del 2026-11-05T12:08Z al 2026-11-05T12:08Z (UTC). Píxeles con focos: 20.5 ha. Arde sobre: vegetación natural. Red Natura: ZEC y ZEPA Sierra de Artxuga, Zarikieta y Montes de Areta.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261105-001</id><title>Incendio en Rielves (Toledo)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261105-001"/><updated>2026-11-05T09:02:00Z</updated>
+<summary>3 focos en 1 pasadas, del 2026-11-05T09:02Z al 2026-11-05T09:02Z (UTC). Píxeles con focos: 300.8 ha. Arde sobre: cultivos. Red Natura: ZEPA Área esteparia de la margen derecha del río Guadarrama. Superficie quemada estimada con Sentinel-2: 2.4 ha (provisional), medida con una sola imagen.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261103-034</id><title>Incendio en Cilleros (Cáceres)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261103-034"/><updated>2026-11-04T14:07:00Z</updated>
+<summary>3 focos en 2 pasadas, del 2026-11-03T12:46Z al 2026-11-04T14:07Z (UTC). Píxeles con focos: 54.3 ha. Perímetro estimado: 22.3 ha; frente activo de 1.94 km en la última pasada. Arde sobre: vegetación natural.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261103-004</id><title>Incendio en Córdoba</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261103-004"/><updated>2026-11-04T14:05:00Z</updated>
+<summary>5 focos en 4 pasadas, del 2026-11-03T09:21Z al 2026-11-04T14:05Z (UTC). Píxeles con focos: 51.2 ha. Perímetro estimado: 17.7 ha; frente activo de 1.43 km en la última pasada. Arde sobre: cultivos.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261102-008</id><title>Incendio en Torres de Segre (Lérida)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261102-008"/><updated>2026-11-04T13:25:00Z</updated>
+<summary>10 focos en 6 pasadas, del 2026-11-02T12:01Z al 2026-11-04T13:25Z (UTC). Píxeles con focos: 125.2 ha. Perímetro estimado: 80.1 ha; frente activo de 1.36 km en la última pasada. Arde sobre: cultivos.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261104-006</id><title>Incendio en Almonacid de la Sierra (Zaragoza)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261104-006"/><updated>2026-11-04T13:25:00Z</updated>
+<summary>5 focos en 2 pasadas, del 2026-11-04T12:25Z al 2026-11-04T13:25Z (UTC). Píxeles con focos: 61.9 ha. Perímetro estimado: 26.5 ha; frente activo de 3.1 km en la última pasada. Arde sobre: cultivos.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261104-007</id><title>Incendio en Ontiñena (Huesca)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261104-007"/><updated>2026-11-04T13:25:00Z</updated>
+<summary>5 focos en 2 pasadas, del 2026-11-04T12:25Z al 2026-11-04T13:25Z (UTC). Píxeles con focos: 68.1 ha. Perímetro estimado: 35.6 ha; frente activo de 2.33 km en la última pasada. Arde sobre: cultivos.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261104-014</id><title>Incendio en Rueda (Valladolid)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261104-014"/><updated>2026-11-04T13:25:00Z</updated>
+<summary>2 focos en 2 pasadas, del 2026-11-04T12:25Z al 2026-11-04T13:25Z (UTC). Píxeles con focos: 21.6 ha. Arde sobre: cultivos. Red Natura: ZEPA La Nava-Rueda.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261104-016</id><title>Incendio en Tudela (Navarra)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261104-016"/><updated>2026-11-04T13:25:00Z</updated>
+<summary>2 focos en 2 pasadas, del 2026-11-04T12:25Z al 2026-11-04T13:25Z (UTC). Píxeles con focos: 36.6 ha. Arde sobre: cultivos. Red Natura: ZEC Bardenas Reales, ZEC Río Ebro.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261102-045</id><title>Incendio en Acedera (Badajoz)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261102-045"/><updated>2026-11-04T13:22:00Z</updated>
+<summary>3 focos en 2 pasadas, del 2026-11-02T13:03Z al 2026-11-04T13:22Z (UTC). Píxeles con focos: 45.6 ha. Perímetro estimado: 8.8 ha; frente activo de 1.17 km en la última pasada. Arde sobre: cultivos.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261102-050</id><title>Incendio en As Neves (Pontevedra)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261102-050"/><updated>2026-11-04T13:22:00Z</updated>
+<summary>4 focos en 4 pasadas, del 2026-11-02T13:03Z al 2026-11-04T13:22Z (UTC). Píxeles con focos: 64.6 ha. Perímetro estimado: 32.3 ha; frente activo de 1.55 km en la última pasada. Arde sobre: vegetación natural. Superficie quemada estimada con Sentinel-2: 14.4 ha (provisional), medida con una sola imagen. Perímetro EFFIS: 12 ha.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261102-054</id><title>Incendio en Valdetorres (Badajoz)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261102-054"/><updated>2026-11-04T13:22:00Z</updated>
+<summary>5 focos en 3 pasadas, del 2026-11-02T13:40Z al 2026-11-04T13:22Z (UTC). Píxeles con focos: 96.1 ha. Perímetro estimado: 37.8 ha; frente activo de 3.26 km en la última pasada. Arde sobre: cultivos. Red Natura: ZEC Río Guadiana Alto - Zujar, ZEC Río Guadamez.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261104-004</id><title>Incendio en Guillena (Sevilla)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261104-004"/><updated>2026-11-04T13:22:00Z</updated>
+<summary>8 focos en 1 pasadas, del 2026-11-04T13:22Z al 2026-11-04T13:22Z (UTC). Píxeles con focos: 117.7 ha. Perímetro estimado: 86.2 ha; frente activo de 5.49 km en la última pasada. Arde sobre: cultivos.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261104-005</id><title>Incendio en La Palma del Condado (Huelva)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261104-005"/><updated>2026-11-04T13:22:00Z</updated>
+<summary>6 focos en 1 pasadas, del 2026-11-04T13:22Z al 2026-11-04T13:22Z (UTC). Píxeles con focos: 45.2 ha. Perímetro estimado: 21 ha; frente activo de 1.97 km en la última pasada. Arde sobre: cultivos.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261102-018</id><title>Incendio en Navalvillar de Pela (Badajoz)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261102-018"/><updated>2026-11-04T12:25:00Z</updated>
+<summary>5 focos en 3 pasadas, del 2026-11-02T13:03Z al 2026-11-04T12:25Z (UTC). Píxeles con focos: 70.8 ha. Perímetro estimado: 24.7 ha; frente activo de 1.51 km en la última pasada. Arde sobre: cultivos. Red Natura: ZEPA Vegas del Ruecas, Cubilar y Moheda Alta. Superficie quemada estimada con Sentinel-2: 52.5 ha (provisional).</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261104-008</id><title>Incendio en Torroella de Montgrí (Gerona)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261104-008"/><updated>2026-11-04T12:25:00Z</updated>
+<summary>3 focos en 2 pasadas, del 2026-11-04T11:44Z al 2026-11-04T12:25Z (UTC). Píxeles con focos: 77.6 ha. Perímetro estimado: 24.7 ha; frente activo de 2.33 km en la última pasada. Arde sobre: cultivos. Red Natura: ZEC Riberes del Baix Ter.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261104-012</id><title>Incendio en Navalvillar de Pela (Badajoz)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261104-012"/><updated>2026-11-04T12:25:00Z</updated>
+<summary>2 focos en 1 pasadas, del 2026-11-04T12:25Z al 2026-11-04T12:25Z (UTC). Píxeles con focos: 48.2 ha. Arde sobre: cultivos. Red Natura: ZEPA Vegas del Ruecas, Cubilar y Moheda Alta. Superficie quemada estimada con Sentinel-2: 7.1 ha (provisional), medida con una sola imagen.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261104-025</id><title>Incendio en Puebla de Alcocer (Badajoz)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261104-025"/><updated>2026-11-04T12:25:00Z</updated>
+<summary>1 focos en 1 pasadas, del 2026-11-04T12:25Z al 2026-11-04T12:25Z (UTC). Píxeles con focos: 25.6 ha. Arde sobre: cultivos. Red Natura: ZEC y ZEPA Embalse de Orellana y Sierra de Pela. Superficie quemada estimada con Sentinel-2: 0.1 ha (provisional), medida con una sola imagen.</summary></entry>
+</feed>

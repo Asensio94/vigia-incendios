@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Vigie des incendies</title>
+<id>https://asensio94.github.io/vigia-incendios/fr/</id><link href="https://asensio94.github.io/vigia-incendios/fr/"/><link rel="self" href="https://asensio94.github.io/vigia-incendios/fr/feed.xml"/>
+<updated>2026-11-07T10:07:00Z</updated><author><name>Vigie des incendies</name></author>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261106-001</id><title>Incendie à Gonfreville-l'Orcher (Seine-Maritime)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261106-001"/><updated>2026-11-07T03:25:00Z</updated>
+<summary>7 foyers en 5 passages, du 2026-11-06T01:19Z au 2026-11-07T03:25Z (UTC). Pixels avec foyers : 150,2 ha. Périmètre estimé : 92,0 ha ; front actif de 2,2 km au dernier passage. Brûle sur : sol urbain ou industriel. Surface brûlée estimée avec Sentinel-2 : 1,2 ha (provisoire), mesurée avec une seule image.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261107-001</id><title>Incendie à Notre-Dame-de-Riez (Vendée)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261107-001"/><updated>2026-11-07T01:45:00Z</updated>
+<summary>1 foyers en 1 passages, du 2026-11-07T01:45Z au 2026-11-07T01:45Z (UTC). Pixels avec foyers : 21,3 ha. Brûle sur : cultures. Natura 2000 : ZPS Marais Breton, baie de Bourgneuf, île de Noirmoutier et forêt de Monts, ZSC Marais Breton, baie de Bourgneuf, île de Noirmoutier et forêt de Monts.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261103-002</id><title>Incendie à Ascou (Ariège)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261103-002"/><updated>2026-11-06T13:29:00Z</updated>
+<summary>7 foyers en 4 passages, du 2026-11-03T12:46Z au 2026-11-06T13:29Z (UTC). Pixels avec foyers : 80,0 ha. Périmètre estimé : 42,2 ha ; front actif de 1,9 km au dernier passage. Brûle sur : végétation naturelle.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261106-003</id><title>Incendie à Sarrance (Pyrénées-Atlantiques)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261106-003"/><updated>2026-11-06T13:29:00Z</updated>
+<summary>2 foyers en 2 passages, du 2026-11-06T12:46Z au 2026-11-06T13:29Z (UTC). Pixels avec foyers : 41,7 ha. Brûle sur : végétation naturelle. Natura 2000 : ZSC Massif du Montagnon.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261103-004</id><title>Incendie à Caussou (Ariège)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261103-004"/><updated>2026-11-06T12:46:00Z</updated>
+<summary>4 foyers en 3 passages, du 2026-11-03T12:46Z au 2026-11-06T12:46Z (UTC). Pixels avec foyers : 76,8 ha. Périmètre estimé : 33,5 ha ; front actif de 1,1 km au dernier passage. Brûle sur : végétation naturelle. Surface brûlée estimée avec Sentinel-2 : 23,2 ha (provisoire), mesurée avec une seule image. Contour EFFIS : 32,0 ha.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261106-002</id><title>Incendie à Orsanco (Pyrénées-Atlantiques)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261106-002"/><updated>2026-11-06T03:02:00Z</updated>
+<summary>2 foyers en 1 passages, du 2026-11-06T03:02Z au 2026-11-06T03:02Z (UTC). Pixels avec foyers : 33,2 ha. Brûle sur : cultures. Natura 2000 : ZSC La Bidouze (cours d'eau).</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261026-001</id><title>Incendie à lieu sans nom</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261026-001"/><updated>2026-11-06T01:19:00Z</updated>
+<summary>34 foyers en 25 passages, du 2026-10-26T01:26Z au 2026-11-06T01:19Z (UTC). Pixels avec foyers : 151,5 ha. Périmètre estimé : 86,0 ha ; front actif de 1,1 km au dernier passage. Brûle sur : sol urbain ou industriel. Surface brûlée estimée avec Sentinel-2 : au moins 2,4 ha (provisoire), mesurée avec une seule image.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261105-001</id><title>Incendie à lieu sans nom</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261105-001"/><updated>2026-11-06T01:19:00Z</updated>
+<summary>3 foyers en 2 passages, du 2026-11-05T01:41Z au 2026-11-06T01:19Z (UTC). Pixels avec foyers : 42,2 ha. Périmètre estimé : 15,5 ha ; front actif de 1,7 km au dernier passage. Brûle sur : sol urbain ou industriel.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261105-003</id><title>Incendie à Verdun (Meuse)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261105-003"/><updated>2026-11-05T13:05:00Z</updated>
+<summary>4 foyers en 3 passages, du 2026-11-05T11:25Z au 2026-11-05T13:05Z (UTC). Pixels avec foyers : 56,8 ha. Périmètre estimé : 19,2 ha ; front actif de 2,0 km au dernier passage. Brûle sur : sol urbain ou industriel.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261105-004</id><title>Incendie à Annay (Nièvre)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261105-004"/><updated>2026-11-05T13:05:00Z</updated>
+<summary>3 foyers en 3 passages, du 2026-11-05T11:25Z au 2026-11-05T13:05Z (UTC). Pixels avec foyers : 61,7 ha. Périmètre estimé : 20,9 ha ; front actif de 1,1 km au dernier passage. Brûle sur : cultures.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261104-001</id><title>Incendie à Galéria (Haute-Corse)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261104-001"/><updated>2026-11-04T12:25:00Z</updated>
+<summary>1 foyers en 1 passages, du 2026-11-04T12:25Z au 2026-11-04T12:25Z (UTC). Pixels avec foyers : 14,8 ha. Brûle sur : végétation naturelle. Natura 2000 : ZSC Rivière et vallée du Fango.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261103-003</id><title>Incendie à Arles (Bouches-du-Rhône)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261103-003"/><updated>2026-11-03T13:44:00Z</updated>
+<summary>3 foyers en 2 passages, du 2026-11-03T12:46Z au 2026-11-03T13:44Z (UTC). Pixels avec foyers : 70,0 ha. Périmètre estimé : 33,9 ha ; front actif de 2,6 km au dernier passage. Brûle sur : cultures.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261103-007</id><title>Incendie à Arles (Bouches-du-Rhône)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261103-007"/><updated>2026-11-03T13:44:00Z</updated>
+<summary>2 foyers en 2 passages, du 2026-11-03T12:46Z au 2026-11-03T13:44Z (UTC). Pixels avec foyers : 45,9 ha. Brûle sur : cultures. Natura 2000 : ZSC Le Rhône aval.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261103-005</id><title>Incendie à Gazost (Hautes-Pyrénées)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261103-005"/><updated>2026-11-03T13:42:00Z</updated>
+<summary>2 foyers en 2 passages, du 2026-11-03T12:46Z au 2026-11-03T13:42Z (UTC). Pixels avec foyers : 24,1 ha. Brûle sur : végétation naturelle. Surface brûlée estimée avec Sentinel-2 : 34,8 ha (provisoire), mesurée avec une seule image. Contour EFFIS : 3,0 ha.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261102-015</id><title>Incendie à Caux-et-Sauzens (Aude)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261102-015"/><updated>2026-11-03T12:46:00Z</updated>
+<summary>3 foyers en 3 passages, du 2026-11-02T14:56Z au 2026-11-03T12:46Z (UTC). Pixels avec foyers : 29,1 ha. Brûle sur : cultures.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261103-006</id><title>Incendie à Luc-sur-Orbieu (Aude)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261103-006"/><updated>2026-11-03T12:46:00Z</updated>
+<summary>1 foyers en 1 passages, du 2026-11-03T12:46Z au 2026-11-03T12:46Z (UTC). Pixels avec foyers : 14,0 ha. Brûle sur : cultures. Natura 2000 : ZSC Vallée de l'Orbieu.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261103-008</id><title>Incendie à Saint-Martin-de-Crau (Bouches-du-Rhône)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261103-008"/><updated>2026-11-03T12:46:00Z</updated>
+<summary>1 foyers en 1 passages, du 2026-11-03T12:46Z au 2026-11-03T12:46Z (UTC). Pixels avec foyers : 16,3 ha. Brûle sur : cultures. Natura 2000 : ZPS Crau, ZSC Crau centrale - Crau sèche.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261102-001</id><title>Incendie à Bastelicaccia (Corse-du-Sud)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261102-001"/><updated>2026-11-03T00:39:00Z</updated>
+<summary>3 foyers en 3 passages, du 2026-11-02T00:37Z au 2026-11-03T00:39Z (UTC). Pixels avec foyers : 64,7 ha. Périmètre estimé : 19,9 ha ; front actif de 1,2 km au dernier passage. Brûle sur : végétation naturelle.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261102-005</id><title>Incendie à Moulis-en-Médoc (Gironde)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261102-005"/><updated>2026-11-02T13:05:00Z</updated>
+<summary>4 foyers en 3 passages, du 2026-11-02T12:01Z au 2026-11-02T13:05Z (UTC). Pixels avec foyers : 63,5 ha. Périmètre estimé : 23,4 ha ; front actif de 1,0 km au dernier passage. Brûle sur : cultures. Natura 2000 : ZSC Marais du Haut Médoc.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261102-006</id><title>Incendie à lieu sans nom</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261102-006"/><updated>2026-11-02T13:05:00Z</updated>
+<summary>4 foyers en 3 passages, du 2026-11-02T12:01Z au 2026-11-02T13:05Z (UTC). Pixels avec foyers : 52,2 ha. Périmètre estimé : 19,7 ha ; front actif de 1,1 km au dernier passage. Brûle sur : cultures. Surface brûlée estimée avec Sentinel-2 : 21,2 ha (provisoire), mesurée avec une seule image.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261102-007</id><title>Incendie à Montrevault-sur-Èvre (Maine-et-Loire)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261102-007"/><updated>2026-11-02T13:05:00Z</updated>
+<summary>3 foyers en 2 passages, du 2026-11-02T12:23Z au 2026-11-02T13:05Z (UTC). Pixels avec foyers : 51,0 ha. Périmètre estimé : 13,8 ha ; front actif de 2,0 km au dernier passage. Brûle sur : cultures. Surface brûlée estimée avec Sentinel-2 : 6,7 ha (provisoire), mesurée avec une seule image.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261102-011</id><title>Incendie à Arles (Bouches-du-Rhône)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261102-011"/><updated>2026-11-02T13:03:00Z</updated>
+<summary>1 foyers en 1 passages, du 2026-11-02T13:03Z au 2026-11-02T13:03Z (UTC). Pixels avec foyers : 20,2 ha. Brûle sur : cultures. Natura 2000 : ZPS Camargue, ZSC Camargue.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261102-012</id><title>Incendie à Villeveyrac (Hérault)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261102-012"/><updated>2026-11-02T13:03:00Z</updated>
+<summary>1 foyers en 1 passages, du 2026-11-02T13:03Z au 2026-11-02T13:03Z (UTC). Pixels avec foyers : 17,2 ha. Brûle sur : cultures. Natura 2000 : ZPS Plaine de Villeveyrac-Montagnac.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261102-009</id><title>Incendie à Cavaillon (Vaucluse)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261102-009"/><updated>2026-11-02T12:23:00Z</updated>
+<summary>1 foyers en 1 passages, du 2026-11-02T12:23Z au 2026-11-02T12:23Z (UTC). Pixels avec foyers : 17,6 ha. Brûle sur : cultures. Natura 2000 : ZSC Le Calavon et l'Encrème.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261102-008</id><title>Incendie à Vendres (Hérault)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261102-008"/><updated>2026-11-02T12:01:00Z</updated>
+<summary>1 foyers en 1 passages, du 2026-11-02T12:01Z au 2026-11-02T12:01Z (UTC). Pixels avec foyers : 21,5 ha. Brûle sur : cultures. Natura 2000 : ZSC Collines d'Ensérune (ancien nom : Collines du Narbonnais).</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261020-001</id><title>Incendie à lieu sans nom</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261020-001"/><updated>2026-11-02T01:38:00Z</updated>
+<summary>13 foyers en 12 passages, du 2026-10-20T01:39Z au 2026-11-02T01:38Z (UTC). Pixels avec foyers : 61,7 ha. Périmètre estimé : 27,9 ha ; front actif de 1,0 km au dernier passage. Brûle sur : mixte. Surface brûlée estimée avec Sentinel-2 : 32,3 ha (provisoire).</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261101-010</id><title>Incendie à Massangis (Yonne)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261101-010"/><updated>2026-11-01T14:22:00Z</updated>
+<summary>1 foyers en 1 passages, du 2026-11-01T14:22Z au 2026-11-01T14:22Z (UTC). Pixels avec foyers : 257,8 ha. Brûle sur : cultures. Natura 2000 : ZSC Pelouses, forêts et habitats à chauve-souris du sud de la vallée de l'Yonne et de ses affluents. Surface brûlée estimée avec Sentinel-2 : 6,9 ha (provisoire), mesurée avec une seule image.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261101-007</id><title>Incendie à Courtenay (Isère)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261101-007"/><updated>2026-11-01T14:20:00Z</updated>
+<summary>1 foyers en 1 passages, du 2026-11-01T14:20Z au 2026-11-01T14:20Z (UTC). Pixels avec foyers : 240,2 ha. Brûle sur : végétation naturelle. Natura 2000 : ZSC L'Isle Crémieu. Surface brûlée estimée avec Sentinel-2 : au moins 0,6 ha (provisoire), mesurée avec une seule image.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261101-003</id><title>Incendie à Eauze (Gers)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261101-003"/><updated>2026-11-01T13:25:00Z</updated>
+<summary>3 foyers en 2 passages, du 2026-11-01T12:40Z au 2026-11-01T13:25Z (UTC). Pixels avec foyers : 32,5 ha. Périmètre estimé : 9,8 ha ; front actif de 1,2 km au dernier passage. Brûle sur : cultures.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261101-001</id><title>Incendie à Mangiennes (Meuse)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261101-001"/><updated>2026-11-01T02:34:00Z</updated>
+<summary>2 foyers en 2 passages, du 2026-11-01T01:34Z au 2026-11-01T02:34Z (UTC). Pixels avec foyers : 34,8 ha. Brûle sur : cultures. Natura 2000 : ZPS Forêts et zones humides du pays de Spincourt.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261101-002</id><title>Incendie à La Jaille-Yvon (Maine-et-Loire)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261101-002"/><updated>2026-11-01T01:43:00Z</updated>
+<summary>1 foyers en 1 passages, du 2026-11-01T01:43Z au 2026-11-01T01:43Z (UTC). Pixels avec foyers : 14,8 ha. Brûle sur : cultures. Natura 2000 : ZSC Basses vallées angevines, aval de la rivière Mayenne et prairies de la Baumette.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261031-007</id><title>Incendie à Saint-Antoine-de-Breuilh (Dordogne)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261031-007"/><updated>2026-10-31T13:44:00Z</updated>
+<summary>4 foyers en 4 passages, du 2026-10-31T12:02Z au 2026-10-31T13:44Z (UTC). Pixels avec foyers : 48,7 ha. Périmètre estimé : 20,5 ha ; front actif de 1,2 km au dernier passage. Brûle sur : cultures. Surface brûlée estimée avec Sentinel-2 : 0,6 ha (provisoire), mesurée avec une seule image.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261031-009</id><title>Incendie à Somloire (Maine-et-Loire)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261031-009"/><updated>2026-10-31T12:59:00Z</updated>
+<summary>3 foyers en 2 passages, du 2026-10-31T12:40Z au 2026-10-31T12:59Z (UTC). Pixels avec foyers : 33,4 ha. Périmètre estimé : 10,9 ha ; front actif de 1,4 km au dernier passage. Brûle sur : cultures.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261031-016</id><title>Incendie à Migné (Indre)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261031-016"/><updated>2026-10-31T12:59:00Z</updated>
+<summary>1 foyers en 1 passages, du 2026-10-31T12:59Z au 2026-10-31T12:59Z (UTC). Pixels avec foyers : 15,2 ha. Brûle sur : cultures. Natura 2000 : ZPS Brenne, ZSC Grande Brenne.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261031-008</id><title>Incendie à Arguenos (Haute-Garonne)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261031-008"/><updated>2026-10-31T12:57:00Z</updated>
+<summary>3 foyers en 2 passages, du 2026-10-31T12:02Z au 2026-10-31T12:57Z (UTC). Pixels avec foyers : 41,5 ha. Périmètre estimé : 17,0 ha ; front actif de 1,8 km au dernier passage. Brûle sur : végétation naturelle. Surface brûlée estimée avec Sentinel-2 : 11,4 ha (provisoire), mesurée avec une seule image. Contour EFFIS : 14,0 ha.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261031-011</id><title>Incendie à Saint-Symphorien-de-Thénières (Aveyron)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261031-011"/><updated>2026-10-31T12:57:00Z</updated>
+<summary>2 foyers en 2 passages, du 2026-10-31T12:40Z au 2026-10-31T12:57Z (UTC). Pixels avec foyers : 26,8 ha. Brûle sur : végétation naturelle. Natura 2000 : ZPS Gorges de la Truyère. Surface brûlée estimée avec Sentinel-2 : 1,6 ha (provisoire), mesurée avec une seule image.</summary></entry>
+</feed>
