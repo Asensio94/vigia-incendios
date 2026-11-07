@@ -313755,25 +313755,25 @@
   {
    "id": "IN-20261104-054",
    "primera": "2026-11-04T14:05Z",
-   "ultima": "2026-11-07T13:10Z",
-   "n_focos": 3,
-   "n_viirs": 3,
-   "pasadas": 3,
+   "ultima": "2026-11-07T14:07Z",
+   "n_focos": 6,
+   "n_viirs": 6,
+   "pasadas": 4,
    "satelites": [
     "NOAA-20",
     "NOAA-21"
    ],
-   "frp_max": 3.0,
-   "frp_total": 8.5,
-   "ha_focos": 60.4,
+   "frp_max": 8.3,
+   "frp_total": 26.9,
+   "ha_focos": 118.2,
    "centro": [
-    -5.65074,
-    39.16272
+    -5.64844,
+    39.1515
    ],
    "bbox": [
     -5.67596,
-    39.15003,
-    -5.64767,
+    39.13931,
+    -5.63118,
     39.16523
    ],
    "geometry": {
@@ -313782,9 +313782,69 @@
      [
       [
        [
-        -5.67013,
-        39.15003
+        -5.63694,
+        39.13931
        ],
+       [
+        -5.63694,
+        39.14265
+       ],
+       [
+        -5.63592,
+        39.14265
+       ],
+       [
+        -5.63592,
+        39.14413
+       ],
+       [
+        -5.63118,
+        39.14413
+       ],
+       [
+        -5.63118,
+        39.14079
+       ],
+       [
+        -5.6322,
+        39.14079
+       ],
+       [
+        -5.6322,
+        39.13931
+       ],
+       [
+        -5.63694,
+        39.13931
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        -5.64479,
+        39.15394
+       ],
+       [
+        -5.64479,
+        39.14906
+       ],
+       [
+        -5.65209,
+        39.14906
+       ],
+       [
+        -5.65209,
+        39.15394
+       ],
+       [
+        -5.64479,
+        39.15394
+       ]
+      ]
+     ],
+     [
+      [
        [
         -5.67013,
         39.15537
@@ -313800,15 +313860,15 @@
        [
         -5.67013,
         39.15003
+       ],
+       [
+        -5.67013,
+        39.15537
        ]
       ]
      ],
      [
       [
-       [
-        -5.65381,
-        39.16462
-       ],
        [
         -5.64767,
         39.16462
@@ -313824,16 +313884,16 @@
        [
         -5.65381,
         39.16462
+       ],
+       [
+        -5.64767,
+        39.16462
        ]
       ]
      ],
      [
       [
        [
-        -5.67596,
-        39.16523
-       ],
-       [
         -5.6712,
         39.16523
        ],
@@ -313847,6 +313907,10 @@
        ],
        [
         -5.67596,
+        39.16523
+       ],
+       [
+        -5.6712,
         39.16523
        ]
       ]
@@ -313862,194 +313926,18 @@
     }
    ],
    "cobertura": {
-    "agricola": 0.67,
-    "matorral": 0.33
+    "agricola": 0.83,
+    "matorral": 0.17
    },
    "lugar": {
     "municipio": "Madrigalejo",
     "provincia": "Cáceres",
     "comunidad": "Extremadura"
    },
-   "lugar_focos": 2,
+   "lugar_focos": 6,
    "estado": "activo",
    "effis": [],
    "effis_ha": null,
-   "perimeter_ha": 12.0,
-   "steps": 3,
-   "front_km": 0.65,
-   "front_t": "2026-11-07T13:10Z",
-   "max_growth_ha_h": 0.2,
-   "progression": [
-    {
-     "t": "2026-11-04T14:05Z",
-     "ha": 4.5,
-     "pixels": 1,
-     "frp": 3.0,
-     "front_km": 0.75
-    },
-    {
-     "t": "2026-11-05T13:03Z",
-     "ha": 8.7,
-     "pixels": 1,
-     "frp": 3.0,
-     "front_km": 0.74,
-     "growth_ha_h": 0.2
-    },
-    {
-     "t": "2026-11-07T13:10Z",
-     "ha": 12.0,
-     "pixels": 1,
-     "frp": 2.4,
-     "front_km": 0.65,
-     "growth_ha_h": 0.1
-    }
-   ],
-   "perimeter": {
-    "type": "MultiPolygon",
-    "coordinates": [
-     [
-      [
-       [
-        -5.65203,
-        39.16241
-       ],
-       [
-        -5.65186,
-        39.1633
-       ],
-       [
-        -5.651,
-        39.16375
-       ],
-       [
-        -5.64999,
-        39.1636
-       ],
-       [
-        -5.6494,
-        39.16282
-       ],
-       [
-        -5.64962,
-        39.16214
-       ],
-       [
-        -5.65048,
-        39.16169
-       ],
-       [
-        -5.65149,
-        39.16184
-       ],
-       [
-        -5.65203,
-        39.16241
-       ]
-      ]
-     ],
-     [
-      [
-       [
-        -5.67463,
-        39.16327
-       ],
-       [
-        -5.67459,
-        39.16393
-       ],
-       [
-        -5.67385,
-        39.16441
-       ],
-       [
-        -5.673,
-        39.16431
-       ],
-       [
-        -5.67247,
-        39.16369
-       ],
-       [
-        -5.67297,
-        39.16241
-       ],
-       [
-        -5.67463,
-        39.16327
-       ]
-      ]
-     ],
-     [
-      [
-       [
-        -5.6686,
-        39.15408
-       ],
-       [
-        -5.6667,
-        39.15325
-       ],
-       [
-        -5.66652,
-        39.15254
-       ],
-       [
-        -5.66686,
-        39.15199
-       ],
-       [
-        -5.66807,
-        39.15165
-       ],
-       [
-        -5.66904,
-        39.15215
-       ],
-       [
-        -5.66922,
-        39.15286
-       ],
-       [
-        -5.6686,
-        39.15408
-       ]
-      ]
-     ]
-    ]
-   },
-   "front": {
-    "type": "LineString",
-    "coordinates": [
-     [
-      -5.67463,
-      39.16327
-     ],
-     [
-      -5.67459,
-      39.16393
-     ],
-     [
-      -5.67385,
-      39.16441
-     ],
-     [
-      -5.673,
-      39.16431
-     ],
-     [
-      -5.67247,
-      39.16369
-     ],
-     [
-      -5.67297,
-      39.16241
-     ],
-     [
-      -5.67463,
-      39.16327
-     ]
-    ]
-   },
    "perimetro": {
     "clave": "v2|3|92d3221ced87",
     "revisado": "2026-11-07T16:26Z",
@@ -317469,6 +317357,323 @@
       ]
      ]
     }
+   },
+   "unidos": [
+    "IN-20261107-013"
+   ],
+   "perimeter_ha": 26.3,
+   "steps": 3,
+   "front_km": 2.66,
+   "front_t": "2026-11-07T13:10Z",
+   "max_growth_ha_h": 0.4,
+   "progression": [
+    {
+     "t": "2026-11-04T14:05Z",
+     "ha": 4.5,
+     "pixels": 1,
+     "frp": 3.0,
+     "front_km": 0.75
+    },
+    {
+     "t": "2026-11-05T13:03Z",
+     "ha": 8.7,
+     "pixels": 1,
+     "frp": 3.0,
+     "front_km": 0.74,
+     "growth_ha_h": 0.2
+    },
+    {
+     "t": "2026-11-07T13:10Z",
+     "ha": 26.3,
+     "pixels": 4,
+     "frp": 20.9,
+     "front_km": 2.66,
+     "growth_ha_h": 0.4
+    }
+   ],
+   "perimeter": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        -5.67463,
+        39.16327
+       ],
+       [
+        -5.67459,
+        39.16393
+       ],
+       [
+        -5.67385,
+        39.16441
+       ],
+       [
+        -5.673,
+        39.16431
+       ],
+       [
+        -5.67247,
+        39.16369
+       ],
+       [
+        -5.67297,
+        39.16241
+       ],
+       [
+        -5.67463,
+        39.16327
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        -5.6686,
+        39.15408
+       ],
+       [
+        -5.6667,
+        39.15325
+       ],
+       [
+        -5.66642,
+        39.15261
+       ],
+       [
+        -5.66686,
+        39.15199
+       ],
+       [
+        -5.66807,
+        39.15165
+       ],
+       [
+        -5.66904,
+        39.15215
+       ],
+       [
+        -5.66922,
+        39.15286
+       ],
+       [
+        -5.6686,
+        39.15408
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        -5.65022,
+        39.15161
+       ],
+       [
+        -5.64885,
+        39.1535
+       ],
+       [
+        -5.64709,
+        39.15228
+       ],
+       [
+        -5.64676,
+        39.15144
+       ],
+       [
+        -5.64701,
+        39.15059
+       ],
+       [
+        -5.64852,
+        39.15019
+       ],
+       [
+        -5.64969,
+        39.15062
+       ],
+       [
+        -5.65022,
+        39.15161
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        -5.63485,
+        39.14292
+       ],
+       [
+        -5.63339,
+        39.14332
+       ],
+       [
+        -5.63244,
+        39.14259
+       ],
+       [
+        -5.63361,
+        39.14053
+       ],
+       [
+        -5.6343,
+        39.14013
+       ],
+       [
+        -5.63515,
+        39.14023
+       ],
+       [
+        -5.63568,
+        39.14085
+       ],
+       [
+        -5.63485,
+        39.14292
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        -5.65041,
+        39.16109
+       ],
+       [
+        -5.65203,
+        39.16241
+       ],
+       [
+        -5.65199,
+        39.16312
+       ],
+       [
+        -5.65126,
+        39.16369
+       ],
+       [
+        -5.6501,
+        39.16365
+       ],
+       [
+        -5.64945,
+        39.16303
+       ],
+       [
+        -5.64949,
+        39.16232
+       ],
+       [
+        -5.65041,
+        39.16109
+       ]
+      ]
+     ]
+    ]
+   },
+   "front": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       -5.67463,
+       39.16327
+      ],
+      [
+       -5.67459,
+       39.16393
+      ],
+      [
+       -5.67385,
+       39.16441
+      ],
+      [
+       -5.673,
+       39.16431
+      ],
+      [
+       -5.67247,
+       39.16369
+      ],
+      [
+       -5.67297,
+       39.16241
+      ],
+      [
+       -5.67463,
+       39.16327
+      ]
+     ],
+     [
+      [
+       -5.65022,
+       39.15161
+      ],
+      [
+       -5.64885,
+       39.1535
+      ],
+      [
+       -5.64709,
+       39.15228
+      ],
+      [
+       -5.64676,
+       39.15144
+      ],
+      [
+       -5.64701,
+       39.15059
+      ],
+      [
+       -5.64852,
+       39.15019
+      ],
+      [
+       -5.64969,
+       39.15062
+      ],
+      [
+       -5.65022,
+       39.15161
+      ]
+     ],
+     [
+      [
+       -5.63485,
+       39.14292
+      ],
+      [
+       -5.63339,
+       39.14332
+      ],
+      [
+       -5.63244,
+       39.14259
+      ],
+      [
+       -5.63361,
+       39.14053
+      ],
+      [
+       -5.6343,
+       39.14013
+      ],
+      [
+       -5.63515,
+       39.14023
+      ],
+      [
+       -5.63568,
+       39.14085
+      ],
+      [
+       -5.63485,
+       39.14292
+      ]
+     ]
+    ]
    }
   },
   {
@@ -327885,6 +328090,26 @@
      ]
     ]
    },
+   "natura": [],
+   "cobertura": {
+    "bosque": 1.0
+   },
+   "lugar": {
+    "municipio": "Villalba del Alcor",
+    "provincia": "Huelva",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 6,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|6|23545998f82a",
+    "revisado": "2026-11-07T16:26Z",
+    "calculado": "2026-11-07T16:26Z",
+    "definitivo": false,
+    "sin_imagen": true
+   },
    "perimeter_ha": 18.8,
    "steps": 1,
    "front_km": 2.47,
@@ -328014,26 +328239,6 @@
       37.35252
      ]
     ]
-   },
-   "natura": [],
-   "cobertura": {
-    "bosque": 1.0
-   },
-   "lugar": {
-    "municipio": "Villalba del Alcor",
-    "provincia": "Huelva",
-    "comunidad": "Andalucía"
-   },
-   "lugar_focos": 6,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|6|23545998f82a",
-    "revisado": "2026-11-07T16:26Z",
-    "calculado": "2026-11-07T16:26Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -328110,6 +328315,27 @@
       ]
      ]
     ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 0.75,
+    "bosque": 0.25
+   },
+   "lugar": {
+    "municipio": "Maguilla",
+    "provincia": "Badajoz",
+    "comunidad": "Extremadura"
+   },
+   "lugar_focos": 4,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|4|e64e7c4504c7",
+    "revisado": "2026-11-07T16:26Z",
+    "calculado": "2026-11-07T16:26Z",
+    "definitivo": false,
+    "sin_imagen": true
    },
    "perimeter_ha": 31.0,
    "steps": 1,
@@ -328240,27 +328466,6 @@
       38.36465
      ]
     ]
-   },
-   "natura": [],
-   "cobertura": {
-    "agricola": 0.75,
-    "bosque": 0.25
-   },
-   "lugar": {
-    "municipio": "Maguilla",
-    "provincia": "Badajoz",
-    "comunidad": "Extremadura"
-   },
-   "lugar_focos": 4,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|4|e64e7c4504c7",
-    "revisado": "2026-11-07T16:26Z",
-    "calculado": "2026-11-07T16:26Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -328328,6 +328533,26 @@
       ]
      ]
     ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Los Palacios y Villafranca",
+    "provincia": "Sevilla",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 4,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|4|1f47b8373e51",
+    "revisado": "2026-11-07T16:26Z",
+    "calculado": "2026-11-07T16:26Z",
+    "definitivo": false,
+    "sin_imagen": true
    },
    "perimeter_ha": 10.4,
    "steps": 1,
@@ -328450,26 +328675,6 @@
       37.19371
      ]
     ]
-   },
-   "natura": [],
-   "cobertura": {
-    "agricola": 1.0
-   },
-   "lugar": {
-    "municipio": "Los Palacios y Villafranca",
-    "provincia": "Sevilla",
-    "comunidad": "Andalucía"
-   },
-   "lugar_focos": 4,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|4|1f47b8373e51",
-    "revisado": "2026-11-07T16:26Z",
-    "calculado": "2026-11-07T16:26Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -328537,6 +328742,26 @@
       ]
      ]
     ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Porzuna",
+    "provincia": "Ciudad Real",
+    "comunidad": "Castilla-La Mancha"
+   },
+   "lugar_focos": 3,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|3|b1e26e2a2c29",
+    "revisado": "2026-11-07T16:26Z",
+    "calculado": "2026-11-07T16:26Z",
+    "definitivo": false,
+    "sin_imagen": true
    },
    "perimeter_ha": 23.8,
    "steps": 1,
@@ -328671,26 +328896,6 @@
       39.19687
      ]
     ]
-   },
-   "natura": [],
-   "cobertura": {
-    "agricola": 1.0
-   },
-   "lugar": {
-    "municipio": "Porzuna",
-    "provincia": "Ciudad Real",
-    "comunidad": "Castilla-La Mancha"
-   },
-   "lugar_focos": 3,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|3|b1e26e2a2c29",
-    "revisado": "2026-11-07T16:26Z",
-    "calculado": "2026-11-07T16:26Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   },
   {
@@ -329010,9 +329215,10 @@
     "comunidad": "Extremadura"
    },
    "lugar_focos": 2,
-   "estado": "activo",
+   "estado": "unido",
    "effis": [],
-   "effis_ha": null
+   "effis_ha": null,
+   "unido_en": "IN-20261104-054"
   },
   {
    "id": "IN-20261107-014",
@@ -330417,49 +330623,66 @@
   {
    "id": "IN-20261107-035",
    "primera": "2026-11-07T13:10Z",
-   "ultima": "2026-11-07T13:10Z",
-   "n_focos": 1,
-   "n_viirs": 1,
-   "pasadas": 1,
+   "ultima": "2026-11-07T14:07Z",
+   "n_focos": 2,
+   "n_viirs": 2,
+   "pasadas": 2,
    "satelites": [
+    "NOAA-20",
     "NOAA-21"
    ],
    "frp_max": 6.4,
-   "frp_total": 6.4,
-   "ha_focos": 14.0,
+   "frp_total": 10.1,
+   "ha_focos": 23.9,
    "centro": [
-    -4.24362,
+    -4.24344,
     39.93273
    ],
    "bbox": [
     -4.2459,
-    39.9311,
-    -4.24134,
-    39.93436
+    39.92948,
+    -4.24097,
+    39.93482
    ],
    "geometry": {
     "type": "Polygon",
     "coordinates": [
      [
       [
-       -4.24134,
+       -4.24543,
+       39.93482
+      ],
+      [
+       -4.24097,
+       39.93482
+      ],
+      [
+       -4.24097,
+       39.92948
+      ],
+      [
+       -4.24543,
+       39.92948
+      ],
+      [
+       -4.24543,
        39.9311
       ],
       [
-       -4.24134,
-       39.93436
+       -4.2459,
+       39.9311
       ],
       [
        -4.2459,
        39.93436
       ],
       [
-       -4.2459,
-       39.9311
+       -4.24543,
+       39.93436
       ],
       [
-       -4.24134,
-       39.9311
+       -4.24543,
+       39.93482
       ]
      ]
     ]
@@ -330469,18 +330692,18 @@
      "codigo": "ES0000435",
      "nombre": "Área esteparia de la margen derecha del río Guadarrama",
      "tipo": "ZEPA",
-     "ha": 14.0
+     "ha": 23.9
     }
    ],
    "cobertura": {
     "agricola": 1.0
    },
    "lugar": {
+    "comunidad": "Castilla-La Mancha",
     "municipio": "Gerindote",
-    "provincia": "Toledo",
-    "comunidad": "Castilla-La Mancha"
+    "provincia": "Toledo"
    },
-   "lugar_focos": 1,
+   "lugar_focos": 2,
    "estado": "activo",
    "effis": [],
    "effis_ha": null,
@@ -330683,7 +330906,135 @@
    "estado": "activo",
    "effis": [],
    "effis_ha": null
+  },
+  {
+   "id": "IN-20261107-039",
+   "primera": "2026-11-07T14:05Z",
+   "ultima": "2026-11-07T14:05Z",
+   "n_focos": 2,
+   "n_viirs": 2,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-20"
+   ],
+   "frp_max": 3.5,
+   "frp_total": 6.9,
+   "ha_focos": 25.0,
+   "centro": [
+    -7.0275,
+    37.36682
+   ],
+   "bbox": [
+    -7.03038,
+    37.3646,
+    -7.02462,
+    37.36904
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -7.02462,
+       37.3646
+      ],
+      [
+       -7.03038,
+       37.3646
+      ],
+      [
+       -7.03038,
+       37.36904
+      ],
+      [
+       -7.02462,
+       37.36904
+      ],
+      [
+       -7.02462,
+       37.3646
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Gibraleón",
+    "provincia": "Huelva",
+    "comunidad": "Andalucía"
+   },
+   "lugar_focos": 2,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null
+  },
+  {
+   "id": "IN-20261107-040",
+   "primera": "2026-11-07T14:07Z",
+   "ultima": "2026-11-07T14:07Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-20"
+   ],
+   "frp_max": 2.8,
+   "frp_total": 2.8,
+   "ha_focos": 19.0,
+   "centro": [
+    -5.83397,
+    43.09211
+   ],
+   "bbox": [
+    -5.83606,
+    43.08958,
+    -5.83188,
+    43.09464
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -5.83188,
+       43.08958
+      ],
+      [
+       -5.83188,
+       43.09464
+      ],
+      [
+       -5.83606,
+       43.09464
+      ],
+      [
+       -5.83606,
+       43.08958
+      ],
+      [
+       -5.83188,
+       43.08958
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "artificial": 1.0
+   },
+   "lugar": {
+    "municipio": "Lena",
+    "provincia": "Asturias",
+    "comunidad": "Asturias"
+   },
+   "lugar_focos": 1,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null
   }
  ],
- "actualizado": "2026-11-07T16:26Z"
+ "actualizado": "2026-11-07T20:52Z"
 }
