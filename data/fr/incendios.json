@@ -61749,7 +61749,72 @@
      ]
     }
    }
+  },
+  {
+   "id": "FR-IN-20261110-001",
+   "primera": "2026-11-10T12:14Z",
+   "ultima": "2026-11-10T12:14Z",
+   "n_focos": 1,
+   "n_viirs": 1,
+   "pasadas": 1,
+   "satelites": [
+    "NOAA-21"
+   ],
+   "frp_max": 5.4,
+   "frp_total": 5.4,
+   "ha_focos": 24.1,
+   "centro": [
+    1.89361,
+    45.26979
+   ],
+   "bbox": [
+    1.89004,
+    45.26785,
+    1.89718,
+    45.27173
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       1.89718,
+       45.26785
+      ],
+      [
+       1.89718,
+       45.27173
+      ],
+      [
+       1.89004,
+       45.27173
+      ],
+      [
+       1.89004,
+       45.26785
+      ],
+      [
+       1.89718,
+       45.26785
+      ]
+     ]
+    ]
+   },
+   "natura": [],
+   "cobertura": {
+    "bosque": 1.0
+   },
+   "lugar": {
+    "municipio": "Saint-Martial-de-Gimel",
+    "insee": "19220",
+    "provincia": "Corrèze",
+    "comunidad": "Nouvelle-Aquitaine"
+   },
+   "lugar_focos": 1,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null
   }
  ],
- "actualizado": "2026-11-10T17:50Z"
+ "actualizado": "2026-11-10T23:21Z"
 }
