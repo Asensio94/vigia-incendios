@@ -179834,7 +179834,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|0c90505638ce",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-10-25T01:12Z",
     "definitivo": true,
     "ha": 0.0,
@@ -180676,7 +180676,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|eec013335fba",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-10-27T16:39Z",
     "definitivo": true,
     "ha": 0.0,
@@ -187305,7 +187305,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|1b9bb5fa84ba",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-04T09:11Z",
     "definitivo": true,
     "ha": 8.9,
@@ -187485,7 +187485,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|5eed2e3690cc",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-10-26T19:19Z",
     "definitivo": false,
     "ha": 0.0,
@@ -188090,7 +188090,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|30bd20edadd8",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-10-27T16:39Z",
     "definitivo": true,
     "ha": 3.6,
@@ -188236,7 +188236,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|30bd20edadd8",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-10-27T16:39Z",
     "definitivo": false,
     "ha": 77.9,
@@ -188718,7 +188718,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|30bd20edadd8",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-10-27T16:39Z",
     "definitivo": true,
     "ha": 25.8,
@@ -189228,7 +189228,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|bcf7c1ec1a1e",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-10-29T07:05Z",
     "definitivo": false,
     "ha": 1.5,
@@ -190230,7 +190230,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|289c80bd4a50",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-12T11:08Z",
     "definitivo": true,
     "ha": 0.1,
@@ -190359,112 +190359,6 @@
        -6.24574,
        38.45563
       ]
-     ]
-    ]
-   },
-   "perimeter_ha": 13.0,
-   "steps": 1,
-   "front_km": 1.79,
-   "front_t": "2026-10-23T13:27Z",
-   "max_growth_ha_h": null,
-   "progression": [
-    {
-     "t": "2026-10-23T13:27Z",
-     "ha": 13.0,
-     "pixels": 3,
-     "frp": 15.1,
-     "front_km": 1.79
-    }
-   ],
-   "perimeter": {
-    "type": "Polygon",
-    "coordinates": [
-     [
-      [
-       -6.25463,
-       38.45639
-      ],
-      [
-       -6.25433,
-       38.45732
-      ],
-      [
-       -6.25313,
-       38.45746
-      ],
-      [
-       -6.25023,
-       38.45561
-      ],
-      [
-       -6.24749,
-       38.4548
-      ],
-      [
-       -6.24708,
-       38.4539
-      ],
-      [
-       -6.24795,
-       38.45291
-      ],
-      [
-       -6.24916,
-       38.45286
-      ],
-      [
-       -6.25126,
-       38.45462
-      ],
-      [
-       -6.25463,
-       38.45639
-      ]
-     ]
-    ]
-   },
-   "front": {
-    "type": "LineString",
-    "coordinates": [
-     [
-      -6.25463,
-      38.45639
-     ],
-     [
-      -6.25433,
-      38.45732
-     ],
-     [
-      -6.25313,
-      38.45746
-     ],
-     [
-      -6.25023,
-      38.45561
-     ],
-     [
-      -6.24749,
-      38.4548
-     ],
-     [
-      -6.24708,
-      38.4539
-     ],
-     [
-      -6.24795,
-      38.45291
-     ],
-     [
-      -6.24916,
-      38.45286
-     ],
-     [
-      -6.25126,
-      38.45462
-     ],
-     [
-      -6.25463,
-      38.45639
      ]
     ]
    },
@@ -190717,6 +190611,112 @@
       ]
      ]
     }
+   },
+   "perimeter_ha": 13.0,
+   "steps": 1,
+   "front_km": 1.79,
+   "front_t": "2026-10-23T13:27Z",
+   "max_growth_ha_h": null,
+   "progression": [
+    {
+     "t": "2026-10-23T13:27Z",
+     "ha": 13.0,
+     "pixels": 3,
+     "frp": 15.1,
+     "front_km": 1.79
+    }
+   ],
+   "perimeter": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -6.25463,
+       38.45639
+      ],
+      [
+       -6.25433,
+       38.45732
+      ],
+      [
+       -6.25313,
+       38.45746
+      ],
+      [
+       -6.25023,
+       38.45561
+      ],
+      [
+       -6.24749,
+       38.4548
+      ],
+      [
+       -6.24708,
+       38.4539
+      ],
+      [
+       -6.24795,
+       38.45291
+      ],
+      [
+       -6.24916,
+       38.45286
+      ],
+      [
+       -6.25126,
+       38.45462
+      ],
+      [
+       -6.25463,
+       38.45639
+      ]
+     ]
+    ]
+   },
+   "front": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -6.25463,
+      38.45639
+     ],
+     [
+      -6.25433,
+      38.45732
+     ],
+     [
+      -6.25313,
+      38.45746
+     ],
+     [
+      -6.25023,
+      38.45561
+     ],
+     [
+      -6.24749,
+      38.4548
+     ],
+     [
+      -6.24708,
+      38.4539
+     ],
+     [
+      -6.24795,
+      38.45291
+     ],
+     [
+      -6.24916,
+      38.45286
+     ],
+     [
+      -6.25126,
+      38.45462
+     ],
+     [
+      -6.25463,
+      38.45639
+     ]
+    ]
    }
   },
   {
@@ -195970,7 +195970,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|de4ce3193abf",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-01T15:07Z",
     "definitivo": true,
     "ha": 64.7,
@@ -197035,7 +197035,7 @@
    "effis_ha": 3,
    "perimetro": {
     "clave": "v2|1|0edc8cbfca15",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-10-25T16:18Z",
     "definitivo": false,
     "ha": 0.4,
@@ -200547,7 +200547,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|aaa02caba629",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-01T15:07Z",
     "definitivo": true,
     "ha": 1.5,
@@ -200672,7 +200672,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|9e94914cf9ac",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-01T15:07Z",
     "definitivo": true,
     "ha": 0.1,
@@ -200816,7 +200816,7 @@
    "effis_ha": 5,
    "perimetro": {
     "clave": "v2|1|4b439189f92a",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-01T15:07Z",
     "definitivo": false,
     "ha": 3.6,
@@ -201995,7 +201995,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|cf3044765526",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-10-28T01:21Z",
     "definitivo": false,
     "ha": 0.1,
@@ -207513,7 +207513,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|a183b1371785",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-02T15:51Z",
     "definitivo": false,
     "ha": 0.2,
@@ -208076,7 +208076,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|044451cb4c8b",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-01T15:07Z",
     "definitivo": true,
     "ha": 0.1,
@@ -208405,7 +208405,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|5eed2e3690cc",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-10-26T19:19Z",
     "definitivo": false,
     "ha": 3.5,
@@ -222710,7 +222710,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|044451cb4c8b",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-01T15:07Z",
     "definitivo": true,
     "ha": 2.0,
@@ -223028,7 +223028,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|c7849f2cf030",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T23:07Z",
     "definitivo": false,
     "ha": 4.4,
@@ -227558,7 +227558,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|ff3d20ff856e",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-04T17:14Z",
     "definitivo": false,
     "ha": 0.0,
@@ -229081,7 +229081,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|968121d19fc1",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-01T01:09Z",
     "definitivo": true,
     "ha": 0.0,
@@ -237274,7 +237274,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|7ed41ed4131f",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-10-27T21:19Z",
     "definitivo": false,
     "ha": 0.0,
@@ -237467,7 +237467,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|e09242196d52",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-04T09:11Z",
     "definitivo": false,
     "ha": 19.4,
@@ -238848,7 +238848,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|a8cc6d6a7ed2",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-10-29T07:05Z",
     "definitivo": false,
     "ha": 0.7,
@@ -240310,7 +240310,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|933fde823d96",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T23:07Z",
     "definitivo": false,
     "ha": 41.4,
@@ -240589,7 +240589,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|5c1d148f71f8",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-01T01:09Z",
     "definitivo": false,
     "ha": 0.4,
@@ -240950,7 +240950,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|2b5cd01f75d1",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-10-30T23:46Z",
     "definitivo": false,
     "ha": 3.3,
@@ -252260,7 +252260,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|a52ed257d4ee",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-10-28T21:04Z",
     "definitivo": false,
     "ha": 2.6,
@@ -252470,7 +252470,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|35034a9c2501",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-10T17:50Z",
     "definitivo": true,
     "ha": 1.4,
@@ -257293,7 +257293,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|25d243a0cad1",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-05T20:39Z",
     "definitivo": false,
     "ha": 0.0,
@@ -257920,7 +257920,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|f0b4ec91d08f",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T17:29Z",
     "definitivo": false,
     "ha": 0.3,
@@ -258631,7 +258631,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|9cf9c9f7449b",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-10T17:50Z",
     "definitivo": true,
     "ha": 0.3,
@@ -262756,7 +262756,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|e0d438480d3a",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-08T07:19Z",
     "definitivo": false,
     "ha": 0.1,
@@ -263343,7 +263343,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|0636d9ff1218",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-04T09:11Z",
     "definitivo": false,
     "ha": 0.0,
@@ -263517,7 +263517,7 @@
    "effis_ha": 46,
    "perimetro": {
     "clave": "v2|2|d87a80593f3b",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T17:29Z",
     "definitivo": true,
     "ha": 35.1,
@@ -264162,7 +264162,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|5282164175e3",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-04T09:11Z",
     "definitivo": false,
     "ha": 2.4,
@@ -264602,7 +264602,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|d1451eeac368",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-04T09:11Z",
     "definitivo": false,
     "ha": 27.0,
@@ -265159,7 +265159,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|29e386592a2e",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-01T15:07Z",
     "definitivo": false,
     "ha": 0.1,
@@ -266155,7 +266155,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|5843ce7d18df",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-04T17:14Z",
     "definitivo": false,
     "ha": 0.4,
@@ -266799,7 +266799,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|68a7631b0b93",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-08T15:11Z",
     "definitivo": true,
     "ha": 0.0,
@@ -268553,7 +268553,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|656815f33b3e",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-01T01:09Z",
     "definitivo": false,
     "ha": 2.2,
@@ -272299,7 +272299,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|841dbfda7747",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-04T09:11Z",
     "definitivo": false,
     "ha": 11.5,
@@ -272917,7 +272917,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|2ede656ef710",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-01T15:07Z",
     "definitivo": false,
     "ha": 13.4,
@@ -273180,7 +273180,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|5e2eeb6259c0",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T23:07Z",
     "definitivo": true,
     "ha": 0.0,
@@ -273361,7 +273361,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|933fde823d96",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T23:07Z",
     "definitivo": false,
     "ha": 6.3,
@@ -276785,7 +276785,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|bacfbf598995",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-04T09:11Z",
     "definitivo": true,
     "ha": 0.0,
@@ -278278,7 +278278,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|e0a8697bf931",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T17:29Z",
     "definitivo": false,
     "ha": 1.8,
@@ -278636,7 +278636,7 @@
    "effis_ha": 2,
    "perimetro": {
     "clave": "v2|2|692c298699b8",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T17:29Z",
     "definitivo": true,
     "ha": 3.6,
@@ -278965,7 +278965,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|5282164175e3",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-04T09:11Z",
     "definitivo": true,
     "ha": 95.8,
@@ -279825,7 +279825,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|bd7b4188f7de",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-04T17:14Z",
     "definitivo": false,
     "ha": 0.0,
@@ -279917,7 +279917,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|bf4dae0b1ea2",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-04T09:11Z",
     "definitivo": true,
     "ha": 0.0,
@@ -280022,7 +280022,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|bf4dae0b1ea2",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-04T09:11Z",
     "definitivo": true,
     "ha": 0.0,
@@ -280835,7 +280835,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|f68c9248a5f6",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-04T09:11Z",
     "definitivo": false,
     "ha": 0.6,
@@ -282975,7 +282975,7 @@
    "effis_ha": 4,
    "perimetro": {
     "clave": "v2|2|de41e169ac2d",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-09T17:29Z",
     "definitivo": false,
     "ha": 3.6,
@@ -283268,7 +283268,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|c9f935060bc0",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T17:29Z",
     "definitivo": false,
     "ha": 3.6,
@@ -283500,7 +283500,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|90449efe2043",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T17:29Z",
     "definitivo": false,
     "ha": 0.0,
@@ -283704,7 +283704,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|a678ff8a79e0",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T17:29Z",
     "definitivo": false,
     "ha": 0.4,
@@ -284145,7 +284145,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|a377a8922f03",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-09T17:29Z",
     "definitivo": true,
     "ha": 0.6,
@@ -284451,7 +284451,7 @@
    "effis_ha": 6,
    "perimetro": {
     "clave": "v2|1|1afab003daed",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T23:07Z",
     "definitivo": false,
     "ha": 11.9,
@@ -285277,7 +285277,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|06f498e99ba1",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T23:07Z",
     "definitivo": false,
     "ha": 0.0,
@@ -293669,7 +293669,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|9fcc0a07b02f",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-02T15:51Z",
     "definitivo": false,
     "sin_imagen": true
@@ -294802,7 +294802,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|4121e2cae6a1",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T17:29Z",
     "definitivo": false,
     "ha": 0.0,
@@ -295441,7 +295441,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|72d69f9440f7",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T17:29Z",
     "definitivo": false,
     "ha": 31.7,
@@ -295763,7 +295763,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|600bfcbf4f4f",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T23:07Z",
     "definitivo": false,
     "ha": 0.0,
@@ -295984,7 +295984,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|85fc0e18ca93",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-10T17:50Z",
     "definitivo": false,
     "ha": 9.2,
@@ -298313,7 +298313,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|2789ddb7a447",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T17:29Z",
     "definitivo": true,
     "ha": 35.3,
@@ -299680,7 +299680,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|1cb7afb20395",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-08T07:19Z",
     "definitivo": true,
     "ha": 4.5,
@@ -300084,11 +300084,647 @@
    ],
    "effis_ha": 3,
    "perimetro": {
-    "clave": "v2|1|a395da1aa7fc",
-    "revisado": "2026-11-12T11:08Z",
-    "calculado": "2026-11-04T17:14Z",
+    "clave": "v2|1|f88032b2a2e0",
+    "revisado": "2026-11-13T00:23Z",
+    "calculado": "2026-11-13T00:23Z",
     "definitivo": false,
-    "sin_imagen": true
+    "ha": 73.7,
+    "severidad": {
+     "baja": 34.1,
+     "moderada": 36.3,
+     "alta": 0.0
+    },
+    "imagenes": [
+     "2026-11-12"
+    ],
+    "fecha_antes": "2026-10-13",
+    "fecha_despues": "2026-11-12",
+    "una_imagen": 1.0,
+    "cobertura": 0.64,
+    "natura": [],
+    "geometry": {
+     "type": "MultiPolygon",
+     "coordinates": [
+      [
+       [
+        [
+         -8.81409,
+         43.13569
+        ],
+        [
+         -8.81458,
+         43.13551
+        ],
+        [
+         -8.81434,
+         43.13461
+        ],
+        [
+         -8.81483,
+         43.13407
+        ],
+        [
+         -8.81704,
+         43.13389
+        ],
+        [
+         -8.81679,
+         43.1357
+        ],
+        [
+         -8.81606,
+         43.13515
+        ],
+        [
+         -8.81532,
+         43.13515
+        ],
+        [
+         -8.81483,
+         43.13587
+        ],
+        [
+         -8.81409,
+         43.13569
+        ]
+       ]
+      ],
+      [
+       [
+        [
+         -8.81875,
+         43.13786
+        ],
+        [
+         -8.81802,
+         43.13714
+        ],
+        [
+         -8.819,
+         43.13732
+        ],
+        [
+         -8.81875,
+         43.13786
+        ]
+       ]
+      ],
+      [
+       [
+        [
+         -8.81629,
+         43.13786
+        ],
+        [
+         -8.81654,
+         43.13768
+        ],
+        [
+         -8.81654,
+         43.13786
+        ],
+        [
+         -8.81629,
+         43.13786
+        ]
+       ]
+      ],
+      [
+       [
+        [
+         -8.80647,
+         43.13532
+        ],
+        [
+         -8.80868,
+         43.13532
+        ],
+        [
+         -8.80942,
+         43.13586
+        ],
+        [
+         -8.81089,
+         43.13623
+        ],
+        [
+         -8.81409,
+         43.13623
+        ],
+        [
+         -8.81458,
+         43.13677
+        ],
+        [
+         -8.81556,
+         43.13677
+        ],
+        [
+         -8.81581,
+         43.13605
+        ],
+        [
+         -8.81605,
+         43.13695
+        ],
+        [
+         -8.81408,
+         43.13767
+        ],
+        [
+         -8.81408,
+         43.13857
+        ],
+        [
+         -8.81457,
+         43.13857
+        ],
+        [
+         -8.81457,
+         43.13893
+        ],
+        [
+         -8.81236,
+         43.13893
+        ],
+        [
+         -8.81211,
+         43.14001
+        ],
+        [
+         -8.8126,
+         43.14055
+        ],
+        [
+         -8.81259,
+         43.14145
+        ],
+        [
+         -8.81186,
+         43.14163
+        ],
+        [
+         -8.81112,
+         43.14253
+        ],
+        [
+         -8.81062,
+         43.14253
+        ],
+        [
+         -8.81062,
+         43.14307
+        ],
+        [
+         -8.81259,
+         43.14415
+        ],
+        [
+         -8.81209,
+         43.14451
+        ],
+        [
+         -8.81111,
+         43.14451
+        ],
+        [
+         -8.81086,
+         43.14523
+        ],
+        [
+         -8.81012,
+         43.14523
+        ],
+        [
+         -8.80988,
+         43.14469
+        ],
+        [
+         -8.81062,
+         43.14469
+        ],
+        [
+         -8.81087,
+         43.14343
+        ],
+        [
+         -8.80915,
+         43.14343
+        ],
+        [
+         -8.80914,
+         43.14469
+        ],
+        [
+         -8.80717,
+         43.14486
+        ],
+        [
+         -8.80594,
+         43.14666
+        ],
+        [
+         -8.8052,
+         43.14648
+        ],
+        [
+         -8.8052,
+         43.14612
+        ],
+        [
+         -8.80422,
+         43.14612
+        ],
+        [
+         -8.80422,
+         43.14648
+        ],
+        [
+         -8.80323,
+         43.14684
+        ],
+        [
+         -8.80274,
+         43.14666
+        ],
+        [
+         -8.80274,
+         43.14558
+        ],
+        [
+         -8.80201,
+         43.1454
+        ],
+        [
+         -8.80201,
+         43.14504
+        ],
+        [
+         -8.80078,
+         43.14485
+        ],
+        [
+         -8.80103,
+         43.14413
+        ],
+        [
+         -8.79955,
+         43.14413
+        ],
+        [
+         -8.79955,
+         43.14359
+        ],
+        [
+         -8.79906,
+         43.14323
+        ],
+        [
+         -8.79931,
+         43.14215
+        ],
+        [
+         -8.79858,
+         43.14161
+        ],
+        [
+         -8.79858,
+         43.14107
+        ],
+        [
+         -8.79981,
+         43.14089
+        ],
+        [
+         -8.80079,
+         43.14017
+        ],
+        [
+         -8.80129,
+         43.13837
+        ],
+        [
+         -8.80301,
+         43.13801
+        ],
+        [
+         -8.80326,
+         43.13711
+        ],
+        [
+         -8.80375,
+         43.13711
+        ],
+        [
+         -8.80376,
+         43.13657
+        ],
+        [
+         -8.80326,
+         43.13657
+        ],
+        [
+         -8.80376,
+         43.13567
+        ],
+        [
+         -8.80376,
+         43.13459
+        ],
+        [
+         -8.80401,
+         43.13513
+        ],
+        [
+         -8.80499,
+         43.1355
+        ],
+        [
+         -8.80499,
+         43.13586
+        ],
+        [
+         -8.80646,
+         43.13586
+        ],
+        [
+         -8.80647,
+         43.13532
+        ]
+       ],
+       [
+        [
+         -8.80646,
+         43.1364
+        ],
+        [
+         -8.80769,
+         43.1364
+        ],
+        [
+         -8.80769,
+         43.13586
+        ],
+        [
+         -8.80646,
+         43.13586
+        ],
+        [
+         -8.80646,
+         43.1364
+        ]
+       ],
+       [
+        [
+         -8.80471,
+         43.14504
+        ],
+        [
+         -8.80373,
+         43.14486
+        ],
+        [
+         -8.80373,
+         43.1454
+        ],
+        [
+         -8.80496,
+         43.14558
+        ],
+        [
+         -8.80471,
+         43.14504
+        ]
+       ],
+       [
+        [
+         -8.80791,
+         43.14451
+        ],
+        [
+         -8.80816,
+         43.14325
+        ],
+        [
+         -8.80718,
+         43.14324
+        ],
+        [
+         -8.80693,
+         43.1436
+        ],
+        [
+         -8.80693,
+         43.14288
+        ],
+        [
+         -8.80743,
+         43.14288
+        ],
+        [
+         -8.80743,
+         43.14234
+        ],
+        [
+         -8.80694,
+         43.14216
+        ],
+        [
+         -8.80743,
+         43.14216
+        ],
+        [
+         -8.80743,
+         43.1418
+        ],
+        [
+         -8.80817,
+         43.1418
+        ],
+        [
+         -8.80792,
+         43.14054
+        ],
+        [
+         -8.80694,
+         43.14036
+        ],
+        [
+         -8.8067,
+         43.13964
+        ],
+        [
+         -8.80571,
+         43.13964
+        ],
+        [
+         -8.80571,
+         43.14
+        ],
+        [
+         -8.80448,
+         43.13982
+        ],
+        [
+         -8.80424,
+         43.13892
+        ],
+        [
+         -8.8035,
+         43.13892
+        ],
+        [
+         -8.80326,
+         43.13927
+        ],
+        [
+         -8.80178,
+         43.13963
+        ],
+        [
+         -8.80104,
+         43.14035
+        ],
+        [
+         -8.80104,
+         43.14143
+        ],
+        [
+         -8.80128,
+         43.14197
+        ],
+        [
+         -8.80226,
+         43.14215
+        ],
+        [
+         -8.80201,
+         43.14305
+        ],
+        [
+         -8.80324,
+         43.14288
+        ],
+        [
+         -8.80299,
+         43.14414
+        ],
+        [
+         -8.80447,
+         43.1445
+        ],
+        [
+         -8.80644,
+         43.14432
+        ],
+        [
+         -8.80644,
+         43.14468
+        ],
+        [
+         -8.80791,
+         43.14451
+        ]
+       ],
+       [
+        [
+         -8.81087,
+         43.14127
+        ],
+        [
+         -8.81088,
+         43.14001
+        ],
+        [
+         -8.80965,
+         43.14001
+        ],
+        [
+         -8.80965,
+         43.13911
+        ],
+        [
+         -8.80818,
+         43.1391
+        ],
+        [
+         -8.80817,
+         43.13964
+        ],
+        [
+         -8.80867,
+         43.13964
+        ],
+        [
+         -8.80891,
+         43.14036
+        ],
+        [
+         -8.80989,
+         43.14073
+        ],
+        [
+         -8.80989,
+         43.14127
+        ],
+        [
+         -8.81087,
+         43.14127
+        ]
+       ],
+       [
+        [
+         -8.81359,
+         43.13839
+        ],
+        [
+         -8.81359,
+         43.13767
+        ],
+        [
+         -8.81211,
+         43.13785
+        ],
+        [
+         -8.81187,
+         43.13749
+        ],
+        [
+         -8.81113,
+         43.13749
+        ],
+        [
+         -8.81039,
+         43.13785
+        ],
+        [
+         -8.81039,
+         43.13857
+        ],
+        [
+         -8.81113,
+         43.13857
+        ],
+        [
+         -8.81138,
+         43.13821
+        ],
+        [
+         -8.81187,
+         43.13821
+        ],
+        [
+         -8.81187,
+         43.13857
+        ],
+        [
+         -8.81359,
+         43.13839
+        ]
+       ]
+      ]
+     ]
+    }
    }
   },
   {
@@ -300431,7 +301067,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|672c23466ecc",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T23:07Z",
     "definitivo": false,
     "ha": 24.2,
@@ -303314,7 +303950,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|cad750fa3a43",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T17:29Z",
     "definitivo": true,
     "ha": 0.0,
@@ -303681,7 +304317,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|2ece9c42f491",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T17:29Z",
     "definitivo": false,
     "ha": 0.0,
@@ -304640,7 +305276,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|2ad99d38444a",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-03T15:08Z",
     "definitivo": false,
     "sin_imagen": true
@@ -307066,19 +307702,20 @@
    ],
    "effis_ha": 2,
    "perimetro": {
-    "clave": "v2|2|c0f9780e55d5",
-    "revisado": "2026-11-12T11:08Z",
-    "calculado": "2026-11-07T02:48Z",
+    "clave": "v2|2|a387a0d0abef",
+    "revisado": "2026-11-13T00:23Z",
+    "calculado": "2026-11-13T00:23Z",
     "definitivo": false,
-    "ha": 5.7,
+    "ha": 5.0,
     "severidad": {
-     "baja": 3.8,
+     "baja": 3.2,
      "moderada": 1.6,
      "alta": 0.2
     },
     "imagenes": [
      "2026-11-04",
-     "2026-11-06"
+     "2026-11-06",
+     "2026-11-12"
     ],
     "fecha_antes": "2026-11-02",
     "fecha_despues": "2026-11-04",
@@ -307136,23 +307773,7 @@
         ],
         [
          -8.50251,
-         42.64848
-        ],
-        [
-         -8.50252,
-         42.64668
-        ],
-        [
-         -8.50276,
-         42.64758
-        ],
-        [
-         -8.50325,
-         42.64758
-        ],
-        [
-         -8.50325,
-         42.64812
+         42.6483
         ],
         [
          -8.50422,
@@ -307590,7 +308211,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|2ece9c42f491",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T23:07Z",
     "definitivo": false,
     "ha": 128.6,
@@ -308789,7 +309410,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|536e4a8e736e",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T23:07Z",
     "definitivo": false,
     "ha": 0.8,
@@ -309084,7 +309705,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|450c641568b6",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-03T20:59Z",
     "definitivo": false,
     "sin_imagen": true
@@ -309226,7 +309847,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|2ece9c42f491",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T23:07Z",
     "definitivo": false,
     "ha": 0.1,
@@ -309543,7 +310164,7 @@
    "effis_ha": 7,
    "perimetro": {
     "clave": "v2|2|1afab003daed",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-07T02:48Z",
     "definitivo": false,
     "ha": 8.2,
@@ -313469,7 +314090,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|92d3221ced87",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T17:29Z",
     "definitivo": false,
     "ha": 7.1,
@@ -313951,7 +314572,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|1e08876cb8ac",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-04T17:14Z",
     "definitivo": false,
     "sin_imagen": true
@@ -314133,7 +314754,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|12cf2d280748",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-04T17:14Z",
     "definitivo": false,
     "sin_imagen": true
@@ -314766,7 +315387,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|2b92dbf94355",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T23:07Z",
     "definitivo": false,
     "ha": 0.1,
@@ -314880,7 +315501,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|92d3221ced87",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T23:07Z",
     "definitivo": false,
     "sin_imagen": true
@@ -315095,7 +315716,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|2f556da2a28d",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T17:29Z",
     "definitivo": false,
     "ha": 0.0,
@@ -320979,7 +321600,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|0810d7e0669c",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-09T17:29Z",
     "definitivo": true,
     "sin_imagen": true
@@ -324714,7 +325335,7 @@
    "effis_ha": 36,
    "perimetro": {
     "clave": "v2|2|97a45b9c1f36",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-09T17:29Z",
     "definitivo": false,
     "ha": 4.0,
@@ -324871,7 +325492,7 @@
    "effis_ha": 10,
    "perimetro": {
     "clave": "v2|2|31bf687386a8",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-08T07:19Z",
     "definitivo": false,
     "ha": 7.8,
@@ -325284,7 +325905,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|cae297a6b67d",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T17:29Z",
     "definitivo": false,
     "ha": 0.0,
@@ -325892,7 +326513,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|177b59042842",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-08T15:11Z",
     "definitivo": false,
     "ha": 0.0,
@@ -325985,7 +326606,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|8725df5705b0",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-08T23:42Z",
     "definitivo": false,
     "sin_imagen": true
@@ -326319,7 +326940,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|29ee6bfb4687",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T23:07Z",
     "definitivo": false,
     "ha": 9.3,
@@ -326636,7 +327257,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|192e32ca080f",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T23:07Z",
     "definitivo": false,
     "ha": 0.0,
@@ -327376,7 +327997,7 @@
    "effis_ha": 1,
    "perimetro": {
     "clave": "v2|1|152c934a3116",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-08T23:42Z",
     "definitivo": false,
     "ha": 0.0,
@@ -327660,7 +328281,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|ebcd3cc88d67",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T23:07Z",
     "definitivo": false,
     "ha": 24.1,
@@ -327941,7 +328562,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|9b39b1267c0e",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-06T23:07Z",
     "definitivo": false,
     "ha": 0.0,
@@ -333300,7 +333921,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|6650ae884fa6",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-07T16:26Z",
     "definitivo": false,
     "sin_imagen": true
@@ -333587,7 +334208,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|911a4f5bb092",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-07T16:26Z",
     "definitivo": false,
     "sin_imagen": true
@@ -334177,7 +334798,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|9824c7e5a78b",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-07T16:26Z",
     "definitivo": false,
     "sin_imagen": true
@@ -334447,7 +335068,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|6650ae884fa6",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-07T16:26Z",
     "definitivo": false,
     "sin_imagen": true
@@ -334653,7 +335274,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|6650ae884fa6",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-07T16:26Z",
     "definitivo": false,
     "sin_imagen": true
@@ -334876,7 +335497,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|06ddfb3f4607",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-08T00:35Z",
     "definitivo": false,
     "sin_imagen": true
@@ -335297,7 +335918,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|6650ae884fa6",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-08T07:19Z",
     "definitivo": false,
     "sin_imagen": true
@@ -335439,7 +336060,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|c334926f34c3",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-09T06:26Z",
     "definitivo": false,
     "sin_imagen": true
@@ -335645,7 +336266,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|1679ea28c0af",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-09T17:29Z",
     "definitivo": false,
     "sin_imagen": true
@@ -335723,7 +336344,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|1|113f44252412",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-10T01:30Z",
     "definitivo": false,
     "sin_imagen": true
@@ -336501,7 +337122,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|2|41ff06ffce93",
-    "revisado": "2026-11-12T11:08Z",
+    "revisado": "2026-11-13T00:23Z",
     "calculado": "2026-11-10T17:50Z",
     "definitivo": false,
     "ha": 9.2,
@@ -337813,5 +338434,5 @@
    "effis_ha": null
   }
  ],
- "actualizado": "2026-11-12T18:56Z"
+ "actualizado": "2026-11-13T00:23Z"
 }
