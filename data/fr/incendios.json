@@ -28776,7 +28776,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|13|a9ceeb2f0a21",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-02T06:00Z",
     "definitivo": false,
     "ha": 32.3,
@@ -30642,7 +30642,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|770051fc4ad7",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-10-29T00:56Z",
     "definitivo": true,
     "ha": 0.0,
@@ -30861,7 +30861,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|89dec94f0c87",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-01T01:09Z",
     "definitivo": false,
     "ha": 0.7,
@@ -31173,7 +31173,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|53e2d49deee4",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-02T15:51Z",
     "definitivo": true,
     "ha": 0.0,
@@ -31517,7 +31517,7 @@
    "effis_ha": 69,
    "perimetro": {
     "clave": "v2|6|70e1a4630673",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-10-30T00:59Z",
     "definitivo": true,
     "ha": 68.6,
@@ -32061,7 +32061,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|11|7b42ec0d0387",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-10-30T23:46Z",
     "definitivo": false,
     "ha": 0.8,
@@ -32491,7 +32491,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|34|7e0efe9af8fb",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-06T17:29Z",
     "definitivo": false,
     "ha": 2.4,
@@ -33379,7 +33379,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|14|4f0908500db6",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-10-29T00:56Z",
     "definitivo": false,
     "ha": 28.5,
@@ -34188,7 +34188,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|5|40f333f97429",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-12T18:56Z",
     "definitivo": true,
     "ha": 2.1,
@@ -35328,7 +35328,7 @@
    "effis_ha": 10,
    "perimetro": {
     "clave": "v2|9|75f78c415da8",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-04T01:20Z",
     "definitivo": true,
     "ha": 10.1,
@@ -35849,7 +35849,7 @@
    "effis_ha": 23,
    "perimetro": {
     "clave": "v2|4|41e3c9e28853",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-10-30T00:59Z",
     "definitivo": false,
     "ha": 12.2,
@@ -36564,7 +36564,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|8|06f70199fa82",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-08T07:19Z",
     "definitivo": true,
     "ha": 37.9,
@@ -38336,7 +38336,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|5|e807f830858b",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-02T15:51Z",
     "definitivo": true,
     "ha": 0.9,
@@ -38662,7 +38662,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|955f625e5e6c",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-01T01:09Z",
     "definitivo": true,
     "ha": 8.3,
@@ -39271,7 +39271,7 @@
    "effis_ha": 4,
    "perimetro": {
     "clave": "v2|3|2113050a8d9e",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-08T07:19Z",
     "definitivo": false,
     "ha": 2.3,
@@ -39850,7 +39850,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|cbf6627f8037",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-01T23:35Z",
     "definitivo": true,
     "ha": 0.0,
@@ -39962,7 +39962,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|760d7522a132",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-08T07:19Z",
     "definitivo": false,
     "ha": 0.2,
@@ -40691,7 +40691,7 @@
    "effis_ha": 25,
    "perimetro": {
     "clave": "v2|16|a91b3b977f36",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-06T17:29Z",
     "definitivo": false,
     "ha": 53.9,
@@ -41502,7 +41502,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|5|cd8c654901e7",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-10-31T21:33Z",
     "definitivo": false,
     "ha": 0.0,
@@ -41741,7 +41741,7 @@
    "effis_ha": 25,
    "perimetro": {
     "clave": "v2|3|1a06090da0a5",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-08T07:19Z",
     "definitivo": false,
     "ha": 14.8,
@@ -44406,7 +44406,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|fc10e0a719ad",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-01T01:09Z",
     "definitivo": false,
     "ha": 0.0,
@@ -44641,7 +44641,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|6|ae5c35dda143",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-02T15:51Z",
     "definitivo": false,
     "ha": 0.6,
@@ -45401,7 +45401,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|4|236308fb93f8",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-10T17:50Z",
     "definitivo": false,
     "ha": 0.3,
@@ -45739,7 +45739,7 @@
    "effis_ha": 14,
    "perimetro": {
     "clave": "v2|3|66a2f29655f7",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-08T07:19Z",
     "definitivo": false,
     "ha": 11.4,
@@ -46073,7 +46073,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|a218783b9871",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-13T16:22Z",
     "definitivo": false,
     "ha": 0.3,
@@ -47318,7 +47318,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|f05e05e3c29f",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-10T17:50Z",
     "definitivo": false,
     "ha": 0.1,
@@ -48503,7 +48503,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|23bdc2a0ce01",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-08T23:42Z",
     "definitivo": true,
     "ha": 0.0,
@@ -48992,7 +48992,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|4|2550f5ca6bf7",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-13T16:22Z",
     "definitivo": true,
     "ha": 0.1,
@@ -49239,10 +49239,10 @@
    "effis": [],
    "effis_ha": null,
    "perimetro": {
-    "clave": "v2|4|c51911a6c301",
-    "revisado": "2026-11-13T16:22Z",
-    "calculado": "2026-11-13T16:22Z",
-    "definitivo": false,
+    "clave": "v2|4|097efff725fa",
+    "revisado": "2026-11-13T22:37Z",
+    "calculado": "2026-11-13T22:37Z",
+    "definitivo": true,
     "ha": 16.0,
     "severidad": {
      "baja": 9.6,
@@ -49770,10 +49770,10 @@
    "effis": [],
    "effis_ha": null,
    "perimetro": {
-    "clave": "v2|3|c51911a6c301",
-    "revisado": "2026-11-13T16:22Z",
-    "calculado": "2026-11-13T16:22Z",
-    "definitivo": false,
+    "clave": "v2|3|097efff725fa",
+    "revisado": "2026-11-13T22:37Z",
+    "calculado": "2026-11-13T22:37Z",
+    "definitivo": true,
     "ha": 5.9,
     "severidad": {
      "baja": 1.1,
@@ -52269,7 +52269,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|2ef2955131c5",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-10T17:50Z",
     "definitivo": true,
     "ha": 0.0,
@@ -52529,7 +52529,7 @@
    "effis_ha": 52,
    "perimetro": {
     "clave": "v2|7|06ecae6751da",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-12T18:56Z",
     "definitivo": false,
     "ha": 490.8,
@@ -55558,7 +55558,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|50f9e35f4b46",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-08T07:19Z",
     "definitivo": false,
     "ha": 0.0,
@@ -55876,7 +55876,7 @@
    "effis_ha": 77,
    "perimetro": {
     "clave": "v2|4|554381480e14",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-08T07:19Z",
     "definitivo": true,
     "ha": 43.5,
@@ -58387,7 +58387,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|c01fa2c30732",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-06T17:29Z",
     "definitivo": false,
     "sin_imagen": true
@@ -58688,7 +58688,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|4|f8f7083c4427",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-05T20:39Z",
     "definitivo": false,
     "sin_imagen": true
@@ -58908,7 +58908,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|3|073019f81c5b",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-10T17:50Z",
     "definitivo": false,
     "sin_imagen": true
@@ -59258,7 +59258,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|7|94a816b8eab1",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-13T16:22Z",
     "definitivo": true,
     "ha": 0.3,
@@ -61509,7 +61509,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|4|647c76b25f6e",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-13T07:57Z",
     "definitivo": false,
     "sin_imagen": true
@@ -61735,7 +61735,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|4|863aca5068e9",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-13T07:57Z",
     "definitivo": false,
     "sin_imagen": true
@@ -61966,7 +61966,7 @@
    "effis_ha": null,
    "perimetro": {
     "clave": "v2|4|c01fa2c30732",
-    "revisado": "2026-11-13T16:22Z",
+    "revisado": "2026-11-13T22:37Z",
     "calculado": "2026-11-13T16:22Z",
     "definitivo": false,
     "sin_imagen": true
@@ -62343,5 +62343,5 @@
    "effis_ha": null
   }
  ],
- "actualizado": "2026-11-13T16:22Z"
+ "actualizado": "2026-11-13T22:37Z"
 }
