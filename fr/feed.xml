@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Vigie des incendies</title>
+<id>https://asensio94.github.io/vigia-incendios/fr/</id><link href="https://asensio94.github.io/vigia-incendios/fr/"/><link rel="self" href="https://asensio94.github.io/vigia-incendios/fr/feed.xml"/>
+<updated>2026-11-14T10:31:00Z</updated><author><name>Vigie des incendies</name></author>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261114-002</id><title>Incendie à lieu sans nom</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261114-002"/><updated>2026-11-14T02:53:00Z</updated>
+<summary>1 foyers en 1 passages, du 2026-11-14T02:53Z au 2026-11-14T02:53Z (UTC). Pixels avec foyers : 24,6 ha. Brûle sur : végétation naturelle. Natura 2000 : ZSC Sologne.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261114-001</id><title>Incendie à lieu sans nom</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261114-001"/><updated>2026-11-14T02:13:00Z</updated>
+<summary>1 foyers en 1 passages, du 2026-11-14T02:13Z au 2026-11-14T02:13Z (UTC). Pixels avec foyers : 24,1 ha. Brûle sur : végétation naturelle. Natura 2000 : ZPS Marais entre Crau et Grand Rhône.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261113-002</id><title>Incendie à lieu sans nom</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261113-002"/><updated>2026-11-14T02:10:00Z</updated>
+<summary>6 foyers en 4 passages, du 2026-11-13T00:47Z au 2026-11-14T02:10Z (UTC). Pixels avec foyers : 70,2 ha. Périmètre estimé : 31,3 ha ; front actif de 1,7 km au dernier passage. Brûle sur : sol urbain ou industriel.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261113-003</id><title>Incendie à lieu sans nom</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261113-003"/><updated>2026-11-14T02:10:00Z</updated>
+<summary>6 foyers en 5 passages, du 2026-11-13T01:32Z au 2026-11-14T02:10Z (UTC). Pixels avec foyers : 51,8 ha. Périmètre estimé : 21,1 ha ; front actif de 1,6 km au dernier passage. Brûle sur : mixte.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261113-001</id><title>Incendie à Chaumuzy (Marne)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261113-001"/><updated>2026-11-13T03:12:00Z</updated>
+<summary>4 foyers en 4 passages, du 2026-11-13T00:47Z au 2026-11-13T03:12Z (UTC). Pixels avec foyers : 89,1 ha. Périmètre estimé : 31,4 ha ; front actif de 1,8 km au dernier passage. Brûle sur : sol urbain ou industriel.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261109-003</id><title>Incendie à Béost (Pyrénées-Atlantiques)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261109-003"/><updated>2026-11-09T02:06:00Z</updated>
+<summary>1 foyers en 1 passages, du 2026-11-09T02:06Z au 2026-11-09T02:06Z (UTC). Pixels avec foyers : 13,7 ha. Brûle sur : végétation naturelle. Natura 2000 : ZSC Massif du Moulle de Jaout. Surface brûlée estimée avec Sentinel-2 : 14,4 ha (provisoire). Contour EFFIS : 52,0 ha.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261108-003</id><title>Incendie à Issor (Pyrénées-Atlantiques)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261108-003"/><updated>2026-11-08T02:25:00Z</updated>
+<summary>1 foyers en 1 passages, du 2026-11-08T02:25Z au 2026-11-08T02:25Z (UTC). Pixels avec foyers : 17,9 ha. Brûle sur : cultures. Natura 2000 : ZSC Massif du Layens, ZSC Le Gave d'Aspe et le Lourdios (cours d'eau).</summary></entry>
+</feed>

@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cstyle%3E.b%7Bfill%3A%23221d1a%7D.p%7Bfill%3A%23c2410c%7D.l%7Bstroke%3A%23221d1a%7D%40media%20%28prefers-color-scheme%3Adark%29%7B.b%7Bfill%3A%23ede6e0%7D.p%7Bfill%3A%23fb7b3e%7D.l%7Bstroke%3A%23ede6e0%7D%7D%3C/style%3E%3Cg%20class%3D%22b%22%3E%3Ccircle%20cx%3D%2234%22%20cy%3D%2231%22%20r%3D%2219%22/%3E%3Cpath%20d%3D%22M19%2040%207%2050.5l3.5%204L25%2046z%22/%3E%3Cpath%20d%3D%22M52%2022l8%202.5-8%202.5z%22/%3E%3C/g%3E%3Cpath%20class%3D%22p%22%20d%3D%22M34%2012a19%2019%200%200%201%2015%2030.8C42%2041%2037%2034%2037%2026c0-6%201.5-10.5%204-12.6A19%2019%200%200%200%2034%2012z%22/%3E%3Cg%20fill%3D%22%23221d1a%22%3E%3Ccircle%20cx%3D%2245%22%20cy%3D%2221.5%22%20r%3D%222.1%22/%3E%3C/g%3E%3Cpath%20class%3D%22l%22%20d%3D%22M31%2049.5V60m7-11v11m-10.5.2h6m1.5%200h6%22%20fill%3D%22none%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E">
+<title>Grands incendies · Vigie des incendies</title>
+<meta name="description" content="Les dix plus grands incendies de chaque saison en France métropolitaine depuis 2022 et ceux de cette année de plus de 100 ha, chacun reconstitué passage après passage avec les foyers FIRMS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* common.css v1.1 — shared look of the nine open-data projects (vigia-incendios is the reference).
+   Copy this file verbatim into each repo; change it in all repos at once, never in one.
+   Each repo sets only --accent and --accent-dark below it and adds its own rules after it.
+
+   Type:  Barlow Condensed for titles and labels, Source Serif 4 for reading, IBM Plex Mono for
+          figures, codes and dates. Load them with:
+   https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap */
+
+:root{
+  --ground:#f0edea; --paper:#faf8f6; --ink:#221d1a; --muted:#6b625c; --line:#dad2cb;
+  --accent:#c2410c; --accent-dark:#fb7b3e;
+  --natura:#2f7a55; --natura-dark:#62b88a;
+  --shadow:0 1px 0 rgba(34,29,26,.06), 0 6px 18px -10px rgba(34,29,26,.28);
+  --font-title:"Barlow Condensed","Arial Narrow",sans-serif;
+  --font-text:"Source Serif 4",Georgia,serif;
+  --font-data:"IBM Plex Mono",ui-monospace,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#15110f; --paper:#1d1815; --ink:#ede6e0; --muted:#a69a91; --line:#362d28;
+    --accent:var(--accent-dark); --natura:var(--natura-dark);
+    --shadow:0 1px 0 rgba(0,0,0,.3), 0 8px 22px -12px rgba(0,0,0,.7);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#15110f; --paper:#1d1815; --ink:#ede6e0; --muted:#a69a91; --line:#362d28;
+  --accent:var(--accent-dark); --natura:var(--natura-dark);
+  --shadow:0 1px 0 rgba(0,0,0,.3), 0 8px 22px -12px rgba(0,0,0,.7);
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font:17px/1.55 var(--font-text);overflow-wrap:break-word}
+a{color:inherit;text-decoration-color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+img,svg{max-width:100%}
+
+/* Header: «PROJECT NAME» with the key word in the accent colour, one sentence, then the figures. */
+.site-header{max-width:1440px;margin:0 auto;padding:28px 16px 18px;display:grid;gap:14px}
+.site-header h1{margin:0;font:700 clamp(40px,6vw,64px)/.9 var(--font-title);text-transform:uppercase;letter-spacing:.02em}
+.site-header h1 span{color:var(--accent)}
+/* Logo: the robin from logo.py before the title; same shape everywhere, breast in the accent. */
+.logo{display:inline-block;width:1.05em;height:1.05em;margin-right:.16em;vertical-align:-.13em;color:var(--ink);overflow:visible}
+.logo .logo-breast{fill:var(--accent)}
+.site-header .lede{margin:0;max-width:72ch;font-size:18px}
+.figures{display:flex;flex-wrap:wrap;gap:12px 28px;margin:0;padding:12px 0 0;border-top:1px solid var(--line)}
+.figures div{display:grid;gap:2px}
+.figures b{font:600 30px/1 var(--font-data);font-variant-numeric:tabular-nums;color:var(--accent)}
+.figures span{font:600 13px/1.2 var(--font-title);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+
+/* Text roles */
+.label{font-family:var(--font-title);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.data{font-family:var(--font-data);font-variant-numeric:tabular-nums}
+.note{color:var(--muted);font-size:14.5px}
+.badge{display:inline-block;font:600 12px/1 var(--font-title);text-transform:uppercase;letter-spacing:.09em;padding:4px 7px 3px;border:1.5px solid currentColor;color:var(--accent)}
+
+/* Cards and panels */
+.card{background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);padding:16px}
+
+/* Method section: how every figure is computed, step by step */
+.method{max-width:1440px;margin:0 auto;padding:24px 16px}
+.method h2{margin:0 0 6px;font:700 28px/1 var(--font-title);text-transform:uppercase;letter-spacing:.03em}
+.method h3{margin:18px 0 4px;font:600 18px/1.2 var(--font-title);text-transform:uppercase;letter-spacing:.06em}
+.method p,.method li{max-width:72ch}
+table.params{border-collapse:collapse;font-size:14.5px;width:100%;max-width:900px}
+table.params th,table.params td{text-align:left;vertical-align:top;padding:6px 10px 6px 0;border-bottom:1px solid var(--line)}
+table.params th{font:600 14px/1.3 var(--font-title);text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;padding-right:16px}
+table.params td.num,table.params th.num{text-align:right;font-family:var(--font-data);font-variant-numeric:tabular-nums}
+
+/* Footer: sources, licence, the shared principle and the sibling projects */
+.site-footer{max-width:1440px;margin:0 auto;padding:16px 16px 40px;font-size:13.5px;color:var(--muted);border-top:1px solid var(--line);display:grid;gap:10px}
+.site-footer .principle{margin:0;color:var(--ink);font-style:italic}
+.siblings{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0;padding:0;list-style:none}
+.siblings li a{text-decoration-color:var(--line)}
+.siblings li[aria-current] a{color:var(--ink);text-decoration-color:var(--accent);font-weight:600}
+
+@media (max-width:640px){
+  body{font-size:16px}
+  .figures b{font-size:24px}
+}
+:root{--accent:#c2410c;--accent-dark:#fb7b3e}
+html{-webkit-text-size-adjust:100%}
+.rotulo{font-family:var(--font-title);text-transform:uppercase;letter-spacing:.08em;font-weight:600;color:var(--muted);font-size:14px}
+.marca{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.site-header .lede{text-wrap:pretty}
+.pestanas{display:flex;gap:4px;margin:6px 0 2px;border-bottom:1.5px solid var(--line)}.pestanas a{font:600 16px/1 var(--font-title);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:9px 12px 8px;border-bottom:3px solid transparent;margin-bottom:-1.5px}.pestanas a:hover{color:var(--ink)}.pestanas a[aria-current=page]{color:var(--accent);border-bottom-color:var(--accent)}
+main.lista-main{max-width:1440px;margin:0 auto;padding:0 16px}
+.filtros{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:end;margin:4px 0 12px}
+.filtros label{display:grid;gap:3px;font-size:13px;color:var(--muted)}
+.filtros input,.filtros select{font:15px var(--font-text);color:var(--ink);background:var(--paper);border:1.5px solid var(--line);padding:6px 8px;min-width:0}
+.filtros input{width:min(320px,80vw)}
+.filtros .cuenta{font:500 13px var(--font-data);color:var(--muted);margin-left:auto}
+.tabla{overflow-x:auto;border-top:1.5px solid var(--ink)}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font:600 14px var(--font-title);letter-spacing:.05em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+th button{all:unset;cursor:pointer}
+th button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+th[aria-sort] button::after{content:" ↓";color:var(--accent)}
+th[aria-sort=ascending] button::after{content:" ↑"}
+td.num,th.num{text-align:right;white-space:nowrap}
+td.num{font-family:var(--font-data);font-variant-numeric:tabular-nums}
+td a{font-weight:600}
+td small{display:block;color:var(--muted);font-size:13px}
+td .barra{display:block;height:4px;background:var(--accent);margin-top:5px;margin-left:auto;opacity:.75}
+.etq{font:500 11.5px var(--font-data);text-transform:uppercase;letter-spacing:.04em;border:1px solid var(--accent);color:var(--accent);padding:0 4px;margin-left:6px;vertical-align:1px}
+tr[hidden]{display:none}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.vacio{padding:18px 0;color:var(--muted)}
+.method{max-width:1440px;margin:28px auto 0;padding:0 16px 40px;border-top:1.5px solid var(--ink);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
+.method p{margin:0 0 10px}
+.method ol{margin:0 0 10px;padding-left:1.4em}
+.method ol li{margin-bottom:8px}
+.method > div > h2:first-child,.method > div > h3:first-child{margin-top:18px}
+.nota{font-size:13.5px;color:var(--muted);margin:0}
+.site-footer p{margin:0}
+@media (max-width: 900px){.method{grid-template-columns:1fr}}
+@media (max-width: 640px){
+  .figures{display:grid;grid-template-columns:1fr 1fr;column-gap:12px}
+  .c-pas,.c-nat{display:none}
+  th,td{padding:8px 6px}
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="marca">
+    <h1><svg class="logo" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><g fill="currentColor"><circle cx="34" cy="31" r="19"/><path d="M19 40 7 50.5l3.5 4L25 46z"/><path d="M52 22l8 2.5-8 2.5z"/></g><path class="logo-breast" d="M34 12a19 19 0 0 1 15 30.8C42 41 37 34 37 26c0-6 1.5-10.5 4-12.6A19 19 0 0 0 34 12z"/><g fill="#221d1a"><circle cx="45" cy="21.5" r="2.1"/></g><path d="M31 49.5V60m7-11v11m-10.5.2h6m1.5 0h6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>Grands incendies</h1>
+    <span class="rotulo">France métropolitaine · depuis 2022 · par passages satellite</span>
+  </div>
+  <nav class="pestanas" aria-label="Sections"><a href="../">Carte en direct</a><a href="../incendio/" aria-current="page">Grands incendies</a></nav>
+  <p class="lede">Les dix plus grands incendies de chaque saison depuis 2022 et ceux de cette année qui dépassent 100 ha, avec leur surface estimée à partir des pixels satellite. Choisissez-en un pour le voir grandir passage après passage.</p>
+  <div class="figures"><div><b>18</b><span>incendies</span></div><div><b>61 324 ha</b><span>estimés au total</span></div><div><b>2022–2026</b><span>saisons</span></div><div><b>15</b><span>touchent Natura 2000</span></div></div>
+</header>
+
+<main class="lista-main">
+  <div class="filtros" role="search">
+    <label>Rechercher <input type="search" id="q" placeholder="commune, département, année…" autocomplete="off"></label>
+    <label>Année <select id="anio"><option value="">Toutes</option><option value="2026">2026</option><option value="2025">2025</option><option value="2023">2023</option><option value="2022">2022</option></select></label>
+    <label>Région <select id="region"><option value="">Toutes</option><option value="Auvergne-Rhône-Alpes">Auvergne-Rhône-Alpes</option><option value="Bretagne">Bretagne</option><option value="Corse">Corse</option><option value="Nouvelle-Aquitaine">Nouvelle-Aquitaine</option><option value="Occitanie">Occitanie</option><option value="Pays de la Loire">Pays de la Loire</option><option value="Provence-Alpes-Côte d'Azur">Provence-Alpes-Côte d'Azur</option></select></label>
+    <span class="cuenta" id="cuenta" aria-live="polite"></span>
+  </div>
+  <div class="tabla">
+  <table id="tabla">
+    <caption class="visually-hidden">Incendies avec une fiche par passages, classés par surface estimée</caption>
+    <thead><tr>
+      <th scope="col" data-k="titulo"><button type="button">Incendie</button></th>
+      <th scope="col" data-k="t"><button type="button">Début</button></th>
+      <th scope="col" class="num" data-k="dias"><button type="button">Jours</button></th>
+      <th scope="col" class="num" data-k="ha" aria-sort="descending"><button type="button">Hectares</button></th>
+      <th scope="col" class="num c-pas" data-k="pasadas"><button type="button">Passages</button></th>
+      <th scope="col" class="num c-nat" data-k="natura"><button type="button">Sites Natura</button></th>
+    </tr></thead>
+    <tbody><tr data-titulo="Landiras (Gironde), juillet 2022" data-t="2022-07-12T21:05Z" data-anio="2022" data-dias="9.7" data-ha="15136.2" data-pasadas="44" data-natura="3" data-region="Nouvelle-Aquitaine" data-busca="Landiras (Gironde), juillet 2022 Gironde Nouvelle-Aquitaine 2022"><td><a href="2022-landiras.html">Landiras (Gironde), juillet 2022</a><small>Nouvelle-Aquitaine</small></td><td><time datetime="2022-07-12T21:05Z">12 juil. 2022</time></td><td class="num">9,7</td><td class="num">15 136<span class="barra" style="width:100%"></span></td><td class="num c-pas">44</td><td class="num c-nat">3</td></tr><tr data-titulo="Saint-Magne (Gironde), août 2022" data-t="2022-08-09T12:26Z" data-anio="2022" data-dias="4.0" data-ha="8561.0" data-pasadas="21" data-natura="2" data-region="Nouvelle-Aquitaine" data-busca="Saint-Magne (Gironde), août 2022 Gironde Nouvelle-Aquitaine 2022"><td><a href="2022-saint-magne.html">Saint-Magne (Gironde), août 2022</a><small>Nouvelle-Aquitaine</small></td><td><time datetime="2022-08-09T12:26Z">9 août 2022</time></td><td class="num">4,0</td><td class="num">8 561<span class="barra" style="width:57%"></span></td><td class="num c-pas">21</td><td class="num c-nat">2</td></tr><tr data-titulo="Saint-Just-Ibarre (Pyrénées-Atlantiques), février 2023" data-t="2023-02-12T13:11Z" data-anio="2023" data-dias="9.0" data-ha="8060.7" data-pasadas="22" data-natura="10" data-region="Nouvelle-Aquitaine" data-busca="Saint-Just-Ibarre (Pyrénées-Atlantiques), février 2023 Pyrénées-Atlantiques Nouvelle-Aquitaine 2023"><td><a href="2023-saint-just-ibarre.html">Saint-Just-Ibarre (Pyrénées-Atlantiques), février 2023</a><small>Nouvelle-Aquitaine</small></td><td><time datetime="2023-02-12T13:11Z">12 févr. 2023</time></td><td class="num">9,0</td><td class="num">8 061<span class="barra" style="width:53%"></span></td><td class="num c-pas">22</td><td class="num c-nat">10</td></tr><tr data-titulo="La Teste-de-Buch (Gironde), juillet 2022" data-t="2022-07-12T21:05Z" data-anio="2022" data-dias="8.2" data-ha="5288.2" data-pasadas="37" data-natura="5" data-region="Nouvelle-Aquitaine" data-busca="La Teste-de-Buch (Gironde), juillet 2022 Gironde Nouvelle-Aquitaine 2022"><td><a href="2022-la-teste-de-buch.html">La Teste-de-Buch (Gironde), juillet 2022</a><small>Nouvelle-Aquitaine</small></td><td><time datetime="2022-07-12T21:05Z">12 juil. 2022</time></td><td class="num">8,2</td><td class="num">5 288<span class="barra" style="width:35%"></span></td><td class="num c-pas">37</td><td class="num c-nat">5</td></tr><tr data-titulo="Coustouge (Aude), août 2025" data-t="2025-08-05T19:47Z" data-anio="2025" data-dias="1.7" data-ha="4484.8" data-pasadas="11" data-natura="3" data-region="Occitanie" data-busca="Coustouge (Aude), août 2025 Aude Occitanie 2025"><td><a href="2025-coustouge.html">Coustouge (Aude), août 2025</a><small>Occitanie</small></td><td><time datetime="2025-08-05T19:47Z">5 août 2025</time></td><td class="num">1,7</td><td class="num">4 485<span class="barra" style="width:30%"></span></td><td class="num c-pas">11</td><td class="num c-nat">3</td></tr><tr data-titulo="Tardets-Sorholus (Pyrénées-Atlantiques), février 2023" data-t="2023-02-11T11:50Z" data-anio="2023" data-dias="9.1" data-ha="3466.4" data-pasadas="20" data-natura="8" data-region="Nouvelle-Aquitaine" data-busca="Tardets-Sorholus (Pyrénées-Atlantiques), février 2023 Pyrénées-Atlantiques Nouvelle-Aquitaine 2023"><td><a href="2023-tardets-sorholus.html">Tardets-Sorholus (Pyrénées-Atlantiques), février 2023</a><small>Nouvelle-Aquitaine</small></td><td><time datetime="2023-02-11T11:50Z">11 févr. 2023</time></td><td class="num">9,1</td><td class="num">3 466<span class="barra" style="width:23%"></span></td><td class="num c-pas">20</td><td class="num c-nat">8</td></tr><tr data-titulo="Sainte-Hélène (Gironde), septembre 2022" data-t="2022-09-13T10:51Z" data-anio="2022" data-dias="3.7" data-ha="3448.4" data-pasadas="19" data-natura="0" data-region="Nouvelle-Aquitaine" data-busca="Sainte-Hélène (Gironde), septembre 2022 Gironde Nouvelle-Aquitaine 2022"><td><a href="2022-sainte-helene.html">Sainte-Hélène (Gironde), septembre 2022</a><small>Nouvelle-Aquitaine</small></td><td><time datetime="2022-09-13T10:51Z">13 sept. 2022</time></td><td class="num">3,7</td><td class="num">3 448<span class="barra" style="width:23%"></span></td><td class="num c-pas">19</td><td class="num c-nat">—</td></tr><tr data-titulo="Aiguines (Var), juin 2022" data-t="2022-06-18T11:11Z" data-anio="2022" data-dias="2.0" data-ha="2547.6" data-pasadas="9" data-natura="0" data-region="Provence-Alpes-Côte d'Azur" data-busca="Aiguines (Var), juin 2022 Var Provence-Alpes-Côte d'Azur 2022"><td><a href="2022-aiguines.html">Aiguines (Var), juin 2022</a><small>Provence-Alpes-Côte d'Azur</small></td><td><time datetime="2022-06-18T11:11Z">18 juin 2022</time></td><td class="num">2,0</td><td class="num">2 548<span class="barra" style="width:17%"></span></td><td class="num c-pas">9</td><td class="num c-nat">—</td></tr><tr data-titulo="Brasparts (Finistère), juillet 2022" data-t="2022-07-18T13:31Z" data-anio="2022" data-dias="4.5" data-ha="1976.5" data-pasadas="9" data-natura="1" data-region="Bretagne" data-busca="Brasparts (Finistère), juillet 2022 Finistère Bretagne 2022"><td><a href="2022-brasparts.html">Brasparts (Finistère), juillet 2022</a><small>Bretagne</small></td><td><time datetime="2022-07-18T13:31Z">18 juil. 2022</time></td><td class="num">4,5</td><td class="num">1 976<span class="barra" style="width:13%"></span></td><td class="num c-pas">9</td><td class="num c-nat">1</td></tr><tr data-titulo="Baugé-en-Anjou (Maine-et-Loire), août 2022" data-t="2022-08-08T11:16Z" data-anio="2022" data-dias="3.1" data-ha="1870.6" data-pasadas="19" data-natura="1" data-region="Pays de la Loire" data-busca="Baugé-en-Anjou (Maine-et-Loire), août 2022 Maine-et-Loire Pays de la Loire 2022"><td><a href="2022-bauge-en-anjou.html">Baugé-en-Anjou (Maine-et-Loire), août 2022</a><small>Pays de la Loire</small></td><td><time datetime="2022-08-08T11:16Z">8 août 2022</time></td><td class="num">3,1</td><td class="num">1 871<span class="barra" style="width:12%"></span></td><td class="num c-pas">19</td><td class="num c-nat">1</td></tr><tr data-titulo="Irouléguy (Pyrénées-Atlantiques), février 2023" data-t="2023-02-15T12:34Z" data-anio="2023" data-dias="5.1" data-ha="1506.0" data-pasadas="14" data-natura="4" data-region="Nouvelle-Aquitaine" data-busca="Irouléguy (Pyrénées-Atlantiques), février 2023 Pyrénées-Atlantiques Nouvelle-Aquitaine 2023"><td><a href="2023-irouleguy.html">Irouléguy (Pyrénées-Atlantiques), février 2023</a><small>Nouvelle-Aquitaine</small></td><td><time datetime="2023-02-15T12:34Z">15 févr. 2023</time></td><td class="num">5,1</td><td class="num">1 506<span class="barra" style="width:10%"></span></td><td class="num c-pas">14</td><td class="num c-nat">4</td></tr><tr data-titulo="Sarrance (Pyrénées-Atlantiques), février 2023" data-t="2023-02-16T11:56Z" data-anio="2023" data-dias="4.1" data-ha="1253.7" data-pasadas="9" data-natura="7" data-region="Nouvelle-Aquitaine" data-busca="Sarrance (Pyrénées-Atlantiques), février 2023 Pyrénées-Atlantiques Nouvelle-Aquitaine 2023"><td><a href="2023-sarrance.html">Sarrance (Pyrénées-Atlantiques), février 2023</a><small>Nouvelle-Aquitaine</small></td><td><time datetime="2023-02-16T11:56Z">16 févr. 2023</time></td><td class="num">4,1</td><td class="num">1 254<span class="barra" style="width:8%"></span></td><td class="num c-pas">9</td><td class="num c-nat">7</td></tr><tr data-titulo="Mostuéjouls (Aveyron), août 2022" data-t="2022-08-08T20:46Z" data-anio="2022" data-dias="5.0" data-ha="1241.9" data-pasadas="17" data-natura="4" data-region="Occitanie" data-busca="Mostuéjouls (Aveyron), août 2022 Aveyron Occitanie 2022"><td><a href="2022-mostuejouls.html">Mostuéjouls (Aveyron), août 2022</a><small>Occitanie</small></td><td><time datetime="2022-08-08T20:46Z">8 août 2022</time></td><td class="num">5,0</td><td class="num">1 242<span class="barra" style="width:8%"></span></td><td class="num c-pas">17</td><td class="num c-nat">4</td></tr><tr data-titulo="Lavilledieu (Ardèche), juillet 2022" data-t="2022-07-27T10:52Z" data-anio="2022" data-dias="1.6" data-ha="1102.2" data-pasadas="5" data-natura="1" data-region="Auvergne-Rhône-Alpes" data-busca="Lavilledieu (Ardèche), juillet 2022 Ardèche Auvergne-Rhône-Alpes 2022"><td><a href="2022-lavilledieu.html">Lavilledieu (Ardèche), juillet 2022</a><small>Auvergne-Rhône-Alpes</small></td><td><time datetime="2022-07-27T10:52Z">27 juil. 2022</time></td><td class="num">1,6</td><td class="num">1 102<span class="barra" style="width:7%"></span></td><td class="num c-pas">5</td><td class="num c-nat">1</td></tr><tr data-titulo="Saint-Martin-de-Crau (Bouches-du-Rhône), juin 2025" data-t="2025-06-13T02:12Z" data-anio="2025" data-dias="0.0" data-ha="1053.0" data-pasadas="1" data-natura="2" data-region="Provence-Alpes-Côte d'Azur" data-busca="Saint-Martin-de-Crau (Bouches-du-Rhône), juin 2025 Bouches-du-Rhône Provence-Alpes-Côte d'Azur 2025"><td><a href="2025-saint-martin-de-crau.html">Saint-Martin-de-Crau (Bouches-du-Rhône), juin 2025</a><small>Provence-Alpes-Côte d'Azur</small></td><td><time datetime="2025-06-13T02:12Z">13 juin 2025</time></td><td class="num">0,0</td><td class="num">1 053<span class="barra" style="width:7%"></span></td><td class="num c-pas">1</td><td class="num c-nat">2</td></tr><tr data-titulo="Incendie de Venaco (Haute-Corse)" data-t="2026-10-29T11:36Z" data-anio="2026" data-dias="1.0" data-ha="113.2" data-pasadas="5" data-natura="1" data-region="Corse" data-busca="Incendie de Venaco (Haute-Corse) Haute-Corse Corse 2026"><td><a href="FR-IN-20261029-003.html">Incendie de Venaco (Haute-Corse)</a></td><td><time datetime="2026-10-29T11:36Z">29 oct. 2026</time></td><td class="num">1,0</td><td class="num">113<span class="barra" style="width:2%"></span></td><td class="num c-pas">5</td><td class="num c-nat">1</td></tr><tr data-titulo="Incendie de Mallemort (Bouches-du-Rhône)" data-t="2026-10-14T12:19Z" data-anio="2026" data-dias="2.0" data-ha="109.5" data-pasadas="7" data-natura="2" data-region="Provence-Alpes-Côte d'Azur" data-busca="Incendie de Mallemort (Bouches-du-Rhône) Bouches-du-Rhône Provence-Alpes-Côte d'Azur 2026"><td><a href="FR-IN-20261014-001.html">Incendie de Mallemort (Bouches-du-Rhône)</a><small>Provence-Alpes-Côte d'Azur</small></td><td><time datetime="2026-10-14T12:19Z">14 oct. 2026</time></td><td class="num">2,0</td><td class="num">110<span class="barra" style="width:2%"></span></td><td class="num c-pas">7</td><td class="num c-nat">2</td></tr><tr data-titulo="Incendie de Casamaccioli (Haute-Corse)" data-t="2026-10-12T11:19Z" data-anio="2026" data-dias="0.1" data-ha="104.6" data-pasadas="2" data-natura="0" data-region="Corse" data-busca="Incendie de Casamaccioli (Haute-Corse) Haute-Corse Corse 2026"><td><a href="FR-IN-20261012-001.html">Incendie de Casamaccioli (Haute-Corse)</a></td><td><time datetime="2026-10-12T11:19Z">12 oct. 2026</time></td><td class="num">0,1</td><td class="num">105<span class="barra" style="width:2%"></span></td><td class="num c-pas">2</td><td class="num c-nat">—</td></tr></tbody>
+  </table>
+  </div>
+  <p class="vacio" id="vacio" hidden>Aucun incendie ne correspond à ces filtres.</p>
+</main>
+
+<section class="method" id="metodo">
+  <div>
+    <h2>Comment ils sont choisis</h2>
+    <ol><li>Pour chaque saison depuis 2022, on télécharge tous les foyers de l’archive standard de FIRMS (VIIRS de Suomi NPP et NOAA-20, et MODIS) en France métropolitaine, sans les sources fixes de chaleur.</li><li>Ils sont regroupés en incendies avec les mêmes règles que la carte en direct : des foyers à moins de 2 km et 72 h appartiennent au même incendie.</li><li>Pour chaque incendie, le périmètre est estimé avec les pixels VIIRS ; on garde les dix plus grands de chaque saison qui dépassent 1 000 ha.</li><li>Ils portent le nom de la commune des premiers pixels, en général celle du départ du feu. Les incendies de l’année entrent d’eux-mêmes dès qu’ils dépassent 100 ha et que leur périmètre a changé au moins une fois.</li></ol>
+  </div>
+  <div>
+    <h3>Ce qu’elle ne peut pas dire</h3>
+    <p>La surface est une estimation depuis l’espace : pixels de 375 m, réunis et refermés. Elle s’approche souvent de la cartographie officielle pour les grands feux et exagère les petits ou ceux qui laissent beaucoup d’îlots intacts. Deux feux qui se touchent peuvent apparaître comme un seul. Les chiffres officiels sont ceux d’EFFIS et de la BDIFF.</p>
+    <h3>Sigles et termes</h3>
+    <ul class="glosario">
+      <li><strong>FIRMS</strong> (Fire Information for Resource Management System) : le service de la NASA qui publie en accès libre les foyers de chaleur vus par satellite, quelques heures après chaque passage.</li>
+      <li><strong>VIIRS</strong> et <strong>MODIS</strong> : les deux capteurs qui détectent ces foyers. VIIRS est à bord des satellites S-NPP, NOAA-20 et NOAA-21, avec des pixels de 375 m ; MODIS, à bord de Terra et Aqua, avec des pixels de 1 km.</li>
+      <li><strong>FRP</strong> (puissance radiative du feu) : la chaleur émise par un pixel, en mégawatts. Elle sert à comparer l’intensité d’un passage à l’autre.</li>
+      <li><strong>EFFIS</strong> : le Système européen d’information sur les feux de forêt, de Copernicus. Il cartographie les surfaces brûlées à partir d’environ 30 ha.</li>
+      <li><strong>NBR</strong> et <strong>dNBR</strong> : le NBR (indice normalisé de surface brûlée) compare sur une image le proche infrarouge et l’infrarouge à ondes courtes ; le dNBR est sa baisse entre l’image d’avant et celle d’après le feu. Plus il baisse, plus c’est brûlé.</li>
+      <li><strong>FEDS</strong> (Fire Event Data Suite) : la méthode de la NASA qui suit chaque incendie passage après passage avec les foyers VIIRS. Le périmètre estimé de la vigie suit la même idée.</li>
+      <li><strong>CORINE Land Cover</strong> : la carte européenne d’occupation du sol (forêt, landes, cultures, ville…), dans son édition 2018.</li>
+      <li><strong>Natura 2000</strong> : le réseau européen d’espaces protégés. <strong>ZSC</strong> : zone spéciale de conservation (directive Habitats) ; <strong>ZPS</strong> : zone de protection spéciale (directive Oiseaux).</li>
+      <li><strong>BDIFF</strong> : la Base de données sur les incendies de forêts en France, la statistique officielle. <strong>Code INSEE</strong> : le code officiel de chaque commune.</li>
+      <li><strong>Sentinel-2</strong> : les satellites européens de Copernicus qui photographient le sol tous les deux ou trois jours avec des pixels de 10 à 20 m.</li>
+    </ul>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p class="principle">Données publiques, règles visibles et chaque chiffre relié à sa source. Des indices, pas des verdicts.</p>
+  <p>Foyers actifs : NASA FIRMS (LANCE), partie de l’Earth Science Data and Information System de la NASA · Surfaces brûlées : EFFIS, Copernicus Emergency Management Service, © Union européenne · Images Sentinel-2 : Copernicus, © Union européenne, via Earth Search (Element 84) · Natura 2000 et CORINE Land Cover 2018 : Agence européenne pour l’environnement · Communes : API Découpage administratif, geo.api.gouv.fr (Licence Ouverte 2.0) · Validation : BDIFF, ministère de l’Agriculture et de la Souveraineté alimentaire (Licence Ouverte 2.0) · Orthophotographie : © IGN, Géoplateforme.</p>
+  <p><a href="https://asensio94.github.io/terra-aperta/fr/">← Terra Aperta : tous les projets</a></p>
+  <nav aria-label="Projets frères"><ul class="siblings">
+    <li><a href="https://asensio94.github.io/sub-nocte/">Sub Nocte</a></li>
+    <li aria-current="page">Vigie des incendies</li>
+    <li><a href="https://asensio94.github.io/centinela-natura/fr/">Centinela Natura</a></li>
+    <li><a href="https://asensio94.github.io/estado-iba/fr/">État des IBA</a></li>
+    <li><a href="https://asensio94.github.io/riesgo-tendidos-aves/regions.fr.html">Risque des lignes pour les oiseaux</a></li>
+    <li><a href="https://asensio94.github.io/observatorio-alegaciones/">Observatoire des consultations</a></li>
+    <li><a href="https://asensio94.github.io/grafo-promotores/">Graphe des porteurs de projet</a></li>
+    <li><a href="https://asensio94.github.io/vigilancia-humedales/france.html">Veille des zones humides</a></li>
+    <li><a href="https://asensio94.github.io/caudal-ecologico/">Débit écologique</a></li>
+    <li><a href="https://asensio94.github.io/acuiferos-francia/fr/">Nappes de France</a></li>
+    <li><a href="https://asensio94.github.io/depuracion-y-bano/fr/">Épuration et baignade</a></li>
+    <li><a href="https://asensio94.github.io/zona-inundable/">Construire en zone inondable</a></li>
+  </ul></nav>
+  <p class="nota">Relief © Mapterhorn (IGN RGE ALTI et LiDAR HD, Licence Ouverte 2.0 ; Copernicus GLO-30). Fond de carte © OpenStreetMap. Orthophoto © IGN.</p>
+</footer>
+
+<script>
+(function () {
+  const tb = document.querySelector("#tabla tbody"), filas = [...tb.rows];
+  const q = document.getElementById("q"), anio = document.getElementById("anio"), reg = document.getElementById("region");
+  const cuenta = document.getElementById("cuenta"), vacio = document.getElementById("vacio");
+  const fmt = n => document.documentElement.lang === "fr" ? n + (n === 1 ? " incendie" : " incendies")
+                                                          : n + (n === 1 ? " incendio" : " incendios");
+  const sin = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  let clave = "ha", desc = true;
+  function pinta() {
+    const t = sin(q.value.trim());
+    let n = 0;
+    for (const f of filas) {
+      const ok = (!t || sin(f.dataset.busca).includes(t)) && (!anio.value || f.dataset.anio === anio.value)
+        && (!reg.value || f.dataset.region === reg.value);
+      f.hidden = !ok; n += ok;
+    }
+    cuenta.textContent = fmt(n); vacio.hidden = n > 0;
+  }
+  function ordena() {
+    const v = f => clave === "titulo" ? sin(f.dataset.titulo) : clave === "t" ? f.dataset.t : +f.dataset[clave];
+    filas.sort((a, b) => (v(a) < v(b) ? -1 : v(a) > v(b) ? 1 : 0) * (desc ? -1 : 1));
+    tb.append(...filas);
+    for (const th of document.querySelectorAll("#tabla th")) {
+      if (th.dataset.k === clave) th.setAttribute("aria-sort", desc ? "descending" : "ascending");
+      else th.removeAttribute("aria-sort");
+    }
+  }
+  document.querySelector("#tabla thead").addEventListener("click", e => {
+    const th = e.target.closest("th"); if (!th) return;
+    desc = th.dataset.k === clave ? !desc : !["titulo"].includes(th.dataset.k);
+    clave = th.dataset.k; ordena();
+  });
+  for (const el of [q, anio, reg]) el.addEventListener("input", pinta);
+  const p = new URLSearchParams(location.search);
+  if (p.get("anio")) anio.value = p.get("anio");
+  if (p.get("q")) q.value = p.get("q");
+  pinta();
+})();
+</script>
+</body>
+</html>
