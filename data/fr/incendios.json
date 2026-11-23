@@ -69836,6 +69836,27 @@
      ]
     ]
    },
+   "natura": [],
+   "cobertura": {
+    "agricola": 1.0
+   },
+   "lugar": {
+    "municipio": "Saint-Thibéry",
+    "insee": "34289",
+    "provincia": "Hérault",
+    "comunidad": "Occitanie"
+   },
+   "lugar_focos": 3,
+   "estado": "activo",
+   "effis": [],
+   "effis_ha": null,
+   "perimetro": {
+    "clave": "v2|3|afd534a104f1",
+    "revisado": "2026-11-22T19:39Z",
+    "calculado": "2026-11-22T19:39Z",
+    "definitivo": false,
+    "sin_imagen": true
+   },
    "perimeter_ha": 11.8,
    "steps": 2,
    "front_km": 1.29,
@@ -69953,29 +69974,8 @@
       ]
      ]
     ]
-   },
-   "natura": [],
-   "cobertura": {
-    "agricola": 1.0
-   },
-   "lugar": {
-    "municipio": "Saint-Thibéry",
-    "insee": "34289",
-    "provincia": "Hérault",
-    "comunidad": "Occitanie"
-   },
-   "lugar_focos": 3,
-   "estado": "activo",
-   "effis": [],
-   "effis_ha": null,
-   "perimetro": {
-    "clave": "v2|3|afd534a104f1",
-    "revisado": "2026-11-22T19:39Z",
-    "calculado": "2026-11-22T19:39Z",
-    "definitivo": false,
-    "sin_imagen": true
    }
   }
  ],
- "actualizado": "2026-11-22T19:39Z"
+ "actualizado": "2026-11-23T00:52Z"
 }
