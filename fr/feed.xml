@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Vigie des incendies</title>
+<id>https://asensio94.github.io/vigia-incendios/fr/</id><link href="https://asensio94.github.io/vigia-incendios/fr/"/><link rel="self" href="https://asensio94.github.io/vigia-incendios/fr/feed.xml"/>
+<updated>2026-11-28T10:26:00Z</updated><author><name>Vigie des incendies</name></author>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261128-003</id><title>Incendie à Manciet (Gers)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261128-003"/><updated>2026-11-28T02:49:00Z</updated>
+<summary>3 foyers en 3 passages, du 2026-11-28T01:11Z au 2026-11-28T02:49Z (UTC). Pixels avec foyers : 58,1 ha. Périmètre estimé : 19,6 ha ; front actif de 1,8 km au dernier passage. Brûle sur : sans données.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261128-001</id><title>Incendie à lieu sans nom</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261128-001"/><updated>2026-11-28T02:47:00Z</updated>
+<summary>3 foyers en 3 passages, du 2026-11-28T01:09Z au 2026-11-28T02:47Z (UTC). Pixels avec foyers : 34,9 ha. Périmètre estimé : 9,2 ha ; front actif de 1,1 km au dernier passage. Brûle sur : végétation naturelle.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261128-002</id><title>Incendie à lieu sans nom</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261128-002"/><updated>2026-11-28T02:47:00Z</updated>
+<summary>3 foyers en 2 passages, du 2026-11-28T01:09Z au 2026-11-28T02:47Z (UTC). Pixels avec foyers : 54,3 ha. Périmètre estimé : 21,5 ha ; front actif de 1,9 km au dernier passage. Brûle sur : sol urbain ou industriel.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261128-005</id><title>Incendie à Martres-Tolosane (Haute-Garonne)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261128-005"/><updated>2026-11-28T01:51:00Z</updated>
+<summary>1 foyers en 1 passages, du 2026-11-28T01:51Z au 2026-11-28T01:51Z (UTC). Pixels avec foyers : 13,7 ha. Brûle sur : sol urbain ou industriel. Natura 2000 : ZPS Vallée de la Garonne de Boussens à Carbonne.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261127-001</id><title>Incendie à Fos-sur-Mer (Bouches-du-Rhône)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261127-001"/><updated>2026-11-27T02:13:00Z</updated>
+<summary>3 foyers en 2 passages, du 2026-11-27T01:28Z au 2026-11-27T02:13Z (UTC). Pixels avec foyers : 40,0 ha. Périmètre estimé : 13,2 ha ; front actif de 1,6 km au dernier passage. Brûle sur : sans données.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261125-002</id><title>Incendie à Lavaur (Tarn)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261125-002"/><updated>2026-11-25T08:54:00Z</updated>
+<summary>1 foyers en 1 passages, du 2026-11-25T08:54Z au 2026-11-25T08:54Z (UTC). Pixels avec foyers : 100,0 ha. Brûle sur : sans données. Natura 2000 : ZSC Vallées du Tarn, de l'Aveyron, du Viaur, de l'Agout et du Gijou. Surface brûlée estimée avec Sentinel-2 : 0,1 ha (provisoire), mesurée avec une seule image.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261118-001</id><title>Incendie à lieu sans nom</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261118-001"/><updated>2026-11-24T01:26:00Z</updated>
+<summary>11 foyers en 6 passages, du 2026-11-18T00:56Z au 2026-11-24T01:26Z (UTC). Pixels avec foyers : 136,9 ha. Périmètre estimé : 77,8 ha ; front actif de 1,3 km au dernier passage. Brûle sur : sol urbain ou industriel. Surface brûlée estimée avec Sentinel-2 : 1,9 ha.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261121-002</id><title>Incendie à lieu sans nom</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261121-002"/><updated>2026-11-24T01:26:00Z</updated>
+<summary>5 foyers en 4 passages, du 2026-11-21T00:43Z au 2026-11-24T01:26Z (UTC). Pixels avec foyers : 65,3 ha. Périmètre estimé : 25,1 ha ; front actif de 2,2 km au dernier passage. Brûle sur : végétation naturelle. Surface brûlée estimée avec Sentinel-2 : 821,6 ha (provisoire).</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261123-003</id><title>Incendie à Arles (Bouches-du-Rhône)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261123-003"/><updated>2026-11-23T12:27:00Z</updated>
+<summary>1 foyers en 1 passages, du 2026-11-23T12:27Z au 2026-11-23T12:27Z (UTC). Pixels avec foyers : 16,3 ha. Brûle sur : sans données. Natura 2000 : ZSC Marais de la vallée des Baux et marais d'Arles.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261123-001</id><title>Incendie à Borgo (Haute-Corse)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261123-001"/><updated>2026-11-23T01:45:00Z</updated>
+<summary>4 foyers en 3 passages, du 2026-11-23T00:07Z au 2026-11-23T01:45Z (UTC). Pixels avec foyers : 71,6 ha. Périmètre estimé : 23,1 ha ; front actif de 1,4 km au dernier passage. Brûle sur : sans données. Natura 2000 : ZSC Étang de Biguglia, ZPS Étang de Biguglia. Surface brûlée estimée avec Sentinel-2 : 0,6 ha (provisoire).</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261122-001</id><title>Incendie à Saint-Thibéry (Hérault)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261122-001"/><updated>2026-11-22T13:29:00Z</updated>
+<summary>3 foyers en 3 passages, du 2026-11-22T11:51Z au 2026-11-22T13:29Z (UTC). Pixels avec foyers : 34,8 ha. Périmètre estimé : 11,8 ha ; front actif de 1,3 km au dernier passage. Brûle sur : cultures.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261121-004</id><title>Incendie à Murato (Haute-Corse)</title>
+<link href="https://asensio94.github.io/vigia-incendios/fr/#FR-IN-20261121-004"/><updated>2026-11-21T12:08:00Z</updated>
+<summary>1 foyers en 1 passages, du 2026-11-21T12:08Z au 2026-11-21T12:08Z (UTC). Pixels avec foyers : 14,8 ha. Brûle sur : végétation naturelle. Surface brûlée estimée avec Sentinel-2 : 0,2 ha (provisoire). Contour EFFIS : 1,0 ha.</summary></entry>
+</feed>

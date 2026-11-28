@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Vigía de incendios</title>
+<id>https://asensio94.github.io/vigia-incendios/</id><link href="https://asensio94.github.io/vigia-incendios/"/><link rel="self" href="https://asensio94.github.io/vigia-incendios/feed.xml"/>
+<updated>2026-11-28T10:26:00Z</updated><author><name>Vigía de incendios</name></author>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261128-001</id><title>Incendio en Pinoso (Alicante)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261128-001"/><updated>2026-11-28T02:51:00Z</updated>
+<summary>3 focos en 3 pasadas, del 2026-11-28T01:11Z al 2026-11-28T02:51Z (UTC). Píxeles con focos: 42.8 ha. Perímetro estimado: 13.9 ha; frente activo de 1.45 km en la última pasada. Arde sobre: sin datos.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261127-002</id><title>Incendio en Pétrola (Albacete)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261127-002"/><updated>2026-11-27T13:33:00Z</updated>
+<summary>6 focos en 3 pasadas, del 2026-11-27T11:53Z al 2026-11-27T13:33Z (UTC). Píxeles con focos: 106.2 ha. Perímetro estimado: 44.1 ha; frente activo de 1.97 km en la última pasada. Arde sobre: sin datos.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261127-003</id><title>Incendio en Pedralba (Valencia)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261127-003"/><updated>2026-11-27T12:53:00Z</updated>
+<summary>3 focos en 2 pasadas, del 2026-11-27T11:53Z al 2026-11-27T12:53Z (UTC). Píxeles con focos: 58.4 ha. Perímetro estimado: 15.9 ha; frente activo de 1.5 km en la última pasada. Arde sobre: sin datos.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261127-005</id><title>Incendio en Calasparra (Región de Murcia)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261127-005"/><updated>2026-11-27T11:53:00Z</updated>
+<summary>2 focos en 1 pasadas, del 2026-11-27T11:53Z al 2026-11-27T11:53Z (UTC). Píxeles con focos: 70.2 ha. Arde sobre: sin datos. Red Natura: ZEPA Sierra del Molino, Embalse del Quípar y Llanos del Cagitán, ZEC Sierras y Vega Alta del Segura y Ríos Alhárabe y Moratalla.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261120-002</id><title>Incendio en Málaga</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261120-002"/><updated>2026-11-27T02:13:00Z</updated>
+<summary>20 focos en 9 pasadas, del 2026-11-20T02:47Z al 2026-11-27T02:13Z (UTC). Píxeles con focos: 66.5 ha. Perímetro estimado: 27.8 ha; frente activo de 1.42 km en la última pasada. Arde sobre: suelo urbano o industrial. Red Natura: ZEPA Bahía de Málaga-Cerro Gordo.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261126-002</id><title>Incendio en Olvés (Zaragoza)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261126-002"/><updated>2026-11-26T13:54:00Z</updated>
+<summary>3 focos en 3 pasadas, del 2026-11-26T12:14Z al 2026-11-26T13:54Z (UTC). Píxeles con focos: 46 ha. Perímetro estimado: 15.8 ha; frente activo de 1.53 km en la última pasada. Arde sobre: sin datos. Superficie quemada estimada con Sentinel-2: 4.8 ha (provisional), medida con una sola imagen.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261123-011</id><title>Incendio en Pinos Puente (Granada)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261123-011"/><updated>2026-11-26T13:10:00Z</updated>
+<summary>6 focos en 2 pasadas, del 2026-11-23T13:10Z al 2026-11-26T13:10Z (UTC). Píxeles con focos: 42.6 ha. Perímetro estimado: 16.3 ha; frente activo de 2.02 km en la última pasada. Arde sobre: sin datos.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261123-003</id><title>Incendio en Guadix (Granada)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261123-003"/><updated>2026-11-26T12:14:00Z</updated>
+<summary>14 focos en 7 pasadas, del 2026-11-23T09:15Z al 2026-11-26T12:14Z (UTC). Píxeles con focos: 68.9 ha. Perímetro estimado: 25.9 ha; frente activo de 1.93 km en la última pasada. Arde sobre: sin datos. Superficie quemada estimada con Sentinel-2: 371.2 ha (provisional), medida con una sola imagen. Perímetro EFFIS: 3 ha.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261126-007</id><title>Incendio en Calasparra (Región de Murcia)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261126-007"/><updated>2026-11-26T12:14:00Z</updated>
+<summary>1 focos en 1 pasadas, del 2026-11-26T12:14Z al 2026-11-26T12:14Z (UTC). Píxeles con focos: 25.6 ha. Arde sobre: sin datos. Red Natura: ZEPA Sierra del Molino, Embalse del Quípar y Llanos del Cagitán, ZEC Sierras y Vega Alta del Segura y Ríos Alhárabe y Moratalla. Superficie quemada estimada con Sentinel-2: 0.9 ha (provisional), medida con una sola imagen.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261124-001</id><title>Incendio en Andújar (Jaén)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261124-001"/><updated>2026-11-26T02:32:00Z</updated>
+<summary>4 focos en 3 pasadas, del 2026-11-24T02:25Z al 2026-11-26T02:32Z (UTC). Píxeles con focos: 59.4 ha. Perímetro estimado: 29.4 ha; frente activo de 1.98 km en la última pasada. Arde sobre: sin datos. Red Natura: ZEC Cuencas del Rumblar, Guadalén y Guadalmena.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261123-008</id><title>Incendio en Villanueva de Azoague (Zamora)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261123-008"/><updated>2026-11-25T13:29:00Z</updated>
+<summary>4 focos en 3 pasadas, del 2026-11-23T13:10Z al 2026-11-25T13:29Z (UTC). Píxeles con focos: 43.7 ha. Perímetro estimado: 12.7 ha; frente activo de 0.6 km en la última pasada. Arde sobre: sin datos. Red Natura: ZEC Riberas del Río Esla y afluentes. Superficie quemada estimada con Sentinel-2: 25.4 ha (provisional), medida con una sola imagen.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261123-012</id><title>Incendio en Rioja (Almería)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261123-012"/><updated>2026-11-23T15:07:00Z</updated>
+<summary>2 focos en 1 pasadas, del 2026-11-23T15:07Z al 2026-11-23T15:07Z (UTC). Píxeles con focos: 271.3 ha. Arde sobre: sin datos. Red Natura: ZEC Ramblas de Gérgal, Tabernas y Sur de Sierra Alhamilla. Superficie quemada estimada con Sentinel-2: 1.6 ha (provisional), medida con una sola imagen.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261123-004</id><title>Incendio en Bétera (Valencia)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261123-004"/><updated>2026-11-23T13:10:00Z</updated>
+<summary>5 focos en 3 pasadas, del 2026-11-23T09:13Z al 2026-11-23T13:10Z (UTC). Píxeles con focos: 45.7 ha. Perímetro estimado: 14.1 ha; frente activo de 1.76 km en la última pasada. Arde sobre: sin datos. Superficie quemada estimada con Sentinel-2: al menos 0.3 ha (provisional), medida con una sola imagen.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261123-006</id><title>Incendio en Almonte (Huelva)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261123-006"/><updated>2026-11-23T13:10:00Z</updated>
+<summary>4 focos en 1 pasadas, del 2026-11-23T13:10Z al 2026-11-23T13:10Z (UTC). Píxeles con focos: 29.9 ha. Perímetro estimado: 8.7 ha; frente activo de 1.19 km en la última pasada. Arde sobre: sin datos. Red Natura: ZEC y ZEPA Doñana. Superficie quemada estimada con Sentinel-2: 1.8 ha (provisional), medida con una sola imagen. Perímetro EFFIS: 1 ha.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261123-007</id><title>Incendio en Cieza (Región de Murcia)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261123-007"/><updated>2026-11-23T13:10:00Z</updated>
+<summary>3 focos en 3 pasadas, del 2026-11-23T09:15Z al 2026-11-23T13:10Z (UTC). Píxeles con focos: 21.6 ha. Arde sobre: sin datos. Superficie quemada estimada con Sentinel-2: 72.8 ha (provisional).</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261123-010</id><title>Incendio en Gérgal (Almería)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261123-010"/><updated>2026-11-23T13:10:00Z</updated>
+<summary>2 focos en 1 pasadas, del 2026-11-23T13:10Z al 2026-11-23T13:10Z (UTC). Píxeles con focos: 13.7 ha. Arde sobre: sin datos. Superficie quemada estimada con Sentinel-2: 4.3 ha (provisional), medida con una sola imagen. Perímetro EFFIS: 7 ha.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261123-024</id><title>Incendio en Cabezuela (Segovia)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261123-024"/><updated>2026-11-23T13:10:00Z</updated>
+<summary>1 focos en 1 pasadas, del 2026-11-23T13:10Z al 2026-11-23T13:10Z (UTC). Píxeles con focos: 13.7 ha. Arde sobre: sin datos. Red Natura: ZEPA Lagunas de Cantalejo - ZEPA. Superficie quemada estimada con Sentinel-2: al menos 2 ha (provisional), medida con una sola imagen.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261123-005</id><title>Incendio en Hellín (Albacete)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261123-005"/><updated>2026-11-23T12:25:00Z</updated>
+<summary>4 focos en 1 pasadas, del 2026-11-23T12:25Z al 2026-11-23T12:25Z (UTC). Píxeles con focos: 76.9 ha. Perímetro estimado: 39.9 ha; frente activo de 2.57 km en la última pasada. Arde sobre: sin datos. Red Natura: ZEC y ZEPA Sierra de Alcaraz y Segura y cañones del Segura y del Mundo. Superficie quemada estimada con Sentinel-2: 15.6 ha.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261123-013</id><title>Incendio en Alcañiz (Teruel)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261123-013"/><updated>2026-11-23T09:13:00Z</updated>
+<summary>1 focos en 1 pasadas, del 2026-11-23T09:13Z al 2026-11-23T09:13Z (UTC). Píxeles con focos: 130.8 ha. Arde sobre: sin datos.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261122-009</id><title>Incendio en Pollença (Islas Baleares)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261122-009"/><updated>2026-11-23T02:45:00Z</updated>
+<summary>26 focos en 4 pasadas, del 2026-11-22T19:38Z al 2026-11-23T02:45Z (UTC). Píxeles con focos: 345.5 ha. Perímetro estimado: 333.8 ha; frente activo de 1.01 km en la última pasada. Arde sobre: vegetación natural. Red Natura: ZEPA Costa Brava de Mallorca, ZEC Costa Brava de Tramuntana, ZEC Formentor. Superficie quemada estimada con Sentinel-2: 167.6 ha (provisional). Perímetro EFFIS: 185 ha.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261122-008</id><title>Incendio en Añón de Moncayo (Zaragoza)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261122-008"/><updated>2026-11-22T16:07:00Z</updated>
+<summary>1 focos en 1 pasadas, del 2026-11-22T16:07Z al 2026-11-22T16:07Z (UTC). Píxeles con focos: 466.6 ha. Arde sobre: vegetación natural. Red Natura: ZEC Moncayo, ZEPA Sierra de Moncayo - Los Fayos - Sierra de Armas. Superficie quemada estimada con Sentinel-2: 816.2 ha (provisional), medida con una sola imagen.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261122-004</id><title>Incendio en Almonacid de la Sierra (Zaragoza)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261122-004"/><updated>2026-11-22T13:29:00Z</updated>
+<summary>3 focos en 3 pasadas, del 2026-11-22T11:51Z al 2026-11-22T13:29Z (UTC). Píxeles con focos: 66.3 ha. Perímetro estimado: 21.7 ha; frente activo de 1.3 km en la última pasada. Arde sobre: cultivos. Superficie quemada estimada con Sentinel-2: 24.2 ha (provisional), medida con una sola imagen.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261122-007</id><title>Incendio en Almenara (Castellón)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261122-007"/><updated>2026-11-22T11:49:00Z</updated>
+<summary>1 focos en 1 pasadas, del 2026-11-22T11:49Z al 2026-11-22T11:49Z (UTC). Píxeles con focos: 49.6 ha. Arde sobre: cultivos. Red Natura: ZEC Marjal d'Almenara. Superficie quemada estimada con Sentinel-2: 1.8 ha.</summary></entry>
+<entry><id>https://asensio94.github.io/vigia-incendios/#IN-20261122-001</id><title>Incendio en Palos de la Frontera (Huelva)</title>
+<link href="https://asensio94.github.io/vigia-incendios/#IN-20261122-001"/><updated>2026-11-22T03:04:00Z</updated>
+<summary>4 focos en 2 pasadas, del 2026-11-22T02:08Z al 2026-11-22T03:04Z (UTC). Píxeles con focos: 31 ha. Perímetro estimado: 7 ha; frente activo de 0.96 km en la última pasada. Arde sobre: cultivos. Superficie quemada estimada con Sentinel-2: 0.2 ha (provisional).</summary></entry>
+</feed>
